@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/api/collections", "destination": "/api/collections" },
+    { "source": "/api/collection/:id", "destination": "/api/collection/[id]" },
+    { "source": "/api/search", "destination": "/api/search" }
+  ]
+}

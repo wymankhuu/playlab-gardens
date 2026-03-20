@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection — Playlab Gardens</title>
+  <meta name="description" content="Explore apps in this Playlab collection.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="logo-icon">🌱</span>
+        Playlab Explore
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="nav-back">← Back to Gardens</a></li>
+      </ul>
+      <a href="https://playlab.ai" class="nav-cta" target="_blank" rel="noopener">Start Building</a>
+      <button class="mobile-menu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Collection Header -->
+  <section class="collection-header container">
+    <div class="collection-header-inner">
+      <div id="collection-accent-bar" class="collection-accent-bar"></div>
+      <div class="collection-header-content">
+        <div id="collection-icon" class="collection-header-icon">📚</div>
+        <h1 id="collection-title">Loading...</h1>
+        <p id="collection-desc" class="collection-header-desc"></p>
+        <div class="collection-header-stats">
+          <span id="apps-count" class="collection-stat"></span>
+        </div>
+
+        <!-- Org context (hidden by default) -->
+        <div id="collection-org-context" class="collection-org-context hidden">
+          <div id="collection-org-name" class="collection-org-name"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apps Grid -->
+  <main class="container section">
+    <div id="apps-grid" class="apps-grid"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    <p>Playlab Gardens — Built with 🌱 by Playlab</p>
+  </footer>
+
+  <!-- App Modal -->
+  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close" onclick="closeModal()">✕</button>
+      <h2 id="modal-title" class="modal-title"></h2>
+      <p id="modal-creator" class="modal-creator"></p>
+      <p id="modal-desc" class="modal-desc"></p>
+      <div class="modal-stats">
+        <div class="modal-stat">
+          <div id="modal-sessions" class="modal-stat-value">0</div>
+          <div class="modal-stat-label">Sessions</div>
+        </div>
+        <div class="modal-stat">
+          <div id="modal-iterations" class="modal-stat-value">0</div>
+          <div class="modal-stat-label">Iterations</div>
+        </div>
+      </div>
+      <a id="modal-cta" href="#" class="modal-cta" target="_blank" rel="noopener">
+        Open in Playlab →
+      </a>
+    </div>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/collection.js"></script>
+</body>
+</html>

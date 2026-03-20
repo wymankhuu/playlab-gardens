@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playlab Gardens — Explore Curated Collections</title>
+  <meta name="description" content="Discover curated collections of Playlab apps built by educators, for educators.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="logo-icon">🌱</span>
+        Playlab Explore
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Seeds</a></li>
+        <li><a href="#">Flowers</a></li>
+        <li><a href="/" class="active">Gardens</a></li>
+        <li><a href="#">Share your app</a></li>
+      </ul>
+      <a href="https://playlab.ai" class="nav-cta" target="_blank" rel="noopener">Start Building</a>
+      <button class="mobile-menu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-shapes" aria-hidden="true">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+      <div class="hero-shape hero-shape-3"></div>
+      <div class="hero-shape hero-shape-4"></div>
+    </div>
+    <div class="hero-content container">
+      <h1 class="heading-xl">
+        Explore <span class="highlight">curated</span> collections of <span class="highlight">Playlab</span> apps
+      </h1>
+      <p class="text-accent hero-tagline">
+        Discover apps built by educators, organized by topic, subject, and community.
+      </p>
+
+      <!-- Search -->
+      <div class="search-container">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="search"
+          id="search-input"
+          class="search-input"
+          placeholder="Search apps by name..."
+          aria-label="Search apps"
+        >
+        <button id="search-clear" class="search-clear" aria-label="Clear search">✕</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Results (hidden by default) -->
+  <section id="search-results" class="search-results container section">
+    <div class="search-results-header">
+      <h2 id="search-results-title" class="search-results-title">Results</h2>
+      <span id="search-results-count" class="search-results-count"></span>
+    </div>
+    <div id="search-results-grid" class="apps-grid"></div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Featured Collections -->
+    <section class="container section">
+      <div class="section-header">
+        <h2>Featured Collections</h2>
+      </div>
+      <div id="featured-grid" class="featured-grid"></div>
+    </section>
+
+    <!-- All Collections -->
+    <section class="container section">
+      <div class="section-header">
+        <h2>All Collections</h2>
+        <span id="collections-count" class="section-count"></span>
+      </div>
+      <div id="collections-grid" class="collections-grid"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    <p>Playlab Gardens — Built with 🌱 by Playlab</p>
+  </footer>
+
+  <!-- App Modal -->
+  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close" onclick="closeModal()">✕</button>
+      <h2 id="modal-title" class="modal-title"></h2>
+      <p id="modal-creator" class="modal-creator"></p>
+      <p id="modal-desc" class="modal-desc"></p>
+      <div class="modal-stats">
+        <div class="modal-stat">
+          <div id="modal-sessions" class="modal-stat-value">0</div>
+          <div class="modal-stat-label">Sessions</div>
+        </div>
+        <div class="modal-stat">
+          <div id="modal-iterations" class="modal-stat-value">0</div>
+          <div class="modal-stat-label">Iterations</div>
+        </div>
+      </div>
+      <a id="modal-cta" href="#" class="modal-cta" target="_blank" rel="noopener">
+        Open in Playlab →
+      </a>
+    </div>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
