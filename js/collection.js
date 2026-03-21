@@ -185,7 +185,7 @@ function renderCollectionHeader(col) {
 
   icon.style.backgroundColor = color;
   icon.innerHTML = lucideIconHTML(iconName, 28);
-  title.textContent = col.name;
+  title.innerHTML = formatCollectionTitle(col.name);
   desc.textContent = getCollectionDescription(col);
 
   // Set hero accent color and background image by type
@@ -231,6 +231,26 @@ function showError(message) {
   const appsGrid = document.getElementById('apps-grid');
   appsGrid.innerHTML = errorStateHTML(message);
   refreshIcons();
+}
+
+// ---- Hero Title (serif + sans-serif mix) ----
+function formatCollectionTitle(name) {
+  // Split multi-word names: last word (or key word) in serif italic, rest in sans-serif
+  const words = name.split(' ');
+  if (words.length === 1) {
+    return `<em>${escapeHtml(name)}</em>`;
+  }
+  // For "X / Y" or "X & Y" patterns, italicize after the separator
+  const sepIdx = words.findIndex(w => w === '/' || w === '&');
+  if (sepIdx >= 0 && sepIdx < words.length - 1) {
+    const before = words.slice(0, sepIdx + 1).map(escapeHtml).join(' ');
+    const after = words.slice(sepIdx + 1).map(escapeHtml).join(' ');
+    return `${before} <em>${after}</em>`;
+  }
+  // Default: italicize last word
+  const before = words.slice(0, -1).map(escapeHtml).join(' ');
+  const last = escapeHtml(words[words.length - 1]);
+  return `${before} <em>${last}</em>`;
 }
 
 // ---- Collection Search ----

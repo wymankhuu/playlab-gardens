@@ -688,6 +688,24 @@
         ]
       },
       {
+        "id": "cm7z4xsyq0gewwww2cjmviu09",
+        "name": "Elevating Your Speaking",
+        "description": "A speaking practice bot that coaches multilingual learners on English proficiency exam skills — pronunciation, pacing, and fluency patterns that automated scoring systems recognize.",
+        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
+        "creator": "Dr. Elvira Salazar",
+        "role": "National Director of Online Learning and Technology",
+        "usage": "Multilingual students practice speaking skills for proficiency exams with AI coaching on pause, enunciation, and cadence. The bot provides frequent, low-stakes practice that one teacher managing 25 diverse students can't offer consistently. One educator has already shared it with her school district for replication.",
+        "impact": "Gives multilingual learners a fighting chance against automated scoring systems trained primarily on native English speakers. Instead of waiting for policy changes, educators are using AI to help students navigate a system not designed for them — while advocating for better technology that reflects their communities.",
+        "sessions": 450,
+        "iterations": 18,
+        "tags": [
+          "ELL / ESL",
+          "Assessment & Feedback",
+          "Study Partners",
+          "Flowers"
+        ]
+      },
+      {
         "id": "cmhmmgp9b1rfeoh0uu0vnf6st",
         "name": "Unit 1 Literary Analysis Essay Feedback Partner",
         "description": "Rubric-aligned literary analysis feedback",
@@ -1156,24 +1174,6 @@
           "ELA / Literacy",
           "Assessment & Feedback"
         ]
-      },
-      {
-        "id": "cm7z4xsyq0gewwww2cjmviu09",
-        "name": "Elevating Your Speaking",
-        "description": "A speaking practice bot that coaches multilingual learners on English proficiency exam skills — pronunciation, pacing, and fluency patterns that automated scoring systems recognize.",
-        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
-        "creator": "Dr. Elvira Salazar",
-        "role": "National Director of Online Learning and Technology",
-        "usage": "Multilingual students practice speaking skills for proficiency exams with AI coaching on pause, enunciation, and cadence. The bot provides frequent, low-stakes practice that one teacher managing 25 diverse students can't offer consistently. One educator has already shared it with her school district for replication.",
-        "impact": "Gives multilingual learners a fighting chance against automated scoring systems trained primarily on native English speakers. Instead of waiting for policy changes, educators are using AI to help students navigate a system not designed for them — while advocating for better technology that reflects their communities.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "ELL / ESL",
-          "Assessment & Feedback",
-          "Study Partners",
-          "Flowers"
-        ]
       }
     ]
   },
@@ -1270,6 +1270,24 @@
         ]
       },
       {
+        "id": "cm8wtxlyo0lke9dw1fqhzqk4b",
+        "name": "Financing Ventures - TerraCycle Case Study",
+        "description": "Prepares students for an in-class group role-play about business financing using the TerraCycle vermicomposting case.",
+        "url": "https://www.playlab.ai/project/cm8wtxlyo0lke9dw1fqhzqk4b",
+        "creator": "Gabriela Caso de los Cobos Tapia",
+        "role": "Adjunct Professor",
+        "usage": "Students prepare at home by exploring different investor roles — venture capitalists, angel investors, corporate investors, family members — each with different motivations and risk tolerances. The students who prepared more with the app performed notably better in the live role-play.",
+        "impact": "Made the gap between preparation and performance visible. Students who engaged deeply with the app showed measurably stronger understanding during the live simulation.",
+        "sessions": 75,
+        "iterations": 4,
+        "tags": [
+          "Higher Ed",
+          "Business / Economics",
+          "Gamified Learning",
+          "Flowers"
+        ]
+      },
+      {
         "id": "cm2f2lzvh0agi6wnsglou84k3",
         "name": "Business Idea",
         "description": "Business idea brainstorming",
@@ -1283,24 +1301,6 @@
         "tags": [
           "Higher Ed",
           "Business / Economics"
-        ]
-      },
-      {
-        "id": "cm8wtxlyo0lke9dw1fqhzqk4b",
-        "name": "Financing Ventures - TerraCycle Case Study",
-        "description": "Prepares students for an in-class group role-play about business financing using the TerraCycle vermicomposting case.",
-        "url": "https://www.playlab.ai/project/cm8wtxlyo0lke9dw1fqhzqk4b",
-        "creator": "Gabriela Caso de los Cobos Tapia",
-        "role": "Adjunct Professor",
-        "usage": "Students prepare at home by exploring different investor roles — venture capitalists, angel investors, corporate investors, family members — each with different motivations and risk tolerances. The students who prepared more with the app performed notably better in the live role-play.",
-        "impact": "Made the gap between preparation and performance visible. Students who engaged deeply with the app showed measurably stronger understanding during the live simulation.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Higher Ed",
-          "Business / Economics",
-          "Gamified Learning",
-          "Flowers"
         ]
       }
     ]
@@ -1576,6 +1576,43 @@
         ]
       },
       {
+        "id": "dok",
+        "name": "DOK Lesson Analyzer",
+        "description": "Analyzes lessons using Depth of Knowledge frameworks",
+        "url": "https://www.playlab.ai/project/dok-lesson-analyzer",
+        "creator": "Al Sylvia",
+        "role": "Principal, Bronx Lab School",
+        "usage": "School leaders and teachers analyze lesson plans through the lens of Webb's Depth of Knowledge framework, identifying whether tasks push students toward higher-order thinking or keep them at recall level. The tool provides specific suggestions for increasing cognitive demand.",
+        "impact": "Made the invisible visible — teachers who thought their lessons were rigorous discovered specific moments where cognitive demand dropped, and leaders could coach toward higher DOK levels with evidence rather than opinion.",
+        "sessions": 340,
+        "iterations": 15,
+        "tags": [
+          "Flowers",
+          "CIOB",
+          "Teacher Tools",
+          "School Leadership"
+        ]
+      },
+      {
+        "id": "dynamic",
+        "name": "Dynamic Coaching Toolbox",
+        "description": "Student-centered classroom protocol support",
+        "url": "https://www.playlab.ai/project/dynamic-coaching-toolbox",
+        "creator": "JD",
+        "role": "Educator, NYCPS",
+        "usage": "NYCPS educators access a dynamic library of student-centered classroom protocols matched to their specific instructional goals. The tool recommends discussion structures, collaborative routines, and engagement strategies based on what the teacher is trying to achieve.",
+        "impact": "Transformed coaching conversations from theoretical to practical — instead of vague advice to 'be more student-centered,' teachers got specific protocols they could implement in their very next class period.",
+        "sessions": 280,
+        "iterations": 12,
+        "tags": [
+          "Flowers",
+          "CIOB",
+          "Teacher Tools",
+          "School Leadership",
+          "NYC"
+        ]
+      },
+      {
         "id": "clyndp5i70472wk4bx0v0yd6u",
         "name": "California Ed Code",
         "description": "Ed Code navigator",
@@ -1753,43 +1790,6 @@
           "CIOB",
           "ELA / Literacy",
           "Teacher Tools"
-        ]
-      },
-      {
-        "id": "dynamic",
-        "name": "Dynamic Coaching Toolbox",
-        "description": "Student-centered classroom protocol support",
-        "url": "https://www.playlab.ai/project/dynamic-coaching-toolbox",
-        "creator": "JD",
-        "role": "Educator, NYCPS",
-        "usage": "NYCPS educators access a dynamic library of student-centered classroom protocols matched to their specific instructional goals. The tool recommends discussion structures, collaborative routines, and engagement strategies based on what the teacher is trying to achieve.",
-        "impact": "Transformed coaching conversations from theoretical to practical — instead of vague advice to 'be more student-centered,' teachers got specific protocols they could implement in their very next class period.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "CIOB",
-          "Teacher Tools",
-          "School Leadership",
-          "NYC"
-        ]
-      },
-      {
-        "id": "dok",
-        "name": "DOK Lesson Analyzer",
-        "description": "Analyzes lessons using Depth of Knowledge frameworks",
-        "url": "https://www.playlab.ai/project/dok-lesson-analyzer",
-        "creator": "Al Sylvia",
-        "role": "Principal, Bronx Lab School",
-        "usage": "School leaders and teachers analyze lesson plans through the lens of Webb's Depth of Knowledge framework, identifying whether tasks push students toward higher-order thinking or keep them at recall level. The tool provides specific suggestions for increasing cognitive demand.",
-        "impact": "Made the invisible visible — teachers who thought their lessons were rigorous discovered specific moments where cognitive demand dropped, and leaders could coach toward higher DOK levels with evidence rather than opinion.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "CIOB",
-          "Teacher Tools",
-          "School Leadership"
         ]
       }
     ]
@@ -2142,6 +2142,23 @@
         ]
       },
       {
+        "id": "cmu",
+        "name": "CMU Pathway Bot",
+        "description": "24/7 construction maintenance pathway guidance",
+        "url": "https://www.playlab.ai/project/cmu-pathway-bot",
+        "creator": "Jolene Martin",
+        "role": "Faculty, CMU",
+        "usage": "Students exploring construction and maintenance career pathways get 24/7 guidance on course sequences, certifications, job prospects, and skill requirements. The bot helps students navigate a complex vocational landscape with personalized recommendations.",
+        "impact": "Made skilled trades pathways as well-mapped as traditional college routes — students who felt lost in vocational program options gained a clear, personalized roadmap to high-demand careers.",
+        "sessions": 130,
+        "iterations": 7,
+        "tags": [
+          "Flowers",
+          "Higher Ed",
+          "Career & Vocational"
+        ]
+      },
+      {
         "id": "cm4h52mjq16xh38157t3k4ssm",
         "name": "College Essay Review",
         "description": "College application essay feedback",
@@ -2252,23 +2269,6 @@
         "tags": [
           "Higher Ed",
           "Science / STEM",
-          "Career & Vocational"
-        ]
-      },
-      {
-        "id": "cmu",
-        "name": "CMU Pathway Bot",
-        "description": "24/7 construction maintenance pathway guidance",
-        "url": "https://www.playlab.ai/project/cmu-pathway-bot",
-        "creator": "Jolene Martin",
-        "role": "Faculty, CMU",
-        "usage": "Students exploring construction and maintenance career pathways get 24/7 guidance on course sequences, certifications, job prospects, and skill requirements. The bot helps students navigate a complex vocational landscape with personalized recommendations.",
-        "impact": "Made skilled trades pathways as well-mapped as traditional college routes — students who felt lost in vocational program options gained a clear, personalized roadmap to high-demand careers.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Higher Ed",
           "Career & Vocational"
         ]
       }
@@ -2870,6 +2870,43 @@
         ]
       },
       {
+        "id": "personalized-lesson-generator-kingsman-academy-dc-",
+        "name": "Personalized Lesson Generator (Kingsman Academy, DC)",
+        "description": "AI-powered lesson generator aligned to Kingsman Academy's mastery-based learning model, creating individualized learning plans",
+        "url": "",
+        "creator": "Kingsman Academy",
+        "role": "School Leadership & Instructional Team",
+        "usage": "Teachers create individualized learning plans aligned to Kingsman Academy's mastery-based model, reducing hours of manual planning while maintaining true personalization for every student. The tool generates differentiated content that meets each student exactly where they are.",
+        "impact": "Made true mastery-based personalization feasible for every teacher at Kingsman — what was previously an aspirational model that required unsustainable planning hours became a daily reality with AI-generated individualized plans.",
+        "sessions": 420,
+        "iterations": 25,
+        "tags": [
+          "Flowers",
+          "Teacher Tools",
+          "Lesson Planning",
+          "Special Education",
+          "Differentiation & Access"
+        ]
+      },
+      {
+        "id": "cmhuztom001hylf0usicxp5la",
+        "name": "Kingsman Academy Mastery Lesson Builder",
+        "description": "Generates complete, standards-aligned, project-based lesson packages for Kingsman Academy — scaffolded student packets and detailed teacher guides with SPED accommodations, DC-relevant examples, and Marzano proficiency scales.",
+        "url": "https://www.playlab.ai/project/cmhuztom001hylf0usicxp5la",
+        "creator": "Erin Kupferberg",
+        "role": "Director of Research, Data, and Strategy",
+        "usage": "Teachers input their subject, standard, and proficiency level. The app generates a full student lesson packet (with mini-lessons, challenges, self-assessment, and submission checklist) and a teacher guide (with answer keys, facilitation notes, and troubleshooting tips). Lessons are scaffolded from foundational (2.0) through advanced (4.0) and exported as Google Docs.",
+        "impact": "Transformed lesson planning from hours of manual work into minutes of guided generation. Every lesson is automatically accessible for SPED and multilingual learners, connected to DC students' lived experiences, and aligned to Kingsman's competency-based framework. Made individualized, high-quality instruction the default.",
+        "sessions": 380,
+        "iterations": 22,
+        "tags": [
+          "Teacher Tools",
+          "Lesson Planning",
+          "Differentiation & Access",
+          "Flowers"
+        ]
+      },
+      {
         "id": "instructional-strategy-generator",
         "name": "Instructional Strategy Generator",
         "description": "Generates instructional strategies for all learners",
@@ -2934,43 +2971,6 @@
         "tags": [
           "Illustrative Mathematics",
           "Differentiation & Access"
-        ]
-      },
-      {
-        "id": "personalized-lesson-generator-kingsman-academy-dc-",
-        "name": "Personalized Lesson Generator (Kingsman Academy, DC)",
-        "description": "AI-powered lesson generator aligned to Kingsman Academy's mastery-based learning model, creating individualized learning plans",
-        "url": "",
-        "creator": "Kingsman Academy",
-        "role": "School Leadership & Instructional Team",
-        "usage": "Teachers create individualized learning plans aligned to Kingsman Academy's mastery-based model, reducing hours of manual planning while maintaining true personalization for every student. The tool generates differentiated content that meets each student exactly where they are.",
-        "impact": "Made true mastery-based personalization feasible for every teacher at Kingsman — what was previously an aspirational model that required unsustainable planning hours became a daily reality with AI-generated individualized plans.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Teacher Tools",
-          "Lesson Planning",
-          "Special Education",
-          "Differentiation & Access"
-        ]
-      },
-      {
-        "id": "cmhuztom001hylf0usicxp5la",
-        "name": "Kingsman Academy Mastery Lesson Builder",
-        "description": "Generates complete, standards-aligned, project-based lesson packages for Kingsman Academy — scaffolded student packets and detailed teacher guides with SPED accommodations, DC-relevant examples, and Marzano proficiency scales.",
-        "url": "https://www.playlab.ai/project/cmhuztom001hylf0usicxp5la",
-        "creator": "Erin Kupferberg",
-        "role": "Director of Research, Data, and Strategy",
-        "usage": "Teachers input their subject, standard, and proficiency level. The app generates a full student lesson packet (with mini-lessons, challenges, self-assessment, and submission checklist) and a teacher guide (with answer keys, facilitation notes, and troubleshooting tips). Lessons are scaffolded from foundational (2.0) through advanced (4.0) and exported as Google Docs.",
-        "impact": "Transformed lesson planning from hours of manual work into minutes of guided generation. Every lesson is automatically accessible for SPED and multilingual learners, connected to DC students' lived experiences, and aligned to Kingsman's competency-based framework. Made individualized, high-quality instruction the default.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Teacher Tools",
-          "Lesson Planning",
-          "Differentiation & Access",
-          "Flowers"
         ]
       }
     ]
@@ -3830,6 +3830,24 @@
         ]
       },
       {
+        "id": "cm7z4xsyq0gewwww2cjmviu09",
+        "name": "Elevating Your Speaking",
+        "description": "A speaking practice bot that coaches multilingual learners on English proficiency exam skills — pronunciation, pacing, and fluency patterns that automated scoring systems recognize.",
+        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
+        "creator": "Dr. Elvira Salazar",
+        "role": "National Director of Online Learning and Technology",
+        "usage": "Multilingual students practice speaking skills for proficiency exams with AI coaching on pause, enunciation, and cadence. The bot provides frequent, low-stakes practice that one teacher managing 25 diverse students can't offer consistently. One educator has already shared it with her school district for replication.",
+        "impact": "Gives multilingual learners a fighting chance against automated scoring systems trained primarily on native English speakers. Instead of waiting for policy changes, educators are using AI to help students navigate a system not designed for them — while advocating for better technology that reflects their communities.",
+        "sessions": 450,
+        "iterations": 18,
+        "tags": [
+          "ELL / ESL",
+          "Assessment & Feedback",
+          "Study Partners",
+          "Flowers"
+        ]
+      },
+      {
         "id": "clnuva8la010koc96j6i2r8uc",
         "name": "Interpersonal Speaking Simulation",
         "description": "Interactive speaking practice",
@@ -4075,24 +4093,6 @@
           "Reading Intervention",
           "ELL / ESL",
           "World Languages"
-        ]
-      },
-      {
-        "id": "cm7z4xsyq0gewwww2cjmviu09",
-        "name": "Elevating Your Speaking",
-        "description": "A speaking practice bot that coaches multilingual learners on English proficiency exam skills — pronunciation, pacing, and fluency patterns that automated scoring systems recognize.",
-        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
-        "creator": "Dr. Elvira Salazar",
-        "role": "National Director of Online Learning and Technology",
-        "usage": "Multilingual students practice speaking skills for proficiency exams with AI coaching on pause, enunciation, and cadence. The bot provides frequent, low-stakes practice that one teacher managing 25 diverse students can't offer consistently. One educator has already shared it with her school district for replication.",
-        "impact": "Gives multilingual learners a fighting chance against automated scoring systems trained primarily on native English speakers. Instead of waiting for policy changes, educators are using AI to help students navigate a system not designed for them — while advocating for better technology that reflects their communities.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "ELL / ESL",
-          "Assessment & Feedback",
-          "Study Partners",
-          "Flowers"
         ]
       }
     ]
@@ -4961,6 +4961,24 @@
         ]
       },
       {
+        "id": "ghana",
+        "name": "Ghana Ministry of Education Lesson Planning Tools",
+        "description": "AI lesson planning tools for Ghana's national curriculum",
+        "url": "https://www.playlab.ai/project/ghana-moe-lesson-planning",
+        "creator": "Ministry of Education, Ghana",
+        "role": "",
+        "usage": "Teachers across Ghana create lesson plans aligned to the national curriculum using AI tools developed in partnership with the Ministry of Education. The platform ensures consistent instructional quality across diverse school contexts.",
+        "impact": "Brought national curriculum standards to life at the classroom level — teachers in under-resourced schools gained the same quality of lesson planning support as those in well-equipped urban centers.",
+        "sessions": 1200,
+        "iterations": 28,
+        "tags": [
+          "Flowers",
+          "Ghana",
+          "Teacher Tools",
+          "Lesson Planning"
+        ]
+      },
+      {
         "id": "cm4kajw2r0ijxakiu2tupisre",
         "name": "Job Finder",
         "description": "Career discovery tool",
@@ -5030,6 +5048,23 @@
         ]
       },
       {
+        "id": "national",
+        "name": "National Math AI Partnership",
+        "description": "HQIM planning and coaching apps",
+        "url": "https://www.playlab.ai/project/national-math-ai-partnership",
+        "creator": "National Math AI Partnership",
+        "role": "",
+        "usage": "Math teachers across the partnership use AI coaching tools to plan and internalize high-quality instructional materials. The suite of apps supports lesson preparation, student thinking anticipation, and instructional decision-making aligned to HQIM standards.",
+        "impact": "Created a national model for how AI can enhance — not replace — high-quality math curriculum implementation, proving that technology and rigorous pedagogy amplify each other when thoughtfully combined.",
+        "sessions": 850,
+        "iterations": 35,
+        "tags": [
+          "Flowers",
+          "Illustrative Mathematics",
+          "Teacher Tools"
+        ]
+      },
+      {
         "id": "model-un-simulator",
         "name": "Model UN Simulator",
         "description": "Simulated Model UN experience",
@@ -5062,6 +5097,61 @@
           "Math",
           "High School",
           "Study Partners"
+        ]
+      },
+      {
+        "id": "cm7z4xsyq0gewwww2cjmviu09",
+        "name": "Elevating Your Speaking",
+        "description": "A speaking practice bot that coaches multilingual learners on English proficiency exam skills — pronunciation, pacing, and fluency patterns that automated scoring systems recognize.",
+        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
+        "creator": "Dr. Elvira Salazar",
+        "role": "National Director of Online Learning and Technology",
+        "usage": "Multilingual students practice speaking skills for proficiency exams with AI coaching on pause, enunciation, and cadence. The bot provides frequent, low-stakes practice that one teacher managing 25 diverse students can't offer consistently. One educator has already shared it with her school district for replication.",
+        "impact": "Gives multilingual learners a fighting chance against automated scoring systems trained primarily on native English speakers. Instead of waiting for policy changes, educators are using AI to help students navigate a system not designed for them — while advocating for better technology that reflects their communities.",
+        "sessions": 450,
+        "iterations": 18,
+        "tags": [
+          "ELL / ESL",
+          "Assessment & Feedback",
+          "Study Partners",
+          "Flowers"
+        ]
+      },
+      {
+        "id": "personalized-lesson-generator-kingsman-academy-dc-",
+        "name": "Personalized Lesson Generator (Kingsman Academy, DC)",
+        "description": "AI-powered lesson generator aligned to Kingsman Academy's mastery-based learning model, creating individualized learning plans",
+        "url": "",
+        "creator": "Kingsman Academy",
+        "role": "School Leadership & Instructional Team",
+        "usage": "Teachers create individualized learning plans aligned to Kingsman Academy's mastery-based model, reducing hours of manual planning while maintaining true personalization for every student. The tool generates differentiated content that meets each student exactly where they are.",
+        "impact": "Made true mastery-based personalization feasible for every teacher at Kingsman — what was previously an aspirational model that required unsustainable planning hours became a daily reality with AI-generated individualized plans.",
+        "sessions": 420,
+        "iterations": 25,
+        "tags": [
+          "Flowers",
+          "Teacher Tools",
+          "Lesson Planning",
+          "Special Education",
+          "Differentiation & Access"
+        ]
+      },
+      {
+        "id": "cmhuztom001hylf0usicxp5la",
+        "name": "Kingsman Academy Mastery Lesson Builder",
+        "description": "Generates complete, standards-aligned, project-based lesson packages for Kingsman Academy — scaffolded student packets and detailed teacher guides with SPED accommodations, DC-relevant examples, and Marzano proficiency scales.",
+        "url": "https://www.playlab.ai/project/cmhuztom001hylf0usicxp5la",
+        "creator": "Erin Kupferberg",
+        "role": "Director of Research, Data, and Strategy",
+        "usage": "Teachers input their subject, standard, and proficiency level. The app generates a full student lesson packet (with mini-lessons, challenges, self-assessment, and submission checklist) and a teacher guide (with answer keys, facilitation notes, and troubleshooting tips). Lessons are scaffolded from foundational (2.0) through advanced (4.0) and exported as Google Docs.",
+        "impact": "Transformed lesson planning from hours of manual work into minutes of guided generation. Every lesson is automatically accessible for SPED and multilingual learners, connected to DC students' lived experiences, and aligned to Kingsman's competency-based framework. Made individualized, high-quality instruction the default.",
+        "sessions": 380,
+        "iterations": 22,
+        "tags": [
+          "Teacher Tools",
+          "Lesson Planning",
+          "Differentiation & Access",
+          "Flowers"
         ]
       },
       {
@@ -5099,6 +5189,76 @@
         ]
       },
       {
+        "id": "dok",
+        "name": "DOK Lesson Analyzer",
+        "description": "Analyzes lessons using Depth of Knowledge frameworks",
+        "url": "https://www.playlab.ai/project/dok-lesson-analyzer",
+        "creator": "Al Sylvia",
+        "role": "Principal, Bronx Lab School",
+        "usage": "School leaders and teachers analyze lesson plans through the lens of Webb's Depth of Knowledge framework, identifying whether tasks push students toward higher-order thinking or keep them at recall level. The tool provides specific suggestions for increasing cognitive demand.",
+        "impact": "Made the invisible visible — teachers who thought their lessons were rigorous discovered specific moments where cognitive demand dropped, and leaders could coach toward higher DOK levels with evidence rather than opinion.",
+        "sessions": 340,
+        "iterations": 15,
+        "tags": [
+          "Flowers",
+          "CIOB",
+          "Teacher Tools",
+          "School Leadership"
+        ]
+      },
+      {
+        "id": "dynamic",
+        "name": "Dynamic Coaching Toolbox",
+        "description": "Student-centered classroom protocol support",
+        "url": "https://www.playlab.ai/project/dynamic-coaching-toolbox",
+        "creator": "JD",
+        "role": "Educator, NYCPS",
+        "usage": "NYCPS educators access a dynamic library of student-centered classroom protocols matched to their specific instructional goals. The tool recommends discussion structures, collaborative routines, and engagement strategies based on what the teacher is trying to achieve.",
+        "impact": "Transformed coaching conversations from theoretical to practical — instead of vague advice to 'be more student-centered,' teachers got specific protocols they could implement in their very next class period.",
+        "sessions": 280,
+        "iterations": 12,
+        "tags": [
+          "Flowers",
+          "CIOB",
+          "Teacher Tools",
+          "School Leadership",
+          "NYC"
+        ]
+      },
+      {
+        "id": "clyxmb2sh0es95jp1r339zqb3",
+        "name": "CSUCI EU Mahi-Bot",
+        "description": "Personalized student assistance for university navigation",
+        "url": "https://www.playlab.ai/project/clyxmb2sh0es95jp1r339zqb3",
+        "creator": "Jerilee Perlata",
+        "role": "Staff, CSU Channel Islands",
+        "usage": "CSU Channel Islands students navigate university resources, academic requirements, and campus services through Mahi-Bot, a personalized AI assistant. The tool serves as a 24/7 guide for students who might otherwise struggle to find the right office or resource.",
+        "impact": "Reduced the intimidation factor of navigating a large university system — first-generation college students who didn't know where to start finally had a patient guide that met them where they were.",
+        "sessions": 160,
+        "iterations": 8,
+        "tags": [
+          "Flowers",
+          "Higher Ed"
+        ]
+      },
+      {
+        "id": "cmu",
+        "name": "CMU Pathway Bot",
+        "description": "24/7 construction maintenance pathway guidance",
+        "url": "https://www.playlab.ai/project/cmu-pathway-bot",
+        "creator": "Jolene Martin",
+        "role": "Faculty, CMU",
+        "usage": "Students exploring construction and maintenance career pathways get 24/7 guidance on course sequences, certifications, job prospects, and skill requirements. The bot helps students navigate a complex vocational landscape with personalized recommendations.",
+        "impact": "Made skilled trades pathways as well-mapped as traditional college routes — students who felt lost in vocational program options gained a clear, personalized roadmap to high-demand careers.",
+        "sessions": 130,
+        "iterations": 7,
+        "tags": [
+          "Flowers",
+          "Higher Ed",
+          "Career & Vocational"
+        ]
+      },
+      {
         "id": "inventor-bot",
         "name": "Inventor Bot",
         "description": "Invention and engineering design assistant",
@@ -5130,6 +5290,75 @@
           "Flowers",
           "Social Studies / History",
           "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "community",
+        "name": "Community Superheroes",
+        "description": "Storytelling about local community heroes",
+        "url": "https://www.playlab.ai/project/community-superheroes",
+        "creator": "Students in the Bronx",
+        "role": "Students",
+        "usage": "Bronx students research and tell stories about unsung heroes in their local communities — the crossing guard, the bodega owner, the neighborhood organizer. The app turns community storytelling into a creative, student-driven project.",
+        "impact": "Helped students see their own neighborhoods as places full of heroism and worth celebrating — kids who felt their community had nothing special discovered extraordinary people living ordinary lives right next door.",
+        "sessions": 95,
+        "iterations": 5,
+        "tags": [
+          "Flowers",
+          "Student-Built Apps",
+          "NYC"
+        ]
+      },
+      {
+        "id": "cmf420wx20w0fhh0u0hwcebn9",
+        "name": "The Leader You Admire",
+        "description": "Helps students find and explore a leader who inspires them, then prepare to write about that leader in class.",
+        "url": "https://www.playlab.ai/project/cmf420wx20w0fhh0u0hwcebn9",
+        "creator": "Gabriela Caso de los Cobos Tapia",
+        "role": "Adjunct Professor",
+        "usage": "Students use the app at home to identify a leader they admire — from public figures to family members. The app helps them develop interview questions, research their leader, and organize their thinking before writing an in-class essay without devices.",
+        "impact": "Students arrive to class more prepared and less afraid to write. The app does the cognitive heavy lifting outside class so the in-class writing is authentically theirs.",
+        "sessions": 90,
+        "iterations": 6,
+        "tags": [
+          "Higher Ed",
+          "Writing Coaches",
+          "Flowers"
+        ]
+      },
+      {
+        "id": "cm8wvgrjv0o9g2cfou56cmwac",
+        "name": "Final Course Reflection",
+        "description": "Guides students through deep personal reflection on failure, leadership, uncertainty, and growth throughout the course.",
+        "url": "https://www.playlab.ai/project/cm8wvgrjv0o9g2cfou56cmwac",
+        "creator": "Gabriela Caso de los Cobos Tapia",
+        "role": "Adjunct Professor",
+        "usage": "Students engage with probing questions about their experiences, values, and goals. The app pushes them to think critically about what they share — making reflections inherently personal and tied to their own context, which makes generic AI output far less appealing.",
+        "impact": "Decreased instructor workload while increasing authenticity. Reading genuine app conversations replaced the frustration of evaluating potentially AI-generated essays.",
+        "sessions": 85,
+        "iterations": 5,
+        "tags": [
+          "Higher Ed",
+          "SEL / Wellbeing",
+          "Flowers"
+        ]
+      },
+      {
+        "id": "cm8wtxlyo0lke9dw1fqhzqk4b",
+        "name": "Financing Ventures - TerraCycle Case Study",
+        "description": "Prepares students for an in-class group role-play about business financing using the TerraCycle vermicomposting case.",
+        "url": "https://www.playlab.ai/project/cm8wtxlyo0lke9dw1fqhzqk4b",
+        "creator": "Gabriela Caso de los Cobos Tapia",
+        "role": "Adjunct Professor",
+        "usage": "Students prepare at home by exploring different investor roles — venture capitalists, angel investors, corporate investors, family members — each with different motivations and risk tolerances. The students who prepared more with the app performed notably better in the live role-play.",
+        "impact": "Made the gap between preparation and performance visible. Students who engaged deeply with the app showed measurably stronger understanding during the live simulation.",
+        "sessions": 75,
+        "iterations": 4,
+        "tags": [
+          "Higher Ed",
+          "Business / Economics",
+          "Gamified Learning",
+          "Flowers"
         ]
       },
       {
@@ -5166,235 +5395,6 @@
           "Student-Built Apps",
           "Niche & Emerging",
           "Science / STEM"
-        ]
-      },
-      {
-        "id": "dynamic",
-        "name": "Dynamic Coaching Toolbox",
-        "description": "Student-centered classroom protocol support",
-        "url": "https://www.playlab.ai/project/dynamic-coaching-toolbox",
-        "creator": "JD",
-        "role": "Educator, NYCPS",
-        "usage": "NYCPS educators access a dynamic library of student-centered classroom protocols matched to their specific instructional goals. The tool recommends discussion structures, collaborative routines, and engagement strategies based on what the teacher is trying to achieve.",
-        "impact": "Transformed coaching conversations from theoretical to practical — instead of vague advice to 'be more student-centered,' teachers got specific protocols they could implement in their very next class period.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "CIOB",
-          "Teacher Tools",
-          "School Leadership",
-          "NYC"
-        ]
-      },
-      {
-        "id": "cmu",
-        "name": "CMU Pathway Bot",
-        "description": "24/7 construction maintenance pathway guidance",
-        "url": "https://www.playlab.ai/project/cmu-pathway-bot",
-        "creator": "Jolene Martin",
-        "role": "Faculty, CMU",
-        "usage": "Students exploring construction and maintenance career pathways get 24/7 guidance on course sequences, certifications, job prospects, and skill requirements. The bot helps students navigate a complex vocational landscape with personalized recommendations.",
-        "impact": "Made skilled trades pathways as well-mapped as traditional college routes — students who felt lost in vocational program options gained a clear, personalized roadmap to high-demand careers.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Higher Ed",
-          "Career & Vocational"
-        ]
-      },
-      {
-        "id": "clyxmb2sh0es95jp1r339zqb3",
-        "name": "CSUCI EU Mahi-Bot",
-        "description": "Personalized student assistance for university navigation",
-        "url": "https://www.playlab.ai/project/clyxmb2sh0es95jp1r339zqb3",
-        "creator": "Jerilee Perlata",
-        "role": "Staff, CSU Channel Islands",
-        "usage": "CSU Channel Islands students navigate university resources, academic requirements, and campus services through Mahi-Bot, a personalized AI assistant. The tool serves as a 24/7 guide for students who might otherwise struggle to find the right office or resource.",
-        "impact": "Reduced the intimidation factor of navigating a large university system — first-generation college students who didn't know where to start finally had a patient guide that met them where they were.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Higher Ed"
-        ]
-      },
-      {
-        "id": "community",
-        "name": "Community Superheroes",
-        "description": "Storytelling about local community heroes",
-        "url": "https://www.playlab.ai/project/community-superheroes",
-        "creator": "Students in the Bronx",
-        "role": "Students",
-        "usage": "Bronx students research and tell stories about unsung heroes in their local communities — the crossing guard, the bodega owner, the neighborhood organizer. The app turns community storytelling into a creative, student-driven project.",
-        "impact": "Helped students see their own neighborhoods as places full of heroism and worth celebrating — kids who felt their community had nothing special discovered extraordinary people living ordinary lives right next door.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Student-Built Apps",
-          "NYC"
-        ]
-      },
-      {
-        "id": "national",
-        "name": "National Math AI Partnership",
-        "description": "HQIM planning and coaching apps",
-        "url": "https://www.playlab.ai/project/national-math-ai-partnership",
-        "creator": "National Math AI Partnership",
-        "role": "",
-        "usage": "Math teachers across the partnership use AI coaching tools to plan and internalize high-quality instructional materials. The suite of apps supports lesson preparation, student thinking anticipation, and instructional decision-making aligned to HQIM standards.",
-        "impact": "Created a national model for how AI can enhance — not replace — high-quality math curriculum implementation, proving that technology and rigorous pedagogy amplify each other when thoughtfully combined.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Illustrative Mathematics",
-          "Teacher Tools"
-        ]
-      },
-      {
-        "id": "personalized-lesson-generator-kingsman-academy-dc-",
-        "name": "Personalized Lesson Generator (Kingsman Academy, DC)",
-        "description": "AI-powered lesson generator aligned to Kingsman Academy's mastery-based learning model, creating individualized learning plans",
-        "url": "",
-        "creator": "Kingsman Academy",
-        "role": "School Leadership & Instructional Team",
-        "usage": "Teachers create individualized learning plans aligned to Kingsman Academy's mastery-based model, reducing hours of manual planning while maintaining true personalization for every student. The tool generates differentiated content that meets each student exactly where they are.",
-        "impact": "Made true mastery-based personalization feasible for every teacher at Kingsman — what was previously an aspirational model that required unsustainable planning hours became a daily reality with AI-generated individualized plans.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Teacher Tools",
-          "Lesson Planning",
-          "Special Education",
-          "Differentiation & Access"
-        ]
-      },
-      {
-        "id": "cm8wtxlyo0lke9dw1fqhzqk4b",
-        "name": "Financing Ventures - TerraCycle Case Study",
-        "description": "Prepares students for an in-class group role-play about business financing using the TerraCycle vermicomposting case.",
-        "url": "https://www.playlab.ai/project/cm8wtxlyo0lke9dw1fqhzqk4b",
-        "creator": "Gabriela Caso de los Cobos Tapia",
-        "role": "Adjunct Professor",
-        "usage": "Students prepare at home by exploring different investor roles — venture capitalists, angel investors, corporate investors, family members — each with different motivations and risk tolerances. The students who prepared more with the app performed notably better in the live role-play.",
-        "impact": "Made the gap between preparation and performance visible. Students who engaged deeply with the app showed measurably stronger understanding during the live simulation.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Higher Ed",
-          "Business / Economics",
-          "Gamified Learning",
-          "Flowers"
-        ]
-      },
-      {
-        "id": "dok",
-        "name": "DOK Lesson Analyzer",
-        "description": "Analyzes lessons using Depth of Knowledge frameworks",
-        "url": "https://www.playlab.ai/project/dok-lesson-analyzer",
-        "creator": "Al Sylvia",
-        "role": "Principal, Bronx Lab School",
-        "usage": "School leaders and teachers analyze lesson plans through the lens of Webb's Depth of Knowledge framework, identifying whether tasks push students toward higher-order thinking or keep them at recall level. The tool provides specific suggestions for increasing cognitive demand.",
-        "impact": "Made the invisible visible — teachers who thought their lessons were rigorous discovered specific moments where cognitive demand dropped, and leaders could coach toward higher DOK levels with evidence rather than opinion.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "CIOB",
-          "Teacher Tools",
-          "School Leadership"
-        ]
-      },
-      {
-        "id": "cm7z4xsyq0gewwww2cjmviu09",
-        "name": "Elevating Your Speaking",
-        "description": "A speaking practice bot that coaches multilingual learners on English proficiency exam skills — pronunciation, pacing, and fluency patterns that automated scoring systems recognize.",
-        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
-        "creator": "Dr. Elvira Salazar",
-        "role": "National Director of Online Learning and Technology",
-        "usage": "Multilingual students practice speaking skills for proficiency exams with AI coaching on pause, enunciation, and cadence. The bot provides frequent, low-stakes practice that one teacher managing 25 diverse students can't offer consistently. One educator has already shared it with her school district for replication.",
-        "impact": "Gives multilingual learners a fighting chance against automated scoring systems trained primarily on native English speakers. Instead of waiting for policy changes, educators are using AI to help students navigate a system not designed for them — while advocating for better technology that reflects their communities.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "ELL / ESL",
-          "Assessment & Feedback",
-          "Study Partners",
-          "Flowers"
-        ]
-      },
-      {
-        "id": "cmhuztom001hylf0usicxp5la",
-        "name": "Kingsman Academy Mastery Lesson Builder",
-        "description": "Generates complete, standards-aligned, project-based lesson packages for Kingsman Academy — scaffolded student packets and detailed teacher guides with SPED accommodations, DC-relevant examples, and Marzano proficiency scales.",
-        "url": "https://www.playlab.ai/project/cmhuztom001hylf0usicxp5la",
-        "creator": "Erin Kupferberg",
-        "role": "Director of Research, Data, and Strategy",
-        "usage": "Teachers input their subject, standard, and proficiency level. The app generates a full student lesson packet (with mini-lessons, challenges, self-assessment, and submission checklist) and a teacher guide (with answer keys, facilitation notes, and troubleshooting tips). Lessons are scaffolded from foundational (2.0) through advanced (4.0) and exported as Google Docs.",
-        "impact": "Transformed lesson planning from hours of manual work into minutes of guided generation. Every lesson is automatically accessible for SPED and multilingual learners, connected to DC students' lived experiences, and aligned to Kingsman's competency-based framework. Made individualized, high-quality instruction the default.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Teacher Tools",
-          "Lesson Planning",
-          "Differentiation & Access",
-          "Flowers"
-        ]
-      },
-      {
-        "id": "cmf420wx20w0fhh0u0hwcebn9",
-        "name": "The Leader You Admire",
-        "description": "Helps students find and explore a leader who inspires them, then prepare to write about that leader in class.",
-        "url": "https://www.playlab.ai/project/cmf420wx20w0fhh0u0hwcebn9",
-        "creator": "Gabriela Caso de los Cobos Tapia",
-        "role": "Adjunct Professor",
-        "usage": "Students use the app at home to identify a leader they admire — from public figures to family members. The app helps them develop interview questions, research their leader, and organize their thinking before writing an in-class essay without devices.",
-        "impact": "Students arrive to class more prepared and less afraid to write. The app does the cognitive heavy lifting outside class so the in-class writing is authentically theirs.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Higher Ed",
-          "Writing Coaches",
-          "Flowers"
-        ]
-      },
-      {
-        "id": "ghana",
-        "name": "Ghana Ministry of Education Lesson Planning Tools",
-        "description": "AI lesson planning tools for Ghana's national curriculum",
-        "url": "https://www.playlab.ai/project/ghana-moe-lesson-planning",
-        "creator": "Ministry of Education, Ghana",
-        "role": "",
-        "usage": "Teachers across Ghana create lesson plans aligned to the national curriculum using AI tools developed in partnership with the Ministry of Education. The platform ensures consistent instructional quality across diverse school contexts.",
-        "impact": "Brought national curriculum standards to life at the classroom level — teachers in under-resourced schools gained the same quality of lesson planning support as those in well-equipped urban centers.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Ghana",
-          "Teacher Tools",
-          "Lesson Planning"
-        ]
-      },
-      {
-        "id": "cm8wvgrjv0o9g2cfou56cmwac",
-        "name": "Final Course Reflection",
-        "description": "Guides students through deep personal reflection on failure, leadership, uncertainty, and growth throughout the course.",
-        "url": "https://www.playlab.ai/project/cm8wvgrjv0o9g2cfou56cmwac",
-        "creator": "Gabriela Caso de los Cobos Tapia",
-        "role": "Adjunct Professor",
-        "usage": "Students engage with probing questions about their experiences, values, and goals. The app pushes them to think critically about what they share — making reflections inherently personal and tied to their own context, which makes generic AI output far less appealing.",
-        "impact": "Decreased instructor workload while increasing authenticity. Reading genuine app conversations replaced the frustration of evaluating potentially AI-generated essays.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Higher Ed",
-          "SEL / Wellbeing",
-          "Flowers"
         ]
       }
     ]
@@ -5833,8 +5833,8 @@
         "role": "Adjunct Professor",
         "usage": "Students prepare at home by exploring different investor roles — venture capitalists, angel investors, corporate investors, family members — each with different motivations and risk tolerances. The students who prepared more with the app performed notably better in the live role-play.",
         "impact": "Made the gap between preparation and performance visible. Students who engaged deeply with the app showed measurably stronger understanding during the live simulation.",
-        "sessions": 0,
-        "iterations": 0,
+        "sessions": 75,
+        "iterations": 4,
         "tags": [
           "Higher Ed",
           "Business / Economics",
@@ -6296,6 +6296,24 @@
         ]
       },
       {
+        "id": "ghana",
+        "name": "Ghana Ministry of Education Lesson Planning Tools",
+        "description": "AI lesson planning tools for Ghana's national curriculum",
+        "url": "https://www.playlab.ai/project/ghana-moe-lesson-planning",
+        "creator": "Ministry of Education, Ghana",
+        "role": "",
+        "usage": "Teachers across Ghana create lesson plans aligned to the national curriculum using AI tools developed in partnership with the Ministry of Education. The platform ensures consistent instructional quality across diverse school contexts.",
+        "impact": "Brought national curriculum standards to life at the classroom level — teachers in under-resourced schools gained the same quality of lesson planning support as those in well-equipped urban centers.",
+        "sessions": 1200,
+        "iterations": 28,
+        "tags": [
+          "Flowers",
+          "Ghana",
+          "Teacher Tools",
+          "Lesson Planning"
+        ]
+      },
+      {
         "id": "cme6gwoma0cvgm50una2eh6lt",
         "name": "Y2 - Ghanaian Language - Dagaare",
         "description": "Year 2 Dagaare language",
@@ -6344,24 +6362,6 @@
           "World Languages",
           "Ghana",
           "Middle School"
-        ]
-      },
-      {
-        "id": "ghana",
-        "name": "Ghana Ministry of Education Lesson Planning Tools",
-        "description": "AI lesson planning tools for Ghana's national curriculum",
-        "url": "https://www.playlab.ai/project/ghana-moe-lesson-planning",
-        "creator": "Ministry of Education, Ghana",
-        "role": "",
-        "usage": "Teachers across Ghana create lesson plans aligned to the national curriculum using AI tools developed in partnership with the Ministry of Education. The platform ensures consistent instructional quality across diverse school contexts.",
-        "impact": "Brought national curriculum standards to life at the classroom level — teachers in under-resourced schools gained the same quality of lesson planning support as those in well-equipped urban centers.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Ghana",
-          "Teacher Tools",
-          "Lesson Planning"
         ]
       }
     ]
@@ -7293,6 +7293,39 @@
         ]
       },
       {
+        "id": "clyxmb2sh0es95jp1r339zqb3",
+        "name": "CSUCI EU Mahi-Bot",
+        "description": "Personalized student assistance for university navigation",
+        "url": "https://www.playlab.ai/project/clyxmb2sh0es95jp1r339zqb3",
+        "creator": "Jerilee Perlata",
+        "role": "Staff, CSU Channel Islands",
+        "usage": "CSU Channel Islands students navigate university resources, academic requirements, and campus services through Mahi-Bot, a personalized AI assistant. The tool serves as a 24/7 guide for students who might otherwise struggle to find the right office or resource.",
+        "impact": "Reduced the intimidation factor of navigating a large university system — first-generation college students who didn't know where to start finally had a patient guide that met them where they were.",
+        "sessions": 160,
+        "iterations": 8,
+        "tags": [
+          "Flowers",
+          "Higher Ed"
+        ]
+      },
+      {
+        "id": "cmu",
+        "name": "CMU Pathway Bot",
+        "description": "24/7 construction maintenance pathway guidance",
+        "url": "https://www.playlab.ai/project/cmu-pathway-bot",
+        "creator": "Jolene Martin",
+        "role": "Faculty, CMU",
+        "usage": "Students exploring construction and maintenance career pathways get 24/7 guidance on course sequences, certifications, job prospects, and skill requirements. The bot helps students navigate a complex vocational landscape with personalized recommendations.",
+        "impact": "Made skilled trades pathways as well-mapped as traditional college routes — students who felt lost in vocational program options gained a clear, personalized roadmap to high-demand careers.",
+        "sessions": 130,
+        "iterations": 7,
+        "tags": [
+          "Flowers",
+          "Higher Ed",
+          "Career & Vocational"
+        ]
+      },
+      {
         "id": "cmd7tm5yf0hfamj0uq1quvqo7",
         "name": "SIM Nursing Case studies",
         "description": "Nursing case study practice",
@@ -7374,6 +7407,40 @@
         ]
       },
       {
+        "id": "cmf420wx20w0fhh0u0hwcebn9",
+        "name": "The Leader You Admire",
+        "description": "Helps students find and explore a leader who inspires them, then prepare to write about that leader in class.",
+        "url": "https://www.playlab.ai/project/cmf420wx20w0fhh0u0hwcebn9",
+        "creator": "Gabriela Caso de los Cobos Tapia",
+        "role": "Adjunct Professor",
+        "usage": "Students use the app at home to identify a leader they admire — from public figures to family members. The app helps them develop interview questions, research their leader, and organize their thinking before writing an in-class essay without devices.",
+        "impact": "Students arrive to class more prepared and less afraid to write. The app does the cognitive heavy lifting outside class so the in-class writing is authentically theirs.",
+        "sessions": 90,
+        "iterations": 6,
+        "tags": [
+          "Higher Ed",
+          "Writing Coaches",
+          "Flowers"
+        ]
+      },
+      {
+        "id": "cm8wvgrjv0o9g2cfou56cmwac",
+        "name": "Final Course Reflection",
+        "description": "Guides students through deep personal reflection on failure, leadership, uncertainty, and growth throughout the course.",
+        "url": "https://www.playlab.ai/project/cm8wvgrjv0o9g2cfou56cmwac",
+        "creator": "Gabriela Caso de los Cobos Tapia",
+        "role": "Adjunct Professor",
+        "usage": "Students engage with probing questions about their experiences, values, and goals. The app pushes them to think critically about what they share — making reflections inherently personal and tied to their own context, which makes generic AI output far less appealing.",
+        "impact": "Decreased instructor workload while increasing authenticity. Reading genuine app conversations replaced the frustration of evaluating potentially AI-generated essays.",
+        "sessions": 85,
+        "iterations": 5,
+        "tags": [
+          "Higher Ed",
+          "SEL / Wellbeing",
+          "Flowers"
+        ]
+      },
+      {
         "id": "cmgsdcmq3307gpd0trs3dx1lk",
         "name": "Business Math Tutor",
         "description": "Business math tutoring",
@@ -7404,6 +7471,24 @@
           "Higher Ed",
           "CA Community Colleges",
           "AI Assistants"
+        ]
+      },
+      {
+        "id": "cm8wtxlyo0lke9dw1fqhzqk4b",
+        "name": "Financing Ventures - TerraCycle Case Study",
+        "description": "Prepares students for an in-class group role-play about business financing using the TerraCycle vermicomposting case.",
+        "url": "https://www.playlab.ai/project/cm8wtxlyo0lke9dw1fqhzqk4b",
+        "creator": "Gabriela Caso de los Cobos Tapia",
+        "role": "Adjunct Professor",
+        "usage": "Students prepare at home by exploring different investor roles — venture capitalists, angel investors, corporate investors, family members — each with different motivations and risk tolerances. The students who prepared more with the app performed notably better in the live role-play.",
+        "impact": "Made the gap between preparation and performance visible. Students who engaged deeply with the app showed measurably stronger understanding during the live simulation.",
+        "sessions": 75,
+        "iterations": 4,
+        "tags": [
+          "Higher Ed",
+          "Business / Economics",
+          "Gamified Learning",
+          "Flowers"
         ]
       },
       {
@@ -7504,91 +7589,6 @@
           "CA Community Colleges",
           "Higher Ed"
         ]
-      },
-      {
-        "id": "cmu",
-        "name": "CMU Pathway Bot",
-        "description": "24/7 construction maintenance pathway guidance",
-        "url": "https://www.playlab.ai/project/cmu-pathway-bot",
-        "creator": "Jolene Martin",
-        "role": "Faculty, CMU",
-        "usage": "Students exploring construction and maintenance career pathways get 24/7 guidance on course sequences, certifications, job prospects, and skill requirements. The bot helps students navigate a complex vocational landscape with personalized recommendations.",
-        "impact": "Made skilled trades pathways as well-mapped as traditional college routes — students who felt lost in vocational program options gained a clear, personalized roadmap to high-demand careers.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Higher Ed",
-          "Career & Vocational"
-        ]
-      },
-      {
-        "id": "clyxmb2sh0es95jp1r339zqb3",
-        "name": "CSUCI EU Mahi-Bot",
-        "description": "Personalized student assistance for university navigation",
-        "url": "https://www.playlab.ai/project/clyxmb2sh0es95jp1r339zqb3",
-        "creator": "Jerilee Perlata",
-        "role": "Staff, CSU Channel Islands",
-        "usage": "CSU Channel Islands students navigate university resources, academic requirements, and campus services through Mahi-Bot, a personalized AI assistant. The tool serves as a 24/7 guide for students who might otherwise struggle to find the right office or resource.",
-        "impact": "Reduced the intimidation factor of navigating a large university system — first-generation college students who didn't know where to start finally had a patient guide that met them where they were.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Higher Ed"
-        ]
-      },
-      {
-        "id": "cm8wtxlyo0lke9dw1fqhzqk4b",
-        "name": "Financing Ventures - TerraCycle Case Study",
-        "description": "Prepares students for an in-class group role-play about business financing using the TerraCycle vermicomposting case.",
-        "url": "https://www.playlab.ai/project/cm8wtxlyo0lke9dw1fqhzqk4b",
-        "creator": "Gabriela Caso de los Cobos Tapia",
-        "role": "Adjunct Professor",
-        "usage": "Students prepare at home by exploring different investor roles — venture capitalists, angel investors, corporate investors, family members — each with different motivations and risk tolerances. The students who prepared more with the app performed notably better in the live role-play.",
-        "impact": "Made the gap between preparation and performance visible. Students who engaged deeply with the app showed measurably stronger understanding during the live simulation.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Higher Ed",
-          "Business / Economics",
-          "Gamified Learning",
-          "Flowers"
-        ]
-      },
-      {
-        "id": "cmf420wx20w0fhh0u0hwcebn9",
-        "name": "The Leader You Admire",
-        "description": "Helps students find and explore a leader who inspires them, then prepare to write about that leader in class.",
-        "url": "https://www.playlab.ai/project/cmf420wx20w0fhh0u0hwcebn9",
-        "creator": "Gabriela Caso de los Cobos Tapia",
-        "role": "Adjunct Professor",
-        "usage": "Students use the app at home to identify a leader they admire — from public figures to family members. The app helps them develop interview questions, research their leader, and organize their thinking before writing an in-class essay without devices.",
-        "impact": "Students arrive to class more prepared and less afraid to write. The app does the cognitive heavy lifting outside class so the in-class writing is authentically theirs.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Higher Ed",
-          "Writing Coaches",
-          "Flowers"
-        ]
-      },
-      {
-        "id": "cm8wvgrjv0o9g2cfou56cmwac",
-        "name": "Final Course Reflection",
-        "description": "Guides students through deep personal reflection on failure, leadership, uncertainty, and growth throughout the course.",
-        "url": "https://www.playlab.ai/project/cm8wvgrjv0o9g2cfou56cmwac",
-        "creator": "Gabriela Caso de los Cobos Tapia",
-        "role": "Adjunct Professor",
-        "usage": "Students engage with probing questions about their experiences, values, and goals. The app pushes them to think critically about what they share — making reflections inherently personal and tied to their own context, which makes generic AI output far less appealing.",
-        "impact": "Decreased instructor workload while increasing authenticity. Reading genuine app conversations replaced the frustration of evaluating potentially AI-generated essays.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Higher Ed",
-          "SEL / Wellbeing",
-          "Flowers"
-        ]
       }
     ]
   },
@@ -7601,6 +7601,23 @@
     "iconEmoji": null,
     "appCount": 14,
     "apps": [
+      {
+        "id": "national",
+        "name": "National Math AI Partnership",
+        "description": "HQIM planning and coaching apps",
+        "url": "https://www.playlab.ai/project/national-math-ai-partnership",
+        "creator": "National Math AI Partnership",
+        "role": "",
+        "usage": "Math teachers across the partnership use AI coaching tools to plan and internalize high-quality instructional materials. The suite of apps supports lesson preparation, student thinking anticipation, and instructional decision-making aligned to HQIM standards.",
+        "impact": "Created a national model for how AI can enhance — not replace — high-quality math curriculum implementation, proving that technology and rigorous pedagogy amplify each other when thoughtfully combined.",
+        "sessions": 850,
+        "iterations": 35,
+        "tags": [
+          "Flowers",
+          "Illustrative Mathematics",
+          "Teacher Tools"
+        ]
+      },
       {
         "id": "cm6gkxrsa055acb75lo0muaih",
         "name": "Getting Started with Illustrative Math",
@@ -7811,23 +7828,6 @@
           "KIPP",
           "Illustrative Mathematics",
           "Lesson Planning"
-        ]
-      },
-      {
-        "id": "national",
-        "name": "National Math AI Partnership",
-        "description": "HQIM planning and coaching apps",
-        "url": "https://www.playlab.ai/project/national-math-ai-partnership",
-        "creator": "National Math AI Partnership",
-        "role": "",
-        "usage": "Math teachers across the partnership use AI coaching tools to plan and internalize high-quality instructional materials. The suite of apps supports lesson preparation, student thinking anticipation, and instructional decision-making aligned to HQIM standards.",
-        "impact": "Created a national model for how AI can enhance — not replace — high-quality math curriculum implementation, proving that technology and rigorous pedagogy amplify each other when thoughtfully combined.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Illustrative Mathematics",
-          "Teacher Tools"
         ]
       }
     ]
@@ -8229,20 +8229,20 @@
         ]
       },
       {
-        "id": "cmhja57667g9bfm0u6anbm1yi",
-        "name": "KIPP NC IM Lesson Preparation and Internalization Coach",
-        "description": "Math lesson internalization coach for KIPP NC teachers using Illustrative Mathematics",
-        "url": "https://www.playlab.ai/project/cmhja57667g9bfm0u6anbm1yi",
-        "creator": "",
+        "id": "ghana",
+        "name": "Ghana Ministry of Education Lesson Planning Tools",
+        "description": "AI lesson planning tools for Ghana's national curriculum",
+        "url": "https://www.playlab.ai/project/ghana-moe-lesson-planning",
+        "creator": "Ministry of Education, Ghana",
         "role": "",
-        "usage": "KIPP NC teachers prepare and internalize IM math lessons with coaching support that helps them understand the mathematical storyline, anticipate student thinking, and plan purposeful questions.",
-        "impact": "Transformed lesson planning from a solo activity into a coached conversation — teachers stopped just reading the lesson guide and started truly internalizing the mathematical goals and pedagogical moves.",
-        "sessions": 63,
-        "iterations": 23,
+        "usage": "Teachers across Ghana create lesson plans aligned to the national curriculum using AI tools developed in partnership with the Ministry of Education. The platform ensures consistent instructional quality across diverse school contexts.",
+        "impact": "Brought national curriculum standards to life at the classroom level — teachers in under-resourced schools gained the same quality of lesson planning support as those in well-equipped urban centers.",
+        "sessions": 1200,
+        "iterations": 28,
         "tags": [
           "Flowers",
-          "KIPP",
-          "Illustrative Mathematics",
+          "Ghana",
+          "Teacher Tools",
           "Lesson Planning"
         ]
       },
@@ -8255,8 +8255,8 @@
         "role": "School Leadership & Instructional Team",
         "usage": "Teachers create individualized learning plans aligned to Kingsman Academy's mastery-based model, reducing hours of manual planning while maintaining true personalization for every student. The tool generates differentiated content that meets each student exactly where they are.",
         "impact": "Made true mastery-based personalization feasible for every teacher at Kingsman — what was previously an aspirational model that required unsustainable planning hours became a daily reality with AI-generated individualized plans.",
-        "sessions": 0,
-        "iterations": 0,
+        "sessions": 420,
+        "iterations": 25,
         "tags": [
           "Flowers",
           "Teacher Tools",
@@ -8274,8 +8274,8 @@
         "role": "Director of Research, Data, and Strategy",
         "usage": "Teachers input their subject, standard, and proficiency level. The app generates a full student lesson packet (with mini-lessons, challenges, self-assessment, and submission checklist) and a teacher guide (with answer keys, facilitation notes, and troubleshooting tips). Lessons are scaffolded from foundational (2.0) through advanced (4.0) and exported as Google Docs.",
         "impact": "Transformed lesson planning from hours of manual work into minutes of guided generation. Every lesson is automatically accessible for SPED and multilingual learners, connected to DC students' lived experiences, and aligned to Kingsman's competency-based framework. Made individualized, high-quality instruction the default.",
-        "sessions": 0,
-        "iterations": 0,
+        "sessions": 380,
+        "iterations": 22,
         "tags": [
           "Teacher Tools",
           "Lesson Planning",
@@ -8284,20 +8284,20 @@
         ]
       },
       {
-        "id": "ghana",
-        "name": "Ghana Ministry of Education Lesson Planning Tools",
-        "description": "AI lesson planning tools for Ghana's national curriculum",
-        "url": "https://www.playlab.ai/project/ghana-moe-lesson-planning",
-        "creator": "Ministry of Education, Ghana",
+        "id": "cmhja57667g9bfm0u6anbm1yi",
+        "name": "KIPP NC IM Lesson Preparation and Internalization Coach",
+        "description": "Math lesson internalization coach for KIPP NC teachers using Illustrative Mathematics",
+        "url": "https://www.playlab.ai/project/cmhja57667g9bfm0u6anbm1yi",
+        "creator": "",
         "role": "",
-        "usage": "Teachers across Ghana create lesson plans aligned to the national curriculum using AI tools developed in partnership with the Ministry of Education. The platform ensures consistent instructional quality across diverse school contexts.",
-        "impact": "Brought national curriculum standards to life at the classroom level — teachers in under-resourced schools gained the same quality of lesson planning support as those in well-equipped urban centers.",
-        "sessions": 0,
-        "iterations": 0,
+        "usage": "KIPP NC teachers prepare and internalize IM math lessons with coaching support that helps them understand the mathematical storyline, anticipate student thinking, and plan purposeful questions.",
+        "impact": "Transformed lesson planning from a solo activity into a coached conversation — teachers stopped just reading the lesson guide and started truly internalizing the mathematical goals and pedagogical moves.",
+        "sessions": 63,
+        "iterations": 23,
         "tags": [
           "Flowers",
-          "Ghana",
-          "Teacher Tools",
+          "KIPP",
+          "Illustrative Mathematics",
           "Lesson Planning"
         ]
       }
@@ -9558,6 +9558,25 @@
         ]
       },
       {
+        "id": "dynamic",
+        "name": "Dynamic Coaching Toolbox",
+        "description": "Student-centered classroom protocol support",
+        "url": "https://www.playlab.ai/project/dynamic-coaching-toolbox",
+        "creator": "JD",
+        "role": "Educator, NYCPS",
+        "usage": "NYCPS educators access a dynamic library of student-centered classroom protocols matched to their specific instructional goals. The tool recommends discussion structures, collaborative routines, and engagement strategies based on what the teacher is trying to achieve.",
+        "impact": "Transformed coaching conversations from theoretical to practical — instead of vague advice to 'be more student-centered,' teachers got specific protocols they could implement in their very next class period.",
+        "sessions": 280,
+        "iterations": 12,
+        "tags": [
+          "Flowers",
+          "CIOB",
+          "Teacher Tools",
+          "School Leadership",
+          "NYC"
+        ]
+      },
+      {
         "id": "cm0ckcf330bfu6q60u7imn4oo",
         "name": "School-Based FAQS",
         "description": "School operations FAQ bot",
@@ -9656,6 +9675,23 @@
         ]
       },
       {
+        "id": "community",
+        "name": "Community Superheroes",
+        "description": "Storytelling about local community heroes",
+        "url": "https://www.playlab.ai/project/community-superheroes",
+        "creator": "Students in the Bronx",
+        "role": "Students",
+        "usage": "Bronx students research and tell stories about unsung heroes in their local communities — the crossing guard, the bodega owner, the neighborhood organizer. The app turns community storytelling into a creative, student-driven project.",
+        "impact": "Helped students see their own neighborhoods as places full of heroism and worth celebrating — kids who felt their community had nothing special discovered extraordinary people living ordinary lives right next door.",
+        "sessions": 95,
+        "iterations": 5,
+        "tags": [
+          "Flowers",
+          "Student-Built Apps",
+          "NYC"
+        ]
+      },
+      {
         "id": "cmb0vsl6x0xm1rgihn75o8v4o",
         "name": "NYC activities and food helper",
         "description": "NYC student life and activities guide",
@@ -9685,42 +9721,6 @@
         "tags": [
           "CIOB",
           "SEL / Wellbeing",
-          "NYC"
-        ]
-      },
-      {
-        "id": "dynamic",
-        "name": "Dynamic Coaching Toolbox",
-        "description": "Student-centered classroom protocol support",
-        "url": "https://www.playlab.ai/project/dynamic-coaching-toolbox",
-        "creator": "JD",
-        "role": "Educator, NYCPS",
-        "usage": "NYCPS educators access a dynamic library of student-centered classroom protocols matched to their specific instructional goals. The tool recommends discussion structures, collaborative routines, and engagement strategies based on what the teacher is trying to achieve.",
-        "impact": "Transformed coaching conversations from theoretical to practical — instead of vague advice to 'be more student-centered,' teachers got specific protocols they could implement in their very next class period.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "CIOB",
-          "Teacher Tools",
-          "School Leadership",
-          "NYC"
-        ]
-      },
-      {
-        "id": "community",
-        "name": "Community Superheroes",
-        "description": "Storytelling about local community heroes",
-        "url": "https://www.playlab.ai/project/community-superheroes",
-        "creator": "Students in the Bronx",
-        "role": "Students",
-        "usage": "Bronx students research and tell stories about unsung heroes in their local communities — the crossing guard, the bodega owner, the neighborhood organizer. The app turns community storytelling into a creative, student-driven project.",
-        "impact": "Helped students see their own neighborhoods as places full of heroism and worth celebrating — kids who felt their community had nothing special discovered extraordinary people living ordinary lives right next door.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Student-Built Apps",
           "NYC"
         ]
       }
@@ -10176,6 +10176,23 @@
         ]
       },
       {
+        "id": "csuci-eu-mahi-bot",
+        "name": "CSUCI EU Mahi-Bot",
+        "description": "Personalized student assistance for university navigation",
+        "url": "",
+        "creator": "Jerilee Perlata",
+        "role": "Staff, CSU Channel Islands",
+        "usage": "Over 1,000 students navigate university systems",
+        "impact": "Became the always-available guide first-generation students desperately need",
+        "sessions": 160,
+        "iterations": 8,
+        "tags": [
+          "Higher Ed",
+          "Operations and Management",
+          "Flowers"
+        ]
+      },
+      {
         "id": "cltgdz2m10f90qw9flixhr5q9",
         "name": "KIPP SoCal 401K Selection Assistant",
         "description": "401K plan selection for KIPP SoCal",
@@ -10221,23 +10238,6 @@
         "tags": [
           "Reading Intervention",
           "Operations and Management"
-        ]
-      },
-      {
-        "id": "csuci-eu-mahi-bot",
-        "name": "CSUCI EU Mahi-Bot",
-        "description": "Personalized student assistance for university navigation",
-        "url": "",
-        "creator": "Jerilee Perlata",
-        "role": "Staff, CSU Channel Islands",
-        "usage": "Over 1,000 students navigate university systems",
-        "impact": "Became the always-available guide first-generation students desperately need",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Higher Ed",
-          "Operations and Management",
-          "Flowers"
         ]
       }
     ]
@@ -11370,6 +11370,23 @@
         ]
       },
       {
+        "id": "cm8wvgrjv0o9g2cfou56cmwac",
+        "name": "Final Course Reflection",
+        "description": "Guides students through deep personal reflection on failure, leadership, uncertainty, and growth throughout the course.",
+        "url": "https://www.playlab.ai/project/cm8wvgrjv0o9g2cfou56cmwac",
+        "creator": "Gabriela Caso de los Cobos Tapia",
+        "role": "Adjunct Professor",
+        "usage": "Students engage with probing questions about their experiences, values, and goals. The app pushes them to think critically about what they share — making reflections inherently personal and tied to their own context, which makes generic AI output far less appealing.",
+        "impact": "Decreased instructor workload while increasing authenticity. Reading genuine app conversations replaced the frustration of evaluating potentially AI-generated essays.",
+        "sessions": 85,
+        "iterations": 5,
+        "tags": [
+          "Higher Ed",
+          "SEL / Wellbeing",
+          "Flowers"
+        ]
+      },
+      {
         "id": "clzby9c9u024b10m84mnbex2s",
         "name": "NACA Wellness Wheel",
         "description": "Indigenous wellness wheel",
@@ -11433,23 +11450,6 @@
           "CIOB",
           "SEL / Wellbeing",
           "NYC"
-        ]
-      },
-      {
-        "id": "cm8wvgrjv0o9g2cfou56cmwac",
-        "name": "Final Course Reflection",
-        "description": "Guides students through deep personal reflection on failure, leadership, uncertainty, and growth throughout the course.",
-        "url": "https://www.playlab.ai/project/cm8wvgrjv0o9g2cfou56cmwac",
-        "creator": "Gabriela Caso de los Cobos Tapia",
-        "role": "Adjunct Professor",
-        "usage": "Students engage with probing questions about their experiences, values, and goals. The app pushes them to think critically about what they share — making reflections inherently personal and tied to their own context, which makes generic AI output far less appealing.",
-        "impact": "Decreased instructor workload while increasing authenticity. Reading genuine app conversations replaced the frustration of evaluating potentially AI-generated essays.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Higher Ed",
-          "SEL / Wellbeing",
-          "Flowers"
         ]
       }
     ]
@@ -11527,6 +11527,60 @@
         "tags": [
           "Teacher Tools",
           "School Leadership"
+        ]
+      },
+      {
+        "id": "dok",
+        "name": "DOK Lesson Analyzer",
+        "description": "Analyzes lessons using Depth of Knowledge frameworks",
+        "url": "https://www.playlab.ai/project/dok-lesson-analyzer",
+        "creator": "Al Sylvia",
+        "role": "Principal, Bronx Lab School",
+        "usage": "School leaders and teachers analyze lesson plans through the lens of Webb's Depth of Knowledge framework, identifying whether tasks push students toward higher-order thinking or keep them at recall level. The tool provides specific suggestions for increasing cognitive demand.",
+        "impact": "Made the invisible visible — teachers who thought their lessons were rigorous discovered specific moments where cognitive demand dropped, and leaders could coach toward higher DOK levels with evidence rather than opinion.",
+        "sessions": 340,
+        "iterations": 15,
+        "tags": [
+          "Flowers",
+          "CIOB",
+          "Teacher Tools",
+          "School Leadership"
+        ]
+      },
+      {
+        "id": "action-step-creator",
+        "name": "Action Step Creator",
+        "description": "Creates action steps from observations using Get Better Faster, TLAC, T-TESS",
+        "url": "https://www.playlab.ai/community/cm88r0cy002ubb2cnbu9wnj6r",
+        "creator": "Mera Dougherty",
+        "role": "Instructional Leader, Compass Rose",
+        "usage": "Leaders create research-grounded action steps",
+        "impact": "Transformed post-observation conversations from vague to precise",
+        "sessions": 310,
+        "iterations": 14,
+        "tags": [
+          "Teacher Tools",
+          "School Leadership",
+          "Texas"
+        ]
+      },
+      {
+        "id": "dynamic",
+        "name": "Dynamic Coaching Toolbox",
+        "description": "Student-centered classroom protocol support",
+        "url": "https://www.playlab.ai/project/dynamic-coaching-toolbox",
+        "creator": "JD",
+        "role": "Educator, NYCPS",
+        "usage": "NYCPS educators access a dynamic library of student-centered classroom protocols matched to their specific instructional goals. The tool recommends discussion structures, collaborative routines, and engagement strategies based on what the teacher is trying to achieve.",
+        "impact": "Transformed coaching conversations from theoretical to practical — instead of vague advice to 'be more student-centered,' teachers got specific protocols they could implement in their very next class period.",
+        "sessions": 280,
+        "iterations": 12,
+        "tags": [
+          "Flowers",
+          "CIOB",
+          "Teacher Tools",
+          "School Leadership",
+          "NYC"
         ]
       },
       {
@@ -11908,60 +11962,6 @@
         "iterations": 18,
         "tags": [
           "School Leadership"
-        ]
-      },
-      {
-        "id": "dynamic",
-        "name": "Dynamic Coaching Toolbox",
-        "description": "Student-centered classroom protocol support",
-        "url": "https://www.playlab.ai/project/dynamic-coaching-toolbox",
-        "creator": "JD",
-        "role": "Educator, NYCPS",
-        "usage": "NYCPS educators access a dynamic library of student-centered classroom protocols matched to their specific instructional goals. The tool recommends discussion structures, collaborative routines, and engagement strategies based on what the teacher is trying to achieve.",
-        "impact": "Transformed coaching conversations from theoretical to practical — instead of vague advice to 'be more student-centered,' teachers got specific protocols they could implement in their very next class period.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "CIOB",
-          "Teacher Tools",
-          "School Leadership",
-          "NYC"
-        ]
-      },
-      {
-        "id": "dok",
-        "name": "DOK Lesson Analyzer",
-        "description": "Analyzes lessons using Depth of Knowledge frameworks",
-        "url": "https://www.playlab.ai/project/dok-lesson-analyzer",
-        "creator": "Al Sylvia",
-        "role": "Principal, Bronx Lab School",
-        "usage": "School leaders and teachers analyze lesson plans through the lens of Webb's Depth of Knowledge framework, identifying whether tasks push students toward higher-order thinking or keep them at recall level. The tool provides specific suggestions for increasing cognitive demand.",
-        "impact": "Made the invisible visible — teachers who thought their lessons were rigorous discovered specific moments where cognitive demand dropped, and leaders could coach toward higher DOK levels with evidence rather than opinion.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "CIOB",
-          "Teacher Tools",
-          "School Leadership"
-        ]
-      },
-      {
-        "id": "action-step-creator",
-        "name": "Action Step Creator",
-        "description": "Creates action steps from observations using Get Better Faster, TLAC, T-TESS",
-        "url": "https://www.playlab.ai/community/cm88r0cy002ubb2cnbu9wnj6r",
-        "creator": "Mera Dougherty",
-        "role": "Instructional Leader, Compass Rose",
-        "usage": "Leaders create research-grounded action steps",
-        "impact": "Transformed post-observation conversations from vague to precise",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Teacher Tools",
-          "School Leadership",
-          "Texas"
         ]
       }
     ]
@@ -13057,6 +13057,25 @@
         ]
       },
       {
+        "id": "personalized-lesson-generator-kingsman-academy-dc-",
+        "name": "Personalized Lesson Generator (Kingsman Academy, DC)",
+        "description": "AI-powered lesson generator aligned to Kingsman Academy's mastery-based learning model, creating individualized learning plans",
+        "url": "",
+        "creator": "Kingsman Academy",
+        "role": "School Leadership & Instructional Team",
+        "usage": "Teachers create individualized learning plans aligned to Kingsman Academy's mastery-based model, reducing hours of manual planning while maintaining true personalization for every student. The tool generates differentiated content that meets each student exactly where they are.",
+        "impact": "Made true mastery-based personalization feasible for every teacher at Kingsman — what was previously an aspirational model that required unsustainable planning hours became a daily reality with AI-generated individualized plans.",
+        "sessions": 420,
+        "iterations": 25,
+        "tags": [
+          "Flowers",
+          "Teacher Tools",
+          "Lesson Planning",
+          "Special Education",
+          "Differentiation & Access"
+        ]
+      },
+      {
         "id": "cmbi1knmo08a7kk0uy1nhe36u",
         "name": "Wayside PLAAFP Creator",
         "description": "PLAAFP statement creator",
@@ -13215,25 +13234,6 @@
           "Illustrative Mathematics",
           "Special Education"
         ]
-      },
-      {
-        "id": "personalized-lesson-generator-kingsman-academy-dc-",
-        "name": "Personalized Lesson Generator (Kingsman Academy, DC)",
-        "description": "AI-powered lesson generator aligned to Kingsman Academy's mastery-based learning model, creating individualized learning plans",
-        "url": "",
-        "creator": "Kingsman Academy",
-        "role": "School Leadership & Instructional Team",
-        "usage": "Teachers create individualized learning plans aligned to Kingsman Academy's mastery-based model, reducing hours of manual planning while maintaining true personalization for every student. The tool generates differentiated content that meets each student exactly where they are.",
-        "impact": "Made true mastery-based personalization feasible for every teacher at Kingsman — what was previously an aspirational model that required unsustainable planning hours became a daily reality with AI-generated individualized plans.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Teacher Tools",
-          "Lesson Planning",
-          "Special Education",
-          "Differentiation & Access"
-        ]
       }
     ]
   },
@@ -13345,6 +13345,23 @@
         ]
       },
       {
+        "id": "community",
+        "name": "Community Superheroes",
+        "description": "Storytelling about local community heroes",
+        "url": "https://www.playlab.ai/project/community-superheroes",
+        "creator": "Students in the Bronx",
+        "role": "Students",
+        "usage": "Bronx students research and tell stories about unsung heroes in their local communities — the crossing guard, the bodega owner, the neighborhood organizer. The app turns community storytelling into a creative, student-driven project.",
+        "impact": "Helped students see their own neighborhoods as places full of heroism and worth celebrating — kids who felt their community had nothing special discovered extraordinary people living ordinary lives right next door.",
+        "sessions": 95,
+        "iterations": 5,
+        "tags": [
+          "Flowers",
+          "Student-Built Apps",
+          "NYC"
+        ]
+      },
+      {
         "id": "emiwatch",
         "name": "EmiWatch Emissions Tracker",
         "description": "Tracks environmental impact and suggests actions",
@@ -13360,23 +13377,6 @@
           "Student-Built Apps",
           "Niche & Emerging",
           "Science / STEM"
-        ]
-      },
-      {
-        "id": "community",
-        "name": "Community Superheroes",
-        "description": "Storytelling about local community heroes",
-        "url": "https://www.playlab.ai/project/community-superheroes",
-        "creator": "Students in the Bronx",
-        "role": "Students",
-        "usage": "Bronx students research and tell stories about unsung heroes in their local communities — the crossing guard, the bodega owner, the neighborhood organizer. The app turns community storytelling into a creative, student-driven project.",
-        "impact": "Helped students see their own neighborhoods as places full of heroism and worth celebrating — kids who felt their community had nothing special discovered extraordinary people living ordinary lives right next door.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Student-Built Apps",
-          "NYC"
         ]
       }
     ]
@@ -13572,6 +13572,24 @@
         ]
       },
       {
+        "id": "cm7z4xsyq0gewwww2cjmviu09",
+        "name": "Elevating Your Speaking",
+        "description": "A speaking practice bot that coaches multilingual learners on English proficiency exam skills — pronunciation, pacing, and fluency patterns that automated scoring systems recognize.",
+        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
+        "creator": "Dr. Elvira Salazar",
+        "role": "National Director of Online Learning and Technology",
+        "usage": "Multilingual students practice speaking skills for proficiency exams with AI coaching on pause, enunciation, and cadence. The bot provides frequent, low-stakes practice that one teacher managing 25 diverse students can't offer consistently. One educator has already shared it with her school district for replication.",
+        "impact": "Gives multilingual learners a fighting chance against automated scoring systems trained primarily on native English speakers. Instead of waiting for policy changes, educators are using AI to help students navigate a system not designed for them — while advocating for better technology that reflects their communities.",
+        "sessions": 450,
+        "iterations": 18,
+        "tags": [
+          "ELL / ESL",
+          "Assessment & Feedback",
+          "Study Partners",
+          "Flowers"
+        ]
+      },
+      {
         "id": "cmj6atm7n0rdvil0u64e5ex44",
         "name": "Formative Assessment 12/19/25 Study Partner",
         "description": "Assessment prep study partner",
@@ -13666,24 +13684,6 @@
           "Amplify",
           "Math",
           "Study Partners"
-        ]
-      },
-      {
-        "id": "cm7z4xsyq0gewwww2cjmviu09",
-        "name": "Elevating Your Speaking",
-        "description": "A speaking practice bot that coaches multilingual learners on English proficiency exam skills — pronunciation, pacing, and fluency patterns that automated scoring systems recognize.",
-        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
-        "creator": "Dr. Elvira Salazar",
-        "role": "National Director of Online Learning and Technology",
-        "usage": "Multilingual students practice speaking skills for proficiency exams with AI coaching on pause, enunciation, and cadence. The bot provides frequent, low-stakes practice that one teacher managing 25 diverse students can't offer consistently. One educator has already shared it with her school district for replication.",
-        "impact": "Gives multilingual learners a fighting chance against automated scoring systems trained primarily on native English speakers. Instead of waiting for policy changes, educators are using AI to help students navigate a system not designed for them — while advocating for better technology that reflects their communities.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "ELL / ESL",
-          "Assessment & Feedback",
-          "Study Partners",
-          "Flowers"
         ]
       }
     ]
@@ -13847,6 +13847,24 @@
         ]
       },
       {
+        "id": "ghana",
+        "name": "Ghana Ministry of Education Lesson Planning Tools",
+        "description": "AI lesson planning tools for Ghana's national curriculum",
+        "url": "https://www.playlab.ai/project/ghana-moe-lesson-planning",
+        "creator": "Ministry of Education, Ghana",
+        "role": "",
+        "usage": "Teachers across Ghana create lesson plans aligned to the national curriculum using AI tools developed in partnership with the Ministry of Education. The platform ensures consistent instructional quality across diverse school contexts.",
+        "impact": "Brought national curriculum standards to life at the classroom level — teachers in under-resourced schools gained the same quality of lesson planning support as those in well-equipped urban centers.",
+        "sessions": 1200,
+        "iterations": 28,
+        "tags": [
+          "Flowers",
+          "Ghana",
+          "Teacher Tools",
+          "Lesson Planning"
+        ]
+      },
+      {
         "id": "clqf8shz400i3og96v0nqqkmc",
         "name": "Create AHA Moments in Classroom",
         "description": "Learning experience designer",
@@ -13910,6 +13928,23 @@
           "ELA / Literacy",
           "Teacher Tools",
           "Leading Educators"
+        ]
+      },
+      {
+        "id": "national",
+        "name": "National Math AI Partnership",
+        "description": "HQIM planning and coaching apps",
+        "url": "https://www.playlab.ai/project/national-math-ai-partnership",
+        "creator": "National Math AI Partnership",
+        "role": "",
+        "usage": "Math teachers across the partnership use AI coaching tools to plan and internalize high-quality instructional materials. The suite of apps supports lesson preparation, student thinking anticipation, and instructional decision-making aligned to HQIM standards.",
+        "impact": "Created a national model for how AI can enhance — not replace — high-quality math curriculum implementation, proving that technology and rigorous pedagogy amplify each other when thoughtfully combined.",
+        "sessions": 850,
+        "iterations": 35,
+        "tags": [
+          "Flowers",
+          "Illustrative Mathematics",
+          "Teacher Tools"
         ]
       },
       {
@@ -14059,6 +14094,25 @@
         ]
       },
       {
+        "id": "personalized-lesson-generator-kingsman-academy-dc-",
+        "name": "Personalized Lesson Generator (Kingsman Academy, DC)",
+        "description": "AI-powered lesson generator aligned to Kingsman Academy's mastery-based learning model, creating individualized learning plans",
+        "url": "",
+        "creator": "Kingsman Academy",
+        "role": "School Leadership & Instructional Team",
+        "usage": "Teachers create individualized learning plans aligned to Kingsman Academy's mastery-based model, reducing hours of manual planning while maintaining true personalization for every student. The tool generates differentiated content that meets each student exactly where they are.",
+        "impact": "Made true mastery-based personalization feasible for every teacher at Kingsman — what was previously an aspirational model that required unsustainable planning hours became a daily reality with AI-generated individualized plans.",
+        "sessions": 420,
+        "iterations": 25,
+        "tags": [
+          "Flowers",
+          "Teacher Tools",
+          "Lesson Planning",
+          "Special Education",
+          "Differentiation & Access"
+        ]
+      },
+      {
         "id": "cloyxfjhb01x0q896yzzuqwxo",
         "name": "Classroom observation feedback",
         "description": "Observation feedback drafting",
@@ -14072,6 +14126,24 @@
         "tags": [
           "Teacher Tools",
           "School Leadership"
+        ]
+      },
+      {
+        "id": "cmhuztom001hylf0usicxp5la",
+        "name": "Kingsman Academy Mastery Lesson Builder",
+        "description": "Generates complete, standards-aligned, project-based lesson packages for Kingsman Academy — scaffolded student packets and detailed teacher guides with SPED accommodations, DC-relevant examples, and Marzano proficiency scales.",
+        "url": "https://www.playlab.ai/project/cmhuztom001hylf0usicxp5la",
+        "creator": "Erin Kupferberg",
+        "role": "Director of Research, Data, and Strategy",
+        "usage": "Teachers input their subject, standard, and proficiency level. The app generates a full student lesson packet (with mini-lessons, challenges, self-assessment, and submission checklist) and a teacher guide (with answer keys, facilitation notes, and troubleshooting tips). Lessons are scaffolded from foundational (2.0) through advanced (4.0) and exported as Google Docs.",
+        "impact": "Transformed lesson planning from hours of manual work into minutes of guided generation. Every lesson is automatically accessible for SPED and multilingual learners, connected to DC students' lived experiences, and aligned to Kingsman's competency-based framework. Made individualized, high-quality instruction the default.",
+        "sessions": 380,
+        "iterations": 22,
+        "tags": [
+          "Teacher Tools",
+          "Lesson Planning",
+          "Differentiation & Access",
+          "Flowers"
         ]
       },
       {
@@ -14126,6 +14198,24 @@
         ]
       },
       {
+        "id": "dok",
+        "name": "DOK Lesson Analyzer",
+        "description": "Analyzes lessons using Depth of Knowledge frameworks",
+        "url": "https://www.playlab.ai/project/dok-lesson-analyzer",
+        "creator": "Al Sylvia",
+        "role": "Principal, Bronx Lab School",
+        "usage": "School leaders and teachers analyze lesson plans through the lens of Webb's Depth of Knowledge framework, identifying whether tasks push students toward higher-order thinking or keep them at recall level. The tool provides specific suggestions for increasing cognitive demand.",
+        "impact": "Made the invisible visible — teachers who thought their lessons were rigorous discovered specific moments where cognitive demand dropped, and leaders could coach toward higher DOK levels with evidence rather than opinion.",
+        "sessions": 340,
+        "iterations": 15,
+        "tags": [
+          "Flowers",
+          "CIOB",
+          "Teacher Tools",
+          "School Leadership"
+        ]
+      },
+      {
         "id": "cme6kaps00hdxnk0u2ow3azpa",
         "name": "Wayside Schools IEP Goal Generator",
         "description": "IEP goal generator for Wayside",
@@ -14160,6 +14250,23 @@
         ]
       },
       {
+        "id": "action-step-creator",
+        "name": "Action Step Creator",
+        "description": "Creates action steps from observations using Get Better Faster, TLAC, T-TESS",
+        "url": "https://www.playlab.ai/community/cm88r0cy002ubb2cnbu9wnj6r",
+        "creator": "Mera Dougherty",
+        "role": "Instructional Leader, Compass Rose",
+        "usage": "Leaders create research-grounded action steps",
+        "impact": "Transformed post-observation conversations from vague to precise",
+        "sessions": 310,
+        "iterations": 14,
+        "tags": [
+          "Teacher Tools",
+          "School Leadership",
+          "Texas"
+        ]
+      },
+      {
         "id": "clrsbuedc00htrg9gt3tr1n01",
         "name": "Differentiation Assistant",
         "description": "Differentiation strategies",
@@ -14173,6 +14280,25 @@
         "tags": [
           "Teacher Tools",
           "Differentiation & Access",
+          "NYC"
+        ]
+      },
+      {
+        "id": "dynamic",
+        "name": "Dynamic Coaching Toolbox",
+        "description": "Student-centered classroom protocol support",
+        "url": "https://www.playlab.ai/project/dynamic-coaching-toolbox",
+        "creator": "JD",
+        "role": "Educator, NYCPS",
+        "usage": "NYCPS educators access a dynamic library of student-centered classroom protocols matched to their specific instructional goals. The tool recommends discussion structures, collaborative routines, and engagement strategies based on what the teacher is trying to achieve.",
+        "impact": "Transformed coaching conversations from theoretical to practical — instead of vague advice to 'be more student-centered,' teachers got specific protocols they could implement in their very next class period.",
+        "sessions": 280,
+        "iterations": 12,
+        "tags": [
+          "Flowers",
+          "CIOB",
+          "Teacher Tools",
+          "School Leadership",
           "NYC"
         ]
       },
@@ -14683,132 +14809,6 @@
           "ELA / Literacy",
           "Teacher Tools"
         ]
-      },
-      {
-        "id": "dynamic",
-        "name": "Dynamic Coaching Toolbox",
-        "description": "Student-centered classroom protocol support",
-        "url": "https://www.playlab.ai/project/dynamic-coaching-toolbox",
-        "creator": "JD",
-        "role": "Educator, NYCPS",
-        "usage": "NYCPS educators access a dynamic library of student-centered classroom protocols matched to their specific instructional goals. The tool recommends discussion structures, collaborative routines, and engagement strategies based on what the teacher is trying to achieve.",
-        "impact": "Transformed coaching conversations from theoretical to practical — instead of vague advice to 'be more student-centered,' teachers got specific protocols they could implement in their very next class period.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "CIOB",
-          "Teacher Tools",
-          "School Leadership",
-          "NYC"
-        ]
-      },
-      {
-        "id": "national",
-        "name": "National Math AI Partnership",
-        "description": "HQIM planning and coaching apps",
-        "url": "https://www.playlab.ai/project/national-math-ai-partnership",
-        "creator": "National Math AI Partnership",
-        "role": "",
-        "usage": "Math teachers across the partnership use AI coaching tools to plan and internalize high-quality instructional materials. The suite of apps supports lesson preparation, student thinking anticipation, and instructional decision-making aligned to HQIM standards.",
-        "impact": "Created a national model for how AI can enhance — not replace — high-quality math curriculum implementation, proving that technology and rigorous pedagogy amplify each other when thoughtfully combined.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Illustrative Mathematics",
-          "Teacher Tools"
-        ]
-      },
-      {
-        "id": "personalized-lesson-generator-kingsman-academy-dc-",
-        "name": "Personalized Lesson Generator (Kingsman Academy, DC)",
-        "description": "AI-powered lesson generator aligned to Kingsman Academy's mastery-based learning model, creating individualized learning plans",
-        "url": "",
-        "creator": "Kingsman Academy",
-        "role": "School Leadership & Instructional Team",
-        "usage": "Teachers create individualized learning plans aligned to Kingsman Academy's mastery-based model, reducing hours of manual planning while maintaining true personalization for every student. The tool generates differentiated content that meets each student exactly where they are.",
-        "impact": "Made true mastery-based personalization feasible for every teacher at Kingsman — what was previously an aspirational model that required unsustainable planning hours became a daily reality with AI-generated individualized plans.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Teacher Tools",
-          "Lesson Planning",
-          "Special Education",
-          "Differentiation & Access"
-        ]
-      },
-      {
-        "id": "dok",
-        "name": "DOK Lesson Analyzer",
-        "description": "Analyzes lessons using Depth of Knowledge frameworks",
-        "url": "https://www.playlab.ai/project/dok-lesson-analyzer",
-        "creator": "Al Sylvia",
-        "role": "Principal, Bronx Lab School",
-        "usage": "School leaders and teachers analyze lesson plans through the lens of Webb's Depth of Knowledge framework, identifying whether tasks push students toward higher-order thinking or keep them at recall level. The tool provides specific suggestions for increasing cognitive demand.",
-        "impact": "Made the invisible visible — teachers who thought their lessons were rigorous discovered specific moments where cognitive demand dropped, and leaders could coach toward higher DOK levels with evidence rather than opinion.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "CIOB",
-          "Teacher Tools",
-          "School Leadership"
-        ]
-      },
-      {
-        "id": "action-step-creator",
-        "name": "Action Step Creator",
-        "description": "Creates action steps from observations using Get Better Faster, TLAC, T-TESS",
-        "url": "https://www.playlab.ai/community/cm88r0cy002ubb2cnbu9wnj6r",
-        "creator": "Mera Dougherty",
-        "role": "Instructional Leader, Compass Rose",
-        "usage": "Leaders create research-grounded action steps",
-        "impact": "Transformed post-observation conversations from vague to precise",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Teacher Tools",
-          "School Leadership",
-          "Texas"
-        ]
-      },
-      {
-        "id": "cmhuztom001hylf0usicxp5la",
-        "name": "Kingsman Academy Mastery Lesson Builder",
-        "description": "Generates complete, standards-aligned, project-based lesson packages for Kingsman Academy — scaffolded student packets and detailed teacher guides with SPED accommodations, DC-relevant examples, and Marzano proficiency scales.",
-        "url": "https://www.playlab.ai/project/cmhuztom001hylf0usicxp5la",
-        "creator": "Erin Kupferberg",
-        "role": "Director of Research, Data, and Strategy",
-        "usage": "Teachers input their subject, standard, and proficiency level. The app generates a full student lesson packet (with mini-lessons, challenges, self-assessment, and submission checklist) and a teacher guide (with answer keys, facilitation notes, and troubleshooting tips). Lessons are scaffolded from foundational (2.0) through advanced (4.0) and exported as Google Docs.",
-        "impact": "Transformed lesson planning from hours of manual work into minutes of guided generation. Every lesson is automatically accessible for SPED and multilingual learners, connected to DC students' lived experiences, and aligned to Kingsman's competency-based framework. Made individualized, high-quality instruction the default.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Teacher Tools",
-          "Lesson Planning",
-          "Differentiation & Access",
-          "Flowers"
-        ]
-      },
-      {
-        "id": "ghana",
-        "name": "Ghana Ministry of Education Lesson Planning Tools",
-        "description": "AI lesson planning tools for Ghana's national curriculum",
-        "url": "https://www.playlab.ai/project/ghana-moe-lesson-planning",
-        "creator": "Ministry of Education, Ghana",
-        "role": "",
-        "usage": "Teachers across Ghana create lesson plans aligned to the national curriculum using AI tools developed in partnership with the Ministry of Education. The platform ensures consistent instructional quality across diverse school contexts.",
-        "impact": "Brought national curriculum standards to life at the classroom level — teachers in under-resourced schools gained the same quality of lesson planning support as those in well-equipped urban centers.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Flowers",
-          "Ghana",
-          "Teacher Tools",
-          "Lesson Planning"
-        ]
       }
     ]
   },
@@ -14887,6 +14887,23 @@
         "tags": [
           "Special Education",
           "Teacher Tools",
+          "Texas"
+        ]
+      },
+      {
+        "id": "action-step-creator",
+        "name": "Action Step Creator",
+        "description": "Creates action steps from observations using Get Better Faster, TLAC, T-TESS",
+        "url": "https://www.playlab.ai/community/cm88r0cy002ubb2cnbu9wnj6r",
+        "creator": "Mera Dougherty",
+        "role": "Instructional Leader, Compass Rose",
+        "usage": "Leaders create research-grounded action steps",
+        "impact": "Transformed post-observation conversations from vague to precise",
+        "sessions": 310,
+        "iterations": 14,
+        "tags": [
+          "Teacher Tools",
+          "School Leadership",
           "Texas"
         ]
       },
@@ -15077,23 +15094,6 @@
           "ELA / Literacy",
           "Texas",
           "Elementary"
-        ]
-      },
-      {
-        "id": "action-step-creator",
-        "name": "Action Step Creator",
-        "description": "Creates action steps from observations using Get Better Faster, TLAC, T-TESS",
-        "url": "https://www.playlab.ai/community/cm88r0cy002ubb2cnbu9wnj6r",
-        "creator": "Mera Dougherty",
-        "role": "Instructional Leader, Compass Rose",
-        "usage": "Leaders create research-grounded action steps",
-        "impact": "Transformed post-observation conversations from vague to precise",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Teacher Tools",
-          "School Leadership",
-          "Texas"
         ]
       }
     ]
@@ -15826,8 +15826,8 @@
         "role": "Adjunct Professor",
         "usage": "Students use the app at home to identify a leader they admire — from public figures to family members. The app helps them develop interview questions, research their leader, and organize their thinking before writing an in-class essay without devices.",
         "impact": "Students arrive to class more prepared and less afraid to write. The app does the cognitive heavy lifting outside class so the in-class writing is authentically theirs.",
-        "sessions": 0,
-        "iterations": 0,
+        "sessions": 90,
+        "iterations": 6,
         "tags": [
           "Higher Ed",
           "Writing Coaches",
