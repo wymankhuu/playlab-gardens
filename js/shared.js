@@ -172,21 +172,11 @@ function initAdminToggle() {
 }
 
 async function loadOverrides() {
-  try {
-    const data = await fetchJSON(apiUrl('/admin-overrides'));
-    appOverrides = data.overrides || {};
-  } catch (err) {
-    console.warn('Could not load overrides:', err.message);
-    appOverrides = {};
-  }
+  // No longer needed — data comes from static export
 }
 
 function applyOverrides(app) {
-  const override = appOverrides[app.id];
-  if (!override) return;
-  if (override.creator) app.creator = override.creator;
-  if (override.role) app._role = override.role;
-  if (override.description) app.description = override.description;
+  // No longer needed — data comes from static export
   if (override.usage) app._usage = override.usage;
   if (override.resources) app._resources = override.resources;
   app._notionPageId = override.notionPageId || null;
@@ -198,7 +188,7 @@ function mergeOverridesIntoApps(apps) {
   }
 }
 
-async function saveOverride(app, fields) {
+async function saveToDatabase(app, fields) {
   try {
     const res = await fetch(apiUrl('/admin-save'), {
       method: 'POST',
@@ -207,7 +197,6 @@ async function saveOverride(app, fields) {
         password: adminPassword,
         appId: app.id,
         appName: app.name,
-        notionPageId: app._notionPageId || undefined,
         ...fields,
       }),
     });
@@ -216,8 +205,6 @@ async function saveOverride(app, fields) {
       alert('Save failed: ' + (data.error || 'Unknown error'));
       return false;
     }
-    // Update local cache
-    appOverrides[app.id] = { ...appOverrides[app.id], ...fields };
     return true;
   } catch (err) {
     alert('Save failed: ' + err.message);
@@ -367,21 +354,6 @@ function openAppModal(app) {
   refreshIcons();
 }
 
-function formatResourceLinks(resourcesStr) {
-  if (!resourcesStr) return '';
-  // Resources stored as newline-separated URLs or "label|url" pairs
-  return resourcesStr.split('\n').filter(Boolean).map(line => {
-    const parts = line.split('|');
-    if (parts.length === 2) {
-      return `<a href="${escapeHtml(parts[1].trim())}" target="_blank" rel="noopener" class="drawer-resource-link">${escapeHtml(parts[0].trim())}</a>`;
-    }
-    if (line.startsWith('http')) {
-      const display = line.replace(/^https?:\/\//, '').split('/')[0];
-      return `<a href="${escapeHtml(line.trim())}" target="_blank" rel="noopener" class="drawer-resource-link">${escapeHtml(display)}</a>`;
-    }
-    return `<span>${escapeHtml(line)}</span>`;
-  }).join('');
-}
 
 function renderAdminPanel(app) {
   const container = document.getElementById('drawer-admin');
@@ -393,39 +365,37 @@ function renderAdminPanel(app) {
   }
 
   container.style.display = '';
-  const override = appOverrides[app.id] || {};
 
   container.innerHTML = `
     <div class="admin-panel">
       <div class="admin-panel-header">
         <i data-lucide="settings" style="width:14px;height:14px;"></i>
-        <span>Admin Edit</span>
+        <span>Edit in Database</span>
       </div>
       <div class="admin-field">
-        <label class="admin-label">Creator Name</label>
+        <label class="admin-label">Creator</label>
         <input type="text" class="admin-input" id="admin-creator" value="${escapeHtml(app.creator || '')}" placeholder="e.g. Jane Smith">
       </div>
       <div class="admin-field">
         <label class="admin-label">Role</label>
-        <input type="text" class="admin-input" id="admin-role" value="${escapeHtml(app._role || 'Teacher')}" placeholder="e.g. Teacher, Student">
+        <input type="text" class="admin-input" id="admin-role" value="${escapeHtml(app.role || '')}" placeholder="e.g. Teacher, Student, Coach">
       </div>
       <div class="admin-field">
         <label class="admin-label">Description</label>
-        <textarea class="admin-textarea" id="admin-description" rows="3" placeholder="About this app...">${escapeHtml(app.description || '')}</textarea>
+        <textarea class="admin-textarea" id="admin-description" rows="3" placeholder="What does this app do?">${escapeHtml(app.description || '')}</textarea>
       </div>
       <div class="admin-field">
         <label class="admin-label">How It's Being Used</label>
-        <textarea class="admin-textarea" id="admin-usage" rows="2" placeholder="How educators use this app...">${escapeHtml(app._usage || '')}</textarea>
+        <textarea class="admin-textarea" id="admin-usage" rows="3" placeholder="How are educators or students using this?">${escapeHtml(app.usage || '')}</textarea>
       </div>
       <div class="admin-field">
-        <label class="admin-label">Resources <span class="admin-hint">(one per line: Label|URL or just URL)</span></label>
-        <textarea class="admin-textarea" id="admin-resources" rows="2" placeholder="Lesson Plan|https://...">${escapeHtml(app._resources || '')}</textarea>
+        <label class="admin-label">Impact</label>
+        <textarea class="admin-textarea" id="admin-impact" rows="3" placeholder="What difference has this made?">${escapeHtml(app.impact || '')}</textarea>
       </div>
-      <button class="admin-save-btn" id="admin-save-btn">Save Changes</button>
+      <button class="admin-save-btn" id="admin-save-btn">Save to Database</button>
     </div>
   `;
 
-  // Save handler
   document.getElementById('admin-save-btn').addEventListener('click', async () => {
     const btn = document.getElementById('admin-save-btn');
     btn.textContent = 'Saving...';
@@ -436,27 +406,25 @@ function renderAdminPanel(app) {
       role: document.getElementById('admin-role').value.trim(),
       description: document.getElementById('admin-description').value.trim(),
       usage: document.getElementById('admin-usage').value.trim(),
-      resources: document.getElementById('admin-resources').value.trim(),
+      impact: document.getElementById('admin-impact').value.trim(),
     };
 
-    const success = await saveOverride(app, fields);
+    const success = await saveToDatabase(app, fields);
     if (success) {
-      // Update the app object in memory
       app.creator = fields.creator;
-      app._role = fields.role;
+      app.role = fields.role;
       app.description = fields.description;
-      app._usage = fields.usage;
-      app._resources = fields.resources;
+      app.usage = fields.usage;
+      app.impact = fields.impact;
 
       btn.textContent = 'Saved!';
       setTimeout(() => {
-        btn.textContent = 'Save Changes';
+        btn.textContent = 'Save to Database';
         btn.disabled = false;
-        // Refresh the drawer view
         openAppModal(app);
       }, 1000);
     } else {
-      btn.textContent = 'Save Changes';
+      btn.textContent = 'Save to Database';
       btn.disabled = false;
     }
   });
