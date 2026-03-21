@@ -1090,6 +1090,11 @@ img {
   max-height: 280px;
   overflow-y: auto;
   z-index: 50;
+}
+
+.filter-dropdown:last-child .filter-dropdown-menu {
+  left: auto;
+  right: 0;
   display: none;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
