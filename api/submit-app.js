@@ -98,7 +98,28 @@ module.exports = async function handler(req, res) {
 
     res.status(200).json({ success: true });
   } catch (error) {
-    console.error('Error submitting app:', error);
+    console.error('Error submitting app:', JSON.stringify({
+      message: error.message,
+      code: error.code,
+      status: error.status,
+      appName: appName?.trim(),
+      timestamp: new Date().toISOString(),
+    }));
+
+    // Send error alert to Slack
+    const slackWebhook = process.env.SLACK_WEBHOOK_URL;
+    if (slackWebhook) {
+      try {
+        await fetch(slackWebhook, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            text: `⚠️ Playlab Gardens submission error: ${error.message} (app: ${appName?.trim() || 'unknown'})`,
+          }),
+        });
+      } catch (_) {}
+    }
+
     res.status(500).json({ error: 'Failed to submit app. Please try again.' });
   }
 };
