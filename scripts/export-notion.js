@@ -128,6 +128,62 @@ async function main() {
 
   const totalApps = collections.reduce((sum, c) => sum + c.apps.length, 0);
   console.log(`\nExported ${collections.length} collections (${totalApps} app entries) to ${outPath}`);
+
+  // 5. Export Cultivators
+  await exportCultivators();
+}
+
+async function exportCultivators() {
+  const CULTIVATORS_DB_ID = '32aa9d3778c580958a83fb9a78a86021';
+  console.log('\nFetching cultivators...');
+
+  const rows = [];
+  let cursor;
+  do {
+    const response = await notion.databases.query({
+      database_id: CULTIVATORS_DB_ID,
+      start_cursor: cursor,
+      page_size: 100,
+    });
+    rows.push(...response.results);
+    cursor = response.has_more ? response.next_cursor : undefined;
+  } while (cursor);
+
+  const cultivators = rows.map(row => {
+    const props = row.properties;
+    const name = (props['Name']?.title || []).map(t => t.plain_text).join('').trim();
+    if (!name) return null;
+
+    const role = (props['Role']?.rich_text || []).map(t => t.plain_text).join('').trim();
+    const org = (props['Organization']?.rich_text || []).map(t => t.plain_text).join('').trim();
+    const about = (props['About']?.rich_text || []).map(t => t.plain_text).join('').trim();
+    const usage = (props['How It\'s Used']?.rich_text || []).map(t => t.plain_text).join('').trim();
+    const impact = (props['Impact']?.rich_text || []).map(t => t.plain_text).join('').trim();
+    const blogLink = (props['Link to Blog']?.rich_text || []).map(t => t.plain_text).join('').trim();
+
+    // Headshot — get the URL from files property
+    let headshotUrl = '';
+    const headshot = props['Headshot']?.files || [];
+    if (headshot.length > 0) {
+      const file = headshot[0];
+      headshotUrl = file.file?.url || file.external?.url || '';
+    }
+
+    return {
+      name,
+      role,
+      organization: org,
+      about,
+      usage,
+      impact,
+      blogLink,
+      headshotUrl,
+    };
+  }).filter(Boolean);
+
+  const outPath = path.join(__dirname, '..', 'data', 'cultivators.json');
+  fs.writeFileSync(outPath, JSON.stringify(cultivators, null, 2));
+  console.log(`Exported ${cultivators.length} cultivators to ${outPath}`);
 }
 
 function parseRow(props) {
