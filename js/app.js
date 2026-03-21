@@ -232,6 +232,9 @@ function initDropdownFilters() {
       if (!isOpen) {
         menu.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
+      } else {
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
       }
     });
 
@@ -259,9 +262,15 @@ function initDropdownFilters() {
   });
 }
 
-function closeAllDropdowns() {
-  document.querySelectorAll('.filter-dropdown-menu.open').forEach(menu => menu.classList.remove('open'));
-  document.querySelectorAll('.filter-dropdown-btn').forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+function closeAllDropdowns(exceptMenu) {
+  document.querySelectorAll('.filter-dropdown-menu').forEach(menu => {
+    if (menu !== exceptMenu) menu.classList.remove('open');
+  });
+  document.querySelectorAll('.filter-dropdown-btn').forEach(btn => {
+    if (!exceptMenu || btn.nextElementSibling !== exceptMenu) {
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
 }
 
 // ---- Search ----

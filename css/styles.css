@@ -616,6 +616,7 @@ img {
   padding: 16px;
   min-width: 200px;
   max-width: 220px;
+  min-height: 180px;
   flex-shrink: 0;
   cursor: pointer;
   backdrop-filter: blur(4px);
@@ -758,16 +759,10 @@ img {
 }
 
 .collection-hero-text h1 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 2.5rem;
-  line-height: 1.1;
-}
-
-.collection-hero-text h1 em {
   font-family: var(--font-accent);
   font-weight: 400;
-  font-style: italic;
+  font-size: 2.5rem;
+  line-height: 1.1;
 }
 
 .collection-hero-desc {
@@ -1919,7 +1914,7 @@ img {
   border-radius: var(--radius-pill);
   cursor: pointer;
   transition: opacity 0.15s;
-  align-self: flex-start;
+  align-self: flex-end;
 }
 
 .share-submit-btn:hover {
