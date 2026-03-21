@@ -253,12 +253,17 @@ function openAppModal(app) {
   }
 
   // Labels
+  // Collection tags
   const drawerLabels = document.getElementById('drawer-labels');
   if (drawerLabels) {
-    const labelsHtml = labelPillsHTML(app.labels, 10);
-    if (labelsHtml) {
+    if (app.tags && app.tags.length > 0) {
+      const pillColors = ['#3347B8', '#FE6A2E', '#2D7A3A', '#E8785A', '#8B9E2A', '#C06EB4', '#D4A843', '#5B8DC9', '#D1576A', '#4A9E6D'];
+      const pills = app.tags.map((tag, i) => {
+        const color = pillColors[i % pillColors.length];
+        return `<a href="collection.html?id=${encodeURIComponent(tag.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''))}" class="drawer-collection-pill" style="background: ${color}20; color: ${color}; border-color: ${color}40;">${escapeHtml(tag)}</a>`;
+      }).join('');
       drawerLabels.style.display = '';
-      drawerLabels.innerHTML = `<div class="drawer-section-label">Tags</div>${labelsHtml}`;
+      drawerLabels.innerHTML = `<div class="drawer-section-label">Collections</div><div class="drawer-collection-pills">${pills}</div>`;
     } else {
       drawerLabels.style.display = 'none';
     }

@@ -1404,7 +1404,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: transparent;
+  background: var(--sand);
   color: var(--deep-forest);
   font-family: var(--font-caption);
   font-weight: 500;
@@ -1417,7 +1417,30 @@ img {
 }
 
 .drawer-btn-secondary:hover {
-  background: var(--sand);
+  background: #d4c48e;
+}
+
+/* ---- Drawer Collection Pills ---- */
+.drawer-collection-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.drawer-collection-pill {
+  font-family: var(--font-caption);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.drawer-collection-pill:hover {
+  opacity: 0.8;
 }
 
 /* ---- Admin Mode ---- */
