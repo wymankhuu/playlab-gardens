@@ -1959,6 +1959,7 @@ img {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
+  width: 100%;
   background: linear-gradient(135deg, #3347B8 0%, #C06EB4 50%, #FE6A2E 100%);
   padding: 48px 40px;
   color: #FFFDF7;
@@ -2495,6 +2496,7 @@ img {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
+  width: 100%;
   background: linear-gradient(135deg, #2D7A3A 0%, #3347B8 50%, #C06EB4 100%);
   padding: 48px 40px;
   color: #FFFDF7;
