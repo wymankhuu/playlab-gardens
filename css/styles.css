@@ -2269,7 +2269,7 @@ img {
   inset: 0;
   background-image: url('../images/beat-1.png');
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   opacity: 0.15;
 }
 
