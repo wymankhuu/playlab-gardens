@@ -451,7 +451,7 @@
     "type": "topic",
     "iconColor": "#E8785A",
     "iconEmoji": null,
-    "appCount": 42,
+    "appCount": 43,
     "apps": [
       {
         "id": "ask-socrates",
@@ -1155,6 +1155,24 @@
           "KIPP",
           "ELA / Literacy",
           "Assessment & Feedback"
+        ]
+      },
+      {
+        "id": "cm7z4xsyq0gewwww2cjmviu09",
+        "name": "Elevating Your Speaking",
+        "description": "A speaking practice bot that coaches multilingual learners on English proficiency exam skills — pronunciation, pacing, and fluency patterns that automated scoring systems recognize.",
+        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
+        "creator": "Dr. Elvira Salazar",
+        "role": "National Director of Online Learning and Technology",
+        "usage": "Multilingual students practice speaking skills for proficiency exams with AI coaching on pause, enunciation, and cadence. The bot provides frequent, low-stakes practice that one teacher managing 25 diverse students can't offer consistently. One educator has already shared it with her school district for replication.",
+        "impact": "Gives multilingual learners a fighting chance against automated scoring systems trained primarily on native English speakers. Instead of waiting for policy changes, educators are using AI to help students navigate a system not designed for them — while advocating for better technology that reflects their communities.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELL / ESL",
+          "Assessment & Feedback",
+          "Study Partners",
+          "Flowers"
         ]
       }
     ]
@@ -2832,7 +2850,7 @@
     "type": "topic",
     "iconColor": "#FE6A2E",
     "iconEmoji": null,
-    "appCount": 6,
+    "appCount": 7,
     "apps": [
       {
         "id": "cm8b0chcx04feqeuxocld0ww3",
@@ -2935,6 +2953,24 @@
           "Lesson Planning",
           "Special Education",
           "Differentiation & Access"
+        ]
+      },
+      {
+        "id": "cmhuztom001hylf0usicxp5la",
+        "name": "Kingsman Academy Mastery Lesson Builder",
+        "description": "Generates complete, standards-aligned, project-based lesson packages for Kingsman Academy — scaffolded student packets and detailed teacher guides with SPED accommodations, DC-relevant examples, and Marzano proficiency scales.",
+        "url": "https://www.playlab.ai/project/cmhuztom001hylf0usicxp5la",
+        "creator": "Erin Kupferberg",
+        "role": "Director of Research, Data, and Strategy",
+        "usage": "Teachers input their subject, standard, and proficiency level. The app generates a full student lesson packet (with mini-lessons, challenges, self-assessment, and submission checklist) and a teacher guide (with answer keys, facilitation notes, and troubleshooting tips). Lessons are scaffolded from foundational (2.0) through advanced (4.0) and exported as Google Docs.",
+        "impact": "Transformed lesson planning from hours of manual work into minutes of guided generation. Every lesson is automatically accessible for SPED and multilingual learners, connected to DC students' lived experiences, and aligned to Kingsman's competency-based framework. Made individualized, high-quality instruction the default.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Teacher Tools",
+          "Lesson Planning",
+          "Differentiation & Access",
+          "Flowers"
         ]
       }
     ]
@@ -3993,23 +4029,6 @@
         ]
       },
       {
-        "id": "cm7z4xsyq0gewwww2cjmviu09",
-        "name": "Elevating your Speaking - TELPAS",
-        "description": "Speaking skills for TELPAS",
-        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
-        "creator": "",
-        "role": "",
-        "usage": "Students develop the oral language skills that the TELPAS speaking assessment demands, practicing with a patient conversation partner that gives them unlimited tries. The tool focuses on the specific speaking competencies that are hardest to practice without a dedicated partner.",
-        "impact": "Built the oral language skills that are nearly impossible to develop without a patient conversation partner — students who never spoke in class started finding their voice because they could practice without an audience.",
-        "sessions": 81,
-        "iterations": 10,
-        "tags": [
-          "World Languages",
-          "ELL / ESL",
-          "Texas"
-        ]
-      },
-      {
         "id": "clzolstvr00jd1jdo5qdxtrb9",
         "name": "Multilingual Lovely Shout-outs",
         "description": "Multilingual celebration and recognition",
@@ -4056,6 +4075,24 @@
           "Reading Intervention",
           "ELL / ESL",
           "World Languages"
+        ]
+      },
+      {
+        "id": "cm7z4xsyq0gewwww2cjmviu09",
+        "name": "Elevating Your Speaking",
+        "description": "A speaking practice bot that coaches multilingual learners on English proficiency exam skills — pronunciation, pacing, and fluency patterns that automated scoring systems recognize.",
+        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
+        "creator": "Dr. Elvira Salazar",
+        "role": "National Director of Online Learning and Technology",
+        "usage": "Multilingual students practice speaking skills for proficiency exams with AI coaching on pause, enunciation, and cadence. The bot provides frequent, low-stakes practice that one teacher managing 25 diverse students can't offer consistently. One educator has already shared it with her school district for replication.",
+        "impact": "Gives multilingual learners a fighting chance against automated scoring systems trained primarily on native English speakers. Instead of waiting for policy changes, educators are using AI to help students navigate a system not designed for them — while advocating for better technology that reflects their communities.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELL / ESL",
+          "Assessment & Feedback",
+          "Study Partners",
+          "Flowers"
         ]
       }
     ]
@@ -4750,7 +4787,7 @@
     "type": "topic",
     "iconColor": "#5B8DC9",
     "iconEmoji": null,
-    "appCount": 33,
+    "appCount": 35,
     "apps": [
       {
         "id": "cloa6u4pi005fpt96wze1b4lr",
@@ -5270,6 +5307,42 @@
           "CIOB",
           "Teacher Tools",
           "School Leadership"
+        ]
+      },
+      {
+        "id": "cm7z4xsyq0gewwww2cjmviu09",
+        "name": "Elevating Your Speaking",
+        "description": "A speaking practice bot that coaches multilingual learners on English proficiency exam skills — pronunciation, pacing, and fluency patterns that automated scoring systems recognize.",
+        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
+        "creator": "Dr. Elvira Salazar",
+        "role": "National Director of Online Learning and Technology",
+        "usage": "Multilingual students practice speaking skills for proficiency exams with AI coaching on pause, enunciation, and cadence. The bot provides frequent, low-stakes practice that one teacher managing 25 diverse students can't offer consistently. One educator has already shared it with her school district for replication.",
+        "impact": "Gives multilingual learners a fighting chance against automated scoring systems trained primarily on native English speakers. Instead of waiting for policy changes, educators are using AI to help students navigate a system not designed for them — while advocating for better technology that reflects their communities.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELL / ESL",
+          "Assessment & Feedback",
+          "Study Partners",
+          "Flowers"
+        ]
+      },
+      {
+        "id": "cmhuztom001hylf0usicxp5la",
+        "name": "Kingsman Academy Mastery Lesson Builder",
+        "description": "Generates complete, standards-aligned, project-based lesson packages for Kingsman Academy — scaffolded student packets and detailed teacher guides with SPED accommodations, DC-relevant examples, and Marzano proficiency scales.",
+        "url": "https://www.playlab.ai/project/cmhuztom001hylf0usicxp5la",
+        "creator": "Erin Kupferberg",
+        "role": "Director of Research, Data, and Strategy",
+        "usage": "Teachers input their subject, standard, and proficiency level. The app generates a full student lesson packet (with mini-lessons, challenges, self-assessment, and submission checklist) and a teacher guide (with answer keys, facilitation notes, and troubleshooting tips). Lessons are scaffolded from foundational (2.0) through advanced (4.0) and exported as Google Docs.",
+        "impact": "Transformed lesson planning from hours of manual work into minutes of guided generation. Every lesson is automatically accessible for SPED and multilingual learners, connected to DC students' lived experiences, and aligned to Kingsman's competency-based framework. Made individualized, high-quality instruction the default.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Teacher Tools",
+          "Lesson Planning",
+          "Differentiation & Access",
+          "Flowers"
         ]
       },
       {
@@ -8137,7 +8210,7 @@
     "type": "topic",
     "iconColor": "#D4A843",
     "iconEmoji": null,
-    "appCount": 4,
+    "appCount": 5,
     "apps": [
       {
         "id": "cm70s8qb30dooxg5kviam9wbe",
@@ -8190,6 +8263,24 @@
           "Lesson Planning",
           "Special Education",
           "Differentiation & Access"
+        ]
+      },
+      {
+        "id": "cmhuztom001hylf0usicxp5la",
+        "name": "Kingsman Academy Mastery Lesson Builder",
+        "description": "Generates complete, standards-aligned, project-based lesson packages for Kingsman Academy — scaffolded student packets and detailed teacher guides with SPED accommodations, DC-relevant examples, and Marzano proficiency scales.",
+        "url": "https://www.playlab.ai/project/cmhuztom001hylf0usicxp5la",
+        "creator": "Erin Kupferberg",
+        "role": "Director of Research, Data, and Strategy",
+        "usage": "Teachers input their subject, standard, and proficiency level. The app generates a full student lesson packet (with mini-lessons, challenges, self-assessment, and submission checklist) and a teacher guide (with answer keys, facilitation notes, and troubleshooting tips). Lessons are scaffolded from foundational (2.0) through advanced (4.0) and exported as Google Docs.",
+        "impact": "Transformed lesson planning from hours of manual work into minutes of guided generation. Every lesson is automatically accessible for SPED and multilingual learners, connected to DC students' lived experiences, and aligned to Kingsman's competency-based framework. Made individualized, high-quality instruction the default.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Teacher Tools",
+          "Lesson Planning",
+          "Differentiation & Access",
+          "Flowers"
         ]
       },
       {
@@ -13297,7 +13388,7 @@
     "type": "topic",
     "iconColor": "#E8785A",
     "iconEmoji": null,
-    "appCount": 17,
+    "appCount": 18,
     "apps": [
       {
         "id": "cm1p74mmj0709rezljxj7oc7e",
@@ -13576,6 +13667,24 @@
           "Math",
           "Study Partners"
         ]
+      },
+      {
+        "id": "cm7z4xsyq0gewwww2cjmviu09",
+        "name": "Elevating Your Speaking",
+        "description": "A speaking practice bot that coaches multilingual learners on English proficiency exam skills — pronunciation, pacing, and fluency patterns that automated scoring systems recognize.",
+        "url": "https://www.playlab.ai/project/cm7z4xsyq0gewwww2cjmviu09",
+        "creator": "Dr. Elvira Salazar",
+        "role": "National Director of Online Learning and Technology",
+        "usage": "Multilingual students practice speaking skills for proficiency exams with AI coaching on pause, enunciation, and cadence. The bot provides frequent, low-stakes practice that one teacher managing 25 diverse students can't offer consistently. One educator has already shared it with her school district for replication.",
+        "impact": "Gives multilingual learners a fighting chance against automated scoring systems trained primarily on native English speakers. Instead of waiting for policy changes, educators are using AI to help students navigate a system not designed for them — while advocating for better technology that reflects their communities.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELL / ESL",
+          "Assessment & Feedback",
+          "Study Partners",
+          "Flowers"
+        ]
       }
     ]
   },
@@ -13586,7 +13695,7 @@
     "type": "topic",
     "iconColor": "#8B9E2A",
     "iconEmoji": null,
-    "appCount": 66,
+    "appCount": 67,
     "apps": [
       {
         "id": "clw83ysq804ds7w7avamics8k",
@@ -14663,6 +14772,24 @@
           "Teacher Tools",
           "School Leadership",
           "Texas"
+        ]
+      },
+      {
+        "id": "cmhuztom001hylf0usicxp5la",
+        "name": "Kingsman Academy Mastery Lesson Builder",
+        "description": "Generates complete, standards-aligned, project-based lesson packages for Kingsman Academy — scaffolded student packets and detailed teacher guides with SPED accommodations, DC-relevant examples, and Marzano proficiency scales.",
+        "url": "https://www.playlab.ai/project/cmhuztom001hylf0usicxp5la",
+        "creator": "Erin Kupferberg",
+        "role": "Director of Research, Data, and Strategy",
+        "usage": "Teachers input their subject, standard, and proficiency level. The app generates a full student lesson packet (with mini-lessons, challenges, self-assessment, and submission checklist) and a teacher guide (with answer keys, facilitation notes, and troubleshooting tips). Lessons are scaffolded from foundational (2.0) through advanced (4.0) and exported as Google Docs.",
+        "impact": "Transformed lesson planning from hours of manual work into minutes of guided generation. Every lesson is automatically accessible for SPED and multilingual learners, connected to DC students' lived experiences, and aligned to Kingsman's competency-based framework. Made individualized, high-quality instruction the default.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Teacher Tools",
+          "Lesson Planning",
+          "Differentiation & Access",
+          "Flowers"
         ]
       },
       {

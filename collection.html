@@ -63,6 +63,11 @@
         <span id="collection-org-context" class="collection-hero-org hidden">
           <span id="collection-org-name"></span>
         </span>
+        <div class="collection-search-container search-container">
+          <i data-lucide="search" style="width:16px;height:16px;" class="collection-search-icon"></i>
+          <input type="text" id="collection-search-input" class="collection-search-input" placeholder="Search apps..." aria-label="Search apps in this collection">
+          <button id="collection-search-clear" class="search-clear" aria-label="Clear search">✕</button>
+        </div>
       </div>
       <div id="collection-accent-bar" class="collection-accent-bar-hidden"></div>
     </div>
@@ -71,14 +76,7 @@
   <!-- Apps Grid -->
   <main class="container section">
     <div class="collection-grid-header">
-      <div class="collection-grid-top">
-        <h2 class="collection-grid-title">Apps in this collection</h2>
-        <div class="collection-search-container search-container">
-          <i data-lucide="search" style="width:16px;height:16px;" class="collection-search-icon"></i>
-          <input type="text" id="collection-search-input" class="collection-search-input" placeholder="Search apps..." aria-label="Search apps in this collection">
-          <button id="collection-search-clear" class="search-clear" aria-label="Clear search">✕</button>
-        </div>
-      </div>
+      <h2 class="collection-grid-title">Apps in this collection</h2>
       <div id="filter-pills" class="filter-pills" style="display:none;"></div>
     </div>
     <div id="apps-grid" class="apps-grid"></div>
