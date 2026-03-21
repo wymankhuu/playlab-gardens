@@ -776,6 +776,8 @@ img {
   display: flex;
   align-items: center;
   gap: 16px;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .collection-hero-stat {
@@ -818,14 +820,6 @@ img {
 
 .collection-grid-header .filter-pills {
   margin-bottom: 0;
-}
-
-.collection-grid-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 16px;
 }
 
 /* ---- Collection Search ---- */
