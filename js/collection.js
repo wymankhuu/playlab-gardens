@@ -204,8 +204,14 @@ function renderCollectionHeader(col) {
     document.getElementById('collection-org-name').textContent = col.name.replace(/\s*Showcase\s*/i, '') + ' Organization';
   }
 
-  // Update page title
+  // Update page title and OG meta
   document.title = `${col.name} — Playlab Gardens`;
+  const colDesc = getCollectionDescription(col);
+  updateMeta('description', colDesc);
+  updateMeta('og:title', `${col.name} — Playlab Community Gardens`);
+  updateMeta('og:description', colDesc);
+  updateMeta('twitter:title', `${col.name} — Playlab Community Gardens`);
+  updateMeta('twitter:description', colDesc);
 
   refreshIcons();
 }

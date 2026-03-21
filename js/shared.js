@@ -36,6 +36,15 @@ function initScrollTop() {
 }
 document.addEventListener('DOMContentLoaded', initScrollTop);
 
+// ---- Meta Helpers ----
+function updateMeta(nameOrProp, content) {
+  let el = document.querySelector(`meta[property="${nameOrProp}"]`)
+    || document.querySelector(`meta[name="${nameOrProp}"]`);
+  if (el) {
+    el.setAttribute('content', content);
+  }
+}
+
 // ---- API Helpers ----
 const API_BASE = '/api';
 

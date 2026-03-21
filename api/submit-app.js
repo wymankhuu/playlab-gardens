@@ -71,6 +71,31 @@ module.exports = async function handler(req, res) {
       properties,
     });
 
+    // Send Slack notification (fire and forget)
+    const slackWebhook = process.env.SLACK_WEBHOOK_URL;
+    if (slackWebhook) {
+      try {
+        await fetch(slackWebhook, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            text: `🌱 New app submitted to Playlab Gardens!`,
+            blocks: [
+              {
+                type: 'section',
+                text: {
+                  type: 'mrkdwn',
+                  text: `*🌱 New App Submission*\n*${appName.trim()}* by ${creator.trim()}${role ? ` (${role.trim()})` : ''}\n${description.trim()}\n<${url.trim()}|Open in Playlab>`
+                }
+              }
+            ]
+          }),
+        });
+      } catch (slackErr) {
+        console.warn('Slack notification failed:', slackErr.message);
+      }
+    }
+
     res.status(200).json({ success: true });
   } catch (error) {
     console.error('Error submitting app:', error);
