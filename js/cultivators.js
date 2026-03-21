@@ -43,18 +43,42 @@ function cultivatorCardHTML(c) {
 
   const roleOrg = [c.role, c.organization].filter(Boolean).join(' · ');
 
+  const monthPill = c.month
+    ? `<span class="cultivator-month-pill">${escapeHtml(c.month)}</span>`
+    : '';
+
   const blogHTML = c.blogLink
     ? `<a href="${escapeHtml(c.blogLink)}" target="_blank" rel="noopener" class="cultivator-blog-link">Read their story →</a>`
     : '';
 
+  // App links
+  let appsHTML = '';
+  if (c.apps && c.apps.length > 0) {
+    const appLinks = c.apps.map(app =>
+      `<a href="${escapeHtml(app.url)}" target="_blank" rel="noopener" class="cultivator-app-link">
+        <span class="cultivator-app-name">${escapeHtml(app.name)}</span>
+        <span class="cultivator-app-arrow">→</span>
+      </a>`
+    ).join('');
+    appsHTML = `
+      <div class="cultivator-section">
+        <h3 class="cultivator-section-title">Their Apps</h3>
+        <div class="cultivator-apps">${appLinks}</div>
+      </div>
+    `;
+  }
+
   return `
     <article class="cultivator-card">
-      <div class="cultivator-header">
-        ${headshotHTML}
-        <div class="cultivator-info">
-          <h2 class="cultivator-name">${escapeHtml(c.name)}</h2>
-          ${roleOrg ? `<p class="cultivator-role">${escapeHtml(roleOrg)}</p>` : ''}
+      <div class="cultivator-card-top">
+        <div class="cultivator-header">
+          ${headshotHTML}
+          <div class="cultivator-info">
+            <h2 class="cultivator-name">${escapeHtml(c.name)}</h2>
+            ${roleOrg ? `<p class="cultivator-role">${escapeHtml(roleOrg)}</p>` : ''}
+          </div>
         </div>
+        ${monthPill}
       </div>
       ${c.about ? `<div class="cultivator-section"><p class="cultivator-about">${escapeHtml(c.about)}</p></div>` : ''}
       ${c.usage ? `
@@ -69,6 +93,7 @@ function cultivatorCardHTML(c) {
           <p class="cultivator-section-text">${escapeHtml(c.impact)}</p>
         </div>
       ` : ''}
+      ${appsHTML}
       ${blogHTML}
     </article>
   `;

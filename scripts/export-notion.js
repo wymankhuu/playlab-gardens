@@ -160,6 +160,7 @@ async function exportCultivators() {
     const usage = (props['How It\'s Used']?.rich_text || []).map(t => t.plain_text).join('').trim();
     const impact = (props['Impact']?.rich_text || []).map(t => t.plain_text).join('').trim();
     const blogLink = (props['Link to Blog']?.rich_text || []).map(t => t.plain_text).join('').trim();
+    const month = (props['Month']?.rich_text || []).map(t => t.plain_text).join('').trim();
 
     // Headshot — get the URL from files property
     let headshotUrl = '';
@@ -178,8 +179,30 @@ async function exportCultivators() {
       impact,
       blogLink,
       headshotUrl,
+      month,
     };
   }).filter(Boolean);
+
+  // Match cultivators to their apps from collections data
+  const collectionsPath = path.join(__dirname, '..', 'data', 'collections.json');
+  const collections = JSON.parse(fs.readFileSync(collectionsPath, 'utf8'));
+
+  // Build a deduplicated map of all apps by creator name
+  const appsByCreator = {};
+  for (const col of collections) {
+    for (const app of col.apps) {
+      if (!app.creator) continue;
+      const creatorKey = app.creator.toLowerCase().trim();
+      if (!appsByCreator[creatorKey]) appsByCreator[creatorKey] = {};
+      appsByCreator[creatorKey][app.id] = { name: app.name, url: app.url, id: app.id };
+    }
+  }
+
+  for (const c of cultivators) {
+    const key = c.name.toLowerCase().trim();
+    const matched = appsByCreator[key];
+    c.apps = matched ? Object.values(matched) : [];
+  }
 
   const outPath = path.join(__dirname, '..', 'data', 'cultivators.json');
   fs.writeFileSync(outPath, JSON.stringify(cultivators, null, 2));

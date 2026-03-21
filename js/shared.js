@@ -377,12 +377,6 @@ function renderAdminPanel(app) {
         <i data-lucide="settings" style="width:14px;height:14px;"></i>
         <span>Edit in Database</span>
       </div>
-      <div class="admin-add-to-master" style="margin-bottom:12px;">
-        <button class="admin-add-master-btn" id="admin-add-master-btn" title="Add this app to the Showcase Master database with current field values">
-          <i data-lucide="database" style="width:14px;height:14px;"></i> Add to Master DB
-        </button>
-        <div id="admin-add-master-status" class="admin-status" style="display:none;"></div>
-      </div>
       <div class="admin-field">
         <label class="admin-label">Creator</label>
         <input type="text" class="admin-input" id="admin-creator" value="${escapeHtml(app.creator || '')}" placeholder="e.g. Jane Smith">
