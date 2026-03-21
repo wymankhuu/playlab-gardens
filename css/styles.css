@@ -758,10 +758,16 @@ img {
 }
 
 .collection-hero-text h1 {
-  font-family: var(--font-accent);
-  font-weight: 400;
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 2.5rem;
   line-height: 1.1;
+}
+
+.collection-hero-text h1 em {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-style: italic;
 }
 
 .collection-hero-desc {
@@ -1819,6 +1825,7 @@ img {
 
 .share-form-container {
   max-width: 640px;
+  margin: 0 auto;
 }
 
 .share-form {
