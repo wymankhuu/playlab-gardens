@@ -3,9 +3,8 @@
    ========================================== */
 
 let allApps = [];
-let activeFilterPills = new Set();
-
 let collectionSearchQuery = '';
+let activeTagFilters = new Set();
 
 document.addEventListener('DOMContentLoaded', async () => {
   initModal();
@@ -63,7 +62,7 @@ async function loadCollection() {
     allApps = data.apps;
 
     renderCollectionHeader(data);
-    buildFilterPills();
+    buildCollectionDropdownFilters();
     renderApps();
     refreshIcons();
   } catch (err) {
@@ -89,17 +88,11 @@ function renderApps() {
     );
   }
 
-  // Apply filter pills
-  if (activeFilterPills.size > 0) {
+  // Apply tag filters
+  if (activeTagFilters.size > 0) {
     filtered = filtered.filter(app => {
-      if (!app.labels) return false;
-      const appLabelSet = [
-        ...(app.labels.subjects || []),
-        ...(app.labels.grades || []),
-        ...(app.labels.useCases || []),
-      ];
-      // App must have at least one of the selected labels
-      return [...activeFilterPills].some(label => appLabelSet.includes(label));
+      if (!app.tags) return false;
+      return [...activeTagFilters].some(tag => app.tags.includes(tag));
     });
   }
 
@@ -114,76 +107,71 @@ function renderApps() {
   refreshIcons();
 }
 
-function buildFilterPills() {
-  const container = document.getElementById('filter-pills');
-  if (!container) return;
+function buildCollectionDropdownFilters() {
+  const container = document.getElementById('collection-filters');
+  const group = document.getElementById('collection-filter-group');
+  if (!container || !group) return;
 
-  // Collect all unique labels from apps in this collection
-  const labelCounts = {};
+  // Collect all unique tags from apps
+  const tagCounts = {};
   for (const app of allApps) {
-    if (!app.labels) continue;
-    const allLabels = [
-      ...(app.labels.subjects || []).map(l => ({ label: l, category: 'subject' })),
-      ...(app.labels.grades || []).map(l => ({ label: l, category: 'grade' })),
-      ...(app.labels.useCases || []).map(l => ({ label: l, category: 'useCase' })),
-    ];
-    for (const { label, category } of allLabels) {
-      if (!labelCounts[label]) {
-        labelCounts[label] = { count: 0, category };
-      }
-      labelCounts[label].count++;
+    if (!app.tags) continue;
+    for (const tag of app.tags) {
+      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
     }
   }
 
-  // Sort: grades first, then subjects, then use cases, then by count
-  const categoryOrder = { grade: 0, subject: 1, useCase: 2 };
-  const sorted = Object.entries(labelCounts)
-    .sort((a, b) => {
-      const catDiff = (categoryOrder[a[1].category] || 9) - (categoryOrder[b[1].category] || 9);
-      if (catDiff !== 0) return catDiff;
-      return b[1].count - a[1].count;
-    });
+  const sortedTags = Object.entries(tagCounts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([tag]) => tag);
 
-  if (sorted.length === 0) {
-    container.style.display = 'none';
-    return;
-  }
+  if (sortedTags.length === 0) return;
 
   container.style.display = '';
-  container.innerHTML = sorted.map(([label]) =>
-    `<button class="filter-pill" data-label="${escapeHtml(label)}">${escapeHtml(label)}</button>`
-  ).join('') + '<button class="filter-pill-clear" style="display:none;">Clear filters</button>';
 
-  // Attach click handlers
-  container.querySelectorAll('.filter-pill').forEach(pill => {
-    pill.addEventListener('click', () => {
-      const label = pill.dataset.label;
-      if (activeFilterPills.has(label)) {
-        activeFilterPills.delete(label);
-        pill.classList.remove('active');
-      } else {
-        activeFilterPills.add(label);
-        pill.classList.add('active');
-      }
-      // Show/hide clear button
-      const clearBtn = container.querySelector('.filter-pill-clear');
-      if (clearBtn) {
-        clearBtn.style.display = activeFilterPills.size > 0 ? '' : 'none';
-      }
-      renderApps();
-    });
+  // Build a single "Filter by collection" dropdown
+  const dropdown = document.createElement('div');
+  dropdown.className = 'filter-dropdown';
+  dropdown.innerHTML = `
+    <button class="filter-dropdown-btn" aria-haspopup="listbox" aria-expanded="false">
+      Also in <span class="filter-arrow">&#9662;</span>
+    </button>
+    <div class="filter-dropdown-menu" role="group" style="text-align:left;">
+      ${sortedTags.map(tag => `
+        <label class="filter-dropdown-item" data-value="${escapeHtml(tag)}">
+          <input type="checkbox" value="${escapeHtml(tag)}">
+          <span>${escapeHtml(tag)}</span>
+        </label>
+      `).join('')}
+    </div>
+  `;
+  group.appendChild(dropdown);
+
+  const btn = dropdown.querySelector('.filter-dropdown-btn');
+  const menu = dropdown.querySelector('.filter-dropdown-menu');
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = menu.classList.contains('open');
+    menu.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', !isOpen);
   });
 
-  // Clear button
-  const clearBtn = container.querySelector('.filter-pill-clear');
-  if (clearBtn) {
-    clearBtn.addEventListener('click', () => {
-      activeFilterPills.clear();
-      container.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
-      clearBtn.style.display = 'none';
-      renderApps();
-    });
-  }
+  menu.addEventListener('change', (e) => {
+    const cb = e.target;
+    if (cb.type !== 'checkbox') return;
+    if (cb.checked) activeTagFilters.add(cb.value);
+    else activeTagFilters.delete(cb.value);
+    cb.closest('.filter-dropdown-item').classList.toggle('checked', cb.checked);
+    btn.classList.toggle('has-selection', activeTagFilters.size > 0);
+    renderApps();
+  });
+
+  menu.addEventListener('click', (e) => e.stopPropagation());
+  document.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  });
 }
 
 function renderCollectionHeader(col) {

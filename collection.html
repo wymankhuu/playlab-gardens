@@ -80,8 +80,12 @@
   <!-- Apps Grid -->
   <main class="container section">
     <div class="collection-grid-header">
-      <h2 class="collection-grid-title">Apps in this collection</h2>
-      <div id="filter-pills" class="filter-pills" style="display:none;"></div>
+      <div class="collection-grid-top">
+        <h2 class="collection-grid-title">Apps in this collection</h2>
+      </div>
+      <div class="filter-bar" id="collection-filters" style="display:none;" role="toolbar">
+        <div class="filter-group" id="collection-filter-group"></div>
+      </div>
     </div>
     <div id="apps-grid" class="apps-grid"></div>
   </main>
