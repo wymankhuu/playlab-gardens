@@ -71,8 +71,8 @@ img {
 
 /* ---- Typography ---- */
 .heading-xl {
-  font-family: var(--font-heading);
-  font-weight: 900;
+  font-family: var(--font-accent);
+  font-weight: 400;
   font-size: 3.5rem;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -116,6 +116,9 @@ img {
 }
 
 .highlight {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-style: normal;
   background-color: var(--lemon);
   padding: 0 6px;
   display: inline;
