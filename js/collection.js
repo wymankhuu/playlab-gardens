@@ -10,9 +10,19 @@ let collectionSearchQuery = '';
 document.addEventListener('DOMContentLoaded', async () => {
   initModal();
   initCollectionSearch();
+  highlightNavForCollection();
   await loadCollection();
   checkCollectionDeepLink();
 });
+
+function highlightNavForCollection() {
+  const id = new URLSearchParams(window.location.search).get('id');
+  if (id === 'flowers') {
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      if (a.href.includes('id=flowers')) a.classList.add('active');
+    });
+  }
+}
 
 function checkCollectionDeepLink() {
   const hash = window.location.hash;
