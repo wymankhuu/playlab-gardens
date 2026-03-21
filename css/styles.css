@@ -116,9 +116,6 @@ img {
 }
 
 .highlight {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-style: normal;
   background-color: var(--lemon);
   padding: 0 6px;
   display: inline;
