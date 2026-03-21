@@ -142,7 +142,6 @@ function refreshIcons() {
 // ---- Admin Mode ----
 let isAdminMode = false;
 let adminPassword = '';
-let appOverrides = {};
 let currentDrawerApp = null;
 
 function initAdminToggle() {
@@ -172,20 +171,11 @@ function initAdminToggle() {
 }
 
 async function loadOverrides() {
-  // No longer needed — data comes from static export
-}
-
-function applyOverrides(app) {
-  // No longer needed — data comes from static export
-  if (override.usage) app._usage = override.usage;
-  if (override.resources) app._resources = override.resources;
-  app._notionPageId = override.notionPageId || null;
+  // No-op — data comes from static export
 }
 
 function mergeOverridesIntoApps(apps) {
-  for (const app of apps) {
-    applyOverrides(app);
-  }
+  // No-op — data comes from static export
 }
 
 async function saveToDatabase(app, fields) {
@@ -238,7 +228,7 @@ function openAppModal(app) {
   // Creator
   const creatorSection = document.getElementById('drawer-creator');
   const creatorName = app.creator || '';
-  const creatorRole = app._role || 'Teacher';
+  const creatorRole = app.role || 'Teacher';
   if (creatorName) {
     creatorSection.style.display = '';
     const initials = creatorName.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
@@ -280,26 +270,13 @@ function openAppModal(app) {
   const usageBox = document.getElementById('drawer-usage');
   if (usageBox) {
     const usageText = usageBox.querySelector('.drawer-info-box-text');
-    const usageContent = app.usage || app._usage || generateUsageBlurb(app);
+    const usageContent = app.usage || generateUsageBlurb(app);
     if (usageContent) {
       usageText.textContent = usageContent;
-      usageText.classList.toggle('drawer-info-box-placeholder', !app.usage && !app._usage);
+      usageText.classList.toggle('drawer-info-box-placeholder', !app.usage);
     } else {
       usageText.textContent = 'Usage details coming soon';
       usageText.classList.add('drawer-info-box-placeholder');
-    }
-  }
-
-  // Resources
-  const resourcesBox = document.getElementById('drawer-resources');
-  if (resourcesBox) {
-    const resourcesText = resourcesBox.querySelector('.drawer-info-box-text');
-    if (app._resources) {
-      resourcesText.innerHTML = formatResourceLinks(app._resources);
-      resourcesText.classList.remove('drawer-info-box-placeholder');
-    } else {
-      resourcesText.textContent = 'No resources added yet';
-      resourcesText.classList.add('drawer-info-box-placeholder');
     }
   }
 
@@ -400,55 +377,6 @@ function renderAdminPanel(app) {
       <button class="admin-save-btn" id="admin-save-btn">Save to Database</button>
     </div>
   `;
-
-  document.getElementById('admin-add-master-btn').addEventListener('click', async () => {
-    const btn = document.getElementById('admin-add-master-btn');
-    const status = document.getElementById('admin-add-master-status');
-    btn.disabled = true;
-    btn.textContent = 'Adding...';
-
-    try {
-      const res = await fetch(apiUrl('/admin-add-to-master'), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          password: adminPassword,
-          appName: app.name,
-          url: app.url || `https://playlab.ai/project/${app.id}`,
-          creator: document.getElementById('admin-creator').value.trim(),
-          role: document.getElementById('admin-role').value.trim(),
-          description: document.getElementById('admin-description').value.trim(),
-          usage: document.getElementById('admin-usage').value.trim(),
-          impact: document.getElementById('admin-impact').value.trim(),
-          sessions: app.sessions || 0,
-          iterations: app.iterations || 0,
-          collections: app.tags || [],
-        }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        status.textContent = 'Added to Master DB!';
-        status.className = 'admin-status admin-status-success';
-        btn.textContent = 'Added!';
-      } else if (res.status === 409) {
-        status.textContent = 'Already in Master DB';
-        status.className = 'admin-status admin-status-warn';
-        btn.textContent = 'Already exists';
-      } else {
-        status.textContent = data.error || 'Failed';
-        status.className = 'admin-status admin-status-error';
-        btn.textContent = 'Add to Master DB';
-        btn.disabled = false;
-      }
-      status.style.display = '';
-    } catch (err) {
-      status.textContent = 'Network error';
-      status.className = 'admin-status admin-status-error';
-      status.style.display = '';
-      btn.textContent = 'Add to Master DB';
-      btn.disabled = false;
-    }
-  });
 
   document.getElementById('admin-save-btn').addEventListener('click', async () => {
     const btn = document.getElementById('admin-save-btn');

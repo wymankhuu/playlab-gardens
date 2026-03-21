@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seeds — Playlab Gardens</title>
+  <meta name="description" content="Starter app templates for educators. Pick a seed, add your expertise, and grow something your students need.">
+  <meta property="og:title" content="Seeds — Playlab Community Gardens">
+  <meta property="og:description" content="Starter app templates. Pick a seed, add your expertise, and grow something your students need.">
+  <meta property="og:image" content="https://playlabgardens.com/images/beat-1.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Seeds — Playlab Community Gardens">
+  <meta name="twitter:description" content="Starter app templates for educators.">
+  <meta name="twitter:image" content="https://playlabgardens.com/images/beat-1.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="logo-icon">🌱</span>
+        Playlab Explore
+      </a>
+      <ul class="nav-links">
+        <li><a href="seeds.html" class="active">Seeds</a></li>
+        <li><a href="collection.html?id=flowers">Flowers</a></li>
+        <li><a href="/">Gardens</a></li>
+        <li><a href="cultivators.html">Cultivators</a></li>
+        <li><a href="share.html">Share your app</a></li>
+      </ul>
+      <a href="https://playlab.ai" class="nav-cta" target="_blank" rel="noopener">Start Building</a>
+      <button class="mobile-menu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="seeds-hero">
+    <div class="seeds-hero-bg"></div>
+    <div class="seeds-hero-content container">
+      <h1 class="seeds-hero-title">Seeds</h1>
+      <p class="seeds-hero-desc">These aren't finished apps — they're starting points. Pick one, add your expertise, your curriculum, your students' needs, and nurture it into something only you could grow.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="container section">
+    <div class="seeds-steps">
+      <div class="seeds-step">
+        <div class="seeds-step-number">1</div>
+        <h3 class="seeds-step-title">Pick a seed</h3>
+        <p class="seeds-step-desc">Browse starter templates by subject or use case</p>
+      </div>
+      <div class="seeds-step">
+        <div class="seeds-step-number">2</div>
+        <h3 class="seeds-step-title">Add your context</h3>
+        <p class="seeds-step-desc">Customize it with your curriculum, your students, your voice</p>
+      </div>
+      <div class="seeds-step">
+        <div class="seeds-step-number">3</div>
+        <h3 class="seeds-step-title">Watch it grow</h3>
+        <p class="seeds-step-desc">Share it, iterate, and see it come to life in your classroom</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seeds Grid -->
+  <main class="container section">
+    <div id="seeds-grid" class="seeds-grid">
+      <div class="seeds-empty">
+        <div class="seeds-empty-icon">🌱</div>
+        <h3>Seeds are sprouting</h3>
+        <p>Starter templates are on the way. Check back soon to find your first seed to plant.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="footer-links">
+        <a href="seeds.html">Seeds</a>        <a href="collection.html?id=flowers">Flowers</a>        <a href="/">Gardens</a>        <a href="cultivators.html">Cultivators</a>        <a href="share.html">Share Your App</a>        <a href="https://playlab.ai" target="_blank" rel="noopener">Start Building</a>
+      </div>
+      <p class="footer-tagline">Playlab Gardens — Built with 🌱 by Playlab</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top-btn" id="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <script src="js/shared.js"></script>
+  <script src="js/seeds.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => setTimeout(() => lucide.createIcons(), 100));</script>
+</body>
+</html>

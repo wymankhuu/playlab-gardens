@@ -131,6 +131,9 @@ async function main() {
 
   // 5. Export Cultivators
   await exportCultivators();
+
+  // 6. Export Seeds
+  await exportSeeds();
 }
 
 async function exportCultivators() {
@@ -207,6 +210,41 @@ async function exportCultivators() {
   const outPath = path.join(__dirname, '..', 'data', 'cultivators.json');
   fs.writeFileSync(outPath, JSON.stringify(cultivators, null, 2));
   console.log(`Exported ${cultivators.length} cultivators to ${outPath}`);
+}
+
+async function exportSeeds() {
+  const SEEDS_DB_ID = '32aa9d3778c58188ab27fe250c849732';
+  console.log('\nFetching seeds...');
+
+  const rows = [];
+  let cursor;
+  do {
+    const response = await notion.databases.query({
+      database_id: SEEDS_DB_ID,
+      filter: { property: 'Active', checkbox: { equals: true } },
+      start_cursor: cursor,
+      page_size: 100,
+    });
+    rows.push(...response.results);
+    cursor = response.has_more ? response.next_cursor : undefined;
+  } while (cursor);
+
+  const seeds = rows.map(row => {
+    const props = row.properties;
+    const name = (props['Name']?.title || []).map(t => t.plain_text).join('').trim();
+    if (!name) return null;
+
+    const description = (props['Description']?.rich_text || []).map(t => t.plain_text).join('').trim();
+    const remixUrl = props['Remix URL']?.url || '';
+    const tags = (props['Tags']?.multi_select || []).map(s => s.name);
+    const creator = (props['Creator']?.rich_text || []).map(t => t.plain_text).join('').trim();
+
+    return { name, description, remixUrl, tags, creator };
+  }).filter(Boolean);
+
+  const outPath = path.join(__dirname, '..', 'data', 'seeds.json');
+  fs.writeFileSync(outPath, JSON.stringify(seeds, null, 2));
+  console.log(`Exported ${seeds.length} seeds to ${outPath}`);
 }
 
 function parseRow(props) {
