@@ -5,8 +5,11 @@
 let allApps = [];
 let activeFilterPills = new Set();
 
+let collectionSearchQuery = '';
+
 document.addEventListener('DOMContentLoaded', async () => {
   initModal();
+  initCollectionSearch();
   await loadCollection();
   checkCollectionDeepLink();
 });
@@ -66,9 +69,19 @@ function renderApps() {
 
   let filtered = allApps;
 
+  // Apply search query
+  if (collectionSearchQuery) {
+    const q = collectionSearchQuery.toLowerCase();
+    filtered = filtered.filter(app =>
+      app.name.toLowerCase().includes(q) ||
+      (app.description || '').toLowerCase().includes(q) ||
+      (app.creator || '').toLowerCase().includes(q)
+    );
+  }
+
   // Apply filter pills
   if (activeFilterPills.size > 0) {
-    filtered = allApps.filter(app => {
+    filtered = filtered.filter(app => {
       if (!app.labels) return false;
       const appLabelSet = [
         ...(app.labels.subjects || []),
@@ -220,6 +233,41 @@ function showError(message) {
   const appsGrid = document.getElementById('apps-grid');
   appsGrid.innerHTML = errorStateHTML(message);
   refreshIcons();
+}
+
+// ---- Collection Search ----
+function initCollectionSearch() {
+  const input = document.getElementById('collection-search-input');
+  const clearBtn = document.getElementById('collection-search-clear');
+  if (!input) return;
+
+  let timeout;
+  input.addEventListener('input', () => {
+    const q = input.value.trim();
+    clearBtn.classList.toggle('visible', q.length > 0);
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      collectionSearchQuery = q;
+      renderApps();
+    }, 200);
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      input.value = '';
+      clearBtn.classList.remove('visible');
+      collectionSearchQuery = '';
+      renderApps();
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    clearBtn.classList.remove('visible');
+    collectionSearchQuery = '';
+    renderApps();
+    input.focus();
+  });
 }
 
 // ---- App Card Click → Modal ----

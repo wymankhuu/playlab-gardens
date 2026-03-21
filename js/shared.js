@@ -377,6 +377,12 @@ function renderAdminPanel(app) {
         <i data-lucide="settings" style="width:14px;height:14px;"></i>
         <span>Edit in Database</span>
       </div>
+      <div class="admin-add-to-master" style="margin-bottom:12px;">
+        <button class="admin-add-master-btn" id="admin-add-master-btn" title="Add this app to the Showcase Master database with current field values">
+          <i data-lucide="database" style="width:14px;height:14px;"></i> Add to Master DB
+        </button>
+        <div id="admin-add-master-status" class="admin-status" style="display:none;"></div>
+      </div>
       <div class="admin-field">
         <label class="admin-label">Creator</label>
         <input type="text" class="admin-input" id="admin-creator" value="${escapeHtml(app.creator || '')}" placeholder="e.g. Jane Smith">
@@ -400,6 +406,55 @@ function renderAdminPanel(app) {
       <button class="admin-save-btn" id="admin-save-btn">Save to Database</button>
     </div>
   `;
+
+  document.getElementById('admin-add-master-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('admin-add-master-btn');
+    const status = document.getElementById('admin-add-master-status');
+    btn.disabled = true;
+    btn.textContent = 'Adding...';
+
+    try {
+      const res = await fetch(apiUrl('/admin-add-to-master'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          password: adminPassword,
+          appName: app.name,
+          url: app.url || `https://playlab.ai/project/${app.id}`,
+          creator: document.getElementById('admin-creator').value.trim(),
+          role: document.getElementById('admin-role').value.trim(),
+          description: document.getElementById('admin-description').value.trim(),
+          usage: document.getElementById('admin-usage').value.trim(),
+          impact: document.getElementById('admin-impact').value.trim(),
+          sessions: app.sessions || 0,
+          iterations: app.iterations || 0,
+          collections: app.tags || [],
+        }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        status.textContent = 'Added to Master DB!';
+        status.className = 'admin-status admin-status-success';
+        btn.textContent = 'Added!';
+      } else if (res.status === 409) {
+        status.textContent = 'Already in Master DB';
+        status.className = 'admin-status admin-status-warn';
+        btn.textContent = 'Already exists';
+      } else {
+        status.textContent = data.error || 'Failed';
+        status.className = 'admin-status admin-status-error';
+        btn.textContent = 'Add to Master DB';
+        btn.disabled = false;
+      }
+      status.style.display = '';
+    } catch (err) {
+      status.textContent = 'Network error';
+      status.className = 'admin-status admin-status-error';
+      status.style.display = '';
+      btn.textContent = 'Add to Master DB';
+      btn.disabled = false;
+    }
+  });
 
   document.getElementById('admin-save-btn').addEventListener('click', async () => {
     const btn = document.getElementById('admin-save-btn');

@@ -217,6 +217,10 @@ function parseRow(props) {
   // Impact
   const impact = richTextToString(props['Impact']);
 
+  // Sessions & Iterations (remixes)
+  const sessions = props['Sessions']?.number || 0;
+  const iterations = props['Iterations']?.number || 0;
+
   return {
     id: appId || name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
     name,
@@ -226,8 +230,8 @@ function parseRow(props) {
     role,
     usage,
     impact,
-    sessions: 0,
-    iterations: 0,
+    sessions,
+    iterations,
   };
 }
 

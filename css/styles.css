@@ -820,6 +820,111 @@ img {
   margin-bottom: 0;
 }
 
+.collection-grid-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+}
+
+/* ---- Collection Search ---- */
+.collection-search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.collection-search-icon {
+  position: absolute;
+  left: 10px;
+  color: #999;
+  pointer-events: none;
+}
+
+.collection-search-input {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  padding: 8px 32px 8px 34px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  width: 220px;
+  transition: border-color 0.15s, width 0.2s;
+}
+
+.collection-search-input:focus {
+  outline: none;
+  border-color: var(--emerald);
+  width: 280px;
+}
+
+.collection-search-container .search-clear {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 14px;
+  display: none;
+}
+
+.collection-search-container .search-clear.visible {
+  display: block;
+}
+
+/* ---- Admin Add to Master ---- */
+.admin-add-master-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 10px 16px;
+  background: var(--emerald);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+  justify-content: center;
+}
+
+.admin-add-master-btn:hover:not(:disabled) {
+  background: #007a32;
+}
+
+.admin-add-master-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.admin-status {
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.admin-status-success {
+  background: #e6f9ed;
+  color: #1a7a3a;
+}
+
+.admin-status-warn {
+  background: #fff8e6;
+  color: #8a6d00;
+}
+
+.admin-status-error {
+  background: #fde8e8;
+  color: #c33;
+}
+
 /* ---- App Cards ---- */
 .apps-grid {
   display: grid;
