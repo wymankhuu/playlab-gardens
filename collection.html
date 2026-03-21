@@ -7,6 +7,7 @@
   <meta name="description" content="Explore apps in this Playlab collection.">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
   <!-- Nav -->
@@ -17,7 +18,9 @@
         Playlab Explore
       </a>
       <ul class="nav-links">
-        <li><a href="/" class="nav-back">← Back to Gardens</a></li>
+        <li><a href="collection.html?id=flowers">Flowers</a></li>
+        <li><a href="/">Gardens</a></li>
+        <li><a href="share.html">Share your app</a></li>
       </ul>
       <a href="https://playlab.ai" class="nav-cta" target="_blank" rel="noopener">Start Building</a>
       <button class="mobile-menu-btn" aria-label="Open menu">
@@ -30,60 +33,134 @@
     </div>
   </nav>
 
-  <!-- Collection Header -->
-  <section class="collection-header container">
-    <div class="collection-header-inner">
-      <div id="collection-accent-bar" class="collection-accent-bar"></div>
-      <div class="collection-header-content">
-        <div id="collection-icon" class="collection-header-icon">📚</div>
-        <h1 id="collection-title">Loading...</h1>
-        <p id="collection-desc" class="collection-header-desc"></p>
-        <div class="collection-header-stats">
-          <span id="apps-count" class="collection-stat"></span>
-        </div>
-
-        <!-- Org context (hidden by default) -->
-        <div id="collection-org-context" class="collection-org-context hidden">
-          <div id="collection-org-name" class="collection-org-name"></div>
+  <!-- Collection Hero -->
+  <section class="collection-hero">
+    <div class="collection-hero-shapes" aria-hidden="true">
+      <div class="collection-hero-shape collection-hero-shape-1"></div>
+      <div class="collection-hero-shape collection-hero-shape-2"></div>
+    </div>
+    <div class="collection-hero-content container">
+      <a href="/" class="collection-breadcrumb">
+        <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
+        All Collections
+      </a>
+      <div class="collection-hero-header">
+        <div id="collection-icon" class="collection-hero-icon">📚</div>
+        <div class="collection-hero-text">
+          <h1 id="collection-title">Loading...</h1>
+          <p id="collection-desc" class="collection-hero-desc"></p>
         </div>
       </div>
+      <div class="collection-hero-meta">
+        <span id="apps-count" class="collection-hero-stat"></span>
+        <!-- Org context (hidden by default) -->
+        <span id="collection-org-context" class="collection-hero-org hidden">
+          <span id="collection-org-name"></span>
+        </span>
+      </div>
+      <div id="collection-accent-bar" class="collection-accent-bar-hidden"></div>
     </div>
   </section>
 
   <!-- Apps Grid -->
   <main class="container section">
+    <div class="collection-grid-header">
+      <h2 class="collection-grid-title">Apps in this collection</h2>
+      <div id="filter-pills" class="filter-pills" style="display:none;"></div>
+    </div>
     <div id="apps-grid" class="apps-grid"></div>
   </main>
 
   <!-- Footer -->
-  <footer class="footer container">
-    <p>Playlab Gardens — Built with 🌱 by Playlab</p>
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="footer-links">
+        <a href="/">Gardens</a>
+        <a href="collection.html?id=flowers">Flowers</a>
+        <a href="share.html">Share Your App</a>
+        <a href="https://playlab.ai" target="_blank" rel="noopener">Start Building</a>
+      </div>
+      <p class="footer-tagline">Playlab Gardens — Built with 🌱 by Playlab</p>
+    </div>
   </footer>
 
-  <!-- App Modal -->
-  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal">
-      <button class="modal-close" aria-label="Close" onclick="closeModal()">✕</button>
-      <h2 id="modal-title" class="modal-title"></h2>
-      <p id="modal-creator" class="modal-creator"></p>
-      <p id="modal-desc" class="modal-desc"></p>
-      <div class="modal-stats">
-        <div class="modal-stat">
-          <div id="modal-sessions" class="modal-stat-value">0</div>
-          <div class="modal-stat-label">Sessions</div>
-        </div>
-        <div class="modal-stat">
-          <div id="modal-iterations" class="modal-stat-value">0</div>
-          <div class="modal-stat-label">Iterations</div>
+  <!-- App Detail Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-app-name">
+    <div class="drawer-header">
+      <span class="drawer-header-title">App Details</span>
+      <div class="drawer-header-actions">
+        <button id="admin-toggle" class="admin-toggle" title="Enter admin mode" aria-label="Toggle admin mode">
+          <i data-lucide="lock" style="width:16px;height:16px;"></i>
+        </button>
+        <button class="drawer-close" aria-label="Close" onclick="closeDrawer()">✕</button>
+      </div>
+    </div>
+    <div class="drawer-body">
+      <h2 id="drawer-app-name" class="drawer-app-name"></h2>
+
+      <div id="drawer-creator" class="drawer-creator">
+        <span id="drawer-creator-avatar" class="drawer-creator-avatar"></span>
+        <div class="drawer-creator-info">
+          <span id="drawer-creator-name" class="drawer-creator-name"></span>
+          <span id="drawer-creator-role" class="drawer-creator-role">Teacher</span>
         </div>
       </div>
-      <a id="modal-cta" href="#" class="modal-cta" target="_blank" rel="noopener">
-        Open in Playlab →
-      </a>
+
+      <div id="drawer-about-section">
+        <div class="drawer-section-label">About</div>
+        <p id="drawer-desc" class="drawer-desc"></p>
+      </div>
+
+      <div id="drawer-usage" class="drawer-info-box">
+        <div class="drawer-info-box-header">
+          <i data-lucide="book-open" class="drawer-info-box-icon"></i>
+          <span class="drawer-info-box-title">How It's Being Used</span>
+        </div>
+        <p class="drawer-info-box-text drawer-info-box-placeholder">Usage details coming soon</p>
+      </div>
+
+      <div id="drawer-impact" class="drawer-info-box">
+        <div class="drawer-info-box-header">
+          <i data-lucide="trending-up" class="drawer-info-box-icon"></i>
+          <span class="drawer-info-box-title">Impact</span>
+        </div>
+        <div class="drawer-impact-stats">
+          <div class="drawer-stat">
+            <i data-lucide="shuffle" class="drawer-stat-icon"></i>
+            <span id="drawer-iterations">0 remixes</span>
+          </div>
+          <div class="drawer-stat">
+            <i data-lucide="star" class="drawer-stat-icon"></i>
+            <span id="drawer-conversations">0 conversations</span>
+          </div>
+        </div>
+        <p id="drawer-impact-text" class="drawer-info-box-text"></p>
+      </div>
+
+
+      <div id="drawer-labels" class="drawer-labels" style="display:none;"></div>
+
+      <div id="drawer-admin" style="display:none;"></div>
+
+      <div id="drawer-related" style="display:none;"></div>
+
+      <div class="drawer-actions">
+        <a id="drawer-cta" href="#" class="drawer-btn-primary" target="_blank" rel="noopener">
+          Open in Playlab →
+        </a>
+        <a id="drawer-remix" href="#" class="drawer-btn-secondary" target="_blank" rel="noopener">
+          Remix this App
+        </a>
+        <button id="drawer-copy-link" class="drawer-btn-tertiary">Copy Link</button>
+      </div>
     </div>
-  </div>
+  </aside>
+
+  <button class="scroll-top-btn" id="scroll-top" aria-label="Scroll to top">↑</button>
 
   <script src="js/shared.js"></script>
   <script src="js/collection.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => setTimeout(() => lucide.createIcons(), 100));</script>
 </body>
 </html>

@@ -3,10 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Playlab Gardens — Explore Curated Collections</title>
-  <meta name="description" content="Discover curated collections of Playlab apps built by educators, for educators.">
+  <title>Playlab Community Gardens</title>
+  <meta name="description" content="Hundreds of apps built by educators, for their students and communities. Each one shaped by a real classroom, a real need.">
+  <meta property="og:title" content="Playlab Community Gardens">
+  <meta property="og:description" content="Hundreds of apps built by educators, for their students and communities. Each one shaped by a real classroom, a real need.">
+  <meta property="og:image" content="/images/landing-illustration.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Playlab Community Gardens">
+  <meta name="twitter:description" content="Hundreds of apps built by educators, for their students and communities.">
+  <meta name="twitter:image" content="/images/landing-illustration.png">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
   <!-- Nav -->
@@ -17,10 +26,9 @@
         Playlab Explore
       </a>
       <ul class="nav-links">
-        <li><a href="#">Seeds</a></li>
-        <li><a href="#">Flowers</a></li>
+        <li><a href="collection.html?id=flowers">Flowers</a></li>
         <li><a href="/" class="active">Gardens</a></li>
-        <li><a href="#">Share your app</a></li>
+        <li><a href="share.html">Share your app</a></li>
       </ul>
       <a href="https://playlab.ai" class="nav-cta" target="_blank" rel="noopener">Start Building</a>
       <button class="mobile-menu-btn" aria-label="Open menu">
@@ -43,10 +51,10 @@
     </div>
     <div class="hero-content container">
       <h1 class="heading-xl">
-        Explore <span class="highlight">curated</span> collections of <span class="highlight">Playlab</span> apps
+        Welcome to the <span class="highlight">Playlab</span> Community <span class="highlight">Gardens</span>
       </h1>
       <p class="text-accent hero-tagline">
-        Discover apps built by educators, organized by topic, subject, and community.
+        Every app here was built by someone who knows their context best. Browse hundreds of tools grown by teachers, students, and leaders — each one shaped by the specific needs of a particular classroom, school, or community. No two look alike, because no two contexts are the same.
       </p>
 
       <!-- Search -->
@@ -64,26 +72,52 @@
         >
         <button id="search-clear" class="search-clear" aria-label="Clear search">✕</button>
       </div>
-    </div>
-  </section>
 
-  <!-- Search Results (hidden by default) -->
-  <section id="search-results" class="search-results container section">
-    <div class="search-results-header">
-      <h2 id="search-results-title" class="search-results-title">Results</h2>
-      <span id="search-results-count" class="search-results-count"></span>
+      <!-- Filters -->
+      <div class="filter-bar" role="toolbar" aria-label="Filter collections">
+        <div class="filter-group" id="label-filters" style="display:none;">
+          <div class="filter-dropdown" data-category="subject">
+            <button class="filter-dropdown-btn" aria-haspopup="listbox" aria-expanded="false">
+              Subject <span class="filter-arrow">&#9662;</span>
+            </button>
+            <div class="filter-dropdown-menu" role="group"></div>
+          </div>
+          <div class="filter-dropdown" data-category="grade">
+            <button class="filter-dropdown-btn" aria-haspopup="listbox" aria-expanded="false">
+              Grade Level <span class="filter-arrow">&#9662;</span>
+            </button>
+            <div class="filter-dropdown-menu" role="group"></div>
+          </div>
+          <div class="filter-dropdown" data-category="useCase">
+            <button class="filter-dropdown-btn" aria-haspopup="listbox" aria-expanded="false">
+              Use Case <span class="filter-arrow">&#9662;</span>
+            </button>
+            <div class="filter-dropdown-menu" role="group"></div>
+          </div>
+          <div class="filter-dropdown" data-category="org">
+            <button class="filter-dropdown-btn" aria-haspopup="listbox" aria-expanded="false">
+              Organization <span class="filter-arrow">&#9662;</span>
+            </button>
+            <div class="filter-dropdown-menu" role="group"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="search-results-grid" class="apps-grid"></div>
   </section>
 
   <!-- Main Content -->
   <main id="main-content">
-    <!-- Featured Collections -->
+    <!-- Flowers Spotlight -->
     <section class="container section">
-      <div class="section-header">
-        <h2>Featured Collections</h2>
-      </div>
-      <div id="featured-grid" class="featured-grid"></div>
+      <a href="collection.html?id=flowers" class="flowers-spotlight">
+        <div class="flowers-spotlight-bg"></div>
+        <div class="flowers-spotlight-content">
+          <span class="flowers-spotlight-badge">Featured Collection</span>
+          <h2 class="flowers-spotlight-title">Flowers</h2>
+          <p class="flowers-spotlight-desc">See how individuals across the Playlab community are building to reflect their unique contexts, roles, and goals. A living showcase of what's possible.</p>
+          <span class="flowers-spotlight-cta">Explore Flowers →</span>
+        </div>
+      </a>
     </section>
 
     <!-- All Collections -->
@@ -92,39 +126,101 @@
         <h2>All Collections</h2>
         <span id="collections-count" class="section-count"></span>
       </div>
+
       <div id="collections-grid" class="collections-grid"></div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="footer container">
-    <p>Playlab Gardens — Built with 🌱 by Playlab</p>
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="footer-links">
+        <a href="/">Gardens</a>
+        <a href="collection.html?id=flowers">Flowers</a>
+        <a href="share.html">Share Your App</a>
+        <a href="https://playlab.ai" target="_blank" rel="noopener">Start Building</a>
+      </div>
+      <p class="footer-tagline">Playlab Gardens — Built with 🌱 by Playlab</p>
+    </div>
   </footer>
 
-  <!-- App Modal -->
-  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal">
-      <button class="modal-close" aria-label="Close" onclick="closeModal()">✕</button>
-      <h2 id="modal-title" class="modal-title"></h2>
-      <p id="modal-creator" class="modal-creator"></p>
-      <p id="modal-desc" class="modal-desc"></p>
-      <div class="modal-stats">
-        <div class="modal-stat">
-          <div id="modal-sessions" class="modal-stat-value">0</div>
-          <div class="modal-stat-label">Sessions</div>
-        </div>
-        <div class="modal-stat">
-          <div id="modal-iterations" class="modal-stat-value">0</div>
-          <div class="modal-stat-label">Iterations</div>
+  <!-- App Detail Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-app-name">
+    <div class="drawer-header">
+      <span class="drawer-header-title">App Details</span>
+      <div class="drawer-header-actions">
+        <button id="admin-toggle" class="admin-toggle" title="Enter admin mode" aria-label="Toggle admin mode">
+          <i data-lucide="lock" style="width:16px;height:16px;"></i>
+        </button>
+        <button class="drawer-close" aria-label="Close" onclick="closeDrawer()">✕</button>
+      </div>
+    </div>
+    <div class="drawer-body">
+      <h2 id="drawer-app-name" class="drawer-app-name"></h2>
+
+      <div id="drawer-creator" class="drawer-creator">
+        <span id="drawer-creator-avatar" class="drawer-creator-avatar"></span>
+        <div class="drawer-creator-info">
+          <span id="drawer-creator-name" class="drawer-creator-name"></span>
+          <span id="drawer-creator-role" class="drawer-creator-role">Teacher</span>
         </div>
       </div>
-      <a id="modal-cta" href="#" class="modal-cta" target="_blank" rel="noopener">
-        Open in Playlab →
-      </a>
+
+      <div id="drawer-about-section">
+        <div class="drawer-section-label">About</div>
+        <p id="drawer-desc" class="drawer-desc"></p>
+      </div>
+
+      <div id="drawer-usage" class="drawer-info-box">
+        <div class="drawer-info-box-header">
+          <i data-lucide="book-open" class="drawer-info-box-icon"></i>
+          <span class="drawer-info-box-title">How It's Being Used</span>
+        </div>
+        <p class="drawer-info-box-text drawer-info-box-placeholder">Usage details coming soon</p>
+      </div>
+
+      <div id="drawer-impact" class="drawer-info-box">
+        <div class="drawer-info-box-header">
+          <i data-lucide="trending-up" class="drawer-info-box-icon"></i>
+          <span class="drawer-info-box-title">Impact</span>
+        </div>
+        <div class="drawer-impact-stats">
+          <div class="drawer-stat">
+            <i data-lucide="shuffle" class="drawer-stat-icon"></i>
+            <span id="drawer-iterations">0 remixes</span>
+          </div>
+          <div class="drawer-stat">
+            <i data-lucide="star" class="drawer-stat-icon"></i>
+            <span id="drawer-conversations">0 conversations</span>
+          </div>
+        </div>
+        <p id="drawer-impact-text" class="drawer-info-box-text"></p>
+      </div>
+
+
+      <div id="drawer-labels" class="drawer-labels" style="display:none;"></div>
+
+      <div id="drawer-admin" style="display:none;"></div>
+
+      <div id="drawer-related" style="display:none;"></div>
+
+      <div class="drawer-actions">
+        <a id="drawer-cta" href="#" class="drawer-btn-primary" target="_blank" rel="noopener">
+          Open in Playlab →
+        </a>
+        <a id="drawer-remix" href="#" class="drawer-btn-secondary" target="_blank" rel="noopener">
+          Remix this App
+        </a>
+        <button id="drawer-copy-link" class="drawer-btn-tertiary">Copy Link</button>
+      </div>
     </div>
-  </div>
+  </aside>
+
+  <button class="scroll-top-btn" id="scroll-top" aria-label="Scroll to top">↑</button>
 
   <script src="js/shared.js"></script>
   <script src="js/app.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => setTimeout(() => lucide.createIcons(), 100));</script>
 </body>
 </html>
