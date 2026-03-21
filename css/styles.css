@@ -156,26 +156,14 @@ img {
 }
 
 .nav-logo {
-  font-family: var(--font-accent);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.125rem;
-  white-space: nowrap;
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
-.nav-logo .logo-icon {
-  width: 28px;
-  height: 28px;
-  background: var(--emerald);
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--cream);
-  font-size: 14px;
+.nav-logo-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-links {
