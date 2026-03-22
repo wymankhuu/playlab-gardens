@@ -1,11 +1,5 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": ".",
-  "crons": [
-    { "path": "/api/cron-sync", "schedule": "0 6 * * *" }
-  ],
   "rewrites": [
-    { "source": "/api/cron-sync", "destination": "/api/cron-sync" },
     { "source": "/api/collections", "destination": "/api/collections" },
     { "source": "/api/collection/:id", "destination": "/api/collection/[id]" },
     { "source": "/api/search", "destination": "/api/search" },
