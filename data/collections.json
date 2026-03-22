@@ -349,7 +349,7 @@
         "impact": "Transformed test prep into structured, confident review",
         "sessions": 224,
         "iterations": 14,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Amplify",
           "Science / STEM",
@@ -1116,7 +1116,7 @@
         "impact": "Transformed test prep into structured, confident review",
         "sessions": 224,
         "iterations": 14,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Amplify",
           "Science / STEM",
@@ -1832,7 +1832,7 @@
         "impact": "Young people and first-time investors are taking their first steps into financial planning because the app removes the intimidation of the investment world. The personalized approach has helped users see investing as something for them, not just for the wealthy.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": false,
+        "pinned": true,
         "tags": [
           "Business / Economics",
           "High School",
@@ -4064,7 +4064,7 @@
         "impact": "Transformed celebrations from last-minute assemblies into thoughtful experiences",
         "sessions": 102,
         "iterations": 5,
-        "pinned": false,
+        "pinned": true,
         "tags": [
           "Cultural Studies",
           "School Leadership",
@@ -4141,7 +4141,7 @@
         "impact": "Teachers are moving beyond isolated readings to interconnected text sets that deepen student understanding across disciplines. The emphasis on diverse authorship has transformed classroom libraries and reading lists, ensuring students encounter voices and perspectives that reflect the full range of human experience while building content knowledge.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Science / STEM",
@@ -4999,7 +4999,7 @@
         "impact": "Scaled high-quality writing feedback across KIPP's network — students who previously had to wait days for teacher comments could iterate on their writing in real time, building confidence and skill simultaneously.",
         "sessions": 990,
         "iterations": 4,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Flowers",
           "KIPP",
@@ -5018,7 +5018,7 @@
         "impact": "Elevated close reading instruction quality",
         "sessions": 953,
         "iterations": 45,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Teacher Tools",
@@ -5824,7 +5824,7 @@
         "impact": "Teachers are moving beyond isolated readings to interconnected text sets that deepen student understanding across disciplines. The emphasis on diverse authorship has transformed classroom libraries and reading lists, ensuring students encounter voices and perspectives that reflect the full range of human experience while building content knowledge.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Science / STEM",
@@ -7267,7 +7267,7 @@
         "impact": "Young people and first-time investors are taking their first steps into financial planning because the app removes the intimidation of the investment world. The personalized approach has helped users see investing as something for them, not just for the wealthy.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": false,
+        "pinned": true,
         "tags": [
           "Business / Economics",
           "High School",
@@ -7438,7 +7438,7 @@
         "impact": "Transformed celebrations from last-minute assemblies into thoughtful experiences",
         "sessions": 102,
         "iterations": 5,
-        "pinned": false,
+        "pinned": true,
         "tags": [
           "Cultural Studies",
           "School Leadership",
@@ -7834,7 +7834,7 @@
         "impact": "Scaled high-quality writing feedback across KIPP's network — students who previously had to wait days for teacher comments could iterate on their writing in real time, building confidence and skill simultaneously.",
         "sessions": 990,
         "iterations": 4,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Flowers",
           "KIPP",
@@ -8315,7 +8315,7 @@
         "impact": "Turned the study of insects from something kids squirm about into something they're fascinated by",
         "sessions": 2087,
         "iterations": 131,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "Gamified Learning"
@@ -8918,7 +8918,7 @@
         "impact": "Became the backbone of Year 2 biology instruction across Ghana",
         "sessions": 20174,
         "iterations": 36,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "Ghana",
@@ -9598,15 +9598,15 @@
       {
         "id": "clzby9c9u024b10m84mnbex2s",
         "name": "NACA Wellness Wheel",
-        "description": "Indigenous wellness wheel",
+        "description": "Indigenous wellness wheel that allows Indigenous Educators to ground themselves on their state of being before tying it to their instruction",
         "url": "https://www.playlab.ai/project/clzby9c9u024b10m84mnbex2s",
-        "creator": "",
-        "role": "",
-        "usage": "Students explore holistic wellbeing",
+        "creator": "Caitlin Mills",
+        "role": "Indigenous Educator",
+        "usage": "To support Indigenous Educators as they ground themselves in Indigenous Culture to embed their culture into their teachings.",
         "impact": "Brought culturally grounded wellness into health education",
         "sessions": 70,
         "iterations": 12,
-        "pinned": false,
+        "pinned": true,
         "tags": [
           "Health & PE",
           "SEL / Wellbeing"
@@ -10802,7 +10802,7 @@
         "impact": "Young people and first-time investors are taking their first steps into financial planning because the app removes the intimidation of the investment world. The personalized approach has helped users see investing as something for them, not just for the wealthy.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": false,
+        "pinned": true,
         "tags": [
           "Business / Economics",
           "High School",
@@ -11917,7 +11917,7 @@
         "impact": "Scaled high-quality writing feedback across KIPP's network — students who previously had to wait days for teacher comments could iterate on their writing in real time, building confidence and skill simultaneously.",
         "sessions": 990,
         "iterations": 4,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Flowers",
           "KIPP",
@@ -12108,7 +12108,7 @@
         "impact": "Elevated close reading instruction quality",
         "sessions": 953,
         "iterations": 45,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Teacher Tools",
@@ -12462,7 +12462,7 @@
         "impact": "Teachers are moving beyond isolated readings to interconnected text sets that deepen student understanding across disciplines. The emphasis on diverse authorship has transformed classroom libraries and reading lists, ensuring students encounter voices and perspectives that reflect the full range of human experience while building content knowledge.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Science / STEM",
@@ -12603,7 +12603,7 @@
         "impact": "Helped 6th graders make the leap from procedural fraction skills to real-world application",
         "sessions": 660,
         "iterations": 6,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Middle School"
@@ -13359,7 +13359,7 @@
         "impact": "Became the backbone of Year 2 biology instruction across Ghana",
         "sessions": 20174,
         "iterations": 36,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "Ghana",
@@ -13595,7 +13595,7 @@
         "impact": "Provided middle schoolers with a comprehensive science review tool that knows what they need to study — instead of reviewing everything equally, students focus their limited study time on the concepts they haven't yet mastered.",
         "sessions": 686,
         "iterations": 120,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Study Partners",
           "Science / STEM",
@@ -13613,7 +13613,7 @@
         "impact": "Helped 6th graders make the leap from procedural fraction skills to real-world application",
         "sessions": 660,
         "iterations": 6,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Middle School"
@@ -13719,7 +13719,7 @@
         "impact": "Transformed test prep into structured, confident review",
         "sessions": 224,
         "iterations": 14,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Amplify",
           "Science / STEM",
@@ -15784,7 +15784,7 @@
         "impact": "Students who previously saw science as something that only happens in a lab are now spotting opportunities for inquiry in their own backyards. Teachers report that the connection between insects and hands-on projects has sparked a deeper curiosity about the natural world and made science feel accessible and personal.",
         "sessions": 2642,
         "iterations": 97,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "Project-Based Learning"
@@ -16915,15 +16915,15 @@
       {
         "id": "clzby9c9u024b10m84mnbex2s",
         "name": "NACA Wellness Wheel",
-        "description": "Indigenous wellness wheel",
+        "description": "Indigenous wellness wheel that allows Indigenous Educators to ground themselves on their state of being before tying it to their instruction",
         "url": "https://www.playlab.ai/project/clzby9c9u024b10m84mnbex2s",
-        "creator": "",
-        "role": "",
-        "usage": "Students explore holistic wellbeing",
+        "creator": "Caitlin Mills",
+        "role": "Indigenous Educator",
+        "usage": "To support Indigenous Educators as they ground themselves in Indigenous Culture to embed their culture into their teachings.",
         "impact": "Brought culturally grounded wellness into health education",
         "sessions": 70,
         "iterations": 12,
-        "pinned": false,
+        "pinned": true,
         "tags": [
           "Health & PE",
           "SEL / Wellbeing"
@@ -17602,7 +17602,7 @@
         "impact": "Transformed celebrations from last-minute assemblies into thoughtful experiences",
         "sessions": 102,
         "iterations": 5,
-        "pinned": false,
+        "pinned": true,
         "tags": [
           "Cultural Studies",
           "School Leadership",
@@ -18042,7 +18042,7 @@
         "impact": "Became the backbone of Year 2 biology instruction across Ghana",
         "sessions": 20174,
         "iterations": 36,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "Ghana",
@@ -18184,7 +18184,7 @@
         "impact": "Students who previously saw science as something that only happens in a lab are now spotting opportunities for inquiry in their own backyards. Teachers report that the connection between insects and hands-on projects has sparked a deeper curiosity about the natural world and made science feel accessible and personal.",
         "sessions": 2642,
         "iterations": 97,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "Project-Based Learning"
@@ -18219,7 +18219,7 @@
         "impact": "Turned the study of insects from something kids squirm about into something they're fascinated by",
         "sessions": 2087,
         "iterations": 131,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "Gamified Learning"
@@ -18305,7 +18305,7 @@
         "impact": "Provided middle schoolers with a comprehensive science review tool that knows what they need to study — instead of reviewing everything equally, students focus their limited study time on the concepts they haven't yet mastered.",
         "sessions": 686,
         "iterations": 120,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Study Partners",
           "Science / STEM",
@@ -18493,7 +18493,7 @@
         "impact": "Transformed test prep into structured, confident review",
         "sessions": 224,
         "iterations": 14,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Amplify",
           "Science / STEM",
@@ -18859,7 +18859,7 @@
         "impact": "Teachers are moving beyond isolated readings to interconnected text sets that deepen student understanding across disciplines. The emphasis on diverse authorship has transformed classroom libraries and reading lists, ensuring students encounter voices and perspectives that reflect the full range of human experience while building content knowledge.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Science / STEM",
@@ -19347,7 +19347,7 @@
         "impact": "Teachers are moving beyond isolated readings to interconnected text sets that deepen student understanding across disciplines. The emphasis on diverse authorship has transformed classroom libraries and reading lists, ensuring students encounter voices and perspectives that reflect the full range of human experience while building content knowledge.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Science / STEM",
@@ -20148,7 +20148,7 @@
         "impact": "Young people and first-time investors are taking their first steps into financial planning because the app removes the intimidation of the investment world. The personalized approach has helped users see investing as something for them, not just for the wealthy.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": false,
+        "pinned": true,
         "tags": [
           "Business / Economics",
           "High School",
@@ -20320,7 +20320,7 @@
         "impact": "Provided middle schoolers with a comprehensive science review tool that knows what they need to study — instead of reviewing everything equally, students focus their limited study time on the concepts they haven't yet mastered.",
         "sessions": 686,
         "iterations": 120,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Study Partners",
           "Science / STEM",
@@ -20966,7 +20966,7 @@
         "impact": "Elevated close reading instruction quality",
         "sessions": 953,
         "iterations": 45,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Teacher Tools",
@@ -22131,7 +22131,7 @@
         "impact": "Teachers are moving beyond isolated readings to interconnected text sets that deepen student understanding across disciplines. The emphasis on diverse authorship has transformed classroom libraries and reading lists, ensuring students encounter voices and perspectives that reflect the full range of human experience while building content knowledge.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Science / STEM",
@@ -23069,7 +23069,7 @@
         "impact": "Scaled high-quality writing feedback across KIPP's network — students who previously had to wait days for teacher comments could iterate on their writing in real time, building confidence and skill simultaneously.",
         "sessions": 990,
         "iterations": 4,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Flowers",
           "KIPP",
