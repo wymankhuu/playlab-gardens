@@ -92,7 +92,7 @@ module.exports = function handler(req, res) {
   });
 
   var summary = filtered.map(function(col) {
-    var previewCount = 6;
+    var previewCount = 9;
 
     return {
       id: col.id,
