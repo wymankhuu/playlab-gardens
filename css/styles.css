@@ -2882,6 +2882,76 @@ img {
   padding: 12px 16px;
 }
 
+/* ---- Submit Success Modal ---- */
+.submit-success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 40, 24, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  animation: adminPwFadeIn 0.15s ease;
+}
+
+.submit-success-overlay.closing {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.submit-success-modal {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  width: 380px;
+  max-width: 90vw;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(13, 40, 24, 0.2), 0 0 0 1px rgba(13, 40, 24, 0.06);
+  animation: adminPwSlideUp 0.2s ease;
+}
+
+.submit-success-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.submit-success-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--deep-forest);
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+.submit-success-text {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--deep-forest);
+  opacity: 0.6;
+  margin: 0 0 24px;
+}
+
+.submit-success-btn {
+  padding: 11px 32px;
+  background: var(--emerald);
+  color: #fff;
+  font-family: var(--font-caption);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(0, 152, 63, 0.15);
+}
+
+.submit-success-btn:hover {
+  background: #007a32;
+  transform: translateY(-1px);
+}
+
 /* ---- Seeds Page ---- */
 .seeds-hero {
   padding: 48px 0 32px;

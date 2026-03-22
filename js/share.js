@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      formContainer.style.display = 'none';
-      successState.style.display = '';
+      showSubmitSuccessModal();
+      form.reset();
     } catch (err) {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Submit Your App';
@@ -116,6 +116,39 @@ function clearAllErrors() {
   document.querySelectorAll('.form-group--error').forEach(g => g.classList.remove('form-group--error'));
   document.querySelectorAll('.form-input--error').forEach(el => el.classList.remove('form-input--error'));
   document.querySelectorAll('.form-error').forEach(el => el.remove());
+}
+
+function showSubmitSuccessModal() {
+  const existing = document.getElementById('submit-success-modal');
+  if (existing) existing.remove();
+
+  const submitBtn = document.getElementById('submit-btn');
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'Submit Your App';
+
+  const modal = document.createElement('div');
+  modal.id = 'submit-success-modal';
+  modal.className = 'submit-success-overlay';
+  modal.innerHTML = `
+    <div class="submit-success-modal">
+      <div class="submit-success-icon">🌱</div>
+      <h3 class="submit-success-title">Thank you for helping Playlab cultivate our Community Gardens.</h3>
+      <p class="submit-success-text">Your app has been submitted.</p>
+      <button class="submit-success-btn" id="submit-success-close">Continue</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  document.getElementById('submit-success-close').addEventListener('click', function() {
+    modal.classList.add('closing');
+    setTimeout(function() { modal.remove(); }, 150);
+  });
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.add('closing');
+      setTimeout(function() { modal.remove(); }, 150);
+    }
+  });
 }
 
 function showFormError(message) {
