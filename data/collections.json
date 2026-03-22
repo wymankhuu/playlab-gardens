@@ -1029,7 +1029,7 @@
         "impact": "Showed what's possible when AI feedback is deeply curriculum-specific",
         "sessions": 292,
         "iterations": 5,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Writing Coaches",
@@ -1295,7 +1295,7 @@
         "impact": "Built presentation confidence through the only method that works — practice, practice, practice. Students who rehearsed with this tool presented with a polish that surprised even their teachers.",
         "sessions": 110,
         "iterations": 35,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "CIOB",
           "Assessment & Feedback"
@@ -1348,7 +1348,7 @@
         "impact": "Transformed test results from dead-end disappointments into launching pads for growth — students who used to crumple up their score reports now use them as study guides.",
         "sessions": 86,
         "iterations": 1,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Texas",
           "Math",
@@ -1478,7 +1478,7 @@
         "impact": "Coaching across the district is becoming more aligned and evidence-based, with coaches able to connect individual teacher feedback to the broader vision for math instruction in NYCPS. The structured approach has helped coaches move from reactive support to proactive, data-informed partnership that accelerates teacher growth toward the district's instructional goals.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "School Leadership",
@@ -1578,7 +1578,7 @@
         "impact": "Leaders are delivering observation feedback that feels genuinely developmental rather than evaluative, because the app helps them ground their notes in specific instructional frameworks teachers already know. The multi-framework alignment has bridged the gap between coaching for math-specific growth and meeting district evaluation requirements, making both feel like part of the same conversation.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Illustrative Mathematics",
@@ -1618,7 +1618,7 @@
         "impact": "Students are catching conceptual misunderstandings before they compound into larger gaps, leading to stronger performance on assessments and more productive practice time. The tool has empowered students to take ownership of their learning by giving them a way to self-assess that goes deeper than checking if they got the right answer.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "High School",
@@ -1639,7 +1639,7 @@
         "impact": "Teachers are responding to student errors with greater precision and intentionality, using misconceptions as diagnostic tools rather than things to fix. Students are developing stronger mathematical reasoning because the question pathways push them to think critically about why their approach didn't work, building the kind of flexible problem-solving skills that transfer across topics.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Middle School",
@@ -1660,7 +1660,7 @@
         "impact": "Students are becoming more aware of how they approach math problems, moving from impulsive answer-seeking to deliberate, reflective problem solving. Teachers have noticed that students who regularly use the app are better able to articulate where they get stuck and self-correct before asking for help, building the kind of mathematical independence that lasts beyond any single lesson.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Study Partners",
@@ -1832,7 +1832,7 @@
         "impact": "Young people and first-time investors are taking their first steps into financial planning because the app removes the intimidation of the investment world. The personalized approach has helped users see investing as something for them, not just for the wealthy.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Business / Economics",
           "High School",
@@ -2317,7 +2317,7 @@
         "impact": "Built presentation confidence through the only method that works — practice, practice, practice. Students who rehearsed with this tool presented with a polish that surprised even their teachers.",
         "sessions": 110,
         "iterations": 35,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "CIOB",
           "Assessment & Feedback"
@@ -3508,7 +3508,7 @@
         "impact": "Students are discovering careers they never knew existed and developing a more nuanced understanding of what different jobs actually involve day to day. The localized resource feature has been especially powerful for students in communities where career exposure is limited, opening doors they didn't know were there.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "High School",
           "Career & Vocational",
@@ -3893,7 +3893,7 @@
         "impact": "Students who used to stare at empty pages for entire class periods are now generating opening lines they feel genuinely excited about. The focused approach to first lines has taught students that great writing starts with intentional choices, giving them a craft-based mindset that carries through the rest of their creative work.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Writing Coaches",
@@ -3929,7 +3929,7 @@
         "impact": "Students are choosing passion project topics with greater intentionality and follow-through because the ideas emerge from their own interests and community context rather than being assigned. The focus on locus of control has helped students select projects they can actually complete, reducing frustration and increasing the quality of final products.",
         "sessions": 0,
         "iterations": 16,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Project-Based Learning",
           "SEL / Wellbeing",
@@ -4691,7 +4691,7 @@
         "impact": "Schools that previously struggled with inconsistent IM implementation are finding common ground through the app's structured guidance. Leaders and coaches report that it has accelerated the shift from compliance-driven curriculum adoption to genuine ownership, with teachers embracing student-centered practices because they understand the why behind the instructional moves.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Teacher Tools",
@@ -4826,7 +4826,7 @@
         "impact": "Teachers are responding to student errors with greater precision and intentionality, using misconceptions as diagnostic tools rather than things to fix. Students are developing stronger mathematical reasoning because the question pathways push them to think critically about why their approach didn't work, building the kind of flexible problem-solving skills that transfer across topics.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Middle School",
@@ -4847,7 +4847,7 @@
         "impact": "Students are becoming more aware of how they approach math problems, moving from impulsive answer-seeking to deliberate, reflective problem solving. Teachers have noticed that students who regularly use the app are better able to articulate where they get stuck and self-correct before asking for help, building the kind of mathematical independence that lasts beyond any single lesson.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Study Partners",
@@ -5280,7 +5280,7 @@
         "impact": "Showed what's possible when AI feedback is deeply curriculum-specific",
         "sessions": 292,
         "iterations": 5,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Writing Coaches",
@@ -5688,7 +5688,7 @@
         "impact": "Students who used to stare at empty pages for entire class periods are now generating opening lines they feel genuinely excited about. The focused approach to first lines has taught students that great writing starts with intentional choices, giving them a craft-based mindset that carries through the rest of their creative work.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Writing Coaches",
@@ -7007,7 +7007,7 @@
         "impact": "Users who previously fell for phishing attempts or simply deleted everything suspicious are now making informed decisions about which messages to trust. The student-built tool has become a practical cybersecurity resource that makes online safety accessible to people of all technical backgrounds.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -7207,7 +7207,7 @@
         "impact": "Families receiving ambiguous genetic testing results are getting clearer guidance on what those results might mean, reducing anxiety and enabling more informed conversations with their doctors. The TP53 focus has the potential to catch pediatric cancer risks earlier.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -7247,7 +7247,7 @@
         "impact": "Users are making more environmentally conscious purchasing decisions because the app connects their everyday shopping to tangible environmental metrics. The dual focus on savings and sustainability has shown people that going green does not have to mean spending more.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -7267,7 +7267,7 @@
         "impact": "Young people and first-time investors are taking their first steps into financial planning because the app removes the intimidation of the investment world. The personalized approach has helped users see investing as something for them, not just for the wealthy.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Business / Economics",
           "High School",
@@ -8055,7 +8055,7 @@
         "impact": "Gave students permission to think like engineers and inventors — kids who assumed inventing was for geniuses discovered that the design process is a learnable skill, and their ideas were worth developing.",
         "sessions": 126,
         "iterations": 10,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Flowers",
           "Gamified Learning",
@@ -8246,7 +8246,7 @@
         "impact": "Families receiving ambiguous genetic testing results are getting clearer guidance on what those results might mean, reducing anxiety and enabling more informed conversations with their doctors. The TP53 focus has the potential to catch pediatric cancer risks earlier.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -8459,7 +8459,7 @@
         "impact": "Made research methodology engaging by turning it into an adventure where choices have real consequences — students remember the methodology because they lived it rather than memorized it.",
         "sessions": 369,
         "iterations": 49,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Gamified Learning",
           "High School"
@@ -8652,7 +8652,7 @@
         "impact": "Gave students permission to think like engineers and inventors — kids who assumed inventing was for geniuses discovered that the design process is a learnable skill, and their ideas were worth developing.",
         "sessions": 126,
         "iterations": 10,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Flowers",
           "Gamified Learning",
@@ -8816,7 +8816,7 @@
         "impact": "Students are discovering careers they never knew existed and developing a more nuanced understanding of what different jobs actually involve day to day. The localized resource feature has been especially powerful for students in communities where career exposure is limited, opening doors they didn't know were there.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "High School",
           "Career & Vocational",
@@ -9606,7 +9606,7 @@
         "impact": "Brought culturally grounded wellness into health education",
         "sessions": 70,
         "iterations": 12,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Health & PE",
           "SEL / Wellbeing"
@@ -9956,7 +9956,7 @@
         "impact": "Made research methodology engaging by turning it into an adventure where choices have real consequences — students remember the methodology because they lived it rather than memorized it.",
         "sessions": 369,
         "iterations": 49,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Gamified Learning",
           "High School"
@@ -10275,7 +10275,7 @@
         "impact": "Users who previously fell for phishing attempts or simply deleted everything suspicious are now making informed decisions about which messages to trust. The student-built tool has become a practical cybersecurity resource that makes online safety accessible to people of all technical backgrounds.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -10628,7 +10628,7 @@
         "impact": "Students are discovering careers they never knew existed and developing a more nuanced understanding of what different jobs actually involve day to day. The localized resource feature has been especially powerful for students in communities where career exposure is limited, opening doors they didn't know were there.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "High School",
           "Career & Vocational",
@@ -10665,7 +10665,7 @@
         "impact": "Families receiving ambiguous genetic testing results are getting clearer guidance on what those results might mean, reducing anxiety and enabling more informed conversations with their doctors. The TP53 focus has the potential to catch pediatric cancer risks earlier.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -10724,7 +10724,7 @@
         "impact": "Users are making more environmentally conscious purchasing decisions because the app connects their everyday shopping to tangible environmental metrics. The dual focus on savings and sustainability has shown people that going green does not have to mean spending more.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -10781,7 +10781,7 @@
         "impact": "Students are catching conceptual misunderstandings before they compound into larger gaps, leading to stronger performance on assessments and more productive practice time. The tool has empowered students to take ownership of their learning by giving them a way to self-assess that goes deeper than checking if they got the right answer.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "High School",
@@ -10802,7 +10802,7 @@
         "impact": "Young people and first-time investors are taking their first steps into financial planning because the app removes the intimidation of the investment world. The personalized approach has helped users see investing as something for them, not just for the wealthy.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Business / Economics",
           "High School",
@@ -11767,7 +11767,7 @@
         "impact": "Schools that previously struggled with inconsistent IM implementation are finding common ground through the app's structured guidance. Leaders and coaches report that it has accelerated the shift from compliance-driven curriculum adoption to genuine ownership, with teachers embracing student-centered practices because they understand the why behind the instructional moves.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Teacher Tools",
@@ -11828,7 +11828,7 @@
         "impact": "Leaders are delivering observation feedback that feels genuinely developmental rather than evaluative, because the app helps them ground their notes in specific instructional frameworks teachers already know. The multi-framework alignment has bridged the gap between coaching for math-specific growth and meeting district evaluation requirements, making both feel like part of the same conversation.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Illustrative Mathematics",
@@ -11868,7 +11868,7 @@
         "impact": "Students are catching conceptual misunderstandings before they compound into larger gaps, leading to stronger performance on assessments and more productive practice time. The tool has empowered students to take ownership of their learning by giving them a way to self-assess that goes deeper than checking if they got the right answer.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "High School",
@@ -12903,7 +12903,7 @@
         "impact": "Transformed test results from dead-end disappointments into launching pads for growth — students who used to crumple up their score reports now use them as study guides.",
         "sessions": 86,
         "iterations": 1,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Texas",
           "Math",
@@ -13068,7 +13068,7 @@
         "impact": "Coaching across the district is becoming more aligned and evidence-based, with coaches able to connect individual teacher feedback to the broader vision for math instruction in NYCPS. The structured approach has helped coaches move from reactive support to proactive, data-informed partnership that accelerates teacher growth toward the district's instructional goals.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "School Leadership",
@@ -13088,7 +13088,7 @@
         "impact": "Schools that previously struggled with inconsistent IM implementation are finding common ground through the app's structured guidance. Leaders and coaches report that it has accelerated the shift from compliance-driven curriculum adoption to genuine ownership, with teachers embracing student-centered practices because they understand the why behind the instructional moves.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Teacher Tools",
@@ -13209,7 +13209,7 @@
         "impact": "Leaders are delivering observation feedback that feels genuinely developmental rather than evaluative, because the app helps them ground their notes in specific instructional frameworks teachers already know. The multi-framework alignment has bridged the gap between coaching for math-specific growth and meeting district evaluation requirements, making both feel like part of the same conversation.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Illustrative Mathematics",
@@ -13269,7 +13269,7 @@
         "impact": "Students are catching conceptual misunderstandings before they compound into larger gaps, leading to stronger performance on assessments and more productive practice time. The tool has empowered students to take ownership of their learning by giving them a way to self-assess that goes deeper than checking if they got the right answer.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "High School",
@@ -13290,7 +13290,7 @@
         "impact": "Teachers are responding to student errors with greater precision and intentionality, using misconceptions as diagnostic tools rather than things to fix. Students are developing stronger mathematical reasoning because the question pathways push them to think critically about why their approach didn't work, building the kind of flexible problem-solving skills that transfer across topics.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Middle School",
@@ -13311,7 +13311,7 @@
         "impact": "Students are becoming more aware of how they approach math problems, moving from impulsive answer-seeking to deliberate, reflective problem solving. Teachers have noticed that students who regularly use the app are better able to articulate where they get stuck and self-correct before asking for help, building the kind of mathematical independence that lasts beyond any single lesson.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Study Partners",
@@ -14083,7 +14083,7 @@
         "impact": "Teachers are responding to student errors with greater precision and intentionality, using misconceptions as diagnostic tools rather than things to fix. Students are developing stronger mathematical reasoning because the question pathways push them to think critically about why their approach didn't work, building the kind of flexible problem-solving skills that transfer across topics.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Middle School",
@@ -14462,7 +14462,7 @@
         "impact": "Coaching across the district is becoming more aligned and evidence-based, with coaches able to connect individual teacher feedback to the broader vision for math instruction in NYCPS. The structured approach has helped coaches move from reactive support to proactive, data-informed partnership that accelerates teacher growth toward the district's instructional goals.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "School Leadership",
@@ -14503,7 +14503,7 @@
         "impact": "Students are catching conceptual misunderstandings before they compound into larger gaps, leading to stronger performance on assessments and more productive practice time. The tool has empowered students to take ownership of their learning by giving them a way to self-assess that goes deeper than checking if they got the right answer.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "High School",
@@ -14524,7 +14524,7 @@
         "impact": "Teachers are responding to student errors with greater precision and intentionality, using misconceptions as diagnostic tools rather than things to fix. Students are developing stronger mathematical reasoning because the question pathways push them to think critically about why their approach didn't work, building the kind of flexible problem-solving skills that transfer across topics.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Middle School",
@@ -14699,7 +14699,7 @@
         "impact": "Users who previously fell for phishing attempts or simply deleted everything suspicious are now making informed decisions about which messages to trust. The student-built tool has become a practical cybersecurity resource that makes online safety accessible to people of all technical backgrounds.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -14739,7 +14739,7 @@
         "impact": "Families receiving ambiguous genetic testing results are getting clearer guidance on what those results might mean, reducing anxiety and enabling more informed conversations with their doctors. The TP53 focus has the potential to catch pediatric cancer risks earlier.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -14760,7 +14760,7 @@
         "impact": "Users are making more environmentally conscious purchasing decisions because the app connects their everyday shopping to tangible environmental metrics. The dual focus on savings and sustainability has shown people that going green does not have to mean spending more.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -15505,7 +15505,7 @@
         "impact": "Coaching across the district is becoming more aligned and evidence-based, with coaches able to connect individual teacher feedback to the broader vision for math instruction in NYCPS. The structured approach has helped coaches move from reactive support to proactive, data-informed partnership that accelerates teacher growth toward the district's instructional goals.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "School Leadership",
@@ -15525,7 +15525,7 @@
         "impact": "Schools that previously struggled with inconsistent IM implementation are finding common ground through the app's structured guidance. Leaders and coaches report that it has accelerated the shift from compliance-driven curriculum adoption to genuine ownership, with teachers embracing student-centered practices because they understand the why behind the instructional moves.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Teacher Tools",
@@ -15603,7 +15603,7 @@
         "impact": "Leaders are delivering observation feedback that feels genuinely developmental rather than evaluative, because the app helps them ground their notes in specific instructional frameworks teachers already know. The multi-framework alignment has bridged the gap between coaching for math-specific growth and meeting district evaluation requirements, making both feel like part of the same conversation.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Illustrative Mathematics",
@@ -16346,7 +16346,7 @@
         "impact": "Students are choosing passion project topics with greater intentionality and follow-through because the ideas emerge from their own interests and community context rather than being assigned. The focus on locus of control has helped students select projects they can actually complete, reducing frustration and increasing the quality of final products.",
         "sessions": 0,
         "iterations": 16,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Project-Based Learning",
           "SEL / Wellbeing",
@@ -16923,7 +16923,7 @@
         "impact": "Brought culturally grounded wellness into health education",
         "sessions": 70,
         "iterations": 12,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Health & PE",
           "SEL / Wellbeing"
@@ -17243,7 +17243,7 @@
         "impact": "Students are choosing passion project topics with greater intentionality and follow-through because the ideas emerge from their own interests and community context rather than being assigned. The focus on locus of control has helped students select projects they can actually complete, reducing frustration and increasing the quality of final products.",
         "sessions": 0,
         "iterations": 16,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Project-Based Learning",
           "SEL / Wellbeing",
@@ -17896,7 +17896,7 @@
         "impact": "Coaching across the district is becoming more aligned and evidence-based, with coaches able to connect individual teacher feedback to the broader vision for math instruction in NYCPS. The structured approach has helped coaches move from reactive support to proactive, data-informed partnership that accelerates teacher growth toward the district's instructional goals.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "School Leadership",
@@ -17916,7 +17916,7 @@
         "impact": "Schools that previously struggled with inconsistent IM implementation are finding common ground through the app's structured guidance. Leaders and coaches report that it has accelerated the shift from compliance-driven curriculum adoption to genuine ownership, with teachers embracing student-centered practices because they understand the why behind the instructional moves.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Teacher Tools",
@@ -17975,7 +17975,7 @@
         "impact": "Leaders are delivering observation feedback that feels genuinely developmental rather than evaluative, because the app helps them ground their notes in specific instructional frameworks teachers already know. The multi-framework alignment has bridged the gap between coaching for math-specific growth and meeting district evaluation requirements, making both feel like part of the same conversation.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Illustrative Mathematics",
@@ -18600,7 +18600,7 @@
         "impact": "Gave students permission to think like engineers and inventors — kids who assumed inventing was for geniuses discovered that the design process is a learnable skill, and their ideas were worth developing.",
         "sessions": 126,
         "iterations": 10,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Flowers",
           "Gamified Learning",
@@ -18781,7 +18781,7 @@
         "impact": "Users who previously fell for phishing attempts or simply deleted everything suspicious are now making informed decisions about which messages to trust. The student-built tool has become a practical cybersecurity resource that makes online safety accessible to people of all technical backgrounds.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -18838,7 +18838,7 @@
         "impact": "Families receiving ambiguous genetic testing results are getting clearer guidance on what those results might mean, reducing anxiety and enabling more informed conversations with their doctors. The TP53 focus has the potential to catch pediatric cancer risks earlier.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -18880,7 +18880,7 @@
         "impact": "Users are making more environmentally conscious purchasing decisions because the app connects their everyday shopping to tangible environmental metrics. The dual focus on savings and sustainability has shown people that going green does not have to mean spending more.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -19888,7 +19888,7 @@
         "impact": "Users who previously fell for phishing attempts or simply deleted everything suspicious are now making informed decisions about which messages to trust. The student-built tool has become a practical cybersecurity resource that makes online safety accessible to people of all technical backgrounds.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -20088,7 +20088,7 @@
         "impact": "Families receiving ambiguous genetic testing results are getting clearer guidance on what those results might mean, reducing anxiety and enabling more informed conversations with their doctors. The TP53 focus has the potential to catch pediatric cancer risks earlier.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -20128,7 +20128,7 @@
         "impact": "Users are making more environmentally conscious purchasing decisions because the app connects their everyday shopping to tangible environmental metrics. The dual focus on savings and sustainability has shown people that going green does not have to mean spending more.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Science / STEM",
           "High School",
@@ -20148,7 +20148,7 @@
         "impact": "Young people and first-time investors are taking their first steps into financial planning because the app removes the intimidation of the investment world. The personalized approach has helped users see investing as something for them, not just for the wealthy.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Business / Economics",
           "High School",
@@ -20666,7 +20666,7 @@
         "impact": "Students are catching conceptual misunderstandings before they compound into larger gaps, leading to stronger performance on assessments and more productive practice time. The tool has empowered students to take ownership of their learning by giving them a way to self-assess that goes deeper than checking if they got the right answer.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "High School",
@@ -20687,7 +20687,7 @@
         "impact": "Students are becoming more aware of how they approach math problems, moving from impulsive answer-seeking to deliberate, reflective problem solving. Teachers have noticed that students who regularly use the app are better able to articulate where they get stuck and self-correct before asking for help, building the kind of mathematical independence that lasts beyond any single lesson.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Study Partners",
@@ -22012,7 +22012,7 @@
         "impact": "Schools that previously struggled with inconsistent IM implementation are finding common ground through the app's structured guidance. Leaders and coaches report that it has accelerated the shift from compliance-driven curriculum adoption to genuine ownership, with teachers embracing student-centered practices because they understand the why behind the instructional moves.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Teacher Tools",
@@ -22269,7 +22269,7 @@
         "impact": "Teachers are responding to student errors with greater precision and intentionality, using misconceptions as diagnostic tools rather than things to fix. Students are developing stronger mathematical reasoning because the question pathways push them to think critically about why their approach didn't work, building the kind of flexible problem-solving skills that transfer across topics.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Math",
           "Middle School",
@@ -22537,7 +22537,7 @@
         "impact": "Transformed test results from dead-end disappointments into launching pads for growth — students who used to crumple up their score reports now use them as study guides.",
         "sessions": 86,
         "iterations": 1,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "Texas",
           "Math",
@@ -23230,7 +23230,7 @@
         "impact": "Showed what's possible when AI feedback is deeply curriculum-specific",
         "sessions": 292,
         "iterations": 5,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Writing Coaches",
@@ -23389,7 +23389,7 @@
         "impact": "Students who used to stare at empty pages for entire class periods are now generating opening lines they feel genuinely excited about. The focused approach to first lines has taught students that great writing starts with intentional choices, giving them a craft-based mindset that carries through the rest of their creative work.",
         "sessions": 0,
         "iterations": 0,
-        "pinned": true,
+        "pinned": false,
         "tags": [
           "ELA / Literacy",
           "Writing Coaches",

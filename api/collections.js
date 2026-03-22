@@ -92,9 +92,7 @@ module.exports = function handler(req, res) {
   });
 
   var summary = filtered.map(function(col) {
-    // Dynamic count: 9 if collection has pinned apps, otherwise 6
-    var hasPinned = col.apps.some(function(a) { return a.pinned; });
-    var previewCount = hasPinned ? 9 : 6;
+    var previewCount = 6;
 
     return {
       id: col.id,
