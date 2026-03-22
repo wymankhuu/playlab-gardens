@@ -1216,7 +1216,7 @@
       },
       {
         "id": "cmifoisima2szm60uf3taohtw",
-        "name": "PBAT PRESENTATION PRACTICE BUDDY!",
+        "name": "PBAT Presentation Practice Buddy",
         "description": "Students practice PBAT presentations repeatedly in a low-stakes environment, getting feedback on content, delivery, and argumentation.",
         "url": "https://www.playlab.ai/project/cmifoisima2szm60uf3taohtw",
         "creator": "Eloi Villenueva",
@@ -1959,8 +1959,26 @@
     "type": "org",
     "iconColor": "#D4A843",
     "iconEmoji": null,
-    "appCount": 17,
+    "appCount": 47,
     "apps": [
+      {
+        "id": "cmc0zsb3k086xi40uf7wcyvpf",
+        "name": "ELD Standards Buddy",
+        "description": "ELD standards navigator",
+        "url": "https://www.playlab.ai/project/cmc0zsb3k086xi40uf7wcyvpf",
+        "creator": "",
+        "role": "",
+        "usage": "Teachers navigate ELD standards",
+        "impact": "Made complex ELD framework actionable",
+        "sessions": 1786,
+        "iterations": 6,
+        "tags": [
+          "Teacher Tools",
+          "ELL / ESL",
+          "Professional Development",
+          "CIOB"
+        ]
+      },
       {
         "id": "cmh0jdf9m01rpil0uf0uxsx5n",
         "name": "MAKERS IN ACTION!",
@@ -2085,23 +2103,6 @@
         ]
       },
       {
-        "id": "cm0fcpuvw0mil6q60r6y0ma3i",
-        "name": "Teacher Lesson DOK Analyzer",
-        "description": "DOK lesson analyzer — built by Al Sylvia (Principal, Bronx Lab School) to support educators and students.",
-        "url": "https://www.playlab.ai/project/cm0fcpuvw0mil6q60r6y0ma3i",
-        "creator": "Al Sylvia",
-        "role": "Principal, Bronx Lab School",
-        "usage": "Teachers evaluate lesson rigor",
-        "impact": "Raised instructional rigor across CIOB",
-        "sessions": 218,
-        "iterations": 13,
-        "tags": [
-          "CIOB",
-          "Teacher Tools",
-          "School Leadership"
-        ]
-      },
-      {
         "id": "clpir35j705m7q896eqeg8t4d",
         "name": "CIOB: ParentAssist Pro",
         "description": "Parents get help with school-home communication",
@@ -2182,25 +2183,8 @@
         ]
       },
       {
-        "id": "cmkd5e1tw00ack90ulqr9lfz9",
-        "name": "Xander",
-        "description": "Cognitive rigor auditing tool — built by Alexander Dvorak (Math Teacher, International HS at Union Square) to support educators and students.",
-        "url": "https://www.playlab.ai/project/cmkd5e1tw00ack90ulqr9lfz9",
-        "creator": "Alexander Dvorak",
-        "role": "Math Teacher, International HS at Union Square",
-        "usage": "Teachers evaluate lesson rigor",
-        "impact": "Shifted how teachers think about instructional rigor",
-        "sessions": 116,
-        "iterations": 21,
-        "tags": [
-          "Math",
-          "High School",
-          "CIOB"
-        ]
-      },
-      {
         "id": "cmifoisima2szm60uf3taohtw",
-        "name": "PBAT PRESENTATION PRACTICE BUDDY!",
+        "name": "PBAT Presentation Practice Buddy",
         "description": "Students practice PBAT presentations repeatedly in a low-stakes environment, getting feedback on content, delivery, and argumentation.",
         "url": "https://www.playlab.ai/project/cmifoisima2szm60uf3taohtw",
         "creator": "Eloi Villenueva",
@@ -2246,6 +2230,471 @@
           "CIOB",
           "ELA / Literacy",
           "Teacher Tools"
+        ]
+      },
+      {
+        "id": "cmkd5e1tw00ack90ulqr9lfz9",
+        "name": "ThinkPhys: Learn Physics by Thinking Like a Physicist",
+        "description": "Physics reasoning and problem-solving tool",
+        "url": "https://www.playlab.ai/project/cmkd5e1tw00ack90ulqr9lfz9",
+        "creator": "Alexander Dvorak",
+        "role": "",
+        "usage": "Physics students at International HS at Union Square develop scientific reasoning by working through problems the way physicists think — starting with observations, building models, and testing predictions.",
+        "impact": "Shifted physics learning from formula memorization to genuine scientific thinking and reasoning.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cm0fcpuvw0mil6q60r6y0ma3i",
+        "name": "Differentiation with Proficiency Levels in Spanish",
+        "description": "Spanish language differentiation tool",
+        "url": "https://www.playlab.ai/project/cm0fcpuvw0mil6q60r6y0ma3i",
+        "creator": "Rosa Bonilla",
+        "role": "",
+        "usage": "Spanish teachers at School Without Walls use this to create differentiated materials for students at different proficiency levels, ensuring all learners are appropriately challenged.",
+        "impact": "Made differentiation in world language classes practical and sustainable for teachers managing multiple proficiency levels.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmi12sqdf3fnki90t246x3zro",
+        "name": "Internationals Alumni Network",
+        "description": "Alumni connection and mentorship tool",
+        "url": "https://www.playlab.ai/project/cmi12sqdf3fnki90t246x3zro",
+        "creator": "Scott Kern",
+        "role": "",
+        "usage": "Students and graduates of North Star Academy connect with alumni for mentorship, college advice, and career networking through a structured outreach platform.",
+        "impact": "Built a living alumni network that turns graduates into mentors, extending the school community beyond graduation.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmkojyuym0fezit0u2387ygvk",
+        "name": "Create a Learning Plan",
+        "description": "Personalized learning plan creator",
+        "url": "https://www.playlab.ai/project/cmkojyuym0fezit0u2387ygvk",
+        "creator": "Eileen Coppola",
+        "role": "",
+        "usage": "CIOB district educators create personalized learning plans for professional development, mapping goals to resources and timelines for teacher growth.",
+        "impact": "Gave district coaches a structured tool for turning professional development goals into actionable, trackable plans.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmggxqesu1a02ga0ud7avan6r",
+        "name": "Feedback AI for Horror Stories",
+        "description": "Creative writing feedback for horror genre",
+        "url": "https://www.playlab.ai/project/cmggxqesu1a02ga0ud7avan6r",
+        "creator": "Crystal Yeung",
+        "role": "",
+        "usage": "Students at Brooklyn Collaborative write horror stories and receive genre-specific feedback on suspense building, pacing, character development, and narrative craft.",
+        "impact": "Made creative writing feedback immediate and genre-aware, helping students develop as fiction writers.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmj1h3drk3dg1mi0upotlfac0",
+        "name": "Math Thought Partner",
+        "description": "Math reasoning and problem-solving partner",
+        "url": "https://www.playlab.ai/project/cmj1h3drk3dg1mi0upotlfac0",
+        "creator": "Arden Katine",
+        "role": "",
+        "usage": "Students work through math problems with a thinking partner that asks guiding questions rather than giving answers, helping them develop mathematical reasoning skills.",
+        "impact": "Shifted math practice from answer-getting to genuine mathematical thinking for CIOB students.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmkbambgo2s5bg90u11q2e34r",
+        "name": "ELA & Debate Research Writing Coach",
+        "description": "Research writing and debate preparation coach",
+        "url": "https://www.playlab.ai/project/cmkbambgo2s5bg90u11q2e34r",
+        "creator": "Christopher A. Costello",
+        "role": "",
+        "usage": "Students at El Puente Academy develop research-based arguments for debate and academic writing, with coaching on evidence selection, claim construction, and counterarguments.",
+        "impact": "Built stronger argumentative writers by connecting debate preparation to academic writing skills.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmh9uqdyr7hnqfr0uwe241n9l",
+        "name": "College & Career Planning Partner",
+        "description": "College and career exploration assistant",
+        "url": "https://www.playlab.ai/project/cmh9uqdyr7hnqfr0uwe241n9l",
+        "creator": "Tina Crisfield",
+        "role": "",
+        "usage": "Students at Bronx Lab School explore college options, research career paths, and build post-secondary plans with personalized guidance based on their interests and goals.",
+        "impact": "Democratized college counseling by giving every student access to personalized post-secondary planning support.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmi4wpmn54ujshl0u1r5zai8c",
+        "name": "IEP Reading Comprehension Coach",
+        "description": "Reading comprehension support for IEP students",
+        "url": "https://www.playlab.ai/project/cmi4wpmn54ujshl0u1r5zai8c",
+        "creator": "Wilnny Abreu",
+        "role": "",
+        "usage": "Students with IEPs at University Heights HS work through reading passages with scaffolded comprehension support tailored to their individual learning goals.",
+        "impact": "Provided personalized reading support that adapts to each student's IEP goals, filling gaps when one-on-one teacher time is limited.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmhxkvmuu0juxmo0u9ftnhe2u",
+        "name": "Extension Problem Finder",
+        "description": "Math extension problem generator",
+        "url": "https://www.playlab.ai/project/cmhxkvmuu0juxmo0u9ftnhe2u",
+        "creator": "Andrea Swenson",
+        "role": "",
+        "usage": "Teachers at East Side Community School find and generate extension problems for students who finish early or need additional challenge, keeping them engaged at higher levels.",
+        "impact": "Solved the common challenge of what to do with students who finish early, providing meaningful mathematical challenges instead of busywork.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmi54bzrb69e7ij0uytri1v3l",
+        "name": "REMIX Research Assistant (Social Studies)",
+        "description": "Social studies research assistant",
+        "url": "https://www.playlab.ai/project/cmi54bzrb69e7ij0uytri1v3l",
+        "creator": "Khalia Joseph",
+        "role": "",
+        "usage": "Students in the Internationals Network conduct social studies research with guided support for finding sources, evaluating credibility, and synthesizing information into arguments.",
+        "impact": "Made academic research in social studies more accessible for multilingual learners navigating English-language sources.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmincqtel00g5jd0umegml5h8",
+        "name": "Literary Analysis Feedback Coach",
+        "description": "Literary analysis writing feedback for ELL students",
+        "url": "https://www.playlab.ai/project/cmincqtel00g5jd0umegml5h8",
+        "creator": "Sean De Silva",
+        "role": "",
+        "usage": "ELL students at International HS at Union Square submit literary analysis drafts and receive targeted feedback on thesis development, textual evidence, and academic language.",
+        "impact": "Gave multilingual learners the specific, patient feedback they need to develop academic writing skills in English.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmgr31d993d8wis0v4ikrin6o",
+        "name": "Historical Figure Panel Interview",
+        "description": "Historical figure roleplay and interview tool",
+        "url": "https://www.playlab.ai/project/cmgr31d993d8wis0v4ikrin6o",
+        "creator": "Jimmy Ferraiolo",
+        "role": "",
+        "usage": "Students at School Without Walls interview historical figures in simulated panel discussions, asking questions and hearing perspectives that bring primary sources to life.",
+        "impact": "Made history personal and debatable, helping students understand that historical figures were real people with complex motivations.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmhw3oazw08sbk10ub24yysha",
+        "name": "CIOB Science PBAT Presentation Coach",
+        "description": "Science PBAT defense preparation coach",
+        "url": "https://www.playlab.ai/project/cmhw3oazw08sbk10ub24yysha",
+        "creator": "Joseph Vincente",
+        "role": "",
+        "usage": "Science students at East Side Community School practice their PBAT presentations with AI feedback on content accuracy, presentation structure, and defense readiness.",
+        "impact": "Gave science students a patient practice partner for high-stakes PBAT defenses, building confidence before presenting to panels.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmiz69new7ggym50u8uwgveuv",
+        "name": "Robot Tina - Upper House PBAT English & History Assistance",
+        "description": "PBAT and college/career planning assistance",
+        "url": "https://www.playlab.ai/project/cmiz69new7ggym50u8uwgveuv",
+        "creator": "Tina Crisfield",
+        "role": "",
+        "usage": "Students at Bronx Lab School use Robot Tina to prepare for PBAT defenses in English and History, and to explore college and career planning with personalized guidance.",
+        "impact": "Extended a veteran teacher's mentorship beyond the classroom, giving students 24/7 access to PBAT preparation and college planning support.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmgr48zc303wlgy0uwg7dwq9p",
+        "name": "Growth Rings Meeting Facilitator",
+        "description": "Meeting facilitation and agenda tool",
+        "url": "https://www.playlab.ai/project/cmgr48zc303wlgy0uwg7dwq9p",
+        "creator": "Moses Ahn",
+        "role": "",
+        "usage": "Staff at Manhattan International HS use Growth Rings to plan and facilitate productive meetings with clear agendas, time management, and structured discussion protocols.",
+        "impact": "Transformed unproductive staff meetings into focused, action-oriented professional conversations.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmhd8y1pq1hbmj50uaolm3uid",
+        "name": "Outliner",
+        "description": "Essay and project outlining assistant",
+        "url": "https://www.playlab.ai/project/cmhd8y1pq1hbmj50uaolm3uid",
+        "creator": "Nathan Weber",
+        "role": "",
+        "usage": "Students at University Heights HS organize their ideas into structured outlines for essays, research papers, and projects before diving into drafts.",
+        "impact": "Reduced the overwhelm of starting large writing assignments by giving students a clear organizational framework.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmhnlyvq400s6lx0uqxv9m9n2",
+        "name": "CIOB Higher-Order Thinking (HOT) Helper",
+        "description": "Higher-order thinking question generator",
+        "url": "https://www.playlab.ai/project/cmhnlyvq400s6lx0uqxv9m9n2",
+        "creator": "Ed Castro",
+        "role": "",
+        "usage": "Teachers use the HOT Helper to transform basic recall questions into higher-order thinking prompts aligned to Bloom's Taxonomy, deepening classroom discussions.",
+        "impact": "Made it easy for CIOB teachers to consistently push student thinking beyond recall and comprehension.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmi50sn1z4ctdjx0uf8g9i7to",
+        "name": "Connect Your Dots",
+        "description": "Cross-curricular connection finder",
+        "url": "https://www.playlab.ai/project/cmi50sn1z4ctdjx0uf8g9i7to",
+        "creator": "Scott Bruss",
+        "role": "",
+        "usage": "CIOB district educators discover connections between their content area and other subjects, building interdisciplinary units that help students see the bigger picture.",
+        "impact": "Broke down subject silos by helping teachers find natural connections across the curriculum.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmkadg28b8nopgn0u14q4lk3h",
+        "name": "The Passion Project",
+        "description": "Student passion project planning tool",
+        "url": "https://www.playlab.ai/project/cmkadg28b8nopgn0u14q4lk3h",
+        "creator": "Mike Taubman",
+        "role": "",
+        "usage": "Students at North Star Academy design and plan independent passion projects, from initial brainstorming through proposal writing and milestone planning.",
+        "impact": "Gave students agency over their own learning by providing structure for pursuing topics they genuinely care about.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmgr2swd93bwpis0vddordmx7",
+        "name": "EchoSpace",
+        "description": "Student reflection and voice amplification tool",
+        "url": "https://www.playlab.ai/project/cmgr2swd93bwpis0vddordmx7",
+        "creator": "Sparkle Peters",
+        "role": "",
+        "usage": "Students at Virtual Innovators Academy use EchoSpace to reflect on their learning, share their perspectives, and build metacognitive awareness through guided journaling.",
+        "impact": "Gave quieter students a safe space to develop and share their ideas before class discussions.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmi5bzjok6190jx0ucagdss9z",
+        "name": "Thinking Through Learning",
+        "description": "Metacognitive learning reflection tool",
+        "url": "https://www.playlab.ai/project/cmi5bzjok6190jx0ucagdss9z",
+        "creator": "JD",
+        "role": "",
+        "usage": "Students at Bronx Lab School reflect on their learning process, identify what strategies worked, and plan how to approach future challenges more effectively.",
+        "impact": "Built students' metacognitive muscles, helping them become more self-aware and strategic learners.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmj0ai1880a8omk0u6fkp6i1f",
+        "name": "MUNDO",
+        "description": "World cultures and global awareness tool",
+        "url": "https://www.playlab.ai/project/cmj0ai1880a8omk0u6fkp6i1f",
+        "creator": "Ed Bringas",
+        "role": "",
+        "usage": "Students at Fannie Lou Hamer Freedom HS explore world cultures, current events, and global perspectives through interactive discussions and research prompts.",
+        "impact": "Expanded students' worldview beyond their immediate community, building global awareness and cultural competency.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmdngd2zt0l0ioe0upd64mhpu",
+        "name": "2025-26 DOK Analyzer V11.25",
+        "description": "Depth of Knowledge lesson analysis tool",
+        "url": "https://www.playlab.ai/project/cmdngd2zt0l0ioe0upd64mhpu",
+        "creator": "Al Sylvia",
+        "role": "",
+        "usage": "Teachers paste their lesson plans and the app analyzes each activity for its Depth of Knowledge level, suggesting modifications to push student thinking to higher DOK levels.",
+        "impact": "Helped CIOB teachers systematically raise the cognitive demand of their lessons by making DOK analysis accessible and actionable.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cm4h5d9ig171z3815m6o7gsh0",
+        "name": "University Heights High School Helper",
+        "description": "Student support tool for University Heights HS",
+        "url": "https://www.playlab.ai/project/cm4h5d9ig171z3815m6o7gsh0",
+        "creator": "Wilnny Abreu",
+        "role": "",
+        "usage": "Students at University Heights High School get academic support, navigate school resources, and find answers to common questions about schedules, requirements, and services.",
+        "impact": "Created an always-available support system for students who might otherwise fall through the cracks at a large school.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cma5cxyxz06xqopiic8helsjx",
+        "name": "GAIMTA - 7. Academic AI Literacy Readiness",
+        "description": "AI readiness assessment tool for district-wide academic literacy",
+        "url": "https://www.playlab.ai/project/cma5cxyxz06xqopiic8helsjx",
+        "creator": "",
+        "role": "",
+        "usage": "District leaders use this tool to assess AI literacy readiness across schools, identifying gaps in educator knowledge and creating targeted professional development plans.",
+        "impact": "Gave CIOB districts a structured framework for evaluating and building AI literacy capacity across their schools.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmjaf2oth10a0kw0uqsakezzv",
+        "name": "REMIX MIHS Data Play",
+        "description": "Data analysis and visualization tool for students",
+        "url": "https://www.playlab.ai/project/cmjaf2oth10a0kw0uqsakezzv",
+        "creator": "Jacob Prarie",
+        "role": "",
+        "usage": "Students at Bronx Lab School analyze real datasets, create visualizations, and draw conclusions — building data literacy through hands-on exploration.",
+        "impact": "Made data analysis accessible and engaging for students, building skills that matter in every career path.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmhzeokrodtfxgf0uoy7jfrt7",
+        "name": "Makers in Action (Co-Pilot Edition)",
+        "description": "Collaborative maker project design tool",
+        "url": "https://www.playlab.ai/project/cmhzeokrodtfxgf0uoy7jfrt7",
+        "creator": "Yousra Hanif",
+        "role": "",
+        "usage": "Students at Flushing International HS collaborate on maker projects with an AI co-pilot that helps them brainstorm designs, troubleshoot construction challenges, and document their process.",
+        "impact": "Added a collaborative dimension to maker education, helping student teams work through design challenges together.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmgr3cz0h0020jz0uq57rb45u",
+        "name": "PBL Design Partner",
+        "description": "Project-based learning design assistant",
+        "url": "https://www.playlab.ai/project/cmgr3cz0h0020jz0uq57rb45u",
+        "creator": "Glen Meinschein",
+        "role": "",
+        "usage": "Teachers at Brooklyn Collaborative design PBL units with support for driving questions, milestone planning, authentic assessments, and real-world connections.",
+        "impact": "Streamlined the complex work of PBL design so teachers could focus on making projects meaningful rather than logistically overwhelming.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmiz47auf012ljr0uljchkrpo",
+        "name": "Near Peer Feedback Tool",
+        "description": "Peer feedback support for student writing",
+        "url": "https://www.playlab.ai/project/cmiz47auf012ljr0uljchkrpo",
+        "creator": "Brendan Harney",
+        "role": "",
+        "usage": "Students at Bronx Lab School give each other structured feedback on writing assignments, guided by the app's framework for constructive peer review.",
+        "impact": "Transformed peer review from superficial 'nice job' comments into substantive, skill-building feedback conversations.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
+        ]
+      },
+      {
+        "id": "cmgr3aov43exfis0v6wxcyhzz",
+        "name": "Research Coach: Keyword Searching",
+        "description": "Research skills and keyword strategy coach",
+        "url": "https://www.playlab.ai/project/cmgr3aov43exfis0v6wxcyhzz",
+        "creator": "Dexter Wilson",
+        "role": "",
+        "usage": "Students at Lyons Community School learn to develop effective search strategies, choose keywords, evaluate sources, and refine research questions for academic projects.",
+        "impact": "Taught students the foundational research skills that transfer across every subject and into college-level work.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "CIOB"
         ]
       }
     ]
@@ -3005,6 +3454,24 @@
     "appCount": 16,
     "apps": [
       {
+        "id": "judy-h-humanities-classroom-funmaker",
+        "name": "Judy H., Humanities Classroom Funmaker",
+        "description": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life.",
+        "url": "https://www.playlab.ai/community/clv33f7hw006yv3fkdkj47o41",
+        "creator": "Nkomo Morris",
+        "role": "Social Studies Teacher",
+        "usage": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life. Instead of spending hours designing engaging review activities, teachers describe the concept they're teaching and get a playable game or activity they can run in class that same day.",
+        "impact": "Students are retaining social studies content at deeper levels because they're learning through play rather than passive note-taking. Teachers have found that the game-based approach sparks richer class discussions, with students making connections between concepts they might have missed through traditional instruction alone.",
+        "sessions": 1782,
+        "iterations": 52,
+        "tags": [
+          "Social Studies / History",
+          "Gamified Learning",
+          "Teacher Tools",
+          "Creative & Engagement"
+        ]
+      },
+      {
         "id": "cmikt5umv18zqky0u20plpkf6",
         "name": "Drama Generator 2000",
         "description": "Drama scene generator",
@@ -3018,6 +3485,23 @@
         "tags": [
           "Music & Performing Arts",
           "Creative & Engagement"
+        ]
+      },
+      {
+        "id": "bad-idea-bot",
+        "name": "Bad Idea Bot",
+        "description": "Students interact with the bot to generate hilariously absurd ideas that become springboards for creative writing.",
+        "url": "https://www.playlab.ai/community/clr9u804202sdq89fd7tlqeo5",
+        "creator": "Carey Swanson",
+        "role": "",
+        "usage": "Students interact with the bot to generate hilariously absurd ideas that become springboards for creative writing. Teachers use it as a warm-up or writing prompt generator that gets even the most reluctant writers excited to put pen to paper, turning laughter into the gateway for storytelling and comic creation.",
+        "impact": "Students who typically resist writing assignments are now eagerly producing stories and comics because the ideas feel fun rather than forced. The low-stakes, humor-driven approach has lowered the barrier to creative expression, helping kids discover that writing can be joyful and that their wildest ideas are worth exploring.",
+        "sessions": 1204,
+        "iterations": 23,
+        "tags": [
+          "ELA / Literacy",
+          "Creative & Engagement",
+          "Elementary"
         ]
       },
       {
@@ -3058,8 +3542,8 @@
         "name": "Edison - Idea Generator for 21st Century Projects",
         "description": "Teachers and students brainstorm innovative projects",
         "url": "https://www.playlab.ai/project/cm1zj2bc60f5ia6mz0nbojenu",
-        "creator": "",
-        "role": "",
+        "creator": "Alaina Turner",
+        "role": "Teacher Dexter High School",
         "usage": "Teachers and students brainstorm innovative projects",
         "impact": "Sparked more ambitious, interdisciplinary project ideas",
         "sessions": 548,
@@ -3201,41 +3685,6 @@
         ]
       },
       {
-        "id": "judy-h-humanities-classroom-funmaker",
-        "name": "Judy H., Humanities Classroom Funmaker",
-        "description": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life.",
-        "url": "https://www.playlab.ai/community/clv33f7hw006yv3fkdkj47o41",
-        "creator": "Nkomo Morris",
-        "role": "Social Studies Teacher",
-        "usage": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life. Instead of spending hours designing engaging review activities, teachers describe the concept they're teaching and get a playable game or activity they can run in class that same day.",
-        "impact": "Students are retaining social studies content at deeper levels because they're learning through play rather than passive note-taking. Teachers have found that the game-based approach sparks richer class discussions, with students making connections between concepts they might have missed through traditional instruction alone.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Social Studies / History",
-          "Gamified Learning",
-          "Teacher Tools",
-          "Creative & Engagement"
-        ]
-      },
-      {
-        "id": "bad-idea-bot",
-        "name": "Bad Idea Bot",
-        "description": "Students interact with the bot to generate hilariously absurd ideas that become springboards for creative writing.",
-        "url": "https://www.playlab.ai/community/clr9u804202sdq89fd7tlqeo5",
-        "creator": "Carey Swanson",
-        "role": "",
-        "usage": "Students interact with the bot to generate hilariously absurd ideas that become springboards for creative writing. Teachers use it as a warm-up or writing prompt generator that gets even the most reluctant writers excited to put pen to paper, turning laughter into the gateway for storytelling and comic creation.",
-        "impact": "Students who typically resist writing assignments are now eagerly producing stories and comics because the ideas feel fun rather than forced. The low-stakes, humor-driven approach has lowered the barrier to creative expression, helping kids discover that writing can be joyful and that their wildest ideas are worth exploring.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "ELA / Literacy",
-          "Creative & Engagement",
-          "Elementary"
-        ]
-      },
-      {
         "id": "lyrics-to-learning",
         "name": "Lyrics to Learning",
         "description": "Transforms song lyrics into cross-curricular learning opportunities, helping students analyze language, themes, and cultural context through music they already love.",
@@ -3262,7 +3711,7 @@
         "usage": "Students use the Brainstorm Engine to discover passion project topics at the intersection of their personal interests, community connections, and actionable problems. The app guides them through a structured brainstorming process that ensures their project idea is both meaningful to them and realistic to execute.",
         "impact": "Students are choosing passion project topics with greater intentionality and follow-through because the ideas emerge from their own interests and community context rather than being assigned. The focus on locus of control has helped students select projects they can actually complete, reducing frustration and increasing the quality of final products.",
         "sessions": 0,
-        "iterations": 0,
+        "iterations": 16,
         "tags": [
           "Project-Based Learning",
           "SEL / Wellbeing",
@@ -4218,6 +4667,23 @@
         ]
       },
       {
+        "id": "bad-idea-bot",
+        "name": "Bad Idea Bot",
+        "description": "Students interact with the bot to generate hilariously absurd ideas that become springboards for creative writing.",
+        "url": "https://www.playlab.ai/community/clr9u804202sdq89fd7tlqeo5",
+        "creator": "Carey Swanson",
+        "role": "",
+        "usage": "Students interact with the bot to generate hilariously absurd ideas that become springboards for creative writing. Teachers use it as a warm-up or writing prompt generator that gets even the most reluctant writers excited to put pen to paper, turning laughter into the gateway for storytelling and comic creation.",
+        "impact": "Students who typically resist writing assignments are now eagerly producing stories and comics because the ideas feel fun rather than forced. The low-stakes, humor-driven approach has lowered the barrier to creative expression, helping kids discover that writing can be joyful and that their wildest ideas are worth exploring.",
+        "sessions": 1204,
+        "iterations": 23,
+        "tags": [
+          "ELA / Literacy",
+          "Creative & Engagement",
+          "Elementary"
+        ]
+      },
+      {
         "id": "clw4xs5dk076yhhb8yh24cpe3",
         "name": "GrammarGenius",
         "description": "Students master grammar rules with feedback",
@@ -4587,8 +5053,8 @@
         "name": "Debate Dojo (v3)",
         "description": "Interactive debate practice",
         "url": "https://www.playlab.ai/project/cm8hrhks00k0eek3ko4ega331",
-        "creator": "",
-        "role": "",
+        "creator": "Glen Meinshein",
+        "role": "Teacher Brooklyn Collaborative School",
         "usage": "Students practice argumentation",
         "impact": "Built structured argumentation skills transferring to writing and civic participation",
         "sessions": 273,
@@ -5049,23 +5515,6 @@
         ]
       },
       {
-        "id": "bad-idea-bot",
-        "name": "Bad Idea Bot",
-        "description": "Students interact with the bot to generate hilariously absurd ideas that become springboards for creative writing.",
-        "url": "https://www.playlab.ai/community/clr9u804202sdq89fd7tlqeo5",
-        "creator": "Carey Swanson",
-        "role": "",
-        "usage": "Students interact with the bot to generate hilariously absurd ideas that become springboards for creative writing. Teachers use it as a warm-up or writing prompt generator that gets even the most reluctant writers excited to put pen to paper, turning laughter into the gateway for storytelling and comic creation.",
-        "impact": "Students who typically resist writing assignments are now eagerly producing stories and comics because the ideas feel fun rather than forced. The low-stakes, humor-driven approach has lowered the barrier to creative expression, helping kids discover that writing can be joyful and that their wildest ideas are worth exploring.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "ELA / Literacy",
-          "Creative & Engagement",
-          "Elementary"
-        ]
-      },
-      {
         "id": "lyrics-to-learning",
         "name": "Lyrics to Learning",
         "description": "Transforms song lyrics into cross-curricular learning opportunities, helping students analyze language, themes, and cultural context through music they already love.",
@@ -5124,7 +5573,8 @@
         "tags": [
           "Teacher Tools",
           "ELL / ESL",
-          "Professional Development"
+          "Professional Development",
+          "CIOB"
         ]
       },
       {
@@ -5774,6 +6224,23 @@
         ]
       },
       {
+        "id": "bad-idea-bot",
+        "name": "Bad Idea Bot",
+        "description": "Students interact with the bot to generate hilariously absurd ideas that become springboards for creative writing.",
+        "url": "https://www.playlab.ai/community/clr9u804202sdq89fd7tlqeo5",
+        "creator": "Carey Swanson",
+        "role": "",
+        "usage": "Students interact with the bot to generate hilariously absurd ideas that become springboards for creative writing. Teachers use it as a warm-up or writing prompt generator that gets even the most reluctant writers excited to put pen to paper, turning laughter into the gateway for storytelling and comic creation.",
+        "impact": "Students who typically resist writing assignments are now eagerly producing stories and comics because the ideas feel fun rather than forced. The low-stakes, humor-driven approach has lowered the barrier to creative expression, helping kids discover that writing can be joyful and that their wildest ideas are worth exploring.",
+        "sessions": 1204,
+        "iterations": 23,
+        "tags": [
+          "ELA / Literacy",
+          "Creative & Engagement",
+          "Elementary"
+        ]
+      },
+      {
         "id": "cmlfb7tlk0ljlqt0ufu5bgwjr",
         "name": "Cipher's Secret: Break the Word Code",
         "description": "Elementary learners build vocabulary and decoding skills through word puzzle challenges that feel more like a game than a lesson. Students compete against themselves to crack increasingly complex word codes.",
@@ -6012,23 +6479,6 @@
           "Family & Community",
           "Elementary",
           "Middle School"
-        ]
-      },
-      {
-        "id": "bad-idea-bot",
-        "name": "Bad Idea Bot",
-        "description": "Students interact with the bot to generate hilariously absurd ideas that become springboards for creative writing.",
-        "url": "https://www.playlab.ai/community/clr9u804202sdq89fd7tlqeo5",
-        "creator": "Carey Swanson",
-        "role": "",
-        "usage": "Students interact with the bot to generate hilariously absurd ideas that become springboards for creative writing. Teachers use it as a warm-up or writing prompt generator that gets even the most reluctant writers excited to put pen to paper, turning laughter into the gateway for storytelling and comic creation.",
-        "impact": "Students who typically resist writing assignments are now eagerly producing stories and comics because the ideas feel fun rather than forced. The low-stakes, humor-driven approach has lowered the barrier to creative expression, helping kids discover that writing can be joyful and that their wildest ideas are worth exploring.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "ELA / Literacy",
-          "Creative & Engagement",
-          "Elementary"
         ]
       }
     ]
@@ -7421,6 +7871,24 @@
         ]
       },
       {
+        "id": "judy-h-humanities-classroom-funmaker",
+        "name": "Judy H., Humanities Classroom Funmaker",
+        "description": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life.",
+        "url": "https://www.playlab.ai/community/clv33f7hw006yv3fkdkj47o41",
+        "creator": "Nkomo Morris",
+        "role": "Social Studies Teacher",
+        "usage": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life. Instead of spending hours designing engaging review activities, teachers describe the concept they're teaching and get a playable game or activity they can run in class that same day.",
+        "impact": "Students are retaining social studies content at deeper levels because they're learning through play rather than passive note-taking. Teachers have found that the game-based approach sparks richer class discussions, with students making connections between concepts they might have missed through traditional instruction alone.",
+        "sessions": 1782,
+        "iterations": 52,
+        "tags": [
+          "Social Studies / History",
+          "Gamified Learning",
+          "Teacher Tools",
+          "Creative & Engagement"
+        ]
+      },
+      {
         "id": "cm85xuf1w02n2y88x5u724kia",
         "name": "2025 Reality Store (Monthly budget)",
         "description": "Financial literacy simulation",
@@ -7593,8 +8061,8 @@
         "name": "Debate Dojo (v3)",
         "description": "Interactive debate practice",
         "url": "https://www.playlab.ai/project/cm8hrhks00k0eek3ko4ega331",
-        "creator": "",
-        "role": "",
+        "creator": "Glen Meinshein",
+        "role": "Teacher Brooklyn Collaborative School",
         "usage": "Students practice argumentation",
         "impact": "Built structured argumentation skills transferring to writing and civic participation",
         "sessions": 273,
@@ -7623,7 +8091,7 @@
       },
       {
         "id": "cmgzlun6w00mqjw0uwmao5qgt",
-        "name": "12 ANGRY MEN SIMULATION",
+        "name": "12 Angry Men SImulator",
         "description": "Courtroom jury simulation — built by Gabriela Caso de los Cobos Tapia (Adjunct Professor) to support educators and students.",
         "url": "https://www.playlab.ai/project/cmgzlun6w00mqjw0uwmao5qgt",
         "creator": "Gabriela Caso de los Cobos Tapia",
@@ -7838,24 +8306,6 @@
           "Student-Built Apps",
           "Fairfax",
           "Gamified Learning"
-        ]
-      },
-      {
-        "id": "judy-h-humanities-classroom-funmaker",
-        "name": "Judy H., Humanities Classroom Funmaker",
-        "description": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life.",
-        "url": "https://www.playlab.ai/community/clv33f7hw006yv3fkdkj47o41",
-        "creator": "Nkomo Morris",
-        "role": "Social Studies Teacher",
-        "usage": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life. Instead of spending hours designing engaging review activities, teachers describe the concept they're teaching and get a playable game or activity they can run in class that same day.",
-        "impact": "Students are retaining social studies content at deeper levels because they're learning through play rather than passive note-taking. Teachers have found that the game-based approach sparks richer class discussions, with students making connections between concepts they might have missed through traditional instruction alone.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Social Studies / History",
-          "Gamified Learning",
-          "Teacher Tools",
-          "Creative & Engagement"
         ]
       },
       {
@@ -9055,7 +9505,7 @@
       },
       {
         "id": "cmgzlun6w00mqjw0uwmao5qgt",
-        "name": "12 ANGRY MEN SIMULATION",
+        "name": "12 Angry Men SImulator",
         "description": "Courtroom jury simulation — built by Gabriela Caso de los Cobos Tapia (Adjunct Professor) to support educators and students.",
         "url": "https://www.playlab.ai/project/cmgzlun6w00mqjw0uwmao5qgt",
         "creator": "Gabriela Caso de los Cobos Tapia",
@@ -13366,8 +13816,8 @@
         "name": "Debate Dojo (v3)",
         "description": "Interactive debate practice",
         "url": "https://www.playlab.ai/project/cm8hrhks00k0eek3ko4ega331",
-        "creator": "",
-        "role": "",
+        "creator": "Glen Meinshein",
+        "role": "Teacher Brooklyn Collaborative School",
         "usage": "Students practice argumentation",
         "impact": "Built structured argumentation skills transferring to writing and civic participation",
         "sessions": 273,
@@ -13952,7 +14402,8 @@
         "tags": [
           "Teacher Tools",
           "ELL / ESL",
-          "Professional Development"
+          "Professional Development",
+          "CIOB"
         ]
       },
       {
@@ -14472,6 +14923,22 @@
         ]
       },
       {
+        "id": "learn-about-insects",
+        "name": "Learn About Insects",
+        "description": "Students explore the world of insects through an interactive guide that teaches them about different species, their habitats, and behaviors.",
+        "url": "https://www.playlab.ai/community/clygdxu4z06btcx3lutzr7ck7",
+        "creator": "Gretchen Gibbs",
+        "role": "Professor",
+        "usage": "Students explore the world of insects through an interactive guide that teaches them about different species, their habitats, and behaviors. The app then helps them brainstorm and design their own everyday science projects inspired by what they've learned about the insect world.",
+        "impact": "Students who previously saw science as something that only happens in a lab are now spotting opportunities for inquiry in their own backyards. Teachers report that the connection between insects and hands-on projects has sparked a deeper curiosity about the natural world and made science feel accessible and personal.",
+        "sessions": 2642,
+        "iterations": 97,
+        "tags": [
+          "Science / STEM",
+          "Project-Based Learning"
+        ]
+      },
+      {
         "id": "cllwjaa2g00bur57sdxxas8bk",
         "name": "Project Toni - a writing TA",
         "description": "Students use Toni for writing feedback during projects",
@@ -14508,8 +14975,8 @@
         "name": "Edison - Idea Generator for 21st Century Projects",
         "description": "Teachers and students brainstorm innovative projects",
         "url": "https://www.playlab.ai/project/cm1zj2bc60f5ia6mz0nbojenu",
-        "creator": "",
-        "role": "",
+        "creator": "Alaina Turner",
+        "role": "Teacher Dexter High School",
         "usage": "Teachers and students brainstorm innovative projects",
         "impact": "Sparked more ambitious, interdisciplinary project ideas",
         "sessions": 548,
@@ -14878,22 +15345,6 @@
         ]
       },
       {
-        "id": "learn-about-insects",
-        "name": "Learn About Insects",
-        "description": "Students explore the world of insects through an interactive guide that teaches them about different species, their habitats, and behaviors.",
-        "url": "https://www.playlab.ai/community/clygdxu4z06btcx3lutzr7ck7",
-        "creator": "Gretchen Gibbs",
-        "role": "Professor",
-        "usage": "Students explore the world of insects through an interactive guide that teaches them about different species, their habitats, and behaviors. The app then helps them brainstorm and design their own everyday science projects inspired by what they've learned about the insect world.",
-        "impact": "Students who previously saw science as something that only happens in a lab are now spotting opportunities for inquiry in their own backyards. Teachers report that the connection between insects and hands-on projects has sparked a deeper curiosity about the natural world and made science feel accessible and personal.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Science / STEM",
-          "Project-Based Learning"
-        ]
-      },
-      {
         "id": "cs-and-physical-computing-integration-app",
         "name": "CS and Physical Computing Integration App",
         "description": "Supports teachers with project-based learning lesson planning and integration design using physical computing such as micro:bits and Hummingbird Kits.",
@@ -15011,7 +15462,7 @@
         "usage": "Students use the Brainstorm Engine to discover passion project topics at the intersection of their personal interests, community connections, and actionable problems. The app guides them through a structured brainstorming process that ensures their project idea is both meaningful to them and realistic to execute.",
         "impact": "Students are choosing passion project topics with greater intentionality and follow-through because the ideas emerge from their own interests and community context rather than being assigned. The focus on locus of control has helped students select projects they can actually complete, reducing frustration and increasing the quality of final products.",
         "sessions": 0,
-        "iterations": 0,
+        "iterations": 16,
         "tags": [
           "Project-Based Learning",
           "SEL / Wellbeing",
@@ -15860,7 +16311,7 @@
         "usage": "Students use the Brainstorm Engine to discover passion project topics at the intersection of their personal interests, community connections, and actionable problems. The app guides them through a structured brainstorming process that ensures their project idea is both meaningful to them and realistic to execute.",
         "impact": "Students are choosing passion project topics with greater intentionality and follow-through because the ideas emerge from their own interests and community context rather than being assigned. The focus on locus of control has helped students select projects they can actually complete, reducing frustration and increasing the quality of final products.",
         "sessions": 0,
-        "iterations": 0,
+        "iterations": 16,
         "tags": [
           "Project-Based Learning",
           "SEL / Wellbeing",
@@ -16640,23 +17091,6 @@
         ]
       },
       {
-        "id": "cm99vh4gt04em9qnksxnqa5jd",
-        "name": "JV3 Cows Unit CER-i",
-        "description": "Students practice Claim-Evidence-Reasoning",
-        "url": "https://www.playlab.ai/project/cm99vh4gt04em9qnksxnqa5jd",
-        "creator": "",
-        "role": "",
-        "usage": "Students practice Claim-Evidence-Reasoning",
-        "impact": "Developed scientific argumentation skills for NGSS assessments",
-        "sessions": 117,
-        "iterations": 1,
-        "tags": [
-          "Middle School",
-          "Science / STEM",
-          "Assessment & Feedback"
-        ]
-      },
-      {
         "id": "cmd93v07f06h5ji0uae4zk9lj",
         "name": "Year 1 - Biology - Subject Specific App",
         "description": "Year 1 biology curriculum",
@@ -16754,6 +17188,22 @@
         "tags": [
           "Study Partners",
           "Science / STEM"
+        ]
+      },
+      {
+        "id": "learn-about-insects",
+        "name": "Learn About Insects",
+        "description": "Students explore the world of insects through an interactive guide that teaches them about different species, their habitats, and behaviors.",
+        "url": "https://www.playlab.ai/community/clygdxu4z06btcx3lutzr7ck7",
+        "creator": "Gretchen Gibbs",
+        "role": "Professor",
+        "usage": "Students explore the world of insects through an interactive guide that teaches them about different species, their habitats, and behaviors. The app then helps them brainstorm and design their own everyday science projects inspired by what they've learned about the insect world.",
+        "impact": "Students who previously saw science as something that only happens in a lab are now spotting opportunities for inquiry in their own backyards. Teachers report that the connection between insects and hands-on projects has sparked a deeper curiosity about the natural world and made science feel accessible and personal.",
+        "sessions": 2642,
+        "iterations": 97,
+        "tags": [
+          "Science / STEM",
+          "Project-Based Learning"
         ]
       },
       {
@@ -17150,6 +17600,23 @@
         ]
       },
       {
+        "id": "cm99vh4gt04em9qnksxnqa5jd",
+        "name": "JV3 Cows Unit CER-i",
+        "description": "Students practice Claim-Evidence-Reasoning",
+        "url": "https://www.playlab.ai/project/cm99vh4gt04em9qnksxnqa5jd",
+        "creator": "",
+        "role": "",
+        "usage": "Students practice Claim-Evidence-Reasoning",
+        "impact": "Developed scientific argumentation skills for NGSS assessments",
+        "sessions": 117,
+        "iterations": 1,
+        "tags": [
+          "Middle School",
+          "Science / STEM",
+          "Assessment & Feedback"
+        ]
+      },
+      {
         "id": "cmhc3lccm3d9wld0uhy87lh86",
         "name": "SMCISD Science STAAR Question Generator",
         "description": "San Marcos CISD teachers generate unlimited STAAR-aligned science questions rather than recycling the same released tests year after year.",
@@ -17303,22 +17770,6 @@
           "Student-Built Apps",
           "Fairfax",
           "Niche & Emerging"
-        ]
-      },
-      {
-        "id": "learn-about-insects",
-        "name": "Learn About Insects",
-        "description": "Students explore the world of insects through an interactive guide that teaches them about different species, their habitats, and behaviors.",
-        "url": "https://www.playlab.ai/community/clygdxu4z06btcx3lutzr7ck7",
-        "creator": "Gretchen Gibbs",
-        "role": "Professor",
-        "usage": "Students explore the world of insects through an interactive guide that teaches them about different species, their habitats, and behaviors. The app then helps them brainstorm and design their own everyday science projects inspired by what they've learned about the insect world.",
-        "impact": "Students who previously saw science as something that only happens in a lab are now spotting opportunities for inquiry in their own backyards. Teachers report that the connection between insects and hands-on projects has sparked a deeper curiosity about the natural world and made science feel accessible and personal.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Science / STEM",
-          "Project-Based Learning"
         ]
       },
       {
@@ -17495,6 +17946,24 @@
         ]
       },
       {
+        "id": "judy-h-humanities-classroom-funmaker",
+        "name": "Judy H., Humanities Classroom Funmaker",
+        "description": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life.",
+        "url": "https://www.playlab.ai/community/clv33f7hw006yv3fkdkj47o41",
+        "creator": "Nkomo Morris",
+        "role": "Social Studies Teacher",
+        "usage": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life. Instead of spending hours designing engaging review activities, teachers describe the concept they're teaching and get a playable game or activity they can run in class that same day.",
+        "impact": "Students are retaining social studies content at deeper levels because they're learning through play rather than passive note-taking. Teachers have found that the game-based approach sparks richer class discussions, with students making connections between concepts they might have missed through traditional instruction alone.",
+        "sessions": 1782,
+        "iterations": 52,
+        "tags": [
+          "Social Studies / History",
+          "Gamified Learning",
+          "Teacher Tools",
+          "Creative & Engagement"
+        ]
+      },
+      {
         "id": "cm19koyzx08di79xb6kuldez9",
         "name": "Akilah, African American History AI Tutor",
         "description": "AI tutor for African American history",
@@ -17594,7 +18063,7 @@
       },
       {
         "id": "cmgzlun6w00mqjw0uwmao5qgt",
-        "name": "12 ANGRY MEN SIMULATION",
+        "name": "12 Angry Men SImulator",
         "description": "Courtroom jury simulation — built by Gabriela Caso de los Cobos Tapia (Adjunct Professor) to support educators and students.",
         "url": "https://www.playlab.ai/project/cmgzlun6w00mqjw0uwmao5qgt",
         "creator": "Gabriela Caso de los Cobos Tapia",
@@ -17741,24 +18210,6 @@
         "tags": [
           "Social Studies / History",
           "Gamified Learning"
-        ]
-      },
-      {
-        "id": "judy-h-humanities-classroom-funmaker",
-        "name": "Judy H., Humanities Classroom Funmaker",
-        "description": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life.",
-        "url": "https://www.playlab.ai/community/clv33f7hw006yv3fkdkj47o41",
-        "creator": "Nkomo Morris",
-        "role": "Social Studies Teacher",
-        "usage": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life. Instead of spending hours designing engaging review activities, teachers describe the concept they're teaching and get a playable game or activity they can run in class that same day.",
-        "impact": "Students are retaining social studies content at deeper levels because they're learning through play rather than passive note-taking. Teachers have found that the game-based approach sparks richer class discussions, with students making connections between concepts they might have missed through traditional instruction alone.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Social Studies / History",
-          "Gamified Learning",
-          "Teacher Tools",
-          "Creative & Engagement"
         ]
       },
       {
@@ -19248,7 +19699,26 @@
         "tags": [
           "Teacher Tools",
           "ELL / ESL",
-          "Professional Development"
+          "Professional Development",
+          "CIOB"
+        ]
+      },
+      {
+        "id": "judy-h-humanities-classroom-funmaker",
+        "name": "Judy H., Humanities Classroom Funmaker",
+        "description": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life.",
+        "url": "https://www.playlab.ai/community/clv33f7hw006yv3fkdkj47o41",
+        "creator": "Nkomo Morris",
+        "role": "Social Studies Teacher",
+        "usage": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life. Instead of spending hours designing engaging review activities, teachers describe the concept they're teaching and get a playable game or activity they can run in class that same day.",
+        "impact": "Students are retaining social studies content at deeper levels because they're learning through play rather than passive note-taking. Teachers have found that the game-based approach sparks richer class discussions, with students making connections between concepts they might have missed through traditional instruction alone.",
+        "sessions": 1782,
+        "iterations": 52,
+        "tags": [
+          "Social Studies / History",
+          "Gamified Learning",
+          "Teacher Tools",
+          "Creative & Engagement"
         ]
       },
       {
@@ -20265,24 +20735,6 @@
           "Data-Driven Instruction",
           "Student-Built Apps",
           "Fairfax"
-        ]
-      },
-      {
-        "id": "judy-h-humanities-classroom-funmaker",
-        "name": "Judy H., Humanities Classroom Funmaker",
-        "description": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life.",
-        "url": "https://www.playlab.ai/community/clv33f7hw006yv3fkdkj47o41",
-        "creator": "Nkomo Morris",
-        "role": "Social Studies Teacher",
-        "usage": "Social studies teachers use Judy H. to quickly generate classroom-ready games and hands-on activities that bring concepts to life. Instead of spending hours designing engaging review activities, teachers describe the concept they're teaching and get a playable game or activity they can run in class that same day.",
-        "impact": "Students are retaining social studies content at deeper levels because they're learning through play rather than passive note-taking. Teachers have found that the game-based approach sparks richer class discussions, with students making connections between concepts they might have missed through traditional instruction alone.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Social Studies / History",
-          "Gamified Learning",
-          "Teacher Tools",
-          "Creative & Engagement"
         ]
       },
       {
