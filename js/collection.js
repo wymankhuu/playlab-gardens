@@ -275,6 +275,10 @@ function renderCollectionHeader(col) {
   title.textContent = col.name;
   desc.textContent = getCollectionDescription(col);
 
+  // Set accent color on apps grid for card left borders
+  const appsGrid = document.getElementById('apps-grid');
+  if (appsGrid) appsGrid.style.setProperty('--collection-accent', color);
+
   // Set hero accent color and background image by type
   const hero = document.querySelector('.collection-hero');
   if (hero) {

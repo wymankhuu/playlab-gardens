@@ -666,6 +666,13 @@ function openAppModal(app) {
   // Admin edit panel
   renderAdminPanel(app);
 
+  // Set drawer accent from the collection page's accent color or first tag
+  const gridAccent = document.getElementById('apps-grid');
+  const accentColor = gridAccent ? getComputedStyle(gridAccent).getPropertyValue('--collection-accent').trim() : '';
+  if (accentColor) {
+    drawer.style.setProperty('--drawer-accent', accentColor);
+  }
+
   // Open
   overlay.classList.add('active');
   drawer.classList.add('active');
