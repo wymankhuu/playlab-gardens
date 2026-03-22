@@ -3469,7 +3469,7 @@ img {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .nav-links {
     display: none;
     position: absolute;
