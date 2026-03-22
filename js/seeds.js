@@ -2,18 +2,21 @@
    Playlab Gardens — Seeds Page
    ========================================== */
 
+let _seedsData = null;
+
 document.addEventListener('DOMContentLoaded', async () => {
   await loadSeeds();
+  initSeedsSearch();
 });
 
 async function loadSeeds() {
   const grid = document.getElementById('seeds-grid');
 
   try {
-    const data = await fetchJSON('/data/seeds.json');
+    _seedsData = await fetchJSON('/data/seeds.json');
 
-    const collections = data.collections || [];
-    const allSeeds = data.seeds || (Array.isArray(data) ? data : []);
+    const collections = _seedsData.collections || [];
+    const allSeeds = _seedsData.seeds || (Array.isArray(_seedsData) ? _seedsData : []);
 
     if (collections.length === 0 && allSeeds.length === 0) {
       grid.innerHTML = `
@@ -61,7 +64,7 @@ function renderSeedSections(collections) {
       ? `<p class="seed-collection-desc">${escapeHtml(col.description)}</p>`
       : '';
 
-    const viewAllHTML = `<a href="collection.html?id=${escapeHtml(col.id)}" class="seed-show-all-btn">View all →</a>`;
+    const shareUrl = `${window.location.origin}/collection.html?id=${col.id}`;
 
     return `
       <div class="seed-collection-section" style="--seed-accent: ${accentColor};">
@@ -73,7 +76,12 @@ function renderSeedSections(collections) {
               <span class="seed-collection-count">${col.apps.length} seed${col.apps.length !== 1 ? 's' : ''}</span>
             </div>
           </div>
-          ${viewAllHTML}
+          <div class="seed-collection-actions">
+            <button class="share-link-btn" data-url="${escapeHtml(shareUrl)}" title="Copy share link" aria-label="Copy share link">
+              <i data-lucide="link" style="width:16px;height:16px;"></i>
+            </button>
+            <a href="collection.html?id=${escapeHtml(col.id)}" class="seed-show-all-btn">View all →</a>
+          </div>
         </div>
         ${descHTML}
         <div class="seed-collection-cards">
@@ -84,19 +92,62 @@ function renderSeedSections(collections) {
   }).join('');
 }
 
-// Toggle show all seeds in a section
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.seed-show-all-btn');
-  if (!btn) return;
-  const colId = btn.dataset.collectionId;
-  const allGrid = document.getElementById(`seed-all-${colId}`);
-  if (!allGrid) return;
+// ---- Search ----
+function initSeedsSearch() {
+  const input = document.getElementById('seeds-search-input');
+  const clearBtn = document.getElementById('seeds-search-clear');
+  if (!input) return;
 
-  if (allGrid.style.display === 'none') {
-    allGrid.style.display = '';
-    btn.textContent = 'Show fewer ←';
-  } else {
-    allGrid.style.display = 'none';
-    btn.textContent = 'View all →';
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    clearBtn.style.display = q ? '' : 'none';
+    filterSeeds(q);
+  });
+
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    clearBtn.style.display = 'none';
+    filterSeeds('');
+    input.focus();
+  });
+}
+
+function filterSeeds(query) {
+  const grid = document.getElementById('seeds-grid');
+  if (!_seedsData) return;
+
+  const allSeeds = _seedsData.seeds || [];
+  const collections = _seedsData.collections || [];
+
+  if (!query) {
+    // Show collections view
+    if (collections.length > 0) {
+      grid.innerHTML = renderSeedSections(collections);
+    } else {
+      grid.innerHTML = allSeeds.map(seedPreviewCard).join('');
+    }
+    if (window.lucide) lucide.createIcons();
+    return;
   }
-});
+
+  // Filter all seeds by query
+  const matches = allSeeds.filter(s =>
+    s.name.toLowerCase().includes(query) ||
+    (s.description || '').toLowerCase().includes(query) ||
+    (s.tags || []).some(t => t.toLowerCase().includes(query))
+  );
+
+  if (matches.length === 0) {
+    grid.innerHTML = `
+      <div class="seeds-empty">
+        <div class="seeds-empty-icon">🔍</div>
+        <h3>No seeds found</h3>
+        <p>Try a different search term.</p>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = `<div class="seeds-search-results">${matches.map(seedPreviewCard).join('')}</div>`;
+}
+

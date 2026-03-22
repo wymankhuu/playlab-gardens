@@ -6,6 +6,8 @@
     { "source": "/api/app-labels", "destination": "/api/app-labels" },
     { "source": "/api/admin-overrides", "destination": "/api/admin-overrides" },
     { "source": "/api/admin-save", "destination": "/api/admin-save" },
-    { "source": "/api/submit-app", "destination": "/api/submit-app" }
+    { "source": "/api/submit-app", "destination": "/api/submit-app" },
+    { "source": "/api/star", "destination": "/api/star" },
+    { "source": "/api/stars", "destination": "/api/stars" }
   ]
 }

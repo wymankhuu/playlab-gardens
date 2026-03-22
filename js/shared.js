@@ -2,8 +2,9 @@
    Playlab Gardens — Shared Utilities
    ========================================== */
 
-// ---- Star / Favorite System (localStorage) ----
+// ---- Star / Favorite System (localStorage + API) ----
 const STARS_KEY = 'playlab-gardens-stars';
+const _starCountCache = {};
 
 function getStarredApps() {
   try { return JSON.parse(localStorage.getItem(STARS_KEY)) || {}; } catch { return {}; }
@@ -15,23 +16,61 @@ function isStarred(appId) {
 
 function toggleStar(appId) {
   const stars = getStarredApps();
-  if (stars[appId]) {
-    delete stars[appId];
-  } else {
+  const nowStarred = !stars[appId];
+  if (nowStarred) {
     stars[appId] = Date.now();
+  } else {
+    delete stars[appId];
   }
   localStorage.setItem(STARS_KEY, JSON.stringify(stars));
-  return !!stars[appId];
+
+  // Call API to update persistent count
+  fetch('/api/star', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ appId, action: nowStarred ? 'star' : 'unstar' }),
+  })
+    .then(r => r.json())
+    .then(data => {
+      if (data.count != null) {
+        _starCountCache[appId] = data.count;
+        updateStarCountDisplays(appId, data.count);
+      }
+    })
+    .catch(() => {});
+
+  return nowStarred;
 }
 
-function getStarCount(appId) {
-  // localStorage only tracks this user's stars — count is 0 or 1 per user
-  return isStarred(appId) ? 1 : 0;
+function updateStarCountDisplays(appId, count) {
+  // Update card badge
+  const cardBtn = document.querySelector(`.app-star-btn[data-app-id="${appId}"]`);
+  if (cardBtn) {
+    const countEl = cardBtn.querySelector('.star-count');
+    if (countEl) countEl.textContent = count > 0 ? count : '';
+  }
+  // Update drawer count
+  const drawerCount = document.getElementById('drawer-star-count');
+  if (drawerCount && drawerCount.dataset.appId === appId) {
+    drawerCount.textContent = count > 0 ? `★ ${count}` : '★ 0';
+  }
+}
+
+async function loadStarCounts(appIds) {
+  if (!appIds || appIds.length === 0) return;
+  const unique = [...new Set(appIds)].slice(0, 100);
+  try {
+    const res = await fetch(`/api/stars?ids=${unique.join(',')}`);
+    const counts = await res.json();
+    for (const [id, count] of Object.entries(counts)) {
+      _starCountCache[id] = count;
+      updateStarCountDisplays(id, count);
+    }
+  } catch {}
 }
 
 function initStarButtons() {
   document.addEventListener('click', function(e) {
-    // Card star button
     const cardBtn = e.target.closest('.app-star-btn');
     if (cardBtn) {
       e.stopPropagation();
@@ -39,12 +78,11 @@ function initStarButtons() {
       const nowStarred = toggleStar(appId);
       cardBtn.classList.toggle('starred', nowStarred);
       cardBtn.querySelector('.star-icon').innerHTML = nowStarred ? '★' : '☆';
-      // Sync drawer if open
-      const drawerStar = document.getElementById('drawer-star-btn');
-      if (drawerStar && drawerStar.dataset.appId === appId) {
-        drawerStar.classList.toggle('starred', nowStarred);
-        drawerStar.querySelector('.star-icon').innerHTML = nowStarred ? '★' : '☆';
-        drawerStar.querySelector('.star-label').textContent = nowStarred ? 'Starred' : 'Star';
+      // Sync drawer
+      const drawerStarBtn = document.getElementById('drawer-star-btn');
+      if (drawerStarBtn && drawerStarBtn.dataset.appId === appId) {
+        drawerStarBtn.classList.toggle('starred', nowStarred);
+        drawerStarBtn.querySelector('.star-icon').innerHTML = nowStarred ? '★' : '☆';
       }
       return;
     }
@@ -56,8 +94,6 @@ function initStarButtons() {
       const nowStarred = toggleStar(appId);
       drawerBtn.classList.toggle('starred', nowStarred);
       drawerBtn.querySelector('.star-icon').innerHTML = nowStarred ? '★' : '☆';
-      drawerBtn.querySelector('.star-label').textContent = nowStarred ? 'Starred' : 'Star';
-      // Sync card
       const cardStar = document.querySelector(`.app-star-btn[data-app-id="${appId}"]`);
       if (cardStar) {
         cardStar.classList.toggle('starred', nowStarred);
@@ -65,7 +101,39 @@ function initStarButtons() {
       }
     }
   });
+
+  // Load star counts for visible cards after a short delay
+  setTimeout(() => {
+    const cards = document.querySelectorAll('.app-star-btn[data-app-id]');
+    const ids = [...cards].map(c => c.dataset.appId).filter(Boolean);
+    if (ids.length > 0) loadStarCounts(ids);
+  }, 500);
 }
+
+// ---- Share Link Handler (all pages) ----
+document.addEventListener('click', function(e) {
+  const shareBtn = e.target.closest('.share-link-btn');
+  if (!shareBtn) return;
+  e.stopPropagation();
+  const url = shareBtn.dataset.url;
+  if (navigator.clipboard && url) {
+    navigator.clipboard.writeText(url).then(() => {
+      // Add toast if not already there
+      if (!shareBtn.querySelector('.copied-toast')) {
+        const toast = document.createElement('span');
+        toast.className = 'copied-toast';
+        toast.textContent = 'Link copied!';
+        shareBtn.appendChild(toast);
+      }
+      shareBtn.classList.add('copied');
+      setTimeout(() => {
+        shareBtn.classList.remove('copied');
+        const toast = shareBtn.querySelector('.copied-toast');
+        if (toast) toast.remove();
+      }, 2000);
+    });
+  }
+});
 
 // ---- Mobile Menu ----
 function initMobileMenu() {
@@ -236,13 +304,6 @@ function initAdminToggle() {
   });
 }
 
-async function loadOverrides() {
-  // No-op — data comes from static export
-}
-
-function mergeOverridesIntoApps(apps) {
-  // No-op — data comes from static export
-}
 
 async function saveToDatabase(app, fields) {
   try {
@@ -336,7 +397,7 @@ function openAppModal(app) {
   const usageBox = document.getElementById('drawer-usage');
   if (usageBox) {
     const usageText = usageBox.querySelector('.drawer-info-box-text');
-    const usageContent = app.usage || generateUsageBlurb(app);
+    const usageContent = app.usage || null;
     if (usageContent) {
       usageText.textContent = usageContent;
       usageText.classList.toggle('drawer-info-box-placeholder', !app.usage);
@@ -348,22 +409,28 @@ function openAppModal(app) {
 
   // Impact
   const iterations = app.iterations || 0;
-  const sessions = app.sessions || 0;
   document.getElementById('drawer-iterations').textContent = `${formatNumber(iterations)} remixes`;
 
-  // Star button in drawer
+  // Star button + count in drawer header
   const drawerStar = document.getElementById('drawer-star-btn');
   if (drawerStar) {
     const starred = isStarred(app.id);
     drawerStar.dataset.appId = app.id;
     drawerStar.classList.toggle('starred', starred);
     drawerStar.querySelector('.star-icon').innerHTML = starred ? '★' : '☆';
-    drawerStar.querySelector('.star-label').textContent = starred ? 'Starred' : 'Star';
+  }
+  const drawerStarCount = document.getElementById('drawer-star-count');
+  if (drawerStarCount) {
+    drawerStarCount.dataset.appId = app.id;
+    const cached = _starCountCache[app.id] || 0;
+    drawerStarCount.textContent = `★ ${cached}`;
+    // Fetch fresh count
+    loadStarCounts([app.id]);
   }
 
   const impactText = document.getElementById('drawer-impact-text');
   if (impactText) {
-    const impactContent = app.impact || generateImpactBlurb(iterations, sessions);
+    const impactContent = app.impact || generateImpactBlurb(iterations);
     if (impactContent) {
       impactText.textContent = impactContent;
       impactText.style.display = '';
@@ -615,30 +682,6 @@ function shortDesc(str) {
 }
 
 // ---- Label Helpers ----
-function labelPillHTML(label, category) {
-  const cssClass = category === 'subject' ? 'app-label--subject'
-    : category === 'grade' ? 'app-label--grade'
-    : 'app-label--usecase';
-  return `<span class="app-label ${cssClass}">${escapeHtml(label)}</span>`;
-}
-
-function labelPillsHTML(labels, maxCount = 3) {
-  if (!labels) return '';
-  const all = [];
-  if (labels.subjects) labels.subjects.forEach(l => all.push({ label: l, category: 'subject' }));
-  if (labels.grades) labels.grades.forEach(l => all.push({ label: l, category: 'grade' }));
-  if (labels.useCases) labels.useCases.forEach(l => all.push({ label: l, category: 'useCase' }));
-  if (all.length === 0) return '';
-
-  const shown = all.slice(0, maxCount);
-  const extra = all.length - maxCount;
-  let html = shown.map(l => labelPillHTML(l.label, l.category)).join('');
-  if (extra > 0) {
-    html += `<span class="app-label app-label--more">+${extra}</span>`;
-  }
-  return `<div class="app-card-labels">${html}</div>`;
-}
-
 function mergeLabelsIntoApps(apps, labelsMap) {
   if (!labelsMap) return;
   for (const app of apps) {
@@ -648,36 +691,16 @@ function mergeLabelsIntoApps(apps, labelsMap) {
 
 // ---- Description & Drawer Helpers ----
 
-/**
- * Generate a contextual description for apps that lack one,
- * based on the app name and its collection-derived labels.
- */
 function generateFallbackDescription(app) {
   if (app.description && app.description.trim()) return app.description;
-  // Simple fallback — all apps should have descriptions from the database now
   return 'An educator-built Playlab app.';
 }
 
-/**
- * Generate a "How It's Being Used" blurb based on labels.
- */
-function generateUsageBlurb(app) {
+function generateImpactBlurb(iterations) {
+  if (!iterations) return null;
+  if (iterations >= 10) return `Remixed ${iterations} times by other educators.`;
+  if (iterations > 0) return `Remixed ${iterations} time${iterations !== 1 ? 's' : ''}.`;
   return null;
-}
-
-/**
- * Generate an impact summary blurb from stats.
- */
-function generateImpactBlurb(iterations, sessions) {
-  if (!iterations && !sessions) return null;
-  const parts = [];
-  if (iterations >= 10) {
-    parts.push(`remixed ${iterations} times by other educators`);
-  } else if (iterations > 0) {
-    parts.push(`remixed ${iterations} time${iterations !== 1 ? 's' : ''}`);
-  }
-  if (parts.length === 0) return null;
-  return parts.join(', ') + '.';
 }
 
 // ---- Skeleton Loaders ----
@@ -707,7 +730,7 @@ const COLLECTION_DESCRIPTIONS = {
   'ela / literacy': 'Reading and writing look different in every classroom. This collection captures that range — from phonics coaches to literary analysis partners, each app shaped by an educator\'s unique understanding of how literacy grows.',
   'ell / esl': 'Language learning is deeply personal work. These tools were built by educators who understand the particular challenges and joys of supporting multilingual students — bridging languages, cultures, and confidence.',
   'elementary': 'Teaching young learners requires a special kind of imagination. These apps are playful, patient, and purposeful — built by educators who understand that the early years set the foundation for everything that follows.',
-  'fairfax': 'Fairfax County educators are building tools that reflect their community\'s diversity and ambition. Each app carries the fingerprint of a specific classroom, a specific need, a specific educator\'s insight.',
+  'fairfax': 'More than 1,100 Fairfax County Public Schools students from 25 high schools designed AI-powered solutions to real-world problems as part of the Seize the Moment Student AI Innovation Challenge — shaping the future of their communities one app at a time.',
   'family & community': 'Learning doesn\'t stop at the school door. These tools help families participate in their children\'s education — bridging the gap between home and classroom with warmth and practical support.',
   'flowers': 'See how individuals across the Playlab community are building to reflect their unique contexts, roles, and goals. Each app here tells a different story — a teacher solving a problem no one else saw, a student reimagining how learning could work, a coach finding new ways to support their team. This is what it looks like when educators grow something of their own.',
   'gamified learning': 'Points, quests, narratives, challenges — educators have found countless ways to make learning feel like play. These apps prove that rigor and fun aren\'t opposites; they\'re collaborators.',
@@ -798,7 +821,12 @@ function collectionSectionHTML(col) {
           </div>
           <h3 class="collection-section-name">${escapeHtml(col.name)}</h3>
         </div>
-        <a href="${collectionUrl}" class="collection-section-viewall">View all →</a>
+        <div class="collection-section-actions">
+          <button class="share-link-btn" data-url="${window.location.origin}/${escapeHtml(collectionUrl)}" title="Copy share link" aria-label="Copy share link">
+            ${lucideIconHTML('link', 14)}
+          </button>
+          <a href="${collectionUrl}" class="collection-section-viewall">View all →</a>
+        </div>
       </div>
       <p class="collection-section-desc">${escapeHtml(truncate(description, 280))}</p>
       <div class="collection-section-meta">
@@ -811,8 +839,6 @@ function collectionSectionHTML(col) {
 
 // ---- App Card HTML ----
 function appCardHTML(app) {
-  const remixes = app.iterations ? `<span class="app-badge">${formatNumber(app.iterations)} remixes</span>` : '';
-  const sessions = '';
   const desc = generateFallbackDescription(app);
 
   // Creator initials for avatar — default to Playlab Creator
@@ -836,6 +862,7 @@ function appCardHTML(app) {
     <div class="app-card" data-app-id="${escapeHtml(app.id)}" tabindex="0" role="button" aria-label="View ${escapeHtml(app.name)}">
       <button class="app-star-btn ${starred ? 'starred' : ''}" data-app-id="${escapeHtml(app.id)}" aria-label="Star this app" title="Star this app">
         <span class="star-icon">${starred ? '★' : '☆'}</span>
+        <span class="star-count">${(_starCountCache[app.id] || 0) > 0 ? _starCountCache[app.id] : ''}</span>
       </button>
       <div class="app-card-body">
         <div class="app-card-creator">

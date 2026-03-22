@@ -625,7 +625,7 @@
     "type": "topic",
     "iconColor": "#E8785A",
     "iconEmoji": null,
-    "appCount": 53,
+    "appCount": 55,
     "apps": [
       {
         "id": "ask-socrates",
@@ -1369,6 +1369,25 @@
         ]
       },
       {
+        "id": "cmkevzgqa0clhlg0ur01fvtq9",
+        "name": "Cognify",
+        "description": "AI-powered K-12 learning diagnostics for both educators and students. Upload student work, get instant analysis identifying misconceptions, standards-aligned interventions, and personalized practice.",
+        "url": "https://www.playlab.ai/project/cmkevzgqa0clhlg0ur01fvtq9",
+        "creator": "Manas Puri",
+        "role": "Student, Lake Braddock Secondary School",
+        "usage": "Teachers and students upload work samples to get instant diagnostic analysis that identifies specific misconceptions and maps them to standards. The app generates targeted interventions and personalized practice, turning assessment from a grading task into a learning tool.",
+        "impact": "Educators are catching misconceptions earlier because the diagnostic feedback is immediate rather than waiting days for manual analysis. Students are receiving more precise support because the app pinpoints exactly where understanding breaks down rather than flagging broad topic areas.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Assessment & Feedback",
+          "Teacher Tools",
+          "Data-Driven Instruction",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
         "id": "nycps-mathematics-shifts-coaching-tool",
         "name": "NYCPS Mathematics Shifts Coaching Tool",
         "description": "Supports math coaches in NYCPS as they navigate the districtwide shifts in math instruction alongside the teachers they coach. Coaches can analyze low-inference observation notes, plan coaching meetings aligned to district criteria for success, and monitor for teacher practice growth.",
@@ -1385,6 +1404,25 @@
           "Professional Development",
           "Assessment & Feedback",
           "NYC"
+        ]
+      },
+      {
+        "id": "cmklr3bry6c6jnb0t5968zi8e",
+        "name": "Virginia Standards of Learning Study Assistant",
+        "description": "Learn any of 70 SOL courses by taking a diagnostic, then progress through review, mastery, and practice while tracking your results.",
+        "url": "https://www.playlab.ai/project/cmklr3bry6c6jnb0t5968zi8e",
+        "creator": "Lincoln Marine, Noah Teates & Aleksander Roberto",
+        "role": "Students, Langley High School",
+        "usage": "Virginia high school students use this app to prepare for Standards of Learning exams across 70 courses. The app starts with a diagnostic to identify gaps, then guides students through review, mastery, and practice phases while tracking their progress over time.",
+        "impact": "Students are approaching SOL prep with a clearer sense of what they actually need to study rather than reviewing everything from scratch. The structured progression from diagnostic to mastery has given students ownership over their exam preparation and a visible path to readiness.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "High School",
+          "Study Partners",
+          "Assessment & Feedback",
+          "Student-Built Apps",
+          "Fairfax"
         ]
       },
       {
@@ -1549,7 +1587,7 @@
     "type": "topic",
     "iconColor": "#8B9E2A",
     "iconEmoji": null,
-    "appCount": 8,
+    "appCount": 9,
     "apps": [
       {
         "id": "cmd97ngc20acujq0usfl5z5v1",
@@ -1683,6 +1721,24 @@
           "Business / Economics",
           "Higher Ed",
           "AI Assistants"
+        ]
+      },
+      {
+        "id": "cmkh1mn1t1y2cjx0u5bqf90ty",
+        "name": "Invest AI",
+        "description": "Provides investment plans with accurate bonds, stocks, and other investment methods based on the user's goals, income, location, and financial situation.",
+        "url": "https://www.playlab.ai/project/cmkh1mn1t1y2cjx0u5bqf90ty",
+        "creator": "Catalina Reyes, Evelina Tatevosyan & Daisy Sheldon",
+        "role": "Students, Hayfield Secondary School",
+        "usage": "Users input their financial goals, income, and situation and Invest AI generates a personalized investment plan recommending specific bonds, stocks, and other instruments. The app makes investing accessible to people who have never had a financial advisor.",
+        "impact": "Young people and first-time investors are taking their first steps into financial planning because the app removes the intimidation of the investment world. The personalized approach has helped users see investing as something for them, not just for the wealthy.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Business / Economics",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
         ]
       }
     ]
@@ -2201,24 +2257,8 @@
     "type": "topic",
     "iconColor": "#5B8DC9",
     "iconEmoji": null,
-    "appCount": 41,
+    "appCount": 44,
     "apps": [
-      {
-        "id": "sassy",
-        "name": "Sassy",
-        "description": "Oregon students explore career and trade pathways with AI guidance tailored to their state's specific opportunities, apprenticeship programs, and workforce needs.",
-        "url": "https://www.playlab.ai/project/sassy",
-        "creator": "Ed Madison",
-        "role": "Oregon Dept of Education / JLI",
-        "usage": "Oregon students explore career and trade pathways with AI guidance tailored to their state's specific opportunities, apprenticeship programs, and workforce needs. The tool connects classroom learning to real career options available in their region.",
-        "impact": "Brought state-level career guidance directly to students — instead of generic advice, Oregon students got pathways matched to their state's actual economy, apprenticeships, and employer needs.",
-        "sessions": 8870,
-        "iterations": 42,
-        "tags": [
-          "Flowers",
-          "Career & Vocational"
-        ]
-      },
       {
         "id": "ai-s-impact-on-your-career",
         "name": "AI's Impact on Your Career",
@@ -2657,6 +2697,24 @@
         ]
       },
       {
+        "id": "sassy",
+        "name": "Sassy",
+        "description": "Sassy helps Oregon middle and high school students explore career and trade pathways.",
+        "url": "https://www.playlab.ai/build/clu49uied0akhn2jgtb8hhww3",
+        "creator": "Ed Madison",
+        "role": "University of Oregon",
+        "usage": "Students interact with Sassy to discover career and trade options that align with their interests and strengths. The app walks them through different vocational pathways available in Oregon, helping them understand what each career looks like day-to-day and what steps they'd need to take to get there.",
+        "impact": "Students who previously had limited exposure to non-college pathways are now actively researching trades and vocational programs. Teachers report that Sassy has opened up richer conversations about post-secondary planning, especially for students who felt traditional four-year college wasn't their only option.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "Middle School",
+          "High School",
+          "Flowers"
+        ]
+      },
+      {
         "id": "scholarships-101",
         "name": "Scholarships 101",
         "description": "KIPP alumni use Scholarships 101 to discover scholarship opportunities that match their profile and get guided support through the application process.",
@@ -2710,6 +2768,24 @@
         ]
       },
       {
+        "id": "cmkcmvmdk2m38k10uj0e3dws9",
+        "name": "FirstStep",
+        "description": "FirstStep helps students prepare for college by walking them through what to expect and what steps to take each year. College doesn't come with a manual — college starts with one step.",
+        "url": "https://www.playlab.ai/project/cmkcmvmdk2m38k10uj0e3dws9",
+        "creator": "Tharu Kalahi, Sadu Kalahi & Ridhi Kasineni",
+        "role": "Students, Centreville High School",
+        "usage": "High school students use FirstStep to navigate the college preparation process year by year, from building a course plan as a freshman to submitting applications as a senior. The app breaks down an overwhelming process into clear, actionable steps so students always know what to do next.",
+        "impact": "Students who felt lost about the college process are now approaching it with confidence because they have a clear roadmap tailored to their timeline. The year-by-year structure has been especially valuable for first-generation college-bound students who lack family experience to guide them.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "High School",
+          "Career & Vocational",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
         "id": "level-up-helper",
         "name": "Level Up Helper",
         "description": "Supports users in the job application process by helping them build better resumes and cover letters catered to either an industry or a specific job description.",
@@ -2741,6 +2817,24 @@
           "Science / STEM",
           "Career & Vocational",
           "High School"
+        ]
+      },
+      {
+        "id": "cmhxswgxn63yykw0u491z6nr3",
+        "name": "Prep Up",
+        "description": "Helps students feel ready for important interviews by providing mock questions and personalized feedback based on their responses.",
+        "url": "https://www.playlab.ai/project/cmhxswgxn63yykw0u491z6nr3",
+        "creator": "Clara Hatcher & Henry Mihalak",
+        "role": "Students, Madison High School",
+        "usage": "Students preparing for job, college, or scholarship interviews use Prep Up to practice with mock questions tailored to their situation. The app provides personalized feedback on each response, helping students refine their answers and build confidence.",
+        "impact": "Students who used to freeze up in interviews are walking in prepared and poised because they have already rehearsed with targeted feedback. The personalized coaching has leveled the playing field for students who lack adults to help them practice.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
         ]
       },
       {
@@ -2878,6 +2972,25 @@
           "High School",
           "Career & Vocational",
           "AI Assistants"
+        ]
+      },
+      {
+        "id": "cmhvagef50qgqlt0uu7cxextd",
+        "name": "PermitPartner",
+        "description": "Helps you gather all required details for permit-ready, code-compliant architectural plans tailored to your county's regulations.",
+        "url": "https://www.playlab.ai/project/cmhvagef50qgqlt0uu7cxextd",
+        "creator": "Abidullah Ghani & Shaheer Salarzai",
+        "role": "Students, South Lakes High School",
+        "usage": "Homeowners and contractors use PermitPartner to compile the details needed for permit-ready architectural plans. The app tailors requirements to specific county regulations, eliminating the guesswork that often delays construction projects.",
+        "impact": "Users who previously struggled with permit paperwork are now submitting compliant plans faster because the app handles the regulatory complexity. The student-built tool has made the permitting process accessible to people without architectural expertise.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
         ]
       }
     ]
@@ -3386,7 +3499,7 @@
     "type": "topic",
     "iconColor": "#3347B8",
     "iconEmoji": null,
-    "appCount": 14,
+    "appCount": 15,
     "apps": [
       {
         "id": "cmj1xjzo413l7ku0ury8svmnz",
@@ -3595,6 +3708,25 @@
         ]
       },
       {
+        "id": "cmkevzgqa0clhlg0ur01fvtq9",
+        "name": "Cognify",
+        "description": "AI-powered K-12 learning diagnostics for both educators and students. Upload student work, get instant analysis identifying misconceptions, standards-aligned interventions, and personalized practice.",
+        "url": "https://www.playlab.ai/project/cmkevzgqa0clhlg0ur01fvtq9",
+        "creator": "Manas Puri",
+        "role": "Student, Lake Braddock Secondary School",
+        "usage": "Teachers and students upload work samples to get instant diagnostic analysis that identifies specific misconceptions and maps them to standards. The app generates targeted interventions and personalized practice, turning assessment from a grading task into a learning tool.",
+        "impact": "Educators are catching misconceptions earlier because the diagnostic feedback is immediate rather than waiting days for manual analysis. Students are receiving more precise support because the app pinpoints exactly where understanding breaks down rather than flagging broad topic areas.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Assessment & Feedback",
+          "Teacher Tools",
+          "Data-Driven Instruction",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
         "id": "im-ai-data-analysis-and-pattern-finder",
         "name": "IM AI Data Analysis and Pattern Finder",
         "description": "Safely upload student assessment data, classroom observation records, or implementation surveys to discover patterns in mathematical learning and teaching effectiveness.",
@@ -3622,7 +3754,7 @@
     "type": "topic",
     "iconColor": "#FE6A2E",
     "iconEmoji": null,
-    "appCount": 21,
+    "appCount": 22,
     "apps": [
       {
         "id": "cm8b0chcx04feqeuxocld0ww3",
@@ -3840,6 +3972,26 @@
         ]
       },
       {
+        "id": "cmjni31oe05ebnt0umzlf1w3w",
+        "name": "Adapt",
+        "description": "A study app that uses AI to adapt learning to a student's mental state and learning behavior, not just the content.",
+        "url": "https://www.playlab.ai/project/cmjni31oe05ebnt0umzlf1w3w",
+        "creator": "Heela Jalali, Mahsa Kohistani & Jenna Galala",
+        "role": "Students, Justice High School",
+        "usage": "Students use Adapt as a study partner that reads their emotional and cognitive state — not just the subject matter — to adjust how material is presented. If a student is frustrated, the app slows down; if they're in flow, it pushes ahead.",
+        "impact": "Students are sustaining study sessions longer and with less frustration because the app meets them where they are emotionally, not just academically. The human-centered approach has shown that learning tools work better when they account for the whole student.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "SEL / Wellbeing",
+          "Study Partners",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Differentiation & Access"
+        ]
+      },
+      {
         "id": "get-started-with-im360",
         "name": "Get Started With IM360",
         "description": "Designed to support teachers, instructional coaches, and school/district leaders in creating equitable, student-centered math classrooms through actionable strategies and sustainable systems with a focus on maintaining coherence and rigor of IM.",
@@ -4014,7 +4166,7 @@
     "type": "topic",
     "iconColor": "#2D7A3A",
     "iconEmoji": null,
-    "appCount": 53,
+    "appCount": 56,
     "apps": [
       {
         "id": "cloa6u4pi005fpt96wze1b4lr",
@@ -4782,6 +4934,44 @@
         ]
       },
       {
+        "id": "cmjhj98ey0lt6nt0ubgyb35i4",
+        "name": "NarrAIter",
+        "description": "AI-guided storytelling that weaves in grammar, spelling, reading comprehension, and vocabulary questions for children, with accessible features like voice input.",
+        "url": "https://www.playlab.ai/project/cmjhj98ey0lt6nt0ubgyb35i4",
+        "creator": "Anna Woo & Grace Yim",
+        "role": "Students, Central Challenge Team",
+        "usage": "Children engage with an interactive story where the AI weaves in grammar, spelling, reading comprehension, and vocabulary questions naturally as the narrative unfolds. The voice input feature makes it accessible to early readers and students with different learning needs.",
+        "impact": "Young readers are building literacy skills without realizing they are being assessed because the learning feels like play. The storytelling format has been especially effective for reluctant readers who engage eagerly when skills practice is embedded in adventure.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELA / Literacy",
+          "Elementary",
+          "Student-Built Apps",
+          "Fairfax",
+          "Gamified Learning"
+        ]
+      },
+      {
+        "id": "cmirmgxli19iqp70uffxniq2s",
+        "name": "Misinformation Detector",
+        "description": "Identify misinformation with the Misinformation Detector! Paste an article and the AI analyzes it using expert-constructed techniques, plus provides tests and examples to build your media literacy skills.",
+        "url": "https://www.playlab.ai/project/cmirmgxli19iqp70uffxniq2s",
+        "creator": "Justin Jaran, Eko Dang & Christian Tam",
+        "role": "Students, Edison High School",
+        "usage": "Students and community members paste articles they suspect might contain misinformation and get an AI-powered analysis using expert-validated detection techniques. The app also offers quizzes and examples so users can sharpen their own ability to spot misinformation independently.",
+        "impact": "Users are developing stronger critical thinking about the media they consume because the app doesn't just flag problems — it teaches the reasoning behind why something is misleading. The student-built tool has made media literacy feel practical and immediate rather than abstract.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELA / Literacy",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
         "id": "have-i-got-a-book-for-you-",
         "name": "Have I Got a Book for YOU!",
         "description": "High school students share their reading preferences, interests, and past favorites with the app and receive personalized book recommendations that match their tastes.",
@@ -4834,6 +5024,25 @@
           "ELA / Literacy",
           "Differentiation & Access",
           "High School"
+        ]
+      },
+      {
+        "id": "cmk4m0j1n0nlvj10ud6f3n9bx",
+        "name": "CivicsLens",
+        "description": "Helps people better understand the news by comparing how the same topic is presented from different perspectives. Highlights biased language and summarizes multiple viewpoints so users can form their own informed opinions.",
+        "url": "https://www.playlab.ai/project/cmk4m0j1n0nlvj10ud6f3n9bx",
+        "creator": "Jackson Stear, Donovan Hogan & Surafael Melaku",
+        "role": "Students, Robinson Secondary School",
+        "usage": "Users paste news articles or topics and CivicsLens shows how different outlets cover the same story, highlighting biased language and framing. It summarizes multiple viewpoints side by side so users can see the full picture before forming their own opinion.",
+        "impact": "Students are developing sharper media literacy skills because they can see bias in action rather than just hearing about it in theory. The comparative approach has changed how young people consume news, making them more thoughtful and questioning readers.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Social Studies / History",
+          "ELA / Literacy",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
         ]
       },
       {
@@ -4916,7 +5125,7 @@
     "type": "topic",
     "iconColor": "#E8785A",
     "iconEmoji": null,
-    "appCount": 23,
+    "appCount": 25,
     "apps": [
       {
         "id": "cmc0zsb3k086xi40uf7wcyvpf",
@@ -5292,6 +5501,26 @@
         ]
       },
       {
+        "id": "cmk1ra2ft1qdtjl0ujm6287fj",
+        "name": "ClearPath AI",
+        "description": "ClearPath AI helps people in Northern Virginia quickly find trusted local housing, food, and support services in their preferred language during times of housing instability.",
+        "url": "https://www.playlab.ai/project/cmk1ra2ft1qdtjl0ujm6287fj",
+        "creator": "Binayak Bhusal, Hans Mehta & Abram Gatz",
+        "role": "Students, Herndon High School",
+        "usage": "Community members facing housing instability use ClearPath AI to find nearby shelters, food banks, and support services in Northern Virginia. The app provides results in the user's preferred language, removing a critical barrier for non-English speakers navigating an already stressful situation.",
+        "impact": "Families who previously struggled to find help because of language barriers or not knowing where to start are now connecting with local resources faster. The student-built tool has become a model for how young people can use technology to address real needs in their own community.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "ELL / ESL",
+          "Flowers",
+          "Fairfax"
+        ]
+      },
+      {
         "id": "your-friendly-neighborhood-librarian",
         "name": "Your Friendly Neighborhood Librarian",
         "description": "Identifies your reading level, generates text about topics you're interested in at or above your reading level in your home language, and suggests books, articles, and other materials you might want to read.",
@@ -5308,6 +5537,25 @@
           "ELL / ESL",
           "Differentiation & Access"
         ]
+      },
+      {
+        "id": "cmkbt18f50gv4g90u95h1neux",
+        "name": "Find Your Home",
+        "description": "An AI assistant that simplifies the complex U.S. housing market for everyone, especially first-time immigrants and underserved communities. Acts as financial triage — assessing eligibility for housing programs, explaining terms like AMI in simple language, and providing personalized multilingual guidance.",
+        "url": "https://www.playlab.ai/project/cmkbt18f50gv4g90u95h1neux",
+        "creator": "Arian Miran & Sahiti Tanuku",
+        "role": "Students, Chantilly High School",
+        "usage": "First-time immigrants and underserved community members use Find Your Home to navigate the U.S. housing market with confidence. The app assesses eligibility for housing programs, explains complex financial terms in plain language, and provides guidance in multiple languages.",
+        "impact": "Families who were overwhelmed by the housing process are now understanding their options and taking action because the app removes language and jargon barriers. The student-built tool has made housing access more equitable by meeting people where they are linguistically and financially.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "ELL / ESL"
+        ]
       }
     ]
   },
@@ -5318,7 +5566,7 @@
     "type": "topic",
     "iconColor": "#8B9E2A",
     "iconEmoji": null,
-    "appCount": 27,
+    "appCount": 28,
     "apps": [
       {
         "id": "cmd959ml706q6k60u7e66i89u",
@@ -5727,6 +5975,25 @@
         ]
       },
       {
+        "id": "cmjhj98ey0lt6nt0ubgyb35i4",
+        "name": "NarrAIter",
+        "description": "AI-guided storytelling that weaves in grammar, spelling, reading comprehension, and vocabulary questions for children, with accessible features like voice input.",
+        "url": "https://www.playlab.ai/project/cmjhj98ey0lt6nt0ubgyb35i4",
+        "creator": "Anna Woo & Grace Yim",
+        "role": "Students, Central Challenge Team",
+        "usage": "Children engage with an interactive story where the AI weaves in grammar, spelling, reading comprehension, and vocabulary questions naturally as the narrative unfolds. The voice input feature makes it accessible to early readers and students with different learning needs.",
+        "impact": "Young readers are building literacy skills without realizing they are being assessed because the learning feels like play. The storytelling format has been especially effective for reluctant readers who engage eagerly when skills practice is embedded in adventure.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELA / Literacy",
+          "Elementary",
+          "Student-Built Apps",
+          "Fairfax",
+          "Gamified Learning"
+        ]
+      },
+      {
         "id": "nys-k-5-question-set-generator",
         "name": "NYS K-5 Question Set Generator",
         "description": "Creates question sets or pathways in the moment for teachers to guide students through problem-solving processes based on their misconceptions, emphasizing open-ended exploration and critical thinking.",
@@ -5790,7 +6057,7 @@
     "type": "org",
     "iconColor": "#C06EB4",
     "iconEmoji": null,
-    "appCount": 5,
+    "appCount": 23,
     "apps": [
       {
         "id": "cm85xuf1w02n2y88x5u724kia",
@@ -5875,6 +6142,346 @@
           "Project-Based Learning",
           "Cultural Studies"
         ]
+      },
+      {
+        "id": "cmjhj98ey0lt6nt0ubgyb35i4",
+        "name": "NarrAIter",
+        "description": "AI-guided storytelling that weaves in grammar, spelling, reading comprehension, and vocabulary questions for children, with accessible features like voice input.",
+        "url": "https://www.playlab.ai/project/cmjhj98ey0lt6nt0ubgyb35i4",
+        "creator": "Anna Woo & Grace Yim",
+        "role": "Students, Central Challenge Team",
+        "usage": "Children engage with an interactive story where the AI weaves in grammar, spelling, reading comprehension, and vocabulary questions naturally as the narrative unfolds. The voice input feature makes it accessible to early readers and students with different learning needs.",
+        "impact": "Young readers are building literacy skills without realizing they are being assessed because the learning feels like play. The storytelling format has been especially effective for reluctant readers who engage eagerly when skills practice is embedded in adventure.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELA / Literacy",
+          "Elementary",
+          "Student-Built Apps",
+          "Fairfax",
+          "Gamified Learning"
+        ]
+      },
+      {
+        "id": "cmkevzgqa0clhlg0ur01fvtq9",
+        "name": "Cognify",
+        "description": "AI-powered K-12 learning diagnostics for both educators and students. Upload student work, get instant analysis identifying misconceptions, standards-aligned interventions, and personalized practice.",
+        "url": "https://www.playlab.ai/project/cmkevzgqa0clhlg0ur01fvtq9",
+        "creator": "Manas Puri",
+        "role": "Student, Lake Braddock Secondary School",
+        "usage": "Teachers and students upload work samples to get instant diagnostic analysis that identifies specific misconceptions and maps them to standards. The app generates targeted interventions and personalized practice, turning assessment from a grading task into a learning tool.",
+        "impact": "Educators are catching misconceptions earlier because the diagnostic feedback is immediate rather than waiting days for manual analysis. Students are receiving more precise support because the app pinpoints exactly where understanding breaks down rather than flagging broad topic areas.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Assessment & Feedback",
+          "Teacher Tools",
+          "Data-Driven Instruction",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmkg36a1e05nxn70uedg8dp9p",
+        "name": "PhishGuard AI",
+        "description": "PhishGuard AI helps users quickly check suspicious emails and messages by analyzing common scam and phishing warning signs and explaining them in simple language.",
+        "url": "https://www.playlab.ai/project/cmkg36a1e05nxn70uedg8dp9p",
+        "creator": "Manan Shrestha, Ryan Benyahya & Darshan Wagle",
+        "role": "Students, Marshall High School",
+        "usage": "Students and community members paste suspicious emails or messages into the app to get a plain-language breakdown of phishing red flags. The app identifies common scam tactics and explains why a message looks suspicious, building digital literacy one real example at a time.",
+        "impact": "Users who previously fell for phishing attempts or simply deleted everything suspicious are now making informed decisions about which messages to trust. The student-built tool has become a practical cybersecurity resource that makes online safety accessible to people of all technical backgrounds.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "cmkcmvmdk2m38k10uj0e3dws9",
+        "name": "FirstStep",
+        "description": "FirstStep helps students prepare for college by walking them through what to expect and what steps to take each year. College doesn't come with a manual — college starts with one step.",
+        "url": "https://www.playlab.ai/project/cmkcmvmdk2m38k10uj0e3dws9",
+        "creator": "Tharu Kalahi, Sadu Kalahi & Ridhi Kasineni",
+        "role": "Students, Centreville High School",
+        "usage": "High school students use FirstStep to navigate the college preparation process year by year, from building a course plan as a freshman to submitting applications as a senior. The app breaks down an overwhelming process into clear, actionable steps so students always know what to do next.",
+        "impact": "Students who felt lost about the college process are now approaching it with confidence because they have a clear roadmap tailored to their timeline. The year-by-year structure has been especially valuable for first-generation college-bound students who lack family experience to guide them.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "High School",
+          "Career & Vocational",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmirmgxli19iqp70uffxniq2s",
+        "name": "Misinformation Detector",
+        "description": "Identify misinformation with the Misinformation Detector! Paste an article and the AI analyzes it using expert-constructed techniques, plus provides tests and examples to build your media literacy skills.",
+        "url": "https://www.playlab.ai/project/cmirmgxli19iqp70uffxniq2s",
+        "creator": "Justin Jaran, Eko Dang & Christian Tam",
+        "role": "Students, Edison High School",
+        "usage": "Students and community members paste articles they suspect might contain misinformation and get an AI-powered analysis using expert-validated detection techniques. The app also offers quizzes and examples so users can sharpen their own ability to spot misinformation independently.",
+        "impact": "Users are developing stronger critical thinking about the media they consume because the app doesn't just flag problems — it teaches the reasoning behind why something is misleading. The student-built tool has made media literacy feel practical and immediate rather than abstract.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELA / Literacy",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "cmk1ra2ft1qdtjl0ujm6287fj",
+        "name": "ClearPath AI",
+        "description": "ClearPath AI helps people in Northern Virginia quickly find trusted local housing, food, and support services in their preferred language during times of housing instability.",
+        "url": "https://www.playlab.ai/project/cmk1ra2ft1qdtjl0ujm6287fj",
+        "creator": "Binayak Bhusal, Hans Mehta & Abram Gatz",
+        "role": "Students, Herndon High School",
+        "usage": "Community members facing housing instability use ClearPath AI to find nearby shelters, food banks, and support services in Northern Virginia. The app provides results in the user's preferred language, removing a critical barrier for non-English speakers navigating an already stressful situation.",
+        "impact": "Families who previously struggled to find help because of language barriers or not knowing where to start are now connecting with local resources faster. The student-built tool has become a model for how young people can use technology to address real needs in their own community.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "ELL / ESL",
+          "Flowers",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmkbt18f50gv4g90u95h1neux",
+        "name": "Find Your Home",
+        "description": "An AI assistant that simplifies the complex U.S. housing market for everyone, especially first-time immigrants and underserved communities. Acts as financial triage — assessing eligibility for housing programs, explaining terms like AMI in simple language, and providing personalized multilingual guidance.",
+        "url": "https://www.playlab.ai/project/cmkbt18f50gv4g90u95h1neux",
+        "creator": "Arian Miran & Sahiti Tanuku",
+        "role": "Students, Chantilly High School",
+        "usage": "First-time immigrants and underserved community members use Find Your Home to navigate the U.S. housing market with confidence. The app assesses eligibility for housing programs, explains complex financial terms in plain language, and provides guidance in multiple languages.",
+        "impact": "Families who were overwhelmed by the housing process are now understanding their options and taking action because the app removes language and jargon barriers. The student-built tool has made housing access more equitable by meeting people where they are linguistically and financially.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "ELL / ESL"
+        ]
+      },
+      {
+        "id": "cmk4m0j1n0nlvj10ud6f3n9bx",
+        "name": "CivicsLens",
+        "description": "Helps people better understand the news by comparing how the same topic is presented from different perspectives. Highlights biased language and summarizes multiple viewpoints so users can form their own informed opinions.",
+        "url": "https://www.playlab.ai/project/cmk4m0j1n0nlvj10ud6f3n9bx",
+        "creator": "Jackson Stear, Donovan Hogan & Surafael Melaku",
+        "role": "Students, Robinson Secondary School",
+        "usage": "Users paste news articles or topics and CivicsLens shows how different outlets cover the same story, highlighting biased language and framing. It summarizes multiple viewpoints side by side so users can see the full picture before forming their own opinion.",
+        "impact": "Students are developing sharper media literacy skills because they can see bias in action rather than just hearing about it in theory. The comparative approach has changed how young people consume news, making them more thoughtful and questioning readers.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Social Studies / History",
+          "ELA / Literacy",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmklr3bry6c6jnb0t5968zi8e",
+        "name": "Virginia Standards of Learning Study Assistant",
+        "description": "Learn any of 70 SOL courses by taking a diagnostic, then progress through review, mastery, and practice while tracking your results.",
+        "url": "https://www.playlab.ai/project/cmklr3bry6c6jnb0t5968zi8e",
+        "creator": "Lincoln Marine, Noah Teates & Aleksander Roberto",
+        "role": "Students, Langley High School",
+        "usage": "Virginia high school students use this app to prepare for Standards of Learning exams across 70 courses. The app starts with a diagnostic to identify gaps, then guides students through review, mastery, and practice phases while tracking their progress over time.",
+        "impact": "Students are approaching SOL prep with a clearer sense of what they actually need to study rather than reviewing everything from scratch. The structured progression from diagnostic to mastery has given students ownership over their exam preparation and a visible path to readiness.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "High School",
+          "Study Partners",
+          "Assessment & Feedback",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmkabk2208gyvgn0uvpi6c2o2",
+        "name": "Step",
+        "description": "Offers calm support for everyday health questions. Built for people with disabilities, chronic conditions, or uncertainty, using clear language and gentle guidance without replacing medical care.",
+        "url": "https://www.playlab.ai/project/cmkabk2208gyvgn0uvpi6c2o2",
+        "creator": "Yuvraj Nathawat",
+        "role": "Student, Oakton High School",
+        "usage": "People with disabilities and chronic conditions use Step to get calm, clear answers to everyday health questions without the anxiety of a clinical search. The app provides gentle guidance in accessible language, helping users feel supported and informed.",
+        "impact": "Users who avoided asking health questions out of overwhelm or fear are now engaging with their wellbeing proactively. The app's calm, judgment-free approach has made health literacy feel approachable for people who often feel excluded from mainstream health resources.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Health & PE",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Special Education"
+        ]
+      },
+      {
+        "id": "cmjni31oe05ebnt0umzlf1w3w",
+        "name": "Adapt",
+        "description": "A study app that uses AI to adapt learning to a student's mental state and learning behavior, not just the content.",
+        "url": "https://www.playlab.ai/project/cmjni31oe05ebnt0umzlf1w3w",
+        "creator": "Heela Jalali, Mahsa Kohistani & Jenna Galala",
+        "role": "Students, Justice High School",
+        "usage": "Students use Adapt as a study partner that reads their emotional and cognitive state — not just the subject matter — to adjust how material is presented. If a student is frustrated, the app slows down; if they're in flow, it pushes ahead.",
+        "impact": "Students are sustaining study sessions longer and with less frustration because the app meets them where they are emotionally, not just academically. The human-centered approach has shown that learning tools work better when they account for the whole student.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "SEL / Wellbeing",
+          "Study Partners",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Differentiation & Access"
+        ]
+      },
+      {
+        "id": "cmhxswgxn63yykw0u491z6nr3",
+        "name": "Prep Up",
+        "description": "Helps students feel ready for important interviews by providing mock questions and personalized feedback based on their responses.",
+        "url": "https://www.playlab.ai/project/cmhxswgxn63yykw0u491z6nr3",
+        "creator": "Clara Hatcher & Henry Mihalak",
+        "role": "Students, Madison High School",
+        "usage": "Students preparing for job, college, or scholarship interviews use Prep Up to practice with mock questions tailored to their situation. The app provides personalized feedback on each response, helping students refine their answers and build confidence.",
+        "impact": "Students who used to freeze up in interviews are walking in prepared and poised because they have already rehearsed with targeted feedback. The personalized coaching has leveled the playing field for students who lack adults to help them practice.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmjsufbuu1gponc0ug5c7a24h",
+        "name": "Genetic Guard",
+        "description": "Uses ClinVar and Alpha Missense to predict the risk of variants of uncertain significance (VUS) found in genetic testing results, empowering patients and preventing pediatric cancers through TP53 specialization.",
+        "url": "https://www.playlab.ai/project/cmjsufbuu1gponc0ug5c7a24h",
+        "creator": "Joelle Rice",
+        "role": "Student, Woodson High School",
+        "usage": "Patients and genetic counselors use Genetic Guard to interpret variants of uncertain significance found in genetic testing results. The app leverages ClinVar and Alpha Missense databases to predict risk levels, with a specialization in TP53 variants linked to pediatric cancers.",
+        "impact": "Families receiving ambiguous genetic testing results are getting clearer guidance on what those results might mean, reducing anxiety and enabling more informed conversations with their doctors. The TP53 focus has the potential to catch pediatric cancer risks earlier.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Flowers",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "cmknavygk1l0rok0ufempxzpf",
+        "name": "Smart Cart",
+        "description": "Compare nearby grocery prices, find the cheapest high-quality options, and get budget-friendly meal and recipe help based on your needs.",
+        "url": "https://www.playlab.ai/project/cmknavygk1l0rok0ufempxzpf",
+        "creator": "Nuh Yesuf, Samuel Mulat & Robel Teklebirhan",
+        "role": "Students, Annandale High School",
+        "usage": "Families on a budget use Smart Cart to compare grocery prices across nearby stores before shopping. The app recommends the cheapest high-quality options and suggests budget-friendly meals and recipes based on what is affordable.",
+        "impact": "Families are stretching their grocery budgets further because they can see price comparisons at a glance instead of driving to multiple stores. The meal planning feature has helped households reduce food waste while eating better on less.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmi5d0ent63zpjx0uiu8kr3yu",
+        "name": "ECOReceipt",
+        "description": "Scans your receipts to show the environmental impact and cost of your purchases. Suggests greener, budget-friendly alternatives and tracks your progress to help you save money while reducing your carbon footprint.",
+        "url": "https://www.playlab.ai/project/cmi5d0ent63zpjx0uiu8kr3yu",
+        "creator": "Ghaarunya Balamurugan, Manasha Mahendramurthy & Sia Vadakkoot",
+        "role": "Students, Westfield High School",
+        "usage": "Users photograph or upload their shopping receipts and ECOReceipt analyzes the environmental impact and cost of each purchase. The app suggests greener, budget-friendly alternatives and tracks progress over time.",
+        "impact": "Users are making more environmentally conscious purchasing decisions because the app connects their everyday shopping to tangible environmental metrics. The dual focus on savings and sustainability has shown people that going green does not have to mean spending more.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "cmkh1mn1t1y2cjx0u5bqf90ty",
+        "name": "Invest AI",
+        "description": "Provides investment plans with accurate bonds, stocks, and other investment methods based on the user's goals, income, location, and financial situation.",
+        "url": "https://www.playlab.ai/project/cmkh1mn1t1y2cjx0u5bqf90ty",
+        "creator": "Catalina Reyes, Evelina Tatevosyan & Daisy Sheldon",
+        "role": "Students, Hayfield Secondary School",
+        "usage": "Users input their financial goals, income, and situation and Invest AI generates a personalized investment plan recommending specific bonds, stocks, and other instruments. The app makes investing accessible to people who have never had a financial advisor.",
+        "impact": "Young people and first-time investors are taking their first steps into financial planning because the app removes the intimidation of the investment world. The personalized approach has helped users see investing as something for them, not just for the wealthy.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Business / Economics",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmhw6lk2m17e4m20uw64xgebp",
+        "name": "Physical Therapy with Stan",
+        "description": "Provides rehab guidance for users with minor musculoskeletal injuries or post-surgical rehab, offering specialized exercise programs based on the user's state of injury for those who lack access to physical therapists.",
+        "url": "https://www.playlab.ai/project/cmhw6lk2m17e4m20uw64xgebp",
+        "creator": "Minh Tran, Michael Cabrera & Khoi Nguyen",
+        "role": "Students, South County High School",
+        "usage": "Low-income users and those without access to physical therapists use Stan to get personalized rehabilitation exercises for minor musculoskeletal injuries. The app assesses the user's injury state and generates a tailored exercise program they can follow at home.",
+        "impact": "Users who couldn't afford physical therapy are now actively rehabbing injuries with structured guidance instead of guessing or doing nothing. The app has made basic rehab support accessible to communities where professional PT is out of reach.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Health & PE",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmhvagef50qgqlt0uu7cxextd",
+        "name": "PermitPartner",
+        "description": "Helps you gather all required details for permit-ready, code-compliant architectural plans tailored to your county's regulations.",
+        "url": "https://www.playlab.ai/project/cmhvagef50qgqlt0uu7cxextd",
+        "creator": "Abidullah Ghani & Shaheer Salarzai",
+        "role": "Students, South Lakes High School",
+        "usage": "Homeowners and contractors use PermitPartner to compile the details needed for permit-ready architectural plans. The app tailors requirements to specific county regulations, eliminating the guesswork that often delays construction projects.",
+        "impact": "Users who previously struggled with permit paperwork are now submitting compliant plans faster because the app handles the regulatory complexity. The student-built tool has made the permitting process accessible to people without architectural expertise.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
       }
     ]
   },
@@ -5885,7 +6492,7 @@
     "type": "topic",
     "iconColor": "#D4A843",
     "iconEmoji": null,
-    "appCount": 12,
+    "appCount": 15,
     "apps": [
       {
         "id": "clq2spiw201pyr69688eue0nr",
@@ -6048,6 +6655,45 @@
         ]
       },
       {
+        "id": "cmk1ra2ft1qdtjl0ujm6287fj",
+        "name": "ClearPath AI",
+        "description": "ClearPath AI helps people in Northern Virginia quickly find trusted local housing, food, and support services in their preferred language during times of housing instability.",
+        "url": "https://www.playlab.ai/project/cmk1ra2ft1qdtjl0ujm6287fj",
+        "creator": "Binayak Bhusal, Hans Mehta & Abram Gatz",
+        "role": "Students, Herndon High School",
+        "usage": "Community members facing housing instability use ClearPath AI to find nearby shelters, food banks, and support services in Northern Virginia. The app provides results in the user's preferred language, removing a critical barrier for non-English speakers navigating an already stressful situation.",
+        "impact": "Families who previously struggled to find help because of language barriers or not knowing where to start are now connecting with local resources faster. The student-built tool has become a model for how young people can use technology to address real needs in their own community.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "ELL / ESL",
+          "Flowers",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmkbt18f50gv4g90u95h1neux",
+        "name": "Find Your Home",
+        "description": "An AI assistant that simplifies the complex U.S. housing market for everyone, especially first-time immigrants and underserved communities. Acts as financial triage — assessing eligibility for housing programs, explaining terms like AMI in simple language, and providing personalized multilingual guidance.",
+        "url": "https://www.playlab.ai/project/cmkbt18f50gv4g90u95h1neux",
+        "creator": "Arian Miran & Sahiti Tanuku",
+        "role": "Students, Chantilly High School",
+        "usage": "First-time immigrants and underserved community members use Find Your Home to navigate the U.S. housing market with confidence. The app assesses eligibility for housing programs, explains complex financial terms in plain language, and provides guidance in multiple languages.",
+        "impact": "Families who were overwhelmed by the housing process are now understanding their options and taking action because the app removes language and jargon barriers. The student-built tool has made housing access more equitable by meeting people where they are linguistically and financially.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "ELL / ESL"
+        ]
+      },
+      {
         "id": "fafsa-assistant",
         "name": "FAFSA Assistant",
         "description": "Parents and families use this bot as a step-by-step guide through the FAFSA application process.",
@@ -6082,6 +6728,24 @@
           "Elementary",
           "Middle School"
         ]
+      },
+      {
+        "id": "cmknavygk1l0rok0ufempxzpf",
+        "name": "Smart Cart",
+        "description": "Compare nearby grocery prices, find the cheapest high-quality options, and get budget-friendly meal and recipe help based on your needs.",
+        "url": "https://www.playlab.ai/project/cmknavygk1l0rok0ufempxzpf",
+        "creator": "Nuh Yesuf, Samuel Mulat & Robel Teklebirhan",
+        "role": "Students, Annandale High School",
+        "usage": "Families on a budget use Smart Cart to compare grocery prices across nearby stores before shopping. The app recommends the cheapest high-quality options and suggests budget-friendly meals and recipes based on what is affordable.",
+        "impact": "Families are stretching their grocery budgets further because they can see price comparisons at a glance instead of driving to multiple stores. The meal planning feature has helped households reduce food waste while eating better on less.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
       }
     ]
   },
@@ -6092,7 +6756,7 @@
     "type": "topic",
     "iconColor": "#5B8DC9",
     "iconEmoji": null,
-    "appCount": 34,
+    "appCount": 36,
     "apps": [
       {
         "id": "cloa6u4pi005fpt96wze1b4lr",
@@ -6127,22 +6791,6 @@
           "Math",
           "Ghana",
           "Elementary"
-        ]
-      },
-      {
-        "id": "sassy",
-        "name": "Sassy",
-        "description": "Oregon students explore career and trade pathways with AI guidance tailored to their state's specific opportunities, apprenticeship programs, and workforce needs.",
-        "url": "https://www.playlab.ai/project/sassy",
-        "creator": "Ed Madison",
-        "role": "Oregon Dept of Education / JLI",
-        "usage": "Oregon students explore career and trade pathways with AI guidance tailored to their state's specific opportunities, apprenticeship programs, and workforce needs. The tool connects classroom learning to real career options available in their region.",
-        "impact": "Brought state-level career guidance directly to students — instead of generic advice, Oregon students got pathways matched to their state's actual economy, apprenticeships, and employer needs.",
-        "sessions": 8870,
-        "iterations": 42,
-        "tags": [
-          "Flowers",
-          "Career & Vocational"
         ]
       },
       {
@@ -6649,6 +7297,24 @@
         ]
       },
       {
+        "id": "sassy",
+        "name": "Sassy",
+        "description": "Sassy helps Oregon middle and high school students explore career and trade pathways.",
+        "url": "https://www.playlab.ai/build/clu49uied0akhn2jgtb8hhww3",
+        "creator": "Ed Madison",
+        "role": "University of Oregon",
+        "usage": "Students interact with Sassy to discover career and trade options that align with their interests and strengths. The app walks them through different vocational pathways available in Oregon, helping them understand what each career looks like day-to-day and what steps they'd need to take to get there.",
+        "impact": "Students who previously had limited exposure to non-college pathways are now actively researching trades and vocational programs. Teachers report that Sassy has opened up richer conversations about post-secondary planning, especially for students who felt traditional four-year college wasn't their only option.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "Middle School",
+          "High School",
+          "Flowers"
+        ]
+      },
+      {
         "id": "creating-inclusive-learning-communities",
         "name": "Creating Inclusive Learning Communities",
         "description": "This app helps educators serve increasingly diverse student populations by enabling them to create learning communities where all students feel they belong and develop the knowledge, skills, and understanding they need to thrive in a world on the move.",
@@ -6667,6 +7333,46 @@
           "Differentiation & Access",
           "ELL / ESL",
           "Flowers"
+        ]
+      },
+      {
+        "id": "cmk1ra2ft1qdtjl0ujm6287fj",
+        "name": "ClearPath AI",
+        "description": "ClearPath AI helps people in Northern Virginia quickly find trusted local housing, food, and support services in their preferred language during times of housing instability.",
+        "url": "https://www.playlab.ai/project/cmk1ra2ft1qdtjl0ujm6287fj",
+        "creator": "Binayak Bhusal, Hans Mehta & Abram Gatz",
+        "role": "Students, Herndon High School",
+        "usage": "Community members facing housing instability use ClearPath AI to find nearby shelters, food banks, and support services in Northern Virginia. The app provides results in the user's preferred language, removing a critical barrier for non-English speakers navigating an already stressful situation.",
+        "impact": "Families who previously struggled to find help because of language barriers or not knowing where to start are now connecting with local resources faster. The student-built tool has become a model for how young people can use technology to address real needs in their own community.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "ELL / ESL",
+          "Flowers",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmjsufbuu1gponc0ug5c7a24h",
+        "name": "Genetic Guard",
+        "description": "Uses ClinVar and Alpha Missense to predict the risk of variants of uncertain significance (VUS) found in genetic testing results, empowering patients and preventing pediatric cancers through TP53 specialization.",
+        "url": "https://www.playlab.ai/project/cmjsufbuu1gponc0ug5c7a24h",
+        "creator": "Joelle Rice",
+        "role": "Student, Woodson High School",
+        "usage": "Patients and genetic counselors use Genetic Guard to interpret variants of uncertain significance found in genetic testing results. The app leverages ClinVar and Alpha Missense databases to predict risk levels, with a specialization in TP53 variants linked to pediatric cancers.",
+        "impact": "Families receiving ambiguous genetic testing results are getting clearer guidance on what those results might mean, reducing anxiety and enabling more informed conversations with their doctors. The TP53 focus has the potential to catch pediatric cancer risks earlier.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Flowers",
+          "Niche & Emerging"
         ]
       },
       {
@@ -6696,7 +7402,7 @@
     "type": "topic",
     "iconColor": "#D1576A",
     "iconEmoji": null,
-    "appCount": 31,
+    "appCount": 32,
     "apps": [
       {
         "id": "ask-socrates",
@@ -7130,6 +7836,25 @@
           "Business / Economics",
           "Gamified Learning",
           "Flowers"
+        ]
+      },
+      {
+        "id": "cmjhj98ey0lt6nt0ubgyb35i4",
+        "name": "NarrAIter",
+        "description": "AI-guided storytelling that weaves in grammar, spelling, reading comprehension, and vocabulary questions for children, with accessible features like voice input.",
+        "url": "https://www.playlab.ai/project/cmjhj98ey0lt6nt0ubgyb35i4",
+        "creator": "Anna Woo & Grace Yim",
+        "role": "Students, Central Challenge Team",
+        "usage": "Children engage with an interactive story where the AI weaves in grammar, spelling, reading comprehension, and vocabulary questions naturally as the narrative unfolds. The voice input feature makes it accessible to early readers and students with different learning needs.",
+        "impact": "Young readers are building literacy skills without realizing they are being assessed because the learning feels like play. The storytelling format has been especially effective for reluctant readers who engage eagerly when skills practice is embedded in adventure.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELA / Literacy",
+          "Elementary",
+          "Student-Built Apps",
+          "Fairfax",
+          "Gamified Learning"
         ]
       },
       {
@@ -7751,7 +8476,7 @@
     "type": "topic",
     "iconColor": "#3347B8",
     "iconEmoji": null,
-    "appCount": 11,
+    "appCount": 13,
     "apps": [
       {
         "id": "cme6havtb09ypnl0u463nznvq",
@@ -7931,6 +8656,43 @@
           "Health & PE",
           "SEL / Wellbeing"
         ]
+      },
+      {
+        "id": "cmkabk2208gyvgn0uvpi6c2o2",
+        "name": "Step",
+        "description": "Offers calm support for everyday health questions. Built for people with disabilities, chronic conditions, or uncertainty, using clear language and gentle guidance without replacing medical care.",
+        "url": "https://www.playlab.ai/project/cmkabk2208gyvgn0uvpi6c2o2",
+        "creator": "Yuvraj Nathawat",
+        "role": "Student, Oakton High School",
+        "usage": "People with disabilities and chronic conditions use Step to get calm, clear answers to everyday health questions without the anxiety of a clinical search. The app provides gentle guidance in accessible language, helping users feel supported and informed.",
+        "impact": "Users who avoided asking health questions out of overwhelm or fear are now engaging with their wellbeing proactively. The app's calm, judgment-free approach has made health literacy feel approachable for people who often feel excluded from mainstream health resources.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Health & PE",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Special Education"
+        ]
+      },
+      {
+        "id": "cmhw6lk2m17e4m20uw64xgebp",
+        "name": "Physical Therapy with Stan",
+        "description": "Provides rehab guidance for users with minor musculoskeletal injuries or post-surgical rehab, offering specialized exercise programs based on the user's state of injury for those who lack access to physical therapists.",
+        "url": "https://www.playlab.ai/project/cmhw6lk2m17e4m20uw64xgebp",
+        "creator": "Minh Tran, Michael Cabrera & Khoi Nguyen",
+        "role": "Students, South County High School",
+        "usage": "Low-income users and those without access to physical therapists use Stan to get personalized rehabilitation exercises for minor musculoskeletal injuries. The app assesses the user's injury state and generates a tailored exercise program they can follow at home.",
+        "impact": "Users who couldn't afford physical therapy are now actively rehabbing injuries with structured guidance instead of guessing or doing nothing. The app has made basic rehab support accessible to communities where professional PT is out of reach.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Health & PE",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
       }
     ]
   },
@@ -7941,7 +8703,7 @@
     "type": "topic",
     "iconColor": "#FE6A2E",
     "iconEmoji": null,
-    "appCount": 48,
+    "appCount": 65,
     "apps": [
       {
         "id": "cm4kajw2r0ijxakiu2tupisre",
@@ -8512,6 +9274,25 @@
         ]
       },
       {
+        "id": "cmkg36a1e05nxn70uedg8dp9p",
+        "name": "PhishGuard AI",
+        "description": "PhishGuard AI helps users quickly check suspicious emails and messages by analyzing common scam and phishing warning signs and explaining them in simple language.",
+        "url": "https://www.playlab.ai/project/cmkg36a1e05nxn70uedg8dp9p",
+        "creator": "Manan Shrestha, Ryan Benyahya & Darshan Wagle",
+        "role": "Students, Marshall High School",
+        "usage": "Students and community members paste suspicious emails or messages into the app to get a plain-language breakdown of phishing red flags. The app identifies common scam tactics and explains why a message looks suspicious, building digital literacy one real example at a time.",
+        "impact": "Users who previously fell for phishing attempts or simply deleted everything suspicious are now making informed decisions about which messages to trust. The student-built tool has become a practical cybersecurity resource that makes online safety accessible to people of all technical backgrounds.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
         "id": "postsecondary-pathway-planner",
         "name": "Postsecondary Pathway Planner",
         "description": "Supports high school students in backwards planning their postsecondary pathways, allowing them to explore various careers through assessments and self-reflection.",
@@ -8530,6 +9311,43 @@
         ]
       },
       {
+        "id": "cmkcmvmdk2m38k10uj0e3dws9",
+        "name": "FirstStep",
+        "description": "FirstStep helps students prepare for college by walking them through what to expect and what steps to take each year. College doesn't come with a manual — college starts with one step.",
+        "url": "https://www.playlab.ai/project/cmkcmvmdk2m38k10uj0e3dws9",
+        "creator": "Tharu Kalahi, Sadu Kalahi & Ridhi Kasineni",
+        "role": "Students, Centreville High School",
+        "usage": "High school students use FirstStep to navigate the college preparation process year by year, from building a course plan as a freshman to submitting applications as a senior. The app breaks down an overwhelming process into clear, actionable steps so students always know what to do next.",
+        "impact": "Students who felt lost about the college process are now approaching it with confidence because they have a clear roadmap tailored to their timeline. The year-by-year structure has been especially valuable for first-generation college-bound students who lack family experience to guide them.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "High School",
+          "Career & Vocational",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmirmgxli19iqp70uffxniq2s",
+        "name": "Misinformation Detector",
+        "description": "Identify misinformation with the Misinformation Detector! Paste an article and the AI analyzes it using expert-constructed techniques, plus provides tests and examples to build your media literacy skills.",
+        "url": "https://www.playlab.ai/project/cmirmgxli19iqp70uffxniq2s",
+        "creator": "Justin Jaran, Eko Dang & Christian Tam",
+        "role": "Students, Edison High School",
+        "usage": "Students and community members paste articles they suspect might contain misinformation and get an AI-powered analysis using expert-validated detection techniques. The app also offers quizzes and examples so users can sharpen their own ability to spot misinformation independently.",
+        "impact": "Users are developing stronger critical thinking about the media they consume because the app doesn't just flag problems — it teaches the reasoning behind why something is misleading. The student-built tool has made media literacy feel practical and immediate rather than abstract.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELA / Literacy",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
         "id": "have-i-got-a-book-for-you-",
         "name": "Have I Got a Book for YOU!",
         "description": "High school students share their reading preferences, interests, and past favorites with the app and receive personalized book recommendations that match their tastes.",
@@ -8545,6 +9363,26 @@
           "High School",
           "Reading Intervention",
           "Differentiation & Access"
+        ]
+      },
+      {
+        "id": "cmk1ra2ft1qdtjl0ujm6287fj",
+        "name": "ClearPath AI",
+        "description": "ClearPath AI helps people in Northern Virginia quickly find trusted local housing, food, and support services in their preferred language during times of housing instability.",
+        "url": "https://www.playlab.ai/project/cmk1ra2ft1qdtjl0ujm6287fj",
+        "creator": "Binayak Bhusal, Hans Mehta & Abram Gatz",
+        "role": "Students, Herndon High School",
+        "usage": "Community members facing housing instability use ClearPath AI to find nearby shelters, food banks, and support services in Northern Virginia. The app provides results in the user's preferred language, removing a critical barrier for non-English speakers navigating an already stressful situation.",
+        "impact": "Families who previously struggled to find help because of language barriers or not knowing where to start are now connecting with local resources faster. The student-built tool has become a model for how young people can use technology to address real needs in their own community.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "ELL / ESL",
+          "Flowers",
+          "Fairfax"
         ]
       },
       {
@@ -8567,6 +9405,25 @@
         ]
       },
       {
+        "id": "cmkbt18f50gv4g90u95h1neux",
+        "name": "Find Your Home",
+        "description": "An AI assistant that simplifies the complex U.S. housing market for everyone, especially first-time immigrants and underserved communities. Acts as financial triage — assessing eligibility for housing programs, explaining terms like AMI in simple language, and providing personalized multilingual guidance.",
+        "url": "https://www.playlab.ai/project/cmkbt18f50gv4g90u95h1neux",
+        "creator": "Arian Miran & Sahiti Tanuku",
+        "role": "Students, Chantilly High School",
+        "usage": "First-time immigrants and underserved community members use Find Your Home to navigate the U.S. housing market with confidence. The app assesses eligibility for housing programs, explains complex financial terms in plain language, and provides guidance in multiple languages.",
+        "impact": "Families who were overwhelmed by the housing process are now understanding their options and taking action because the app removes language and jargon barriers. The student-built tool has made housing access more equitable by meeting people where they are linguistically and financially.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "ELL / ESL"
+        ]
+      },
+      {
         "id": "stem-career-explorer",
         "name": "STEM Career Explorer",
         "description": "A chatbot that guides students through exploring different STEM career paths, providing information on job requirements, salary expectations, and educational pathways for various STEM professions to help students make informed career choices.",
@@ -8584,6 +9441,63 @@
         ]
       },
       {
+        "id": "cmk4m0j1n0nlvj10ud6f3n9bx",
+        "name": "CivicsLens",
+        "description": "Helps people better understand the news by comparing how the same topic is presented from different perspectives. Highlights biased language and summarizes multiple viewpoints so users can form their own informed opinions.",
+        "url": "https://www.playlab.ai/project/cmk4m0j1n0nlvj10ud6f3n9bx",
+        "creator": "Jackson Stear, Donovan Hogan & Surafael Melaku",
+        "role": "Students, Robinson Secondary School",
+        "usage": "Users paste news articles or topics and CivicsLens shows how different outlets cover the same story, highlighting biased language and framing. It summarizes multiple viewpoints side by side so users can see the full picture before forming their own opinion.",
+        "impact": "Students are developing sharper media literacy skills because they can see bias in action rather than just hearing about it in theory. The comparative approach has changed how young people consume news, making them more thoughtful and questioning readers.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Social Studies / History",
+          "ELA / Literacy",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmklr3bry6c6jnb0t5968zi8e",
+        "name": "Virginia Standards of Learning Study Assistant",
+        "description": "Learn any of 70 SOL courses by taking a diagnostic, then progress through review, mastery, and practice while tracking your results.",
+        "url": "https://www.playlab.ai/project/cmklr3bry6c6jnb0t5968zi8e",
+        "creator": "Lincoln Marine, Noah Teates & Aleksander Roberto",
+        "role": "Students, Langley High School",
+        "usage": "Virginia high school students use this app to prepare for Standards of Learning exams across 70 courses. The app starts with a diagnostic to identify gaps, then guides students through review, mastery, and practice phases while tracking their progress over time.",
+        "impact": "Students are approaching SOL prep with a clearer sense of what they actually need to study rather than reviewing everything from scratch. The structured progression from diagnostic to mastery has given students ownership over their exam preparation and a visible path to readiness.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "High School",
+          "Study Partners",
+          "Assessment & Feedback",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmkabk2208gyvgn0uvpi6c2o2",
+        "name": "Step",
+        "description": "Offers calm support for everyday health questions. Built for people with disabilities, chronic conditions, or uncertainty, using clear language and gentle guidance without replacing medical care.",
+        "url": "https://www.playlab.ai/project/cmkabk2208gyvgn0uvpi6c2o2",
+        "creator": "Yuvraj Nathawat",
+        "role": "Student, Oakton High School",
+        "usage": "People with disabilities and chronic conditions use Step to get calm, clear answers to everyday health questions without the anxiety of a clinical search. The app provides gentle guidance in accessible language, helping users feel supported and informed.",
+        "impact": "Users who avoided asking health questions out of overwhelm or fear are now engaging with their wellbeing proactively. The app's calm, judgment-free approach has made health literacy feel approachable for people who often feel excluded from mainstream health resources.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Health & PE",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Special Education"
+        ]
+      },
+      {
         "id": "fafsa-assistant",
         "name": "FAFSA Assistant",
         "description": "Parents and families use this bot as a step-by-step guide through the FAFSA application process.",
@@ -8598,6 +9512,44 @@
           "High School",
           "Family & Community",
           "AI Assistants"
+        ]
+      },
+      {
+        "id": "cmjni31oe05ebnt0umzlf1w3w",
+        "name": "Adapt",
+        "description": "A study app that uses AI to adapt learning to a student's mental state and learning behavior, not just the content.",
+        "url": "https://www.playlab.ai/project/cmjni31oe05ebnt0umzlf1w3w",
+        "creator": "Heela Jalali, Mahsa Kohistani & Jenna Galala",
+        "role": "Students, Justice High School",
+        "usage": "Students use Adapt as a study partner that reads their emotional and cognitive state — not just the subject matter — to adjust how material is presented. If a student is frustrated, the app slows down; if they're in flow, it pushes ahead.",
+        "impact": "Students are sustaining study sessions longer and with less frustration because the app meets them where they are emotionally, not just academically. The human-centered approach has shown that learning tools work better when they account for the whole student.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "SEL / Wellbeing",
+          "Study Partners",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Differentiation & Access"
+        ]
+      },
+      {
+        "id": "cmhxswgxn63yykw0u491z6nr3",
+        "name": "Prep Up",
+        "description": "Helps students feel ready for important interviews by providing mock questions and personalized feedback based on their responses.",
+        "url": "https://www.playlab.ai/project/cmhxswgxn63yykw0u491z6nr3",
+        "creator": "Clara Hatcher & Henry Mihalak",
+        "role": "Students, Madison High School",
+        "usage": "Students preparing for job, college, or scholarship interviews use Prep Up to practice with mock questions tailored to their situation. The app provides personalized feedback on each response, helping students refine their answers and build confidence.",
+        "impact": "Students who used to freeze up in interviews are walking in prepared and poised because they have already rehearsed with targeted feedback. The personalized coaching has leveled the playing field for students who lack adults to help them practice.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
         ]
       },
       {
@@ -8692,6 +9644,81 @@
         ]
       },
       {
+        "id": "cmjsufbuu1gponc0ug5c7a24h",
+        "name": "Genetic Guard",
+        "description": "Uses ClinVar and Alpha Missense to predict the risk of variants of uncertain significance (VUS) found in genetic testing results, empowering patients and preventing pediatric cancers through TP53 specialization.",
+        "url": "https://www.playlab.ai/project/cmjsufbuu1gponc0ug5c7a24h",
+        "creator": "Joelle Rice",
+        "role": "Student, Woodson High School",
+        "usage": "Patients and genetic counselors use Genetic Guard to interpret variants of uncertain significance found in genetic testing results. The app leverages ClinVar and Alpha Missense databases to predict risk levels, with a specialization in TP53 variants linked to pediatric cancers.",
+        "impact": "Families receiving ambiguous genetic testing results are getting clearer guidance on what those results might mean, reducing anxiety and enabling more informed conversations with their doctors. The TP53 focus has the potential to catch pediatric cancer risks earlier.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Flowers",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "sassy",
+        "name": "Sassy",
+        "description": "Sassy helps Oregon middle and high school students explore career and trade pathways.",
+        "url": "https://www.playlab.ai/build/clu49uied0akhn2jgtb8hhww3",
+        "creator": "Ed Madison",
+        "role": "University of Oregon",
+        "usage": "Students interact with Sassy to discover career and trade options that align with their interests and strengths. The app walks them through different vocational pathways available in Oregon, helping them understand what each career looks like day-to-day and what steps they'd need to take to get there.",
+        "impact": "Students who previously had limited exposure to non-college pathways are now actively researching trades and vocational programs. Teachers report that Sassy has opened up richer conversations about post-secondary planning, especially for students who felt traditional four-year college wasn't their only option.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "Middle School",
+          "High School",
+          "Flowers"
+        ]
+      },
+      {
+        "id": "cmknavygk1l0rok0ufempxzpf",
+        "name": "Smart Cart",
+        "description": "Compare nearby grocery prices, find the cheapest high-quality options, and get budget-friendly meal and recipe help based on your needs.",
+        "url": "https://www.playlab.ai/project/cmknavygk1l0rok0ufempxzpf",
+        "creator": "Nuh Yesuf, Samuel Mulat & Robel Teklebirhan",
+        "role": "Students, Annandale High School",
+        "usage": "Families on a budget use Smart Cart to compare grocery prices across nearby stores before shopping. The app recommends the cheapest high-quality options and suggests budget-friendly meals and recipes based on what is affordable.",
+        "impact": "Families are stretching their grocery budgets further because they can see price comparisons at a glance instead of driving to multiple stores. The meal planning feature has helped households reduce food waste while eating better on less.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmi5d0ent63zpjx0uiu8kr3yu",
+        "name": "ECOReceipt",
+        "description": "Scans your receipts to show the environmental impact and cost of your purchases. Suggests greener, budget-friendly alternatives and tracks your progress to help you save money while reducing your carbon footprint.",
+        "url": "https://www.playlab.ai/project/cmi5d0ent63zpjx0uiu8kr3yu",
+        "creator": "Ghaarunya Balamurugan, Manasha Mahendramurthy & Sia Vadakkoot",
+        "role": "Students, Westfield High School",
+        "usage": "Users photograph or upload their shopping receipts and ECOReceipt analyzes the environmental impact and cost of each purchase. The app suggests greener, budget-friendly alternatives and tracks progress over time.",
+        "impact": "Users are making more environmentally conscious purchasing decisions because the app connects their everyday shopping to tangible environmental metrics. The dual focus on savings and sustainability has shown people that going green does not have to mean spending more.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
         "id": "college-challenge-coach",
         "name": "College Challenge Coach",
         "description": "Helps students think through challenges and obstacles they may encounter in college, building problem-solving skills and resilience before they leave high school.",
@@ -8747,6 +9774,24 @@
         ]
       },
       {
+        "id": "cmkh1mn1t1y2cjx0u5bqf90ty",
+        "name": "Invest AI",
+        "description": "Provides investment plans with accurate bonds, stocks, and other investment methods based on the user's goals, income, location, and financial situation.",
+        "url": "https://www.playlab.ai/project/cmkh1mn1t1y2cjx0u5bqf90ty",
+        "creator": "Catalina Reyes, Evelina Tatevosyan & Daisy Sheldon",
+        "role": "Students, Hayfield Secondary School",
+        "usage": "Users input their financial goals, income, and situation and Invest AI generates a personalized investment plan recommending specific bonds, stocks, and other instruments. The app makes investing accessible to people who have never had a financial advisor.",
+        "impact": "Young people and first-time investors are taking their first steps into financial planning because the app removes the intimidation of the investment world. The personalized approach has helped users see investing as something for them, not just for the wealthy.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Business / Economics",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
         "id": "sos-guide-summer-opportunities",
         "name": "SOS Guide - Summer Opportunities",
         "description": "Assists high school students (grades 9-12) in finding and applying to summer programs that match their grade, interests, GPA, and location preferences.",
@@ -8761,6 +9806,43 @@
           "High School",
           "Career & Vocational",
           "AI Assistants"
+        ]
+      },
+      {
+        "id": "cmhw6lk2m17e4m20uw64xgebp",
+        "name": "Physical Therapy with Stan",
+        "description": "Provides rehab guidance for users with minor musculoskeletal injuries or post-surgical rehab, offering specialized exercise programs based on the user's state of injury for those who lack access to physical therapists.",
+        "url": "https://www.playlab.ai/project/cmhw6lk2m17e4m20uw64xgebp",
+        "creator": "Minh Tran, Michael Cabrera & Khoi Nguyen",
+        "role": "Students, South County High School",
+        "usage": "Low-income users and those without access to physical therapists use Stan to get personalized rehabilitation exercises for minor musculoskeletal injuries. The app assesses the user's injury state and generates a tailored exercise program they can follow at home.",
+        "impact": "Users who couldn't afford physical therapy are now actively rehabbing injuries with structured guidance instead of guessing or doing nothing. The app has made basic rehab support accessible to communities where professional PT is out of reach.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Health & PE",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmhvagef50qgqlt0uu7cxextd",
+        "name": "PermitPartner",
+        "description": "Helps you gather all required details for permit-ready, code-compliant architectural plans tailored to your county's regulations.",
+        "url": "https://www.playlab.ai/project/cmhvagef50qgqlt0uu7cxextd",
+        "creator": "Abidullah Ghani & Shaheer Salarzai",
+        "role": "Students, South Lakes High School",
+        "usage": "Homeowners and contractors use PermitPartner to compile the details needed for permit-ready architectural plans. The app tailors requirements to specific county regulations, eliminating the guesswork that often delays construction projects.",
+        "impact": "Users who previously struggled with permit paperwork are now submitting compliant plans faster because the app handles the regulatory complexity. The student-built tool has made the permitting process accessible to people without architectural expertise.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
         ]
       }
     ]
@@ -11093,7 +12175,7 @@
     "type": "topic",
     "iconColor": "#D1576A",
     "iconEmoji": null,
-    "appCount": 41,
+    "appCount": 42,
     "apps": [
       {
         "id": "cmd97ngc20acujq0usfl5z5v1",
@@ -11744,6 +12826,24 @@
         ]
       },
       {
+        "id": "sassy",
+        "name": "Sassy",
+        "description": "Sassy helps Oregon middle and high school students explore career and trade pathways.",
+        "url": "https://www.playlab.ai/build/clu49uied0akhn2jgtb8hhww3",
+        "creator": "Ed Madison",
+        "role": "University of Oregon",
+        "usage": "Students interact with Sassy to discover career and trade options that align with their interests and strengths. The app walks them through different vocational pathways available in Oregon, helping them understand what each career looks like day-to-day and what steps they'd need to take to get there.",
+        "impact": "Students who previously had limited exposure to non-college pathways are now actively researching trades and vocational programs. Teachers report that Sassy has opened up richer conversations about post-secondary planning, especially for students who felt traditional four-year college wasn't their only option.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "Middle School",
+          "High School",
+          "Flowers"
+        ]
+      },
+      {
         "id": "start-my-art",
         "name": "Start My Art",
         "description": "Helps middle school students explore career paths in the visual art field. Guides them in selecting a path to research best suited to their unique interests, moving beyond the typical art careers found in web search engines.",
@@ -12225,7 +13325,7 @@
     "type": "topic",
     "iconColor": "#FE6A2E",
     "iconEmoji": null,
-    "appCount": 8,
+    "appCount": 13,
     "apps": [
       {
         "id": "cm3rsufb30c0y10k7sapg89d5",
@@ -12360,6 +13460,102 @@
           "Student-Built Apps",
           "Niche & Emerging",
           "Science / STEM"
+        ]
+      },
+      {
+        "id": "cmkg36a1e05nxn70uedg8dp9p",
+        "name": "PhishGuard AI",
+        "description": "PhishGuard AI helps users quickly check suspicious emails and messages by analyzing common scam and phishing warning signs and explaining them in simple language.",
+        "url": "https://www.playlab.ai/project/cmkg36a1e05nxn70uedg8dp9p",
+        "creator": "Manan Shrestha, Ryan Benyahya & Darshan Wagle",
+        "role": "Students, Marshall High School",
+        "usage": "Students and community members paste suspicious emails or messages into the app to get a plain-language breakdown of phishing red flags. The app identifies common scam tactics and explains why a message looks suspicious, building digital literacy one real example at a time.",
+        "impact": "Users who previously fell for phishing attempts or simply deleted everything suspicious are now making informed decisions about which messages to trust. The student-built tool has become a practical cybersecurity resource that makes online safety accessible to people of all technical backgrounds.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "cmirmgxli19iqp70uffxniq2s",
+        "name": "Misinformation Detector",
+        "description": "Identify misinformation with the Misinformation Detector! Paste an article and the AI analyzes it using expert-constructed techniques, plus provides tests and examples to build your media literacy skills.",
+        "url": "https://www.playlab.ai/project/cmirmgxli19iqp70uffxniq2s",
+        "creator": "Justin Jaran, Eko Dang & Christian Tam",
+        "role": "Students, Edison High School",
+        "usage": "Students and community members paste articles they suspect might contain misinformation and get an AI-powered analysis using expert-validated detection techniques. The app also offers quizzes and examples so users can sharpen their own ability to spot misinformation independently.",
+        "impact": "Users are developing stronger critical thinking about the media they consume because the app doesn't just flag problems — it teaches the reasoning behind why something is misleading. The student-built tool has made media literacy feel practical and immediate rather than abstract.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELA / Literacy",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "cmjsufbuu1gponc0ug5c7a24h",
+        "name": "Genetic Guard",
+        "description": "Uses ClinVar and Alpha Missense to predict the risk of variants of uncertain significance (VUS) found in genetic testing results, empowering patients and preventing pediatric cancers through TP53 specialization.",
+        "url": "https://www.playlab.ai/project/cmjsufbuu1gponc0ug5c7a24h",
+        "creator": "Joelle Rice",
+        "role": "Student, Woodson High School",
+        "usage": "Patients and genetic counselors use Genetic Guard to interpret variants of uncertain significance found in genetic testing results. The app leverages ClinVar and Alpha Missense databases to predict risk levels, with a specialization in TP53 variants linked to pediatric cancers.",
+        "impact": "Families receiving ambiguous genetic testing results are getting clearer guidance on what those results might mean, reducing anxiety and enabling more informed conversations with their doctors. The TP53 focus has the potential to catch pediatric cancer risks earlier.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Flowers",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "cmi5d0ent63zpjx0uiu8kr3yu",
+        "name": "ECOReceipt",
+        "description": "Scans your receipts to show the environmental impact and cost of your purchases. Suggests greener, budget-friendly alternatives and tracks your progress to help you save money while reducing your carbon footprint.",
+        "url": "https://www.playlab.ai/project/cmi5d0ent63zpjx0uiu8kr3yu",
+        "creator": "Ghaarunya Balamurugan, Manasha Mahendramurthy & Sia Vadakkoot",
+        "role": "Students, Westfield High School",
+        "usage": "Users photograph or upload their shopping receipts and ECOReceipt analyzes the environmental impact and cost of each purchase. The app suggests greener, budget-friendly alternatives and tracks progress over time.",
+        "impact": "Users are making more environmentally conscious purchasing decisions because the app connects their everyday shopping to tangible environmental metrics. The dual focus on savings and sustainability has shown people that going green does not have to mean spending more.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "cmhvagef50qgqlt0uu7cxextd",
+        "name": "PermitPartner",
+        "description": "Helps you gather all required details for permit-ready, code-compliant architectural plans tailored to your county's regulations.",
+        "url": "https://www.playlab.ai/project/cmhvagef50qgqlt0uu7cxextd",
+        "creator": "Abidullah Ghani & Shaheer Salarzai",
+        "role": "Students, South Lakes High School",
+        "usage": "Homeowners and contractors use PermitPartner to compile the details needed for permit-ready architectural plans. The app tailors requirements to specific county regulations, eliminating the guesswork that often delays construction projects.",
+        "impact": "Users who previously struggled with permit paperwork are now submitting compliant plans faster because the app handles the regulatory complexity. The student-built tool has made the permitting process accessible to people without architectural expertise.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
         ]
       }
     ]
@@ -14236,7 +15432,7 @@
     "type": "topic",
     "iconColor": "#5B8DC9",
     "iconEmoji": null,
-    "appCount": 25,
+    "appCount": 26,
     "apps": [
       {
         "id": "clnnq834e0722oc9efcet4vii",
@@ -14506,6 +15702,26 @@
           "Project-Based Learning",
           "SEL / Wellbeing",
           "Cultural Studies"
+        ]
+      },
+      {
+        "id": "cmjni31oe05ebnt0umzlf1w3w",
+        "name": "Adapt",
+        "description": "A study app that uses AI to adapt learning to a student's mental state and learning behavior, not just the content.",
+        "url": "https://www.playlab.ai/project/cmjni31oe05ebnt0umzlf1w3w",
+        "creator": "Heela Jalali, Mahsa Kohistani & Jenna Galala",
+        "role": "Students, Justice High School",
+        "usage": "Students use Adapt as a study partner that reads their emotional and cognitive state — not just the subject matter — to adjust how material is presented. If a student is frustrated, the app slows down; if they're in flow, it pushes ahead.",
+        "impact": "Students are sustaining study sessions longer and with less frustration because the app meets them where they are emotionally, not just academically. The human-centered approach has shown that learning tools work better when they account for the whole student.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "SEL / Wellbeing",
+          "Study Partners",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Differentiation & Access"
         ]
       },
       {
@@ -15404,7 +16620,7 @@
     "type": "topic",
     "iconColor": "#4A9E6D",
     "iconEmoji": null,
-    "appCount": 45,
+    "appCount": 48,
     "apps": [
       {
         "id": "cme6fjssk0bbom50u3bk6xwpt",
@@ -16088,6 +17304,25 @@
         ]
       },
       {
+        "id": "cmkg36a1e05nxn70uedg8dp9p",
+        "name": "PhishGuard AI",
+        "description": "PhishGuard AI helps users quickly check suspicious emails and messages by analyzing common scam and phishing warning signs and explaining them in simple language.",
+        "url": "https://www.playlab.ai/project/cmkg36a1e05nxn70uedg8dp9p",
+        "creator": "Manan Shrestha, Ryan Benyahya & Darshan Wagle",
+        "role": "Students, Marshall High School",
+        "usage": "Students and community members paste suspicious emails or messages into the app to get a plain-language breakdown of phishing red flags. The app identifies common scam tactics and explains why a message looks suspicious, building digital literacy one real example at a time.",
+        "impact": "Users who previously fell for phishing attempts or simply deleted everything suspicious are now making informed decisions about which messages to trust. The student-built tool has become a practical cybersecurity resource that makes online safety accessible to people of all technical backgrounds.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
         "id": "learn-about-insects",
         "name": "Learn About Insects",
         "description": "Students explore the world of insects through an interactive guide that teaches them about different species, their habitats, and behaviors.",
@@ -16139,6 +17374,26 @@
         ]
       },
       {
+        "id": "cmjsufbuu1gponc0ug5c7a24h",
+        "name": "Genetic Guard",
+        "description": "Uses ClinVar and Alpha Missense to predict the risk of variants of uncertain significance (VUS) found in genetic testing results, empowering patients and preventing pediatric cancers through TP53 specialization.",
+        "url": "https://www.playlab.ai/project/cmjsufbuu1gponc0ug5c7a24h",
+        "creator": "Joelle Rice",
+        "role": "Student, Woodson High School",
+        "usage": "Patients and genetic counselors use Genetic Guard to interpret variants of uncertain significance found in genetic testing results. The app leverages ClinVar and Alpha Missense databases to predict risk levels, with a specialization in TP53 variants linked to pediatric cancers.",
+        "impact": "Families receiving ambiguous genetic testing results are getting clearer guidance on what those results might mean, reducing anxiety and enabling more informed conversations with their doctors. The TP53 focus has the potential to catch pediatric cancer risks earlier.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Flowers",
+          "Niche & Emerging"
+        ]
+      },
+      {
         "id": "build-knowledge-and-disrupt-texts-2-0",
         "name": "Build Knowledge and Disrupt Texts 2.0",
         "description": "Helps teachers build deeper knowledge on Science and History topics through more coherent text sets. Provides informational text pairings and offers similar fictional texts by diverse authors.",
@@ -16157,6 +17412,25 @@
           "Cultural Studies",
           "Lesson Planning"
         ]
+      },
+      {
+        "id": "cmi5d0ent63zpjx0uiu8kr3yu",
+        "name": "ECOReceipt",
+        "description": "Scans your receipts to show the environmental impact and cost of your purchases. Suggests greener, budget-friendly alternatives and tracks your progress to help you save money while reducing your carbon footprint.",
+        "url": "https://www.playlab.ai/project/cmi5d0ent63zpjx0uiu8kr3yu",
+        "creator": "Ghaarunya Balamurugan, Manasha Mahendramurthy & Sia Vadakkoot",
+        "role": "Students, Westfield High School",
+        "usage": "Users photograph or upload their shopping receipts and ECOReceipt analyzes the environmental impact and cost of each purchase. The app suggests greener, budget-friendly alternatives and tracks progress over time.",
+        "impact": "Users are making more environmentally conscious purchasing decisions because the app connects their everyday shopping to tangible environmental metrics. The dual focus on savings and sustainability has shown people that going green does not have to mean spending more.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
       }
     ]
   },
@@ -16167,7 +17441,7 @@
     "type": "topic",
     "iconColor": "#3347B8",
     "iconEmoji": null,
-    "appCount": 24,
+    "appCount": 25,
     "apps": [
       {
         "id": "cme6h714p0ge7nk0uw48xnont",
@@ -16545,6 +17819,25 @@
         ]
       },
       {
+        "id": "cmk4m0j1n0nlvj10ud6f3n9bx",
+        "name": "CivicsLens",
+        "description": "Helps people better understand the news by comparing how the same topic is presented from different perspectives. Highlights biased language and summarizes multiple viewpoints so users can form their own informed opinions.",
+        "url": "https://www.playlab.ai/project/cmk4m0j1n0nlvj10ud6f3n9bx",
+        "creator": "Jackson Stear, Donovan Hogan & Surafael Melaku",
+        "role": "Students, Robinson Secondary School",
+        "usage": "Users paste news articles or topics and CivicsLens shows how different outlets cover the same story, highlighting biased language and framing. It summarizes multiple viewpoints side by side so users can see the full picture before forming their own opinion.",
+        "impact": "Students are developing sharper media literacy skills because they can see bias in action rather than just hearing about it in theory. The comparative approach has changed how young people consume news, making them more thoughtful and questioning readers.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Social Studies / History",
+          "ELA / Literacy",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
         "id": "social-justice-in-action",
         "name": "Social Justice in Action",
         "description": "Addy, your Advocate Assistant, guides you through the planning process of your social justice project.",
@@ -16591,7 +17884,7 @@
     "type": "topic",
     "iconColor": "#FE6A2E",
     "iconEmoji": null,
-    "appCount": 17,
+    "appCount": 18,
     "apps": [
       {
         "id": "clgazbbrl001gi1f5y7el9gl6",
@@ -16837,6 +18130,25 @@
         ]
       },
       {
+        "id": "cmkabk2208gyvgn0uvpi6c2o2",
+        "name": "Step",
+        "description": "Offers calm support for everyday health questions. Built for people with disabilities, chronic conditions, or uncertainty, using clear language and gentle guidance without replacing medical care.",
+        "url": "https://www.playlab.ai/project/cmkabk2208gyvgn0uvpi6c2o2",
+        "creator": "Yuvraj Nathawat",
+        "role": "Student, Oakton High School",
+        "usage": "People with disabilities and chronic conditions use Step to get calm, clear answers to everyday health questions without the anxiety of a clinical search. The app provides gentle guidance in accessible language, helping users feel supported and informed.",
+        "impact": "Users who avoided asking health questions out of overwhelm or fear are now engaging with their wellbeing proactively. The app's calm, judgment-free approach has made health literacy feel approachable for people who often feel excluded from mainstream health resources.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Health & PE",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Special Education"
+        ]
+      },
+      {
         "id": "udl-matters",
         "name": "UDL Matters",
         "description": "Creates access points to specific learning objectives for all students through Universal Design for Learning. Solves the classroom dilemma of teachers' ability to meet students where they're at.",
@@ -16882,7 +18194,7 @@
     "type": "topic",
     "iconColor": "#2D7A3A",
     "iconEmoji": null,
-    "appCount": 9,
+    "appCount": 27,
     "apps": [
       {
         "id": "clzhnrlj802rdk0vk3u25z2z0",
@@ -17018,6 +18330,346 @@
         ]
       },
       {
+        "id": "cmjhj98ey0lt6nt0ubgyb35i4",
+        "name": "NarrAIter",
+        "description": "AI-guided storytelling that weaves in grammar, spelling, reading comprehension, and vocabulary questions for children, with accessible features like voice input.",
+        "url": "https://www.playlab.ai/project/cmjhj98ey0lt6nt0ubgyb35i4",
+        "creator": "Anna Woo & Grace Yim",
+        "role": "Students, Central Challenge Team",
+        "usage": "Children engage with an interactive story where the AI weaves in grammar, spelling, reading comprehension, and vocabulary questions naturally as the narrative unfolds. The voice input feature makes it accessible to early readers and students with different learning needs.",
+        "impact": "Young readers are building literacy skills without realizing they are being assessed because the learning feels like play. The storytelling format has been especially effective for reluctant readers who engage eagerly when skills practice is embedded in adventure.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELA / Literacy",
+          "Elementary",
+          "Student-Built Apps",
+          "Fairfax",
+          "Gamified Learning"
+        ]
+      },
+      {
+        "id": "cmkevzgqa0clhlg0ur01fvtq9",
+        "name": "Cognify",
+        "description": "AI-powered K-12 learning diagnostics for both educators and students. Upload student work, get instant analysis identifying misconceptions, standards-aligned interventions, and personalized practice.",
+        "url": "https://www.playlab.ai/project/cmkevzgqa0clhlg0ur01fvtq9",
+        "creator": "Manas Puri",
+        "role": "Student, Lake Braddock Secondary School",
+        "usage": "Teachers and students upload work samples to get instant diagnostic analysis that identifies specific misconceptions and maps them to standards. The app generates targeted interventions and personalized practice, turning assessment from a grading task into a learning tool.",
+        "impact": "Educators are catching misconceptions earlier because the diagnostic feedback is immediate rather than waiting days for manual analysis. Students are receiving more precise support because the app pinpoints exactly where understanding breaks down rather than flagging broad topic areas.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Assessment & Feedback",
+          "Teacher Tools",
+          "Data-Driven Instruction",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmkg36a1e05nxn70uedg8dp9p",
+        "name": "PhishGuard AI",
+        "description": "PhishGuard AI helps users quickly check suspicious emails and messages by analyzing common scam and phishing warning signs and explaining them in simple language.",
+        "url": "https://www.playlab.ai/project/cmkg36a1e05nxn70uedg8dp9p",
+        "creator": "Manan Shrestha, Ryan Benyahya & Darshan Wagle",
+        "role": "Students, Marshall High School",
+        "usage": "Students and community members paste suspicious emails or messages into the app to get a plain-language breakdown of phishing red flags. The app identifies common scam tactics and explains why a message looks suspicious, building digital literacy one real example at a time.",
+        "impact": "Users who previously fell for phishing attempts or simply deleted everything suspicious are now making informed decisions about which messages to trust. The student-built tool has become a practical cybersecurity resource that makes online safety accessible to people of all technical backgrounds.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "cmkcmvmdk2m38k10uj0e3dws9",
+        "name": "FirstStep",
+        "description": "FirstStep helps students prepare for college by walking them through what to expect and what steps to take each year. College doesn't come with a manual — college starts with one step.",
+        "url": "https://www.playlab.ai/project/cmkcmvmdk2m38k10uj0e3dws9",
+        "creator": "Tharu Kalahi, Sadu Kalahi & Ridhi Kasineni",
+        "role": "Students, Centreville High School",
+        "usage": "High school students use FirstStep to navigate the college preparation process year by year, from building a course plan as a freshman to submitting applications as a senior. The app breaks down an overwhelming process into clear, actionable steps so students always know what to do next.",
+        "impact": "Students who felt lost about the college process are now approaching it with confidence because they have a clear roadmap tailored to their timeline. The year-by-year structure has been especially valuable for first-generation college-bound students who lack family experience to guide them.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "High School",
+          "Career & Vocational",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmirmgxli19iqp70uffxniq2s",
+        "name": "Misinformation Detector",
+        "description": "Identify misinformation with the Misinformation Detector! Paste an article and the AI analyzes it using expert-constructed techniques, plus provides tests and examples to build your media literacy skills.",
+        "url": "https://www.playlab.ai/project/cmirmgxli19iqp70uffxniq2s",
+        "creator": "Justin Jaran, Eko Dang & Christian Tam",
+        "role": "Students, Edison High School",
+        "usage": "Students and community members paste articles they suspect might contain misinformation and get an AI-powered analysis using expert-validated detection techniques. The app also offers quizzes and examples so users can sharpen their own ability to spot misinformation independently.",
+        "impact": "Users are developing stronger critical thinking about the media they consume because the app doesn't just flag problems — it teaches the reasoning behind why something is misleading. The student-built tool has made media literacy feel practical and immediate rather than abstract.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "ELA / Literacy",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "cmk1ra2ft1qdtjl0ujm6287fj",
+        "name": "ClearPath AI",
+        "description": "ClearPath AI helps people in Northern Virginia quickly find trusted local housing, food, and support services in their preferred language during times of housing instability.",
+        "url": "https://www.playlab.ai/project/cmk1ra2ft1qdtjl0ujm6287fj",
+        "creator": "Binayak Bhusal, Hans Mehta & Abram Gatz",
+        "role": "Students, Herndon High School",
+        "usage": "Community members facing housing instability use ClearPath AI to find nearby shelters, food banks, and support services in Northern Virginia. The app provides results in the user's preferred language, removing a critical barrier for non-English speakers navigating an already stressful situation.",
+        "impact": "Families who previously struggled to find help because of language barriers or not knowing where to start are now connecting with local resources faster. The student-built tool has become a model for how young people can use technology to address real needs in their own community.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "ELL / ESL",
+          "Flowers",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmkbt18f50gv4g90u95h1neux",
+        "name": "Find Your Home",
+        "description": "An AI assistant that simplifies the complex U.S. housing market for everyone, especially first-time immigrants and underserved communities. Acts as financial triage — assessing eligibility for housing programs, explaining terms like AMI in simple language, and providing personalized multilingual guidance.",
+        "url": "https://www.playlab.ai/project/cmkbt18f50gv4g90u95h1neux",
+        "creator": "Arian Miran & Sahiti Tanuku",
+        "role": "Students, Chantilly High School",
+        "usage": "First-time immigrants and underserved community members use Find Your Home to navigate the U.S. housing market with confidence. The app assesses eligibility for housing programs, explains complex financial terms in plain language, and provides guidance in multiple languages.",
+        "impact": "Families who were overwhelmed by the housing process are now understanding their options and taking action because the app removes language and jargon barriers. The student-built tool has made housing access more equitable by meeting people where they are linguistically and financially.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "ELL / ESL"
+        ]
+      },
+      {
+        "id": "cmk4m0j1n0nlvj10ud6f3n9bx",
+        "name": "CivicsLens",
+        "description": "Helps people better understand the news by comparing how the same topic is presented from different perspectives. Highlights biased language and summarizes multiple viewpoints so users can form their own informed opinions.",
+        "url": "https://www.playlab.ai/project/cmk4m0j1n0nlvj10ud6f3n9bx",
+        "creator": "Jackson Stear, Donovan Hogan & Surafael Melaku",
+        "role": "Students, Robinson Secondary School",
+        "usage": "Users paste news articles or topics and CivicsLens shows how different outlets cover the same story, highlighting biased language and framing. It summarizes multiple viewpoints side by side so users can see the full picture before forming their own opinion.",
+        "impact": "Students are developing sharper media literacy skills because they can see bias in action rather than just hearing about it in theory. The comparative approach has changed how young people consume news, making them more thoughtful and questioning readers.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Social Studies / History",
+          "ELA / Literacy",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmklr3bry6c6jnb0t5968zi8e",
+        "name": "Virginia Standards of Learning Study Assistant",
+        "description": "Learn any of 70 SOL courses by taking a diagnostic, then progress through review, mastery, and practice while tracking your results.",
+        "url": "https://www.playlab.ai/project/cmklr3bry6c6jnb0t5968zi8e",
+        "creator": "Lincoln Marine, Noah Teates & Aleksander Roberto",
+        "role": "Students, Langley High School",
+        "usage": "Virginia high school students use this app to prepare for Standards of Learning exams across 70 courses. The app starts with a diagnostic to identify gaps, then guides students through review, mastery, and practice phases while tracking their progress over time.",
+        "impact": "Students are approaching SOL prep with a clearer sense of what they actually need to study rather than reviewing everything from scratch. The structured progression from diagnostic to mastery has given students ownership over their exam preparation and a visible path to readiness.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "High School",
+          "Study Partners",
+          "Assessment & Feedback",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmkabk2208gyvgn0uvpi6c2o2",
+        "name": "Step",
+        "description": "Offers calm support for everyday health questions. Built for people with disabilities, chronic conditions, or uncertainty, using clear language and gentle guidance without replacing medical care.",
+        "url": "https://www.playlab.ai/project/cmkabk2208gyvgn0uvpi6c2o2",
+        "creator": "Yuvraj Nathawat",
+        "role": "Student, Oakton High School",
+        "usage": "People with disabilities and chronic conditions use Step to get calm, clear answers to everyday health questions without the anxiety of a clinical search. The app provides gentle guidance in accessible language, helping users feel supported and informed.",
+        "impact": "Users who avoided asking health questions out of overwhelm or fear are now engaging with their wellbeing proactively. The app's calm, judgment-free approach has made health literacy feel approachable for people who often feel excluded from mainstream health resources.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Health & PE",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Special Education"
+        ]
+      },
+      {
+        "id": "cmjni31oe05ebnt0umzlf1w3w",
+        "name": "Adapt",
+        "description": "A study app that uses AI to adapt learning to a student's mental state and learning behavior, not just the content.",
+        "url": "https://www.playlab.ai/project/cmjni31oe05ebnt0umzlf1w3w",
+        "creator": "Heela Jalali, Mahsa Kohistani & Jenna Galala",
+        "role": "Students, Justice High School",
+        "usage": "Students use Adapt as a study partner that reads their emotional and cognitive state — not just the subject matter — to adjust how material is presented. If a student is frustrated, the app slows down; if they're in flow, it pushes ahead.",
+        "impact": "Students are sustaining study sessions longer and with less frustration because the app meets them where they are emotionally, not just academically. The human-centered approach has shown that learning tools work better when they account for the whole student.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "SEL / Wellbeing",
+          "Study Partners",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Differentiation & Access"
+        ]
+      },
+      {
+        "id": "cmhxswgxn63yykw0u491z6nr3",
+        "name": "Prep Up",
+        "description": "Helps students feel ready for important interviews by providing mock questions and personalized feedback based on their responses.",
+        "url": "https://www.playlab.ai/project/cmhxswgxn63yykw0u491z6nr3",
+        "creator": "Clara Hatcher & Henry Mihalak",
+        "role": "Students, Madison High School",
+        "usage": "Students preparing for job, college, or scholarship interviews use Prep Up to practice with mock questions tailored to their situation. The app provides personalized feedback on each response, helping students refine their answers and build confidence.",
+        "impact": "Students who used to freeze up in interviews are walking in prepared and poised because they have already rehearsed with targeted feedback. The personalized coaching has leveled the playing field for students who lack adults to help them practice.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmjsufbuu1gponc0ug5c7a24h",
+        "name": "Genetic Guard",
+        "description": "Uses ClinVar and Alpha Missense to predict the risk of variants of uncertain significance (VUS) found in genetic testing results, empowering patients and preventing pediatric cancers through TP53 specialization.",
+        "url": "https://www.playlab.ai/project/cmjsufbuu1gponc0ug5c7a24h",
+        "creator": "Joelle Rice",
+        "role": "Student, Woodson High School",
+        "usage": "Patients and genetic counselors use Genetic Guard to interpret variants of uncertain significance found in genetic testing results. The app leverages ClinVar and Alpha Missense databases to predict risk levels, with a specialization in TP53 variants linked to pediatric cancers.",
+        "impact": "Families receiving ambiguous genetic testing results are getting clearer guidance on what those results might mean, reducing anxiety and enabling more informed conversations with their doctors. The TP53 focus has the potential to catch pediatric cancer risks earlier.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Flowers",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "cmknavygk1l0rok0ufempxzpf",
+        "name": "Smart Cart",
+        "description": "Compare nearby grocery prices, find the cheapest high-quality options, and get budget-friendly meal and recipe help based on your needs.",
+        "url": "https://www.playlab.ai/project/cmknavygk1l0rok0ufempxzpf",
+        "creator": "Nuh Yesuf, Samuel Mulat & Robel Teklebirhan",
+        "role": "Students, Annandale High School",
+        "usage": "Families on a budget use Smart Cart to compare grocery prices across nearby stores before shopping. The app recommends the cheapest high-quality options and suggests budget-friendly meals and recipes based on what is affordable.",
+        "impact": "Families are stretching their grocery budgets further because they can see price comparisons at a glance instead of driving to multiple stores. The meal planning feature has helped households reduce food waste while eating better on less.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Family & Community",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmi5d0ent63zpjx0uiu8kr3yu",
+        "name": "ECOReceipt",
+        "description": "Scans your receipts to show the environmental impact and cost of your purchases. Suggests greener, budget-friendly alternatives and tracks your progress to help you save money while reducing your carbon footprint.",
+        "url": "https://www.playlab.ai/project/cmi5d0ent63zpjx0uiu8kr3yu",
+        "creator": "Ghaarunya Balamurugan, Manasha Mahendramurthy & Sia Vadakkoot",
+        "role": "Students, Westfield High School",
+        "usage": "Users photograph or upload their shopping receipts and ECOReceipt analyzes the environmental impact and cost of each purchase. The app suggests greener, budget-friendly alternatives and tracks progress over time.",
+        "impact": "Users are making more environmentally conscious purchasing decisions because the app connects their everyday shopping to tangible environmental metrics. The dual focus on savings and sustainability has shown people that going green does not have to mean spending more.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Science / STEM",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
+        "id": "cmkh1mn1t1y2cjx0u5bqf90ty",
+        "name": "Invest AI",
+        "description": "Provides investment plans with accurate bonds, stocks, and other investment methods based on the user's goals, income, location, and financial situation.",
+        "url": "https://www.playlab.ai/project/cmkh1mn1t1y2cjx0u5bqf90ty",
+        "creator": "Catalina Reyes, Evelina Tatevosyan & Daisy Sheldon",
+        "role": "Students, Hayfield Secondary School",
+        "usage": "Users input their financial goals, income, and situation and Invest AI generates a personalized investment plan recommending specific bonds, stocks, and other instruments. The app makes investing accessible to people who have never had a financial advisor.",
+        "impact": "Young people and first-time investors are taking their first steps into financial planning because the app removes the intimidation of the investment world. The personalized approach has helped users see investing as something for them, not just for the wealthy.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Business / Economics",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmhw6lk2m17e4m20uw64xgebp",
+        "name": "Physical Therapy with Stan",
+        "description": "Provides rehab guidance for users with minor musculoskeletal injuries or post-surgical rehab, offering specialized exercise programs based on the user's state of injury for those who lack access to physical therapists.",
+        "url": "https://www.playlab.ai/project/cmhw6lk2m17e4m20uw64xgebp",
+        "creator": "Minh Tran, Michael Cabrera & Khoi Nguyen",
+        "role": "Students, South County High School",
+        "usage": "Low-income users and those without access to physical therapists use Stan to get personalized rehabilitation exercises for minor musculoskeletal injuries. The app assesses the user's injury state and generates a tailored exercise program they can follow at home.",
+        "impact": "Users who couldn't afford physical therapy are now actively rehabbing injuries with structured guidance instead of guessing or doing nothing. The app has made basic rehab support accessible to communities where professional PT is out of reach.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Health & PE",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmhvagef50qgqlt0uu7cxextd",
+        "name": "PermitPartner",
+        "description": "Helps you gather all required details for permit-ready, code-compliant architectural plans tailored to your county's regulations.",
+        "url": "https://www.playlab.ai/project/cmhvagef50qgqlt0uu7cxextd",
+        "creator": "Abidullah Ghani & Shaheer Salarzai",
+        "role": "Students, South Lakes High School",
+        "usage": "Homeowners and contractors use PermitPartner to compile the details needed for permit-ready architectural plans. The app tailors requirements to specific county regulations, eliminating the guesswork that often delays construction projects.",
+        "impact": "Users who previously struggled with permit paperwork are now submitting compliant plans faster because the app handles the regulatory complexity. The student-built tool has made the permitting process accessible to people without architectural expertise.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Career & Vocational",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Niche & Emerging"
+        ]
+      },
+      {
         "id": "project-p-e-a-c-e-",
         "name": "Project P.E.A.C.E.",
         "description": "P.E.A.C.E. — Personalized Entity for Arbitration and Conflict Elimination — empowers students with effective conflict resolution skills using district initiatives like The 7 Mindsets and Conscious Discipline.",
@@ -17043,7 +18695,7 @@
     "type": "topic",
     "iconColor": "#E8785A",
     "iconEmoji": null,
-    "appCount": 24,
+    "appCount": 26,
     "apps": [
       {
         "id": "cm1p74mmj0709rezljxj7oc7e",
@@ -17362,6 +19014,45 @@
         ]
       },
       {
+        "id": "cmklr3bry6c6jnb0t5968zi8e",
+        "name": "Virginia Standards of Learning Study Assistant",
+        "description": "Learn any of 70 SOL courses by taking a diagnostic, then progress through review, mastery, and practice while tracking your results.",
+        "url": "https://www.playlab.ai/project/cmklr3bry6c6jnb0t5968zi8e",
+        "creator": "Lincoln Marine, Noah Teates & Aleksander Roberto",
+        "role": "Students, Langley High School",
+        "usage": "Virginia high school students use this app to prepare for Standards of Learning exams across 70 courses. The app starts with a diagnostic to identify gaps, then guides students through review, mastery, and practice phases while tracking their progress over time.",
+        "impact": "Students are approaching SOL prep with a clearer sense of what they actually need to study rather than reviewing everything from scratch. The structured progression from diagnostic to mastery has given students ownership over their exam preparation and a visible path to readiness.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "High School",
+          "Study Partners",
+          "Assessment & Feedback",
+          "Student-Built Apps",
+          "Fairfax"
+        ]
+      },
+      {
+        "id": "cmjni31oe05ebnt0umzlf1w3w",
+        "name": "Adapt",
+        "description": "A study app that uses AI to adapt learning to a student's mental state and learning behavior, not just the content.",
+        "url": "https://www.playlab.ai/project/cmjni31oe05ebnt0umzlf1w3w",
+        "creator": "Heela Jalali, Mahsa Kohistani & Jenna Galala",
+        "role": "Students, Justice High School",
+        "usage": "Students use Adapt as a study partner that reads their emotional and cognitive state — not just the subject matter — to adjust how material is presented. If a student is frustrated, the app slows down; if they're in flow, it pushes ahead.",
+        "impact": "Students are sustaining study sessions longer and with less frustration because the app meets them where they are emotionally, not just academically. The human-centered approach has shown that learning tools work better when they account for the whole student.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "SEL / Wellbeing",
+          "Study Partners",
+          "High School",
+          "Student-Built Apps",
+          "Fairfax",
+          "Differentiation & Access"
+        ]
+      },
+      {
         "id": "algebra-with-mathias-next-gen",
         "name": "Algebra with Mathias - Next Gen",
         "description": "A chatbot that assists students in preparing for their Next Gen Regents Exam with break-it-down and checking-for-understanding questions in high school algebra.",
@@ -17460,7 +19151,7 @@
     "type": "topic",
     "iconColor": "#8B9E2A",
     "iconEmoji": null,
-    "appCount": 86,
+    "appCount": 87,
     "apps": [
       {
         "id": "clw83ysq804ds7w7avamics8k",
@@ -18572,6 +20263,25 @@
           "Teacher Tools",
           "Assessment & Feedback",
           "Differentiation & Access"
+        ]
+      },
+      {
+        "id": "cmkevzgqa0clhlg0ur01fvtq9",
+        "name": "Cognify",
+        "description": "AI-powered K-12 learning diagnostics for both educators and students. Upload student work, get instant analysis identifying misconceptions, standards-aligned interventions, and personalized practice.",
+        "url": "https://www.playlab.ai/project/cmkevzgqa0clhlg0ur01fvtq9",
+        "creator": "Manas Puri",
+        "role": "Student, Lake Braddock Secondary School",
+        "usage": "Teachers and students upload work samples to get instant diagnostic analysis that identifies specific misconceptions and maps them to standards. The app generates targeted interventions and personalized practice, turning assessment from a grading task into a learning tool.",
+        "impact": "Educators are catching misconceptions earlier because the diagnostic feedback is immediate rather than waiting days for manual analysis. Students are receiving more precise support because the app pinpoints exactly where understanding breaks down rather than flagging broad topic areas.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Assessment & Feedback",
+          "Teacher Tools",
+          "Data-Driven Instruction",
+          "Student-Built Apps",
+          "Fairfax"
         ]
       },
       {

@@ -50,14 +50,11 @@ async function loadCollection() {
     const [data, labelsData] = await Promise.all([
       fetchJSON(apiUrl(`/collection/${encodeURIComponent(id)}`)),
       fetchJSON(apiUrl('/app-labels')).catch(() => null),
-      loadOverrides(),
     ]);
 
-    // Merge labels and overrides into apps
     if (labelsData && labelsData.labels) {
       mergeLabelsIntoApps(data.apps, labelsData.labels);
     }
-    mergeOverridesIntoApps(data.apps);
 
     allApps = data.apps;
 
@@ -98,10 +95,10 @@ function renderApps() {
 
   if (filtered.length === 0) {
     appsGrid.innerHTML = emptyStateHTML('No apps match the selected filters');
-    appsCount.textContent = '0 apps';
+    appsCount.textContent = '0 apps in this collection';
   } else {
     appsGrid.innerHTML = filtered.map(appCardHTML).join('');
-    appsCount.textContent = `${filtered.length} app${filtered.length !== 1 ? 's' : ''}`;
+    appsCount.textContent = `${filtered.length} app${filtered.length !== 1 ? 's' : ''} in this collection`;
     attachAppCardListeners(appsGrid, filtered);
   }
   refreshIcons();

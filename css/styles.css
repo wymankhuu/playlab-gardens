@@ -541,6 +541,60 @@ img {
   opacity: 1;
 }
 
+.collection-section-actions,
+.seed-collection-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.share-link-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(13, 40, 24, 0.35);
+  padding: 4px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.share-link-btn:hover {
+  color: var(--deep-forest);
+  background: rgba(13, 40, 24, 0.06);
+}
+.share-link-btn.copied {
+  color: #2D7A3A;
+}
+.share-link-btn .copied-toast {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--deep-forest);
+  color: var(--cream);
+  font-family: var(--font-caption);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.share-link-btn.copied .copied-toast {
+  opacity: 1;
+}
+
+.seeds-search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
 .collection-section-desc {
   font-family: var(--font-caption);
   font-size: 0.875rem;
@@ -778,10 +832,8 @@ img {
 .collection-hero-stat {
   font-family: var(--font-caption);
   font-size: 0.875rem;
-  font-weight: 500;
-  padding: 4px 14px;
-  border-radius: var(--radius-pill);
-  background: var(--cream);
+  font-weight: 400;
+  opacity: 0.7;
 }
 
 .collection-hero-org {
@@ -911,34 +963,44 @@ img {
   background: rgba(230, 168, 23, 0.15);
 }
 
-/* Star button in drawer */
+/* Star button in drawer header */
 .drawer-star-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   background: none;
-  border: 1.5px solid rgba(13, 40, 24, 0.15);
-  border-radius: 8px;
-  padding: 6px 14px;
+  border: none;
   cursor: pointer;
-  font-size: 0.875rem;
-  font-family: var(--font-caption);
-  color: rgba(13, 40, 24, 0.6);
-  transition: all 0.15s;
+  font-size: 1.25rem;
+  color: rgba(13, 40, 24, 0.3);
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+  line-height: 1;
 }
 .drawer-star-btn:hover {
-  border-color: #e6a817;
   color: #e6a817;
-  background: rgba(230, 168, 23, 0.06);
+  background: rgba(230, 168, 23, 0.1);
 }
 .drawer-star-btn.starred {
-  border-color: #e6a817;
   color: #e6a817;
-  background: rgba(230, 168, 23, 0.08);
 }
-.drawer-star-btn .star-icon {
-  font-size: 1.1rem;
-  line-height: 1;
+
+/* Star count in drawer header */
+.drawer-star-count {
+  font-family: var(--font-caption);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #e6a817;
+  opacity: 0.85;
+}
+
+/* Star count on card */
+.app-star-btn .star-count {
+  font-family: var(--font-caption);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: rgba(13, 40, 24, 0.45);
+}
+.app-star-btn.starred .star-count {
+  color: #e6a817;
 }
 
 .app-card:hover {
@@ -1034,30 +1096,7 @@ img {
   line-height: 1.4;
 }
 
-.app-label--subject {
-  background-color: rgba(0, 152, 63, 0.1);
-  color: #00983F;
-  border: 1px solid rgba(0, 152, 63, 0.2);
-}
 
-.app-label--grade {
-  background-color: rgba(54, 86, 234, 0.1);
-  color: #3656EA;
-  border: 1px solid rgba(54, 86, 234, 0.2);
-}
-
-.app-label--usecase {
-  background-color: rgba(254, 106, 46, 0.1);
-  color: #FE6A2E;
-  border: 1px solid rgba(254, 106, 46, 0.2);
-}
-
-.app-label--more {
-  background-color: var(--sand);
-  color: var(--deep-forest);
-  border: 1px solid transparent;
-  opacity: 0.7;
-}
 
 /* Drawer labels — neutral bordered pills to match app detail design */
 .drawer-labels {
@@ -1614,11 +1653,6 @@ img {
   font-size: 0.75rem;
   margin-bottom: 6px;
   opacity: 0.6;
-}
-
-.admin-hint {
-  font-weight: 400;
-  opacity: 0.7;
 }
 
 .admin-input {

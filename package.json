@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@notionhq/client": "^2.2.15",
+    "@upstash/redis": "^1.37.0",
     "dotenv": "^17.3.1"
   }
 }
