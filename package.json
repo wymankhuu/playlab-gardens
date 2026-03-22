@@ -2,7 +2,10 @@
   "name": "playlab-gardens",
   "version": "1.0.0",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "export": "node scripts/export-notion.js",
+    "enrich": "node scripts/enrich-descriptions.js"
+  },
   "dependencies": {
     "@notionhq/client": "^2.2.15",
     "@upstash/redis": "^1.37.0",

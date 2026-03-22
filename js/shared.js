@@ -902,8 +902,6 @@ function closeDrawer() {
   }
 }
 
-// Keep backward compat alias
-function closeModal() { closeDrawer(); }
 
 // ---- Rendering Helpers ----
 function formatNumber(n) {

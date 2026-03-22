@@ -2436,39 +2436,6 @@ img {
   cursor: not-allowed;
 }
 
-.share-success {
-  text-align: center;
-  padding: 80px 24px;
-}
-
-.share-success-icon {
-  font-size: 64px;
-  margin-bottom: 16px;
-}
-
-.share-success h2 {
-  font-family: var(--font-accent);
-  font-weight: 400;
-  font-size: 1.75rem;
-  margin-bottom: 12px;
-}
-
-.share-success p {
-  font-family: var(--font-caption);
-  font-size: 0.9375rem;
-  opacity: 0.7;
-  max-width: 480px;
-  margin: 0 auto 24px;
-  line-height: 1.6;
-}
-
-.share-success-link {
-  font-family: var(--font-caption);
-  font-weight: 600;
-  font-size: 0.875rem;
-  color: var(--emerald);
-}
-
 /* ---- Flowers Spotlight ---- */
 .flowers-spotlight {
   display: block;

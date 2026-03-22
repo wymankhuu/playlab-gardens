@@ -5,7 +5,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('share-form');
   const submitBtn = document.getElementById('submit-btn');
-  const successState = document.getElementById('success-state');
   const formContainer = document.getElementById('form-container');
 
   const requiredFields = [

@@ -276,7 +276,6 @@ function initCollectionSearch() {
   });
 }
 
-// ---- Sort Toggle ----
 // ---- App Card Click → Modal ----
 function attachAppCardListeners(container, apps) {
   container.querySelectorAll('.app-card').forEach((card) => {
