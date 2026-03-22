@@ -29,8 +29,8 @@
         "name": "Intercultural Chapter Assistant",
         "description": "Students and educators explore intercultural concepts and navigate cross-cultural communication with AI guidance. The tool helps bridge cultural understanding gaps that textbooks often oversimplify.",
         "url": "https://www.playlab.ai/project/cmfb8vk5v14h6ke0ufzhxjno8",
-        "creator": "",
-        "role": "",
+        "creator": "Kali Moore",
+        "role": "Civics Teacher",
         "usage": "Students and educators explore intercultural concepts and navigate cross-cultural communication with AI guidance. The tool helps bridge cultural understanding gaps that textbooks often oversimplify.",
         "impact": "Helped people navigate the nuances of intercultural communication that no textbook can fully capture — the real, messy, beautiful complexity of working across cultures.",
         "sessions": 235,
@@ -474,8 +474,8 @@
         "name": "Year 1 - Art and Design Foundation",
         "description": "Year 1 students learn foundational art concepts",
         "url": "https://www.playlab.ai/project/cmd93hdgx04v9k60urun1snzm",
-        "creator": "",
-        "role": "",
+        "creator": "T-TEL",
+        "role": "Ghana Ministry of Education",
         "usage": "Year 1 students learn foundational art concepts",
         "impact": "Brought structured art education to classrooms where it was previously absent",
         "sessions": 8199,
@@ -3278,7 +3278,7 @@
     "type": "topic",
     "iconColor": "#4A9E6D",
     "iconEmoji": null,
-    "appCount": 12,
+    "appCount": 11,
     "apps": [
       {
         "id": "re-imagining-migration",
@@ -3303,8 +3303,8 @@
         "name": "Akilah, African American History AI Tutor",
         "description": "AI tutor for African American history",
         "url": "https://www.playlab.ai/project/cm19koyzx08di79xb6kuldez9",
-        "creator": "",
-        "role": "",
+        "creator": "Connie Salsida",
+        "role": "Civics and ELA Teacher",
         "usage": "Students explore history interactively",
         "impact": "Gave students a dedicated space to engage deeply with African American history",
         "sessions": 1276,
@@ -3316,11 +3316,11 @@
       },
       {
         "id": "clllg5ich012qpy7s4e1vpu8m",
-        "name": "LE - Teaching for Equity Coach",
+        "name": "Teaching for Equity Coach",
         "description": "Equity coaching simulation",
         "url": "https://www.playlab.ai/project/clllg5ich012qpy7s4e1vpu8m",
-        "creator": "",
-        "role": "",
+        "creator": "Chong Hao Fu",
+        "role": "Non Profit CEO",
         "usage": "Educators develop equitable practices",
         "impact": "Pushed teachers beyond surface-level diversity toward genuinely equitable design",
         "sessions": 837,
@@ -3332,29 +3332,12 @@
         ]
       },
       {
-        "id": "clooj1564011dr6963ffu8t6d",
-        "name": "LE - Teaching for Equity Coach (Team)",
-        "description": "Team equity coaching",
-        "url": "https://www.playlab.ai/project/clooj1564011dr6963ffu8t6d",
-        "creator": "",
-        "role": "",
-        "usage": "Educator teams collaborate on equity",
-        "impact": "Extended equity coaching from individual to team practice",
-        "sessions": 400,
-        "iterations": 2,
-        "tags": [
-          "Leading Educators",
-          "Professional Development",
-          "Cultural Studies"
-        ]
-      },
-      {
         "id": "cmfb8vk5v14h6ke0ufzhxjno8",
         "name": "Intercultural Chapter Assistant",
         "description": "Students and educators explore intercultural concepts and navigate cross-cultural communication with AI guidance. The tool helps bridge cultural understanding gaps that textbooks often oversimplify.",
         "url": "https://www.playlab.ai/project/cmfb8vk5v14h6ke0ufzhxjno8",
-        "creator": "",
-        "role": "",
+        "creator": "Kali Moore",
+        "role": "Civics Teacher",
         "usage": "Students and educators explore intercultural concepts and navigate cross-cultural communication with AI guidance. The tool helps bridge cultural understanding gaps that textbooks often oversimplify.",
         "impact": "Helped people navigate the nuances of intercultural communication that no textbook can fully capture — the real, messy, beautiful complexity of working across cultures.",
         "sessions": 235,
@@ -3419,8 +3402,8 @@
         "name": "Equity Minded Inquiry",
         "description": "Fairfax students and teachers engage in equity-focused inquiry projects that examine real issues of inclusion, access, and representation in their school community.",
         "url": "https://www.playlab.ai/project/cm2kt0yv50fx144zfgrpujogr",
-        "creator": "",
-        "role": "",
+        "creator": "Ayva Sosnicki",
+        "role": "Teacher",
         "usage": "Fairfax students and teachers engage in equity-focused inquiry projects that examine real issues of inclusion, access, and representation in their school community. The tool structures the inquiry process so conversations about equity are productive rather than performative.",
         "impact": "Pushed Fairfax classrooms toward more inclusive, equity-centered practice through student-led inquiry rather than top-down mandates — when students investigate equity themselves, the insights stick in ways that professional development workshops never achieve.",
         "sessions": 54,
@@ -5693,8 +5676,8 @@
         "name": "Year 1 - Art and Design Foundation",
         "description": "Year 1 students learn foundational art concepts",
         "url": "https://www.playlab.ai/project/cmd93hdgx04v9k60urun1snzm",
-        "creator": "",
-        "role": "",
+        "creator": "T-TEL",
+        "role": "Ghana Ministry of Education",
         "usage": "Year 1 students learn foundational art concepts",
         "impact": "Brought structured art education to classrooms where it was previously absent",
         "sessions": 8199,
@@ -6131,8 +6114,8 @@
         "name": "Equity Minded Inquiry",
         "description": "Fairfax students and teachers engage in equity-focused inquiry projects that examine real issues of inclusion, access, and representation in their school community.",
         "url": "https://www.playlab.ai/project/cm2kt0yv50fx144zfgrpujogr",
-        "creator": "",
-        "role": "",
+        "creator": "Ayva Sosnicki",
+        "role": "Teacher",
         "usage": "Fairfax students and teachers engage in equity-focused inquiry projects that examine real issues of inclusion, access, and representation in their school community. The tool structures the inquiry process so conversations about equity are productive rather than performative.",
         "impact": "Pushed Fairfax classrooms toward more inclusive, equity-centered practice through student-led inquiry rather than top-down mandates — when students investigate equity themselves, the insights stick in ways that professional development workshops never achieve.",
         "sessions": 54,
@@ -8233,8 +8216,8 @@
         "name": "Year 1 - Art and Design Foundation",
         "description": "Year 1 students learn foundational art concepts",
         "url": "https://www.playlab.ai/project/cmd93hdgx04v9k60urun1snzm",
-        "creator": "",
-        "role": "",
+        "creator": "T-TEL",
+        "role": "Ghana Ministry of Education",
         "usage": "Year 1 students learn foundational art concepts",
         "impact": "Brought structured art education to classrooms where it was previously absent",
         "sessions": 8199,
@@ -11027,6 +11010,23 @@
         ]
       },
       {
+        "id": "clllg5ich012qpy7s4e1vpu8m",
+        "name": "Teaching for Equity Coach",
+        "description": "Equity coaching simulation",
+        "url": "https://www.playlab.ai/project/clllg5ich012qpy7s4e1vpu8m",
+        "creator": "Chong Hao Fu",
+        "role": "Non Profit CEO",
+        "usage": "Educators develop equitable practices",
+        "impact": "Pushed teachers beyond surface-level diversity toward genuinely equitable design",
+        "sessions": 837,
+        "iterations": 5,
+        "tags": [
+          "Leading Educators",
+          "Cultural Studies",
+          "Professional Development"
+        ]
+      },
+      {
         "id": "cmi3clym59y9ri90u40g546os",
         "name": "Nashville Classical Testing - Intellectual Prep",
         "description": "Teachers build intellectually rigorous test materials",
@@ -11041,23 +11041,6 @@
           "Assessment & Feedback",
           "Teacher Tools",
           "Leading Educators"
-        ]
-      },
-      {
-        "id": "clooj1564011dr6963ffu8t6d",
-        "name": "LE - Teaching for Equity Coach (Team)",
-        "description": "Team equity coaching",
-        "url": "https://www.playlab.ai/project/clooj1564011dr6963ffu8t6d",
-        "creator": "",
-        "role": "",
-        "usage": "Educator teams collaborate on equity",
-        "impact": "Extended equity coaching from individual to team practice",
-        "sessions": 400,
-        "iterations": 2,
-        "tags": [
-          "Leading Educators",
-          "Professional Development",
-          "Cultural Studies"
         ]
       },
       {
@@ -13989,6 +13972,23 @@
         ]
       },
       {
+        "id": "clllg5ich012qpy7s4e1vpu8m",
+        "name": "Teaching for Equity Coach",
+        "description": "Equity coaching simulation",
+        "url": "https://www.playlab.ai/project/clllg5ich012qpy7s4e1vpu8m",
+        "creator": "Chong Hao Fu",
+        "role": "Non Profit CEO",
+        "usage": "Educators develop equitable practices",
+        "impact": "Pushed teachers beyond surface-level diversity toward genuinely equitable design",
+        "sessions": 837,
+        "iterations": 5,
+        "tags": [
+          "Leading Educators",
+          "Cultural Studies",
+          "Professional Development"
+        ]
+      },
+      {
         "id": "cmctoty920fx0m70u3pfpzwro",
         "name": "PAIRR criteria-focused feedback bot",
         "description": "Teachers see how AI delivers criteria-aligned feedback",
@@ -14002,23 +14002,6 @@
         "tags": [
           "Assessment & Feedback",
           "Professional Development"
-        ]
-      },
-      {
-        "id": "clooj1564011dr6963ffu8t6d",
-        "name": "LE - Teaching for Equity Coach (Team)",
-        "description": "Team equity coaching",
-        "url": "https://www.playlab.ai/project/clooj1564011dr6963ffu8t6d",
-        "creator": "",
-        "role": "",
-        "usage": "Educator teams collaborate on equity",
-        "impact": "Extended equity coaching from individual to team practice",
-        "sessions": 400,
-        "iterations": 2,
-        "tags": [
-          "Leading Educators",
-          "Professional Development",
-          "Cultural Studies"
         ]
       },
       {
@@ -14151,24 +14134,6 @@
         ]
       },
       {
-        "id": "le-teaching-for-equity-coach",
-        "name": "LE - Teaching for Equity Coach",
-        "description": "Teachers describe a specific classroom challenge and the coach draws on Teaching for Equity research to offer grounded, practical strategies.",
-        "url": "https://www.playlab.ai/community/clooj1564011dr6963ffu8t6d",
-        "creator": "Chong Hao Fu",
-        "role": "Non Profit Leader",
-        "usage": "Teachers describe a specific classroom challenge and the coach draws on Teaching for Equity research to offer grounded, practical strategies. It acts as an on-demand thought partner that helps educators connect their daily struggles to evidence-based equity practices, making research feel actionable rather than abstract.",
-        "impact": "Teachers are bridging the gap between equity research and classroom practice in real time, applying strategies they might never have discovered on their own. The coaching model has made equity-focused professional growth feel continuous and responsive rather than limited to scheduled training sessions.",
-        "sessions": 0,
-        "iterations": 0,
-        "tags": [
-          "Professional Development",
-          "Teacher Tools",
-          "Differentiation & Access",
-          "Leading Educators"
-        ]
-      },
-      {
         "id": "session-design-feedback",
         "name": "Session Design Feedback",
         "description": "School leaders and PD facilitators use this app as a design partner when building professional development sessions.",
@@ -14295,6 +14260,24 @@
           "Professional Development",
           "School Leadership",
           "Higher Ed"
+        ]
+      },
+      {
+        "id": "le-teaching-for-equity-coach",
+        "name": "LE - Teaching for Equity Coach",
+        "description": "Teachers describe a specific classroom challenge and the coach draws on Teaching for Equity research to offer grounded, practical strategies.",
+        "url": "https://www.playlab.ai/community/clooj1564011dr6963ffu8t6d",
+        "creator": "Chong Hao Fu",
+        "role": "Non Profit Leader",
+        "usage": "Teachers describe a specific classroom challenge and the coach draws on Teaching for Equity research to offer grounded, practical strategies. It acts as an on-demand thought partner that helps educators connect their daily struggles to evidence-based equity practices, making research feel actionable rather than abstract.",
+        "impact": "Teachers are bridging the gap between equity research and classroom practice in real time, applying strategies they might never have discovered on their own. The coaching model has made equity-focused professional growth feel continuous and responsive rather than limited to scheduled training sessions.",
+        "sessions": 0,
+        "iterations": 0,
+        "tags": [
+          "Professional Development",
+          "Teacher Tools",
+          "Differentiation & Access",
+          "Leading Educators"
         ]
       },
       {
@@ -14863,8 +14846,8 @@
         "name": "Equity Minded Inquiry",
         "description": "Fairfax students and teachers engage in equity-focused inquiry projects that examine real issues of inclusion, access, and representation in their school community.",
         "url": "https://www.playlab.ai/project/cm2kt0yv50fx144zfgrpujogr",
-        "creator": "",
-        "role": "",
+        "creator": "Ayva Sosnicki",
+        "role": "Teacher",
         "usage": "Fairfax students and teachers engage in equity-focused inquiry projects that examine real issues of inclusion, access, and representation in their school community. The tool structures the inquiry process so conversations about equity are productive rather than performative.",
         "impact": "Pushed Fairfax classrooms toward more inclusive, equity-centered practice through student-led inquiry rather than top-down mandates — when students investigate equity themselves, the insights stick in ways that professional development workshops never achieve.",
         "sessions": 54,
@@ -17516,8 +17499,8 @@
         "name": "Akilah, African American History AI Tutor",
         "description": "AI tutor for African American history",
         "url": "https://www.playlab.ai/project/cm19koyzx08di79xb6kuldez9",
-        "creator": "",
-        "role": "",
+        "creator": "Connie Salsida",
+        "role": "Civics and ELA Teacher",
         "usage": "Students explore history interactively",
         "impact": "Gave students a dedicated space to engage deeply with African American history",
         "sessions": 1276,

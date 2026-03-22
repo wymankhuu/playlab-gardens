@@ -3,8 +3,6 @@
    ========================================== */
 
 let allCollections = [];
-let filterOptions = null;
-let activeDropdownFilters = { subject: new Set(), grade: new Set(), useCase: new Set(), org: new Set() };
 
 document.addEventListener('DOMContentLoaded', async () => {
   initModal();
@@ -20,19 +18,8 @@ async function loadCollections() {
   renderSkeletons(collectionsGrid, 6, 'skeleton-card');
 
   try {
-    const [data, labelsData] = await Promise.all([
-      fetchJSON(apiUrl('/collections')),
-      fetchJSON(apiUrl('/app-labels')).catch(() => null),
-    ]);
-
+    const data = await fetchJSON(apiUrl('/collections'));
     allCollections = data;
-
-    if (labelsData) {
-      filterOptions = labelsData.filterOptions;
-      initDropdownFilters();
-      restoreFiltersFromURL();
-    }
-
     renderFilteredCollections();
     refreshIcons();
   } catch (err) {
@@ -49,30 +36,6 @@ function renderFilteredCollections() {
 
   let filtered = [...allCollections];
   filtered.sort((a, b) => a.name.localeCompare(b.name));
-
-  // Apply dropdown filters
-  const hasDropdownFilter = Object.values(activeDropdownFilters).some(s => s.size > 0);
-  if (hasDropdownFilter) {
-    filtered = filtered.filter(col => {
-      const colNameLower = col.name.toLowerCase();
-      for (const [category, selectedLabels] of Object.entries(activeDropdownFilters)) {
-        if (selectedLabels.size === 0) continue;
-        if (category === 'org') {
-          if (col.type !== 'org') return false;
-          const matches = [...selectedLabels].some(label =>
-            colNameLower.includes(label.toLowerCase()) || label.toLowerCase().includes(colNameLower)
-          );
-          if (!matches) return false;
-        } else {
-          const matches = [...selectedLabels].some(label =>
-            colNameLower.includes(label.toLowerCase()) || label.toLowerCase().includes(colNameLower)
-          );
-          if (!matches) return false;
-        }
-      }
-      return true;
-    });
-  }
 
   // Group collections by type
   const subjectNames = ['science / stem', 'math', 'ela / literacy', 'social studies / history', 'arts & design', 'business / economics', 'cultural studies', 'religious studies', 'health & pe', 'music & performing arts', 'world languages', 'illustrative mathematics'];
@@ -99,177 +62,95 @@ function renderFilteredCollections() {
     }
   }
 
-  let html = '';
-  for (const group of groups) {
-    if (group.collections.length === 0) continue;
-    html += `<div class="collection-group">
+  // Build jump nav + sections
+  const activeGroups = groups.filter(g => g.collections.length > 0);
+  const jumpNav = `<nav class="jump-nav" aria-label="Jump to section">
+    ${activeGroups.map(g => {
+      const slug = g.title.toLowerCase().replace(/\s+/g, '-');
+      return `<a href="#section-${slug}" class="jump-nav-link">${g.title}</a>`;
+    }).join('')}
+  </nav>`;
+
+  let html = jumpNav;
+  for (const group of activeGroups) {
+    const slug = group.title.toLowerCase().replace(/\s+/g, '-');
+    const pills = group.collections.map(c => {
+      const anchorId = `col-${c.id}`;
+      return `<a href="#${anchorId}" class="section-pill" data-collection-id="${escapeHtml(c.id)}">${escapeHtml(c.name)} <span class="section-pill-count">${c.appCount}</span></a>`;
+    }).join('');
+
+    html += `<div class="collection-group" id="section-${slug}">
       <h3 class="collection-group-title">${group.title}</h3>
+      <div class="section-pills">${pills}</div>
       ${group.collections.map(c => collectionSectionHTML(c)).join('')}
     </div>`;
   }
   collectionsGrid.innerHTML = html;
 
+  // Highlight active jump nav link on scroll
+  initJumpNavHighlight();
+
   attachPreviewCardListeners(collectionsGrid, filtered);
   collectionsCount.textContent = `${filtered.length} collections`;
 
-  // Show/hide clear filters button
-  updateClearFiltersBtn();
+  // Smooth scroll for section pills
+  collectionsGrid.addEventListener('click', (e) => {
+    const pill = e.target.closest('.section-pill');
+    if (!pill) return;
+    const href = pill.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+    e.preventDefault();
+    const el = document.getElementById(href.slice(1));
+    if (el) {
+      const offset = 140;
+      window.scrollTo({ top: el.offsetTop - offset, behavior: 'smooth' });
+    }
+  });
 
   refreshIcons();
 }
 
-// ---- Filter URL State ----
-function syncFiltersToURL() {
-  const params = new URLSearchParams();
-  for (const [key, values] of Object.entries(activeDropdownFilters)) {
-    if (values.size > 0) {
-      params.set(key, [...values].join(','));
-    }
-  }
-  const qs = params.toString();
-  const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
-  history.replaceState(null, '', newUrl);
-}
+// ---- Jump Nav Scroll Highlight ----
+function initJumpNavHighlight() {
+  const nav = document.querySelector('.jump-nav');
+  if (!nav) return;
 
-function restoreFiltersFromURL() {
-  const params = new URLSearchParams(window.location.search);
-  for (const key of ['subject', 'grade', 'useCase', 'org']) {
-    const val = params.get(key);
-    if (val) {
-      val.split(',').forEach(v => activeDropdownFilters[key].add(v));
-    }
-  }
+  const links = nav.querySelectorAll('.jump-nav-link');
+  const sections = [...links].map(link => {
+    const id = link.getAttribute('href').slice(1);
+    return document.getElementById(id);
+  }).filter(Boolean);
 
-  // Update UI checkboxes to match
-  for (const [key, values] of Object.entries(activeDropdownFilters)) {
-    if (values.size === 0) continue;
-    const dropdown = document.querySelector(`[data-category="${key}"]`);
-    if (!dropdown) continue;
-    const btn = dropdown.querySelector('.filter-dropdown-btn');
-    dropdown.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-      if (values.has(cb.value)) {
-        cb.checked = true;
-        cb.closest('.filter-dropdown-item')?.classList.add('checked');
+  // Smooth scroll on click
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = link.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        const offset = nav.offsetHeight + 80;
+        window.scrollTo({ top: el.offsetTop - offset, behavior: 'smooth' });
       }
     });
-    if (btn) btn.classList.toggle('has-selection', values.size > 0);
-  }
-}
-
-// ---- Clear All Filters ----
-function updateClearFiltersBtn() {
-  const hasFilter = Object.values(activeDropdownFilters).some(s => s.size > 0);
-  let btn = document.getElementById('clear-all-filters');
-
-  if (hasFilter && !btn) {
-    btn = document.createElement('button');
-    btn.id = 'clear-all-filters';
-    btn.className = 'clear-filters-btn';
-    btn.textContent = 'Clear all filters';
-    btn.addEventListener('click', clearAllFilters);
-    const filterGroup = document.getElementById('label-filters');
-    if (filterGroup) filterGroup.appendChild(btn);
-  } else if (!hasFilter && btn) {
-    btn.remove();
-  }
-}
-
-function clearAllFilters() {
-  for (const key of Object.keys(activeDropdownFilters)) {
-    activeDropdownFilters[key].clear();
-  }
-  // Uncheck all checkboxes
-  document.querySelectorAll('.filter-dropdown-item input[type="checkbox"]').forEach(cb => {
-    cb.checked = false;
-    cb.closest('.filter-dropdown-item')?.classList.remove('checked');
   });
-  document.querySelectorAll('.filter-dropdown-btn').forEach(btn => {
-    btn.classList.remove('has-selection');
-  });
-  syncFiltersToURL();
-  renderFilteredCollections();
-}
 
-// ---- Dropdown Filters ----
-function initDropdownFilters() {
-  if (!filterOptions) return;
-
-  const labelFilters = document.getElementById('label-filters');
-  if (!labelFilters) return;
-
-  labelFilters.style.display = '';
-
-  const orgOptions = allCollections
-    .filter(c => c.type === 'org')
-    .map(c => c.name)
-    .sort();
-
-  const categories = [
-    { key: 'subject', options: filterOptions.subjects },
-    { key: 'grade', options: filterOptions.grades },
-    { key: 'useCase', options: filterOptions.useCases },
-    { key: 'org', options: orgOptions },
-  ];
-
-  for (const { key, options } of categories) {
-    const dropdown = labelFilters.querySelector(`[data-category="${key}"]`);
-    if (!dropdown) continue;
-
-    const menu = dropdown.querySelector('.filter-dropdown-menu');
-    const btn = dropdown.querySelector('.filter-dropdown-btn');
-
-    menu.innerHTML = options.map(opt => `
-      <label class="filter-dropdown-item" data-value="${escapeHtml(opt)}">
-        <input type="checkbox" value="${escapeHtml(opt)}">
-        <span>${escapeHtml(opt)}</span>
-      </label>
-    `).join('');
-
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = menu.classList.contains('open');
-      closeAllDropdowns();
-      if (!isOpen) {
-        menu.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      } else {
-        menu.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
+  // Highlight on scroll
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const scrollY = window.scrollY + 200;
+      let active = null;
+      for (const section of sections) {
+        if (section.offsetTop <= scrollY) active = section;
       }
+      links.forEach(link => {
+        const id = link.getAttribute('href').slice(1);
+        link.classList.toggle('active', active && active.id === id);
+      });
+      ticking = false;
     });
-
-    menu.addEventListener('change', (e) => {
-      const checkbox = e.target;
-      if (checkbox.type !== 'checkbox') return;
-
-      if (checkbox.checked) {
-        activeDropdownFilters[key].add(checkbox.value);
-      } else {
-        activeDropdownFilters[key].delete(checkbox.value);
-      }
-
-      checkbox.closest('.filter-dropdown-item').classList.toggle('checked', checkbox.checked);
-      btn.classList.toggle('has-selection', activeDropdownFilters[key].size > 0);
-
-      syncFiltersToURL();
-      renderFilteredCollections();
-    });
-  }
-
-  document.addEventListener('click', () => closeAllDropdowns());
-  labelFilters.addEventListener('click', (e) => {
-    if (e.target.closest('.filter-dropdown-menu')) e.stopPropagation();
-  });
-}
-
-function closeAllDropdowns(exceptMenu) {
-  document.querySelectorAll('.filter-dropdown-menu').forEach(menu => {
-    if (menu !== exceptMenu) menu.classList.remove('open');
-  });
-  document.querySelectorAll('.filter-dropdown-btn').forEach(btn => {
-    if (!exceptMenu || btn.nextElementSibling !== exceptMenu) {
-      btn.setAttribute('aria-expanded', 'false');
-    }
   });
 }
 

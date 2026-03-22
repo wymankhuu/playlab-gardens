@@ -5,7 +5,7 @@
  * Requires .env with NOTION_API_KEY and NOTION_MASTER_DB_ID.
  */
 
-require('dotenv/config');
+try { require('dotenv/config'); } catch {}
 const { Client } = require('@notionhq/client');
 const fs = require('fs');
 const path = require('path');

@@ -2,6 +2,7 @@
   "name": "playlab-gardens",
   "version": "1.0.0",
   "private": true,
+  "scripts": {},
   "dependencies": {
     "@notionhq/client": "^2.2.15",
     "@upstash/redis": "^1.37.0",

@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Collection — Playlab Gardens</title>
   <meta name="description" content="Explore apps in this Playlab collection.">
-  <meta property="og:title" content="Playlab Community Gardens">
+  <meta property="og:title" content="Playlab Gardens">
   <meta property="og:description" content="Explore apps in this Playlab collection.">
   <meta property="og:image" content="https://playlabgardens.com/images/landing-illustration.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Playlab Community Gardens">
+  <meta name="twitter:title" content="Playlab Gardens">
   <meta name="twitter:description" content="Explore apps in this Playlab collection.">
   <meta name="twitter:image" content="https://playlabgardens.com/images/landing-illustration.png">
   <link rel="stylesheet" href="css/styles.css">
@@ -63,10 +63,17 @@
       </div>
       <div class="collection-hero-meta">
         <span id="apps-count" class="collection-hero-stat"></span>
-        <!-- Org context (hidden by default) -->
         <span id="collection-org-context" class="collection-hero-org hidden">
           <span id="collection-org-name"></span>
         </span>
+        <div class="collection-hero-share">
+          <button id="collection-qr-btn" class="qr-code-btn" data-url="" data-name="" title="Generate QR code" aria-label="Generate QR code">
+            <i data-lucide="qr-code" style="width:18px;height:18px;"></i>
+          </button>
+          <button id="collection-share-btn" class="share-link-btn" data-url="" title="Copy share link" aria-label="Copy share link">
+            <i data-lucide="link" style="width:18px;height:18px;"></i>
+          </button>
+        </div>
       </div>
 
       <!-- Search (matching Gardens page style) -->

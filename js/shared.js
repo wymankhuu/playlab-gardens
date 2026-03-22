@@ -110,6 +110,58 @@ function initStarButtons() {
   }, 500);
 }
 
+// ---- QR Code Modal ----
+function showQRModal(url, name) {
+  // Remove existing modal
+  const existing = document.getElementById('qr-modal');
+  if (existing) existing.remove();
+
+  const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}&margin=10`;
+
+  const modal = document.createElement('div');
+  modal.id = 'qr-modal';
+  modal.className = 'qr-modal-overlay';
+  modal.innerHTML = `
+    <div class="qr-modal">
+      <div class="qr-modal-header">
+        <h3 class="qr-modal-title">${escapeHtml(name)}</h3>
+        <button class="qr-modal-close" aria-label="Close">✕</button>
+      </div>
+      <div class="qr-modal-body">
+        <img src="${qrImageUrl}" alt="QR code for ${escapeHtml(name)}" class="qr-modal-image" width="300" height="300">
+        <p class="qr-modal-url">${escapeHtml(url)}</p>
+      </div>
+      <div class="qr-modal-actions">
+        <a href="${qrImageUrl}" download="qr-${name.toLowerCase().replace(/\s+/g, '-')}.png" class="qr-download-btn">Download QR</a>
+        <button class="qr-copy-btn" data-url="${escapeHtml(url)}">Copy Link</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Close handlers
+  modal.querySelector('.qr-modal-close').addEventListener('click', () => modal.remove());
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+  document.addEventListener('keydown', function onEsc(e) {
+    if (e.key === 'Escape') { modal.remove(); document.removeEventListener('keydown', onEsc); }
+  });
+
+  // Copy button
+  modal.querySelector('.qr-copy-btn').addEventListener('click', function() {
+    navigator.clipboard.writeText(url).then(() => {
+      this.textContent = 'Copied!';
+      setTimeout(() => { this.textContent = 'Copy Link'; }, 2000);
+    });
+  });
+}
+
+document.addEventListener('click', function(e) {
+  const qrBtn = e.target.closest('.qr-code-btn');
+  if (!qrBtn) return;
+  e.stopPropagation();
+  showQRModal(qrBtn.dataset.url, qrBtn.dataset.name || 'Collection');
+});
+
 // ---- Share Link Handler (all pages) ----
 document.addEventListener('click', function(e) {
   const shareBtn = e.target.closest('.share-link-btn');
@@ -541,6 +593,9 @@ function renderAdminPanel(app) {
       app.usage = fields.usage;
       app.impact = fields.impact;
 
+      // Update the card in the grid immediately
+      refreshAppCard(app);
+
       btn.textContent = 'Saved!';
       setTimeout(() => {
         btn.textContent = 'Save to Database';
@@ -813,7 +868,7 @@ function collectionSectionHTML(col) {
   }
 
   return `
-    <section class="collection-section" data-type="${escapeHtml(col.type || 'topic')}" style="--collection-accent: ${accentColor};">
+    <section class="collection-section" id="col-${escapeHtml(col.id)}" data-type="${escapeHtml(col.type || 'topic')}" style="--collection-accent: ${accentColor};">
       <div class="collection-section-header">
         <div class="collection-section-title">
           <div class="collection-section-icon" style="background-color: ${accentColor}">
@@ -822,6 +877,9 @@ function collectionSectionHTML(col) {
           <h3 class="collection-section-name">${escapeHtml(col.name)}</h3>
         </div>
         <div class="collection-section-actions">
+          <button class="qr-code-btn" data-url="${window.location.origin}/${escapeHtml(collectionUrl)}" data-name="${escapeHtml(col.name)}" title="Generate QR code" aria-label="Generate QR code">
+            ${lucideIconHTML('qr-code', 14)}
+          </button>
           <button class="share-link-btn" data-url="${window.location.origin}/${escapeHtml(collectionUrl)}" title="Copy share link" aria-label="Copy share link">
             ${lucideIconHTML('link', 14)}
           </button>
@@ -875,6 +933,26 @@ function appCardHTML(app) {
       </div>
     </div>
   `;
+}
+
+// ---- Live Card Update ----
+function refreshAppCard(app) {
+  const desc = generateFallbackDescription(app);
+  const creatorName = app.creator || 'Playlab Creator';
+  const initials = app.creator
+    ? app.creator.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2)
+    : 'P';
+  const creatorHTML = `<span class="app-card-avatar">${escapeHtml(initials)}</span>${escapeHtml(creatorName)}`;
+
+  // Update all matching cards in-place (preserves click handlers)
+  document.querySelectorAll(`.app-card[data-app-id="${app.id}"], .preview-app-card[data-app-id="${app.id}"]`).forEach(card => {
+    const nameEl = card.querySelector('.app-card-name, .preview-app-card-name');
+    const descEl = card.querySelector('.app-card-desc, .preview-app-card-desc');
+    const creatorEl = card.querySelector('.app-card-creator');
+    if (nameEl) nameEl.textContent = app.name;
+    if (descEl) descEl.textContent = shortDesc(desc);
+    if (creatorEl) creatorEl.innerHTML = creatorHTML;
+  });
 }
 
 // ---- Empty/Error States ----

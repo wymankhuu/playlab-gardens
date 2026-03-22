@@ -77,6 +77,9 @@ function renderSeedSections(collections) {
             </div>
           </div>
           <div class="seed-collection-actions">
+            <button class="qr-code-btn" data-url="${escapeHtml(shareUrl)}" data-name="${escapeHtml(col.name)}" title="Generate QR code" aria-label="Generate QR code">
+              <i data-lucide="qr-code" style="width:16px;height:16px;"></i>
+            </button>
             <button class="share-link-btn" data-url="${escapeHtml(shareUrl)}" title="Copy share link" aria-label="Copy share link">
               <i data-lucide="link" style="width:16px;height:16px;"></i>
             </button>

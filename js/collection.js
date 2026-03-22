@@ -5,6 +5,7 @@
 let allApps = [];
 let collectionSearchQuery = '';
 let activeTagFilters = new Set();
+let collectionSortMode = 'recent';
 
 document.addEventListener('DOMContentLoaded', async () => {
   initModal();
@@ -102,6 +103,20 @@ function renderApps() {
     attachAppCardListeners(appsGrid, filtered);
   }
   refreshIcons();
+}
+
+function initSortToggle() {
+  const appsGrid = document.getElementById('apps-grid');
+  if (!appsGrid) return;
+
+  appsGrid.addEventListener('click', (e) => {
+    const btn = e.target.closest('.sort-btn');
+    if (!btn) return;
+    const mode = btn.dataset.sort;
+    if (mode === collectionSortMode) return;
+    collectionSortMode = mode;
+    renderApps();
+  });
 }
 
 function buildCollectionDropdownFilters() {
@@ -220,6 +235,18 @@ function renderCollectionHeader(col) {
   updateMeta('og:description', colDesc);
   updateMeta('twitter:title', `${col.name} — Playlab Community Gardens`);
   updateMeta('twitter:description', colDesc);
+
+  // Wire up share/QR buttons
+  const pageUrl = window.location.href;
+  const qrBtn = document.getElementById('collection-qr-btn');
+  const shareBtn = document.getElementById('collection-share-btn');
+  if (qrBtn) {
+    qrBtn.dataset.url = pageUrl;
+    qrBtn.dataset.name = col.name;
+  }
+  if (shareBtn) {
+    shareBtn.dataset.url = pageUrl;
+  }
 
   refreshIcons();
 }
