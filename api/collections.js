@@ -5,7 +5,7 @@ const dataPath = path.join(__dirname, '..', 'data', 'collections.json');
 const allCollections = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
 // Ghana/Y1/Y2 pattern — skip entirely in previews (except the Ghana collection itself)
-const GHANA_Y_RE = /^y[12]\s*[-–]/i|^year\s*[12]\s*[-–]/i|ghana/i;
+const GHANA_Y_RE = /^y[12]\s*[-–]|^year\s*[12]\s*[-–]|ghana/i;
 
 /**
  * Pick N diverse preview apps from a list sorted by sessions.
