@@ -293,7 +293,7 @@ const COLLECTION_ICONS = {
   'amplify': 'volume-2',
   'leading educators': 'award',
   'health & pe': 'activity',
-  'creative & engagement': 'sparkles',
+  'creative & engagement': 'lightbulb',
   'music & performing arts': 'music',
   'professional development': 'briefcase',
   'lesson planning': 'calendar',
