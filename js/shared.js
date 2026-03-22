@@ -110,6 +110,38 @@ function initStarButtons() {
   }, 500);
 }
 
+// ---- Admin Pin Card Buttons (delegated) ----
+document.addEventListener('click', function(e) {
+  const pinBtn = e.target.closest('.admin-pin-card-btn');
+  if (!pinBtn) return;
+  e.stopPropagation();
+  e.preventDefault();
+
+  const appName = pinBtn.dataset.appName;
+  const collectionName = pinBtn.dataset.collectionName;
+  const isPinned = pinBtn.classList.contains('pinned');
+  const newPinned = !isPinned;
+
+  pinBtn.disabled = true;
+  pinBtn.style.opacity = '0.5';
+
+  togglePin(appName, newPinned, collectionName).then(function(success) {
+    if (success) {
+      pinBtn.classList.toggle('pinned', newPinned);
+      pinBtn.title = newPinned ? 'Unpin' : 'Pin';
+      pinBtn.innerHTML = lucideIconHTML(newPinned ? 'pin-off' : 'pin', 12);
+      refreshIcons();
+
+      // Update the app object in memory
+      const allAppsArr = getAllAppsFlat();
+      const appObj = allAppsArr.find(function(a) { return a.name === appName; });
+      if (appObj) appObj.pinned = newPinned;
+    }
+    pinBtn.disabled = false;
+    pinBtn.style.opacity = '';
+  });
+});
+
 // ---- QR Code Modal ----
 function showQRModal(url, name) {
   // Remove existing modal
@@ -1008,8 +1040,16 @@ function collectionSectionHTML(col) {
         ? app.creator.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2)
         : 'P';
       const creatorHTML = `<div class="app-card-creator"><span class="app-card-avatar">${escapeHtml(initials)}</span>${escapeHtml(previewCreatorName)}</div>`;
+      let previewPinBtn = '';
+      if (isAdminMode) {
+        const pinLabel = app.pinned ? 'Unpin' : 'Pin';
+        previewPinBtn = `<button class="admin-pin-card-btn ${app.pinned ? 'pinned' : ''}" data-app-name="${escapeHtml(app.name)}" data-collection-name="${escapeHtml(col.name)}" title="${pinLabel}" aria-label="${pinLabel}">
+          ${lucideIconHTML(app.pinned ? 'pin-off' : 'pin', 12)}
+        </button>`;
+      }
       return `
       <div class="preview-app-card" data-app-id="${escapeHtml(app.id)}" tabindex="0" role="button" aria-label="View ${escapeHtml(app.name)}">
+        ${previewPinBtn}
         ${creatorHTML}
         <div class="preview-app-card-name">${escapeHtml(app.name)}</div>
         <div class="preview-app-card-desc">${escapeHtml(shortDesc(desc))}</div>
@@ -1072,8 +1112,9 @@ function appCardHTML(app) {
 
   const starred = isStarred(app.id);
 
-  // Admin mode: flag cards missing key fields
+  // Admin mode: flag cards missing key fields + pin button
   let adminFlag = '';
+  let adminPinBtn = '';
   if (isAdminMode) {
     const missing = [];
     if (!app.creator) missing.push('creator');
@@ -1083,11 +1124,17 @@ function appCardHTML(app) {
     if (missing.length > 0) {
       adminFlag = `<span class="admin-missing-dot" title="Missing: ${missing.join(', ')}">${missing.length}</span>`;
     }
+    const pinLabel = app.pinned ? 'Unpin' : 'Pin';
+    const colName = (app.tags && app.tags.length > 0) ? app.tags[0] : '';
+    adminPinBtn = `<button class="admin-pin-card-btn ${app.pinned ? 'pinned' : ''}" data-app-name="${escapeHtml(app.name)}" data-collection-name="${escapeHtml(colName)}" title="${pinLabel}" aria-label="${pinLabel}">
+      ${lucideIconHTML(app.pinned ? 'pin-off' : 'pin', 12)}
+    </button>`;
   }
 
   return `
     <div class="app-card ${isAdminMode && adminFlag ? 'admin-missing' : ''}" data-app-id="${escapeHtml(app.id)}" tabindex="0" role="button" aria-label="View ${escapeHtml(app.name)}">
       ${adminFlag}
+      ${adminPinBtn}
       <button class="app-star-btn ${starred ? 'starred' : ''}" data-app-id="${escapeHtml(app.id)}" aria-label="Star this app" title="Star this app">
         <span class="star-icon">${starred ? '★' : '☆'}</span>
         <span class="star-count">${(_starCountCache[app.id] || 0) > 0 ? _starCountCache[app.id] : ''}</span>
