@@ -771,6 +771,7 @@ img {
 
 /* Preview app card (inside collection sections) */
 .preview-app-card {
+  position: relative;
   background: rgba(255, 253, 247, 0.85);
   border: 1px solid rgba(13, 40, 24, 0.08);
   border-radius: 14px;
