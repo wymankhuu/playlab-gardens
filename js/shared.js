@@ -630,12 +630,20 @@ function renderAdminPanel(app) {
 
   container.style.display = '';
 
+  // Get collection name from app tags for pin API
+  const appCollectionName = (app.tags && app.tags.length > 0) ? app.tags[0] : '';
+
   container.innerHTML = `
     <div class="admin-panel">
       <div class="admin-panel-header">
         <i data-lucide="pen-line" style="width:14px;height:14px;"></i>
         <span>Edit App</span>
       </div>
+      <button class="admin-pin-drawer-btn ${app.pinned ? 'pinned' : ''}" id="admin-pin-btn"
+        data-app-name="${escapeHtml(app.name)}" data-collection-name="${escapeHtml(appCollectionName)}">
+        ${lucideIconHTML(app.pinned ? 'pin-off' : 'pin', 14)}
+        ${app.pinned ? 'Unpin from Homepage' : 'Pin to Homepage'}
+      </button>
       <div class="admin-row">
         <div class="admin-field admin-field--half">
           <label class="admin-label" for="admin-creator">Creator</label>
@@ -709,7 +717,53 @@ function renderAdminPanel(app) {
     }
   });
 
+  // Pin button handler
+  document.getElementById('admin-pin-btn').addEventListener('click', async function() {
+    const btn = this;
+    const newPinned = !app.pinned;
+    const appName = btn.dataset.appName;
+    const collectionName = btn.dataset.collectionName;
+
+    btn.disabled = true;
+    btn.textContent = newPinned ? 'Pinning...' : 'Unpinning...';
+
+    const success = await togglePin(appName, newPinned, collectionName);
+    if (success) {
+      app.pinned = newPinned;
+      btn.textContent = newPinned ? 'Pinned!' : 'Unpinned!';
+      setTimeout(() => openAppModal(app), 800);
+    } else {
+      btn.disabled = false;
+      btn.innerHTML = `${lucideIconHTML(app.pinned ? 'pin-off' : 'pin', 14)} ${app.pinned ? 'Unpin from Homepage' : 'Pin to Homepage'}`;
+      refreshIcons();
+    }
+  });
+
   refreshIcons();
+}
+
+async function togglePin(appName, pinned, collectionName) {
+  try {
+    const res = await fetch(apiUrl('/admin-pin'), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        password: adminPassword,
+        appName: appName,
+        pinned: pinned,
+        collectionName: collectionName,
+      }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      alert('Pin failed: ' + (data.error || 'Unknown error'));
+      return false;
+    }
+    return true;
+  } catch (err) {
+    alert('Pin failed: ' + err.message);
+    return false;
+  }
 }
 
 // All apps cache for related apps lookup

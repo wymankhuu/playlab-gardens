@@ -21,34 +21,55 @@ function isGhanaApp(name) {
 function pickPreview(apps, count, collectionName) {
   var colLower = collectionName.toLowerCase();
   var allowGhana = GHANA_ALLOWED.indexOf(colLower) >= 0;
-  var picked = [];
-  var seenCreators = {};
 
-  // Pass 1: unique creators, skip Ghana apps if not allowed
+  // Separate pinned from unpinned
+  var pinnedApps = [];
+  var unpinnedApps = [];
   for (var i = 0; i < apps.length; i++) {
-    if (picked.length >= count) break;
-    if (!allowGhana && isGhanaApp(apps[i].name)) continue;
-    var creator = (apps[i].creator || '').toLowerCase().trim();
-    if (creator && seenCreators[creator]) continue;
-    picked.push(apps[i]);
-    if (creator) seenCreators[creator] = true;
-  }
-
-  // Pass 2: relax creator uniqueness if we didn't fill enough
-  if (picked.length < count) {
-    for (var j = 0; j < apps.length; j++) {
-      if (picked.length >= count) break;
-      if (picked.indexOf(apps[j]) !== -1) continue;
-      if (!allowGhana && isGhanaApp(apps[j].name)) continue;
-      picked.push(apps[j]);
+    if (apps[i].pinned) {
+      pinnedApps.push(apps[i]);
+    } else {
+      unpinnedApps.push(apps[i]);
     }
   }
 
-  // Pass 3: last resort, allow any app
+  var picked = [];
+  var seenCreators = {};
+
+  // Phase 1: Add pinned apps first (respecting Ghana filter)
+  for (var p = 0; p < pinnedApps.length; p++) {
+    if (picked.length >= count) break;
+    if (!allowGhana && isGhanaApp(pinnedApps[p].name)) continue;
+    picked.push(pinnedApps[p]);
+    var pc = (pinnedApps[p].creator || '').toLowerCase().trim();
+    if (pc) seenCreators[pc] = true;
+  }
+
+  // Phase 2: Fill remaining with unpinned, unique creators
+  for (var j = 0; j < unpinnedApps.length; j++) {
+    if (picked.length >= count) break;
+    if (!allowGhana && isGhanaApp(unpinnedApps[j].name)) continue;
+    var creator = (unpinnedApps[j].creator || '').toLowerCase().trim();
+    if (creator && seenCreators[creator]) continue;
+    picked.push(unpinnedApps[j]);
+    if (creator) seenCreators[creator] = true;
+  }
+
+  // Phase 3: Relax creator uniqueness
   if (picked.length < count) {
-    for (var k = 0; k < apps.length; k++) {
+    for (var k = 0; k < unpinnedApps.length; k++) {
       if (picked.length >= count) break;
-      if (picked.indexOf(apps[k]) === -1) picked.push(apps[k]);
+      if (picked.indexOf(unpinnedApps[k]) !== -1) continue;
+      if (!allowGhana && isGhanaApp(unpinnedApps[k].name)) continue;
+      picked.push(unpinnedApps[k]);
+    }
+  }
+
+  // Phase 4: Last resort, allow any app
+  if (picked.length < count) {
+    for (var m = 0; m < apps.length; m++) {
+      if (picked.length >= count) break;
+      if (picked.indexOf(apps[m]) === -1) picked.push(apps[m]);
     }
   }
 
@@ -71,6 +92,10 @@ module.exports = function handler(req, res) {
   });
 
   var summary = filtered.map(function(col) {
+    // Dynamic count: 9 if collection has pinned apps, otherwise 6
+    var hasPinned = col.apps.some(function(a) { return a.pinned; });
+    var previewCount = hasPinned ? 9 : 6;
+
     return {
       id: col.id,
       name: col.name,
@@ -79,7 +104,7 @@ module.exports = function handler(req, res) {
       iconColor: col.iconColor,
       iconEmoji: col.iconEmoji,
       appCount: col.appCount,
-      previewApps: pickPreview(col.apps, 6, col.name),
+      previewApps: pickPreview(col.apps, previewCount, col.name),
     };
   });
 

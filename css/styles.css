@@ -2065,6 +2065,42 @@ img {
   box-shadow: none;
 }
 
+/* ---- Admin Pin Button (drawer) ---- */
+.admin-pin-drawer-btn {
+  width: 100%;
+  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-caption);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  background: rgba(13, 40, 24, 0.04);
+  color: var(--deep-forest);
+  border: 1.5px solid rgba(13, 40, 24, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 16px;
+}
+
+.admin-pin-drawer-btn:hover {
+  background: rgba(0, 152, 63, 0.06);
+  border-color: rgba(0, 152, 63, 0.2);
+}
+
+.admin-pin-drawer-btn.pinned {
+  background: rgba(0, 152, 63, 0.08);
+  border-color: rgba(0, 152, 63, 0.25);
+  color: var(--emerald);
+}
+
+.admin-pin-drawer-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* Resource links in drawer */
 .drawer-resource-link {
   display: block;

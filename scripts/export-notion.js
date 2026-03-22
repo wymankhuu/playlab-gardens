@@ -358,6 +358,9 @@ function parseRow(props) {
   const sessions = props['Sessions']?.number || 0;
   const iterations = props['Iterations']?.number || 0;
 
+  // Homepage pin flag
+  const pinned = !!props['Homepage']?.checkbox;
+
   return {
     id: appId || name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
     name,
@@ -369,6 +372,7 @@ function parseRow(props) {
     impact,
     sessions,
     iterations,
+    pinned,
   };
 }
 
