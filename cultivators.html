@@ -17,33 +17,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="images/favicon.webp" type="image/webp">
-  <script defer src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <script defer src="js/lucide.min.js"></script>
 </head>
 <body>
-  <!-- Nav -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="images/favicon.webp" alt="Playlab" class="nav-logo-img">
-        Playlab Gardens
-      </a>
-      <ul class="nav-links">
-        <li><a href="/">Gardens</a></li>
-        <li><a href="collection.html?id=flowers">Flowers</a></li>
-        <li><a href="seeds.html">Seeds</a></li>
-        <li><a href="cultivators.html" class="active">Cultivators</a></li>
-        <li><a href="share.html">Share your app</a></li>
-      </ul>
-      <a href="https://playlab.ai" class="nav-cta" target="_blank" rel="noopener">Start Building</a>
-      <button class="mobile-menu-btn" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-      </button>
-    </div>
-  </nav>
+  <div id="layout-nav"></div>
 
   <!-- Hero -->
   <section class="cultivators-hero">
@@ -75,18 +52,10 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-inner container">
-      <div class="footer-links">
-        <a href="seeds.html">Seeds</a>        <a href="collection.html?id=flowers">Flowers</a>        <a href="/">Gardens</a>        <a href="cultivators.html">Cultivators</a>        <a href="share.html">Share Your App</a>        <a href="https://playlab.ai" target="_blank" rel="noopener">Start Building</a>
-      </div>
-      <p class="footer-tagline">Brought to you by Playlab Education Inc., a 501(c)3 nonprofit.<br>© 2026 Playlab Education Inc.</p>
-    </div>
-  </footer>
+  <div id="layout-footer"></div>
+  <div id="layout-scroll-top"></div>
 
-  <button class="scroll-top-btn" id="scroll-top" aria-label="Scroll to top">↑</button>
-
+  <script defer src="js/layout.js"></script>
   <script defer src="js/shared.js"></script>
   <script defer src="js/cultivators.js"></script>
 </body>

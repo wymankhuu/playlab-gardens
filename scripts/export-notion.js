@@ -7,6 +7,7 @@
 
 try { require('dotenv/config'); } catch {}
 const { Client } = require('@notionhq/client');
+const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -166,6 +167,10 @@ async function main() {
 
   // 7. Export Cultivators
   await exportCultivators();
+
+  // 8. Regenerate sitemap from updated collections data
+  console.log('\nRegenerating sitemap...');
+  execSync('node ' + path.join(__dirname, 'generate-sitemap.js'), { stdio: 'inherit' });
 }
 
 async function exportCultivators() {

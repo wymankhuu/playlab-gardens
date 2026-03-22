@@ -8,17 +8,68 @@ let activeTagFilters = new Set();
 document.addEventListener('DOMContentLoaded', async () => {
   initModal();
   initCollectionSearch();
-  highlightNavForCollection();
   await loadCollection();
+  applyFiltersFromURL();
   checkCollectionDeepLink();
 });
 
-function highlightNavForCollection() {
-  const id = new URLSearchParams(window.location.search).get('id');
-  if (id === 'flowers') {
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      if (a.href.includes('id=flowers')) a.classList.add('active');
+// ---- URL ↔ Filter Sync ----
+function syncFiltersToURL() {
+  const params = new URLSearchParams(window.location.search);
+
+  // Preserve existing id param
+  // Update filter param
+  if (activeTagFilters.size > 0) {
+    params.set('filter', [...activeTagFilters].join(','));
+  } else {
+    params.delete('filter');
+  }
+
+  // Update search query param
+  if (collectionSearchQuery) {
+    params.set('q', collectionSearchQuery);
+  } else {
+    params.delete('q');
+  }
+
+  const newURL = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
+  window.history.replaceState(null, '', newURL);
+}
+
+function applyFiltersFromURL() {
+  const params = new URLSearchParams(window.location.search);
+
+  // Restore tag filters
+  const filterParam = params.get('filter');
+  if (filterParam) {
+    const tags = filterParam.split(',').map(t => t.trim()).filter(Boolean);
+    tags.forEach(tag => activeTagFilters.add(tag));
+    // Check matching checkboxes in the dropdown
+    document.querySelectorAll('.filter-dropdown-item input[type="checkbox"]').forEach(cb => {
+      if (activeTagFilters.has(cb.value)) {
+        cb.checked = true;
+        cb.closest('.filter-dropdown-item').classList.add('checked');
+      }
     });
+    const filterBtn = document.querySelector('.filter-dropdown-btn');
+    if (filterBtn && activeTagFilters.size > 0) {
+      filterBtn.classList.add('has-selection');
+    }
+  }
+
+  // Restore search query
+  const qParam = params.get('q');
+  if (qParam) {
+    collectionSearchQuery = qParam;
+    const searchInput = document.getElementById('collection-search-input');
+    const searchClear = document.getElementById('collection-search-clear');
+    if (searchInput) searchInput.value = qParam;
+    if (searchClear && qParam.length > 0) searchClear.classList.add('visible');
+  }
+
+  // Re-render if any filters were restored
+  if (filterParam || qParam) {
+    renderApps();
   }
 }
 
@@ -122,6 +173,7 @@ function renderApps() {
         });
         const filterBtn = document.querySelector('.filter-dropdown-btn');
         if (filterBtn) filterBtn.classList.remove('has-selection');
+        syncFiltersToURL();
         renderApps();
       });
       appsGrid.parentNode.insertBefore(clearBtn, appsGrid);
@@ -198,6 +250,7 @@ function buildCollectionDropdownFilters() {
     else activeTagFilters.delete(cb.value);
     cb.closest('.filter-dropdown-item').classList.toggle('checked', cb.checked);
     btn.classList.toggle('has-selection', activeTagFilters.size > 0);
+    syncFiltersToURL();
     renderApps();
   });
 
@@ -292,6 +345,7 @@ function initCollectionSearch() {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
       collectionSearchQuery = q;
+      syncFiltersToURL();
       renderApps();
     }, 200);
   });
@@ -301,6 +355,7 @@ function initCollectionSearch() {
       input.value = '';
       clearBtn.classList.remove('visible');
       collectionSearchQuery = '';
+      syncFiltersToURL();
       renderApps();
     }
   });
@@ -309,6 +364,7 @@ function initCollectionSearch() {
     input.value = '';
     clearBtn.classList.remove('visible');
     collectionSearchQuery = '';
+    syncFiltersToURL();
     renderApps();
     input.focus();
   });
