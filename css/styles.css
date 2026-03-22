@@ -3787,4 +3787,45 @@ img {
   .drawer-body {
     padding: 16px;
   }
+
+  /* Mobile: filter dropdown as bottom sheet */
+  .filter-dropdown-menu {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 60vh;
+    border-radius: 16px 16px 0 0;
+    z-index: 200;
+    padding: 12px;
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.15);
+  }
+  .filter-dropdown-menu.open {
+    display: block;
+  }
+}
+
+/* ---- Clear Filters Button ---- */
+.clear-filters-btn {
+  font-family: var(--font-caption);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--deep-forest);
+  border: 1.5px solid rgba(13, 40, 24, 0.2);
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+.clear-filters-btn:hover {
+  background: var(--sand);
+  border-color: rgba(13, 40, 24, 0.3);
+}
+
+/* ---- Search Dropdown Keyboard Active ---- */
+.search-dropdown-item.kb-active {
+  background: var(--sand);
 }

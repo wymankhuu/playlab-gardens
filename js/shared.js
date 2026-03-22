@@ -541,12 +541,17 @@ function initModal() {
   initAdminToggle();
 }
 
+let _savedScrollY = 0;
+
 function openAppModal(app) {
   const overlay = document.getElementById('drawer-overlay');
   const drawer = document.getElementById('drawer');
   if (!overlay || !drawer) return;
 
   currentDrawerApp = app;
+
+  // Save scroll position before locking
+  _savedScrollY = window.scrollY;
 
   // App name
   document.getElementById('drawer-app-name').textContent = app.name;
@@ -666,9 +671,9 @@ function openAppModal(app) {
   drawer.classList.add('active');
   document.body.style.overflow = 'hidden';
 
-  // Deep link
+  // Deep link — pushState so browser Back closes the drawer
   if (app.id) {
-    history.replaceState(null, '', `${window.location.pathname}${window.location.search}#app=${app.id}`);
+    history.pushState({ drawerOpen: true, appId: app.id }, '', `${window.location.pathname}${window.location.search}#app=${app.id}`);
   }
 
   const closeBtn = drawer.querySelector('.drawer-close');
@@ -905,7 +910,9 @@ function renderRelatedApps(app) {
   });
 }
 
-function closeDrawer() {
+let _closingViaPopstate = false;
+
+function closeDrawer(fromPopstate) {
   const overlay = document.getElementById('drawer-overlay');
   const drawer = document.getElementById('drawer');
   if (!overlay || !drawer) return;
@@ -914,11 +921,27 @@ function closeDrawer() {
   drawer.classList.remove('active');
   document.body.style.overflow = '';
 
-  // Clear deep link hash
-  if (window.location.hash.startsWith('#app=')) {
-    history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+  // Restore scroll position
+  window.scrollTo(0, _savedScrollY);
+
+  // If not triggered by popstate, go back to remove the pushState entry
+  if (!fromPopstate && window.location.hash.startsWith('#app=')) {
+    _closingViaPopstate = true;
+    history.back();
   }
 }
+
+// Handle browser Back button → close drawer
+window.addEventListener('popstate', (e) => {
+  if (_closingViaPopstate) {
+    _closingViaPopstate = false;
+    return;
+  }
+  const drawer = document.getElementById('drawer');
+  if (drawer && drawer.classList.contains('active')) {
+    closeDrawer(true);
+  }
+});
 
 
 // ---- Rendering Helpers ----

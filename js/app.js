@@ -221,11 +221,20 @@ function initSearch() {
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
+      const active = document.querySelector('.search-dropdown-item.kb-active');
+      if (active) {
+        active.click();
+        return;
+      }
       clearTimeout(searchTimeout);
       const q = input.value.trim();
       if (q) performSearch(q);
     }
     if (e.key === 'Escape') hideSearchResults();
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      navigateSearchDropdown(e.key === 'ArrowDown' ? 1 : -1);
+    }
   });
 
   clearBtn.addEventListener('click', () => {
@@ -321,7 +330,11 @@ function getSearchDropdown() {
 
 function hideSearchResults() {
   const dropdown = document.getElementById('search-dropdown');
-  if (dropdown) dropdown.classList.remove('open');
+  if (dropdown) {
+    dropdown.classList.remove('open');
+    const active = dropdown.querySelector('.kb-active');
+    if (active) active.classList.remove('kb-active');
+  }
 }
 
 // ---- Deep Link to App ----
@@ -340,6 +353,26 @@ function checkDeepLink() {
       return;
     }
   }
+}
+
+// ---- Search Dropdown Keyboard Navigation ----
+function navigateSearchDropdown(direction) {
+  const dropdown = document.getElementById('search-dropdown');
+  if (!dropdown || !dropdown.classList.contains('open')) return;
+
+  const items = [...dropdown.querySelectorAll('.search-dropdown-item')];
+  if (items.length === 0) return;
+
+  const active = dropdown.querySelector('.search-dropdown-item.kb-active');
+  let idx = active ? items.indexOf(active) : -1;
+  if (active) active.classList.remove('kb-active');
+
+  idx += direction;
+  if (idx < 0) idx = items.length - 1;
+  if (idx >= items.length) idx = 0;
+
+  items[idx].classList.add('kb-active');
+  items[idx].scrollIntoView({ block: 'nearest' });
 }
 
 // ---- Preview Card Click → Modal ----

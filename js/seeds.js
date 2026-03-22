@@ -60,7 +60,8 @@ function seedPreviewCard(seed) {
 
 function renderSeedSections(collections) {
   return collections.map(col => {
-    const previewHTML = col.apps.slice(0, SEED_PREVIEW_APPS).map(seedPreviewCard).join('');
+    const sortedApps = [...col.apps].sort((a, b) => a.name.localeCompare(b.name));
+    const previewHTML = sortedApps.slice(0, SEED_PREVIEW_APPS).map(seedPreviewCard).join('');
     const accentColor = col.color || '#2D7A3A';
 
     const descHTML = col.description
@@ -130,7 +131,7 @@ function filterSeeds(query) {
     if (collections.length > 0) {
       grid.innerHTML = renderSeedSections(collections);
     } else {
-      grid.innerHTML = allSeeds.map(seedPreviewCard).join('');
+      grid.innerHTML = [...allSeeds].sort((a, b) => a.name.localeCompare(b.name)).map(seedPreviewCard).join('');
     }
     if (window.lucide) lucide.createIcons();
     return;
@@ -141,7 +142,7 @@ function filterSeeds(query) {
     s.name.toLowerCase().includes(query) ||
     (s.description || '').toLowerCase().includes(query) ||
     (s.tags || []).some(t => t.toLowerCase().includes(query))
-  );
+  ).sort((a, b) => a.name.localeCompare(b.name));
 
   if (matches.length === 0) {
     grid.innerHTML = `
