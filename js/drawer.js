@@ -159,7 +159,7 @@ function initAdminToggle() {
       persistAdminState();
       toggle.classList.remove('admin-active');
       toggle.title = 'Enter admin mode';
-      if (currentDrawerApp) openAppModal(currentDrawerApp);
+      if (currentDrawerApp) window.openAppModal(currentDrawerApp);
     } else {
       showPasswordModal((pwd) => {
         adminPassword = pwd;
@@ -167,7 +167,7 @@ function initAdminToggle() {
         persistAdminState();
         toggle.classList.add('admin-active');
         toggle.title = 'Exit admin mode';
-        if (currentDrawerApp) openAppModal(currentDrawerApp);
+        if (currentDrawerApp) window.openAppModal(currentDrawerApp);
       });
     }
   });
@@ -244,22 +244,22 @@ async function saveToDatabase(app, fields) {
 // ---- Drawer Init ----
 let currentDrawerApp = null;
 
-function initModal() {
+window.initModal = function initModal() {
   const overlay = document.getElementById('drawer-overlay');
   if (!overlay) return;
 
-  overlay.addEventListener('click', () => closeDrawer());
+  overlay.addEventListener('click', () => window.closeDrawer());
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeDrawer();
+    if (e.key === 'Escape') window.closeDrawer();
   });
 
   initAdminToggle();
-}
+};
 
 // ---- Open App Modal ----
 let _savedScrollY = 0;
 
-function openAppModal(app) {
+window.openAppModal = function openAppModal(app) {
   const overlay = document.getElementById('drawer-overlay');
   const drawer = document.getElementById('drawer');
   if (!overlay || !drawer) return;
@@ -382,12 +382,12 @@ function openAppModal(app) {
   if (closeBtn) closeBtn.focus();
 
   refreshIcons();
-}
+};
 
 // ---- Close Drawer ----
 let _closingViaPopstate = false;
 
-function closeDrawer(fromPopstate) {
+window.closeDrawer = function closeDrawer(fromPopstate) {
   const overlay = document.getElementById('drawer-overlay');
   const drawer = document.getElementById('drawer');
   if (!overlay || !drawer) return;
@@ -401,12 +401,12 @@ function closeDrawer(fromPopstate) {
     _closingViaPopstate = true;
     history.back();
   }
-}
+};
 
 window.addEventListener('popstate', (e) => {
   if (_closingViaPopstate) { _closingViaPopstate = false; return; }
   const drawer = document.getElementById('drawer');
-  if (drawer && drawer.classList.contains('active')) closeDrawer(true);
+  if (drawer && drawer.classList.contains('active')) window.closeDrawer(true);
 });
 
 // ---- Admin Panel ----
@@ -485,7 +485,7 @@ function renderAdminPanel(app) {
       app.impact = fields.impact;
       refreshAppCard(app);
       btn.textContent = 'Saved!';
-      setTimeout(() => { btn.textContent = 'Save to Database'; btn.disabled = false; openAppModal(app); }, 1000);
+      setTimeout(() => { btn.textContent = 'Save to Database'; btn.disabled = false; window.openAppModal(app); }, 1000);
     } else {
       btn.textContent = 'Save to Database';
       btn.disabled = false;
@@ -502,7 +502,7 @@ function renderAdminPanel(app) {
     if (success) {
       app.pinned = newPinned;
       btn.textContent = newPinned ? 'Pinned!' : 'Unpinned!';
-      setTimeout(() => openAppModal(app), DRAWER_TRANSITION_MS);
+      setTimeout(() => window.openAppModal(app), DRAWER_TRANSITION_MS);
     } else {
       btn.disabled = false;
       btn.innerHTML = `${lucideIconHTML(app.pinned ? 'pin-off' : 'pin', 14)} ${app.pinned ? 'Unpin from Homepage' : 'Pin to Homepage'}`;
@@ -579,7 +579,7 @@ function renderRelatedApps(app) {
   container.querySelectorAll('.drawer-related-item').forEach(item => {
     const relId = item.dataset.appId;
     const relApp = all.find(a => a.id === relId);
-    if (relApp) { item.addEventListener('click', () => openAppModal(relApp)); item.style.cursor = 'pointer'; }
+    if (relApp) { item.addEventListener('click', () => window.openAppModal(relApp)); item.style.cursor = 'pointer'; }
   });
 }
 
@@ -591,9 +591,10 @@ setTimeout(() => {
   if (ids.length > 0) loadStarCounts(ids);
 }, 500);
 
-// Signal that drawer is ready and process any queued open calls
+// Signal that drawer is ready, run initModal, and process any queued open calls
 window._drawerReady = true;
+window.initModal();
 if (window._drawerQueue) {
-  window._drawerQueue.forEach(app => openAppModal(app));
+  window._drawerQueue.forEach(app => window.openAppModal(app));
   window._drawerQueue = null;
 }

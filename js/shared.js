@@ -45,40 +45,47 @@ function isStarred(appId) {
 }
 
 // ---- Drawer lazy-loader ----
-// openAppModal, closeDrawer, and initModal are defined in drawer.js
-// which is loaded on-demand when first needed.
+// The real openAppModal, closeDrawer, and initModal live in drawer.js.
+// These stubs load drawer.js on first call, then delegate.
 let _drawerScriptLoaded = false;
+let _drawerScriptReady = false;
 
 function _loadDrawerScript(callback) {
-  if (_drawerScriptLoaded) { if (callback) callback(); return; }
+  if (_drawerScriptReady) { if (callback) callback(); return; }
+  if (_drawerScriptLoaded) {
+    // Already loading — queue the callback
+    if (callback) {
+      const check = setInterval(() => {
+        if (_drawerScriptReady) { clearInterval(check); callback(); }
+      }, 50);
+    }
+    return;
+  }
   _drawerScriptLoaded = true;
   const script = document.createElement('script');
   script.src = 'js/drawer.js';
-  script.onload = callback || function() {};
+  script.onload = function() {
+    _drawerScriptReady = true;
+    if (callback) callback();
+  };
   document.head.appendChild(script);
 }
 
-function openAppModal(app) {
-  if (window._drawerReady) {
-    // drawer.js has overwritten this function, but just in case:
-    return;
-  }
-  // Queue the open and load drawer.js
-  window._drawerQueue = window._drawerQueue || [];
-  window._drawerQueue.push(app);
-  _loadDrawerScript();
-}
-
-function closeDrawer() {
-  // Will be overwritten by drawer.js once loaded
-}
-
-function initModal() {
-  // Load drawer.js which will set up the real initModal
+// Stubs — drawer.js overwrites these via window.openAppModal = ...
+window.openAppModal = function(app) {
   _loadDrawerScript(function() {
-    if (typeof initModal === 'function') initModal();
+    window.openAppModal(app);
   });
-}
+};
+
+window.closeDrawer = function() {
+  // No-op until drawer.js loads
+};
+
+window.initModal = function() {
+  // drawer.js auto-calls initModal on load, so just trigger the load
+  _loadDrawerScript();
+};
 
 
 // ---- QR Code Modal ----
