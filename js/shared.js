@@ -343,19 +343,83 @@ function initAdminToggle() {
       // Re-open current app in view mode if drawer is open
       if (currentDrawerApp) openAppModal(currentDrawerApp);
     } else {
-      const pwd = prompt('Enter admin password:');
-      if (pwd) {
+      showPasswordModal((pwd) => {
         adminPassword = pwd;
         isAdminMode = true;
         toggle.classList.add('admin-active');
         toggle.title = 'Exit admin mode';
-        // Re-open current app in edit mode if drawer is open
         if (currentDrawerApp) openAppModal(currentDrawerApp);
-      }
+      });
     }
   });
 }
 
+
+function showPasswordModal(onSuccess) {
+  // Remove any existing modal
+  const existing = document.getElementById('admin-password-modal');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'admin-password-modal';
+  modal.className = 'admin-pw-overlay';
+  modal.innerHTML = `
+    <div class="admin-pw-modal">
+      <div class="admin-pw-header">
+        <div class="admin-pw-icon">
+          ${lucideIconHTML('lock', 20)}
+        </div>
+        <h3 class="admin-pw-title">Admin Access</h3>
+        <p class="admin-pw-subtitle">Enter the password to edit apps</p>
+      </div>
+      <div class="admin-pw-body">
+        <input type="password" class="admin-pw-input" id="admin-pw-field" placeholder="Password" autocomplete="off" autofocus>
+        <p class="admin-pw-error" id="admin-pw-error"></p>
+      </div>
+      <div class="admin-pw-actions">
+        <button class="admin-pw-cancel" id="admin-pw-cancel">Cancel</button>
+        <button class="admin-pw-submit" id="admin-pw-submit">
+          ${lucideIconHTML('unlock', 14)}
+          Enter
+        </button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  refreshIcons();
+
+  const input = document.getElementById('admin-pw-field');
+  const error = document.getElementById('admin-pw-error');
+  const submitBtn = document.getElementById('admin-pw-submit');
+
+  // Focus input after animation
+  setTimeout(() => input.focus(), 50);
+
+  function close() {
+    modal.classList.add('closing');
+    setTimeout(() => modal.remove(), 150);
+  }
+
+  function submit() {
+    const pwd = input.value.trim();
+    if (!pwd) {
+      error.textContent = 'Please enter a password';
+      input.focus();
+      return;
+    }
+    close();
+    onSuccess(pwd);
+  }
+
+  submitBtn.addEventListener('click', submit);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') submit();
+    if (e.key === 'Escape') close();
+    error.textContent = '';
+  });
+  document.getElementById('admin-pw-cancel').addEventListener('click', close);
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+}
 
 async function saveToDatabase(app, fields) {
   try {
