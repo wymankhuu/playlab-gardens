@@ -2,7 +2,7 @@
   {
     "id": "ai-assistants",
     "name": "AI Assistants",
-    "description": "",
+    "description": "Educators are reimagining what a teaching assistant can be. These AI-powered tools handle everything from lesson scaffolding to real-time student support — each one reflecting a different vision of how intelligence can serve the classroom.",
     "type": "topic",
     "iconColor": "#3347B8",
     "iconEmoji": null,
@@ -332,7 +332,7 @@
   {
     "id": "amplify",
     "name": "Amplify",
-    "description": "",
+    "description": "Amplify educators have taken their deep curriculum knowledge and built something new with it. These apps extend and personalize the Amplify experience in ways only the people closest to the work could imagine.",
     "type": "org",
     "iconColor": "#FE6A2E",
     "iconEmoji": null,
@@ -489,7 +489,7 @@
   {
     "id": "arts-design",
     "name": "Arts & Design",
-    "description": "",
+    "description": "Where creativity meets craft. Educators and students have built tools that open up visual arts, design thinking, and creative expression — proving that art education thrives when learners can shape their own tools.",
     "type": "topic",
     "iconColor": "#2D7A3A",
     "iconEmoji": null,
@@ -656,7 +656,7 @@
   {
     "id": "assessment-feedback",
     "name": "Assessment & Feedback",
-    "description": "",
+    "description": "The community has built dozens of different approaches to understanding what students know. From quick formative checks to deep rubric-based feedback, each tool reflects a different classroom reality and a different philosophy of assessment.",
     "type": "topic",
     "iconColor": "#E8785A",
     "iconEmoji": null,
@@ -1245,7 +1245,8 @@
         "pinned": false,
         "tags": [
           "CIOB",
-          "Assessment & Feedback"
+          "Assessment & Feedback",
+          "Project-Based Learning"
         ]
       },
       {
@@ -1673,7 +1674,7 @@
   {
     "id": "business-economics",
     "name": "Business / Economics",
-    "description": "",
+    "description": "Financial literacy, entrepreneurship, economic reasoning — educators across contexts have built tools that bring the complexity of the business world into classrooms in accessible, student-centered ways.",
     "type": "topic",
     "iconColor": "#8B9E2A",
     "iconEmoji": null,
@@ -1845,7 +1846,7 @@
   {
     "id": "ca-community-colleges",
     "name": "CA Community Colleges",
-    "description": "",
+    "description": "California's community college educators are building for a student population unlike any other — working adults, first-generation learners, career changers. These apps reflect that diversity and the creativity it demands.",
     "type": "topic",
     "iconColor": "#C06EB4",
     "iconEmoji": null,
@@ -2066,7 +2067,7 @@
   {
     "id": "ciob",
     "name": "CIOB",
-    "description": "",
+    "description": "CIOB district educators have channeled their knowledge of their communities into tools that serve their specific students. What started as individual experiments has become a growing library of locally-rooted innovation.",
     "type": "org",
     "iconColor": "#D4A843",
     "iconEmoji": null,
@@ -2303,7 +2304,8 @@
         "pinned": false,
         "tags": [
           "CIOB",
-          "Assessment & Feedback"
+          "Assessment & Feedback",
+          "Project-Based Learning"
         ]
       },
       {
@@ -2372,7 +2374,8 @@
         "iterations": 20,
         "pinned": false,
         "tags": [
-          "CIOB"
+          "CIOB",
+          "Science / STEM"
         ]
       },
       {
@@ -2404,7 +2407,8 @@
         "iterations": 15,
         "pinned": false,
         "tags": [
-          "CIOB"
+          "CIOB",
+          "Career & Vocational"
         ]
       },
       {
@@ -2521,7 +2525,7 @@
       },
       {
         "id": "cmi54bzrb69e7ij0uytri1v3l",
-        "name": "REMIX Research Assistant (Social Studies)",
+        "name": "Research Assistant (Social Studies)",
         "description": "Social studies research assistant",
         "url": "https://www.playlab.ai/project/cmi54bzrb69e7ij0uytri1v3l",
         "creator": "Khalia Joseph",
@@ -2532,7 +2536,8 @@
         "iterations": 6,
         "pinned": false,
         "tags": [
-          "CIOB"
+          "CIOB",
+          "Study Partners"
         ]
       },
       {
@@ -2548,7 +2553,9 @@
         "iterations": 20,
         "pinned": false,
         "tags": [
-          "CIOB"
+          "CIOB",
+          "Writing Coaches",
+          "ELA / Literacy"
         ]
       },
       {
@@ -2612,7 +2619,8 @@
         "iterations": 25,
         "pinned": false,
         "tags": [
-          "CIOB"
+          "CIOB",
+          "Teacher Tools"
         ]
       },
       {
@@ -2804,7 +2812,8 @@
         "iterations": 18,
         "pinned": false,
         "tags": [
-          "CIOB"
+          "CIOB",
+          "Project-Based Learning"
         ]
       },
       {
@@ -2860,11 +2869,11 @@
   {
     "id": "career-vocational",
     "name": "Career & Vocational",
-    "description": "",
+    "description": "From resume builders to industry simulations, educators are helping students see a future beyond the classroom. These tools connect academic learning to real-world career paths in ways that feel personal and practical.",
     "type": "topic",
     "iconColor": "#5B8DC9",
     "iconEmoji": null,
-    "appCount": 44,
+    "appCount": 45,
     "apps": [
       {
         "id": "ai-s-impact-on-your-career",
@@ -3387,6 +3396,23 @@
         ]
       },
       {
+        "id": "cmi12sqdf3fnki90t246x3zro",
+        "name": "Internationals Alumni Network",
+        "description": "Alumni connection and mentorship tool",
+        "url": "https://www.playlab.ai/project/cmi12sqdf3fnki90t246x3zro",
+        "creator": "Scott Kern",
+        "role": "",
+        "usage": "Students and graduates of North Star Academy connect with alumni for mentorship, college advice, and career networking through a structured outreach platform.",
+        "impact": "Built a living alumni network that turns graduates into mentors, extending the school community beyond graduation.",
+        "sessions": 0,
+        "iterations": 15,
+        "pinned": false,
+        "tags": [
+          "CIOB",
+          "Career & Vocational"
+        ]
+      },
+      {
         "id": "postsecondary-pathway-planner",
         "name": "Postsecondary Pathway Planner",
         "description": "Supports high school students in backwards planning their postsecondary pathways, allowing them to explore various careers through assessments and self-reflection.",
@@ -3649,7 +3675,7 @@
   {
     "id": "creative-engagement",
     "name": "Creative & Engagement",
-    "description": "",
+    "description": "Some of the most inventive work in the community lives here. These apps use storytelling, play, and surprise to pull students in — reminding us that engagement isn't a trick, it's a design challenge.",
     "type": "topic",
     "iconColor": "#D1576A",
     "iconEmoji": null,
@@ -3941,7 +3967,7 @@
   {
     "id": "cultural-studies",
     "name": "Cultural Studies",
-    "description": "",
+    "description": "Educators have built tools that honor the richness of human culture — from indigenous traditions to diaspora histories. Each app opens a window into a different community's story, told with care and nuance.",
     "type": "topic",
     "iconColor": "#4A9E6D",
     "iconEmoji": null,
@@ -4156,7 +4182,7 @@
   {
     "id": "data-driven-instruction",
     "name": "Data-Driven Instruction",
-    "description": "",
+    "description": "What happens when teachers can see patterns in student learning in real time? These tools turn data into something actionable, helping educators adjust their practice with clarity rather than guesswork.",
     "type": "topic",
     "iconColor": "#3347B8",
     "iconEmoji": null,
@@ -4426,7 +4452,7 @@
   {
     "id": "differentiation-access",
     "name": "Differentiation & Access",
-    "description": "",
+    "description": "Every learner arrives differently. These apps are built by educators who know that firsthand — tools that flex, adapt, and meet students where they actually are, not where a pacing guide says they should be.",
     "type": "topic",
     "iconColor": "#FE6A2E",
     "iconEmoji": null,
@@ -4860,11 +4886,11 @@
   {
     "id": "ela-literacy",
     "name": "ELA / Literacy",
-    "description": "",
+    "description": "Reading and writing look different in every classroom. This collection captures that range — from phonics coaches to literary analysis partners, each app shaped by an educator's unique understanding of how literacy grows.",
     "type": "topic",
     "iconColor": "#2D7A3A",
     "iconEmoji": null,
-    "appCount": 56,
+    "appCount": 57,
     "apps": [
       {
         "id": "cloa6u4pi005fpt96wze1b4lr",
@@ -5794,6 +5820,24 @@
         ]
       },
       {
+        "id": "cmincqtel00g5jd0umegml5h8",
+        "name": "Literary Analysis Feedback Coach",
+        "description": "Literary analysis writing feedback for ELL students",
+        "url": "https://www.playlab.ai/project/cmincqtel00g5jd0umegml5h8",
+        "creator": "Sean De Silva",
+        "role": "",
+        "usage": "ELL students at International HS at Union Square submit literary analysis drafts and receive targeted feedback on thesis development, textual evidence, and academic language.",
+        "impact": "Gave multilingual learners the specific, patient feedback they need to develop academic writing skills in English.",
+        "sessions": 0,
+        "iterations": 20,
+        "pinned": false,
+        "tags": [
+          "CIOB",
+          "Writing Coaches",
+          "ELA / Literacy"
+        ]
+      },
+      {
         "id": "cmk4m0j1n0nlvj10ud6f3n9bx",
         "name": "CivicsLens",
         "description": "Helps people better understand the news by comparing how the same topic is presented from different perspectives. Highlights biased language and summarizes multiple viewpoints so users can form their own informed opinions.",
@@ -5875,7 +5919,7 @@
   {
     "id": "ell-esl",
     "name": "ELL / ESL",
-    "description": "",
+    "description": "Language learning is deeply personal work. These tools were built by educators who understand the particular challenges and joys of supporting multilingual students — bridging languages, cultures, and confidence.",
     "type": "topic",
     "iconColor": "#E8785A",
     "iconEmoji": null,
@@ -6342,7 +6386,7 @@
   {
     "id": "elementary",
     "name": "Elementary",
-    "description": "",
+    "description": "Teaching young learners requires a special kind of imagination. These apps are playful, patient, and purposeful — built by educators who understand that the early years set the foundation for everything that follows.",
     "type": "topic",
     "iconColor": "#8B9E2A",
     "iconEmoji": null,
@@ -6861,7 +6905,7 @@
   {
     "id": "fairfax",
     "name": "Fairfax",
-    "description": "",
+    "description": "More than 1,100 Fairfax County Public Schools students from 25 high schools designed AI-powered solutions to real-world problems as part of the Seize the Moment Student AI Innovation Challenge — shaping the future of their communities one app at a time.",
     "type": "org",
     "iconColor": "#C06EB4",
     "iconEmoji": null,
@@ -7319,7 +7363,7 @@
   {
     "id": "family-community",
     "name": "Family & Community",
-    "description": "",
+    "description": "Learning doesn't stop at the school door. These tools help families participate in their children's education — bridging the gap between home and classroom with warmth and practical support.",
     "type": "topic",
     "iconColor": "#D4A843",
     "iconEmoji": null,
@@ -7598,11 +7642,11 @@
   {
     "id": "flowers",
     "name": "Flowers",
-    "description": "",
+    "description": "See how individuals across the Playlab community are building to reflect their unique contexts, roles, and goals. Each app here tells a different story — a teacher solving a problem no one else saw, a student reimagining how learning could work, a coach finding new ways to support their team.",
     "type": "topic",
     "iconColor": "#5B8DC9",
     "iconEmoji": null,
-    "appCount": 36,
+    "appCount": 35,
     "apps": [
       {
         "id": "cloa6u4pi005fpt96wze1b4lr",
@@ -7858,24 +7902,6 @@
           "Flowers",
           "Writing Coaches",
           "Assessment & Feedback"
-        ]
-      },
-      {
-        "id": "national-math-ai-partnership",
-        "name": "National Math AI Partnership",
-        "description": "HQIM planning and coaching apps — built by National Math AI Partnership (Multi-Region Curriculum Coaching Team) to support educators and students.",
-        "url": "",
-        "creator": "National Math AI Partnership",
-        "role": "Multi-Region Curriculum Coaching Team",
-        "usage": "Teachers internalize HQIM materials",
-        "impact": "Changed how teachers relate to curriculum — from following scripts to deep internalization",
-        "sessions": 850,
-        "iterations": 35,
-        "pinned": false,
-        "tags": [
-          "Illustrative Mathematics",
-          "Teacher Tools",
-          "Flowers"
         ]
       },
       {
@@ -8280,7 +8306,7 @@
   {
     "id": "gamified-learning",
     "name": "Gamified Learning",
-    "description": "",
+    "description": "Points, quests, narratives, challenges — educators have found countless ways to make learning feel like play. These apps prove that rigor and fun aren't opposites; they're collaborators.",
     "type": "topic",
     "iconColor": "#D1576A",
     "iconEmoji": null,
@@ -8864,7 +8890,7 @@
   {
     "id": "ghana",
     "name": "Ghana",
-    "description": "",
+    "description": "Ghana's educator community has embraced app-building with remarkable energy. From curriculum-aligned subject tools to creative student projects, these apps represent one of the most vibrant collections on the platform.",
     "type": "org",
     "iconColor": "#4A9E6D",
     "iconEmoji": null,
@@ -9416,7 +9442,7 @@
   {
     "id": "health-pe",
     "name": "Health & PE",
-    "description": "",
+    "description": "Bodies, minds, nutrition, movement — health education covers enormous ground. These apps reflect educators who see wellness holistically, building tools that meet students in the fullness of who they are.",
     "type": "topic",
     "iconColor": "#3347B8",
     "iconEmoji": null,
@@ -9656,7 +9682,7 @@
   {
     "id": "high-school",
     "name": "High School",
-    "description": "",
+    "description": "High school students are ready for complexity. These tools rise to that — offering sophisticated support for advanced coursework, college prep, and the social-emotional challenges of adolescence.",
     "type": "topic",
     "iconColor": "#FE6A2E",
     "iconEmoji": null,
@@ -10854,7 +10880,7 @@
   {
     "id": "higher-ed",
     "name": "Higher Ed",
-    "description": "",
+    "description": "College and university educators are building for a different kind of learner — self-directed, time-pressed, and hungry for depth. These apps bring AI into higher education with the rigor the context demands.",
     "type": "topic",
     "iconColor": "#2D7A3A",
     "iconEmoji": null,
@@ -11486,30 +11512,12 @@
   {
     "id": "illustrative-mathematics",
     "name": "Illustrative Mathematics",
-    "description": "",
+    "description": "IM educators know their curriculum inside and out. These apps extend that expertise into new territory — interactive practice, lesson internalization, and student support that stays true to the IM philosophy.",
     "type": "topic",
     "iconColor": "#E8785A",
     "iconEmoji": null,
-    "appCount": 20,
+    "appCount": 19,
     "apps": [
-      {
-        "id": "national-math-ai-partnership",
-        "name": "National Math AI Partnership",
-        "description": "HQIM planning and coaching apps — built by National Math AI Partnership (Multi-Region Curriculum Coaching Team) to support educators and students.",
-        "url": "",
-        "creator": "National Math AI Partnership",
-        "role": "Multi-Region Curriculum Coaching Team",
-        "usage": "Teachers internalize HQIM materials",
-        "impact": "Changed how teachers relate to curriculum — from following scripts to deep internalization",
-        "sessions": 850,
-        "iterations": 35,
-        "pinned": false,
-        "tags": [
-          "Illustrative Mathematics",
-          "Teacher Tools",
-          "Flowers"
-        ]
-      },
       {
         "id": "cm6gkxrsa055acb75lo0muaih",
         "name": "Getting Started with Illustrative Math",
@@ -11865,7 +11873,7 @@
   {
     "id": "kipp",
     "name": "KIPP",
-    "description": "",
+    "description": "KIPP educators build with urgency and heart. These apps carry that energy — tools designed for specific schools, specific grade levels, and the specific belief that every student deserves an excellent education.",
     "type": "org",
     "iconColor": "#8B9E2A",
     "iconEmoji": null,
@@ -12073,7 +12081,7 @@
   {
     "id": "leading-educators",
     "name": "Leading Educators",
-    "description": "",
+    "description": "The Leading Educators community brings a coaching lens to everything they build. These apps support not just students but the professional growth of the educators who serve them.",
     "type": "org",
     "iconColor": "#C06EB4",
     "iconEmoji": null,
@@ -12277,7 +12285,7 @@
   {
     "id": "lesson-planning",
     "name": "Lesson Planning",
-    "description": "",
+    "description": "Behind every great lesson is a plan. These tools help educators think through sequence, differentiation, and timing — turning the invisible work of preparation into something more structured and shareable.",
     "type": "topic",
     "iconColor": "#D4A843",
     "iconEmoji": null,
@@ -12461,7 +12469,7 @@
   {
     "id": "math",
     "name": "Math",
-    "description": "",
+    "description": "Math education is a space of enormous creativity right now. From visual models to AI tutors to curriculum-aligned practice, this collection captures the community's many approaches to helping students think mathematically.",
     "type": "topic",
     "iconColor": "#5B8DC9",
     "iconEmoji": null,
@@ -13288,7 +13296,7 @@
   {
     "id": "middle-school",
     "name": "Middle School",
-    "description": "",
+    "description": "Middle schoolers are figuring out who they are. These tools meet that energy — engaging, age-appropriate, and built by educators who understand the unique developmental moment of early adolescence.",
     "type": "topic",
     "iconColor": "#D1576A",
     "iconEmoji": null,
@@ -14062,7 +14070,7 @@
   {
     "id": "music-performing-arts",
     "name": "Music & Performing Arts",
-    "description": "",
+    "description": "Music theory, performance practice, creative composition — educators in the arts are proving that AI tools can enhance rather than replace the deeply human experience of making music and art together.",
     "type": "topic",
     "iconColor": "#4A9E6D",
     "iconEmoji": null,
@@ -14195,7 +14203,7 @@
   {
     "id": "nyc",
     "name": "NYC",
-    "description": "",
+    "description": "New York City's educators bring the energy and diversity of the city into everything they build. These apps reflect classrooms where dozens of languages, cultures, and perspectives converge every day.",
     "type": "org",
     "iconColor": "#3347B8",
     "iconEmoji": null,
@@ -14503,7 +14511,7 @@
   {
     "id": "niche-emerging",
     "name": "Niche & Emerging",
-    "description": "",
+    "description": "The edges are where innovation happens. These apps explore topics that don't fit neatly into traditional categories — unusual subjects, experimental formats, and ideas that might define tomorrow's classrooms.",
     "type": "topic",
     "iconColor": "#FE6A2E",
     "iconEmoji": null,
@@ -14758,7 +14766,7 @@
   {
     "id": "operations-and-management",
     "name": "Operations and Management",
-    "description": "",
+    "description": "The work that keeps schools running rarely gets the spotlight. These tools tackle scheduling, communications, HR, and the thousand small decisions that shape whether a school day runs smoothly — built by the people who live that complexity every day.",
     "type": "topic",
     "iconColor": "#2D7A3A",
     "iconEmoji": null,
@@ -15150,7 +15158,7 @@
   {
     "id": "professional-development",
     "name": "Professional Development",
-    "description": "",
+    "description": "Educators building tools for other educators. These apps support coaching, reflection, and growth — the kind of professional learning that actually changes practice, not just checks a compliance box.",
     "type": "topic",
     "iconColor": "#E8785A",
     "iconEmoji": null,
@@ -15713,11 +15721,11 @@
   {
     "id": "project-based-learning",
     "name": "Project-Based Learning",
-    "description": "",
+    "description": "PBL demands a different kind of tool — one that supports open-ended inquiry, student agency, and real-world connection. These apps help educators and students design projects that matter.",
     "type": "topic",
     "iconColor": "#8B9E2A",
     "iconEmoji": null,
-    "appCount": 34,
+    "appCount": 36,
     "apps": [
       {
         "id": "cli01hdu30000q5exv2m4oc20",
@@ -16131,6 +16139,24 @@
         ]
       },
       {
+        "id": "clwsfzx7e0f3ik4f3v1f0w3he",
+        "name": "FIHS PBAT",
+        "description": "Flushing International HS students prepare for their Performance Based Assessment Task defense with structured practice and feedback.",
+        "url": "https://www.playlab.ai/project/clwsfzx7e0f3ik4f3v1f0w3he",
+        "creator": "Eloi Villenueva",
+        "role": "Teacher, Flushing International HS",
+        "usage": "Flushing International HS students prepare for their Performance Based Assessment Task defense with structured practice and feedback. The tool helps them develop the presentation and argumentation skills needed to defend their academic work publicly.",
+        "impact": "Helped students at Flushing International HS walk into their PBAT defense with confidence rather than terror — the structured practice transformed a high-stakes moment into a showcase of genuine learning.",
+        "sessions": 117,
+        "iterations": 76,
+        "pinned": false,
+        "tags": [
+          "CIOB",
+          "Assessment & Feedback",
+          "Project-Based Learning"
+        ]
+      },
+      {
         "id": "cm1ayztes0lfrvodpvsc3m17a",
         "name": "French Language Project Builder",
         "description": "French students build projects with AI support, extending language learning beyond textbook exercises into authentic, creative work. The tool helps students produce French-language content they're genuinely proud of.",
@@ -16300,6 +16326,23 @@
         ]
       },
       {
+        "id": "cmhzeokrodtfxgf0uoy7jfrt7",
+        "name": "Makers in Action (Co-Pilot Edition)",
+        "description": "Collaborative maker project design tool",
+        "url": "https://www.playlab.ai/project/cmhzeokrodtfxgf0uoy7jfrt7",
+        "creator": "Yousra Hanif",
+        "role": "",
+        "usage": "Students at Flushing International HS collaborate on maker projects with an AI co-pilot that helps them brainstorm designs, troubleshoot construction challenges, and document their process.",
+        "impact": "Added a collaborative dimension to maker education, helping student teams work through design challenges together.",
+        "sessions": 0,
+        "iterations": 18,
+        "pinned": false,
+        "tags": [
+          "CIOB",
+          "Project-Based Learning"
+        ]
+      },
+      {
         "id": "cm4055ep91rttc035yijo602l",
         "name": "Passion Project Brainstorm Engine",
         "description": "Supports students to develop a Passion Project topic that uses their interests, has a connection to their community, and solves a dilemma that is within their locus of control.",
@@ -16322,7 +16365,7 @@
   {
     "id": "reading-intervention",
     "name": "Reading Intervention",
-    "description": "",
+    "description": "When a student struggles to read, the stakes are high. These tools are built by educators who feel that urgency — targeted, evidence-informed approaches to helping every student become a reader.",
     "type": "topic",
     "iconColor": "#C06EB4",
     "iconEmoji": null,
@@ -16651,7 +16694,7 @@
   {
     "id": "religious-studies",
     "name": "Religious Studies",
-    "description": "",
+    "description": "Faith, ethics, scripture, and theology — educators in religious communities have built tools that honor the depth and sensitivity of spiritual education while embracing what technology makes newly possible.",
     "type": "topic",
     "iconColor": "#D4A843",
     "iconEmoji": null,
@@ -16732,7 +16775,7 @@
   {
     "id": "sel-wellbeing",
     "name": "SEL / Wellbeing",
-    "description": "",
+    "description": "Social-emotional learning isn't a curriculum add-on; it's the foundation. These tools help students develop self-awareness, empathy, and resilience — built by educators who know that wellbeing comes first.",
     "type": "topic",
     "iconColor": "#5B8DC9",
     "iconEmoji": null,
@@ -17219,7 +17262,7 @@
   {
     "id": "school-leadership",
     "name": "School Leadership",
-    "description": "",
+    "description": "Principals, coaches, and district leaders are building too. These tools tackle the operational and strategic challenges of running schools — from observation protocols to data dashboards to communication aids.",
     "type": "topic",
     "iconColor": "#D1576A",
     "iconEmoji": null,
@@ -17989,11 +18032,11 @@
   {
     "id": "science-stem",
     "name": "Science / STEM",
-    "description": "",
+    "description": "From biology to physics to engineering design, STEM educators are building tools that make abstract concepts tangible. The range here is extraordinary — reflecting the breadth of scientific curiosity itself.",
     "type": "topic",
     "iconColor": "#4A9E6D",
     "iconEmoji": null,
-    "appCount": 48,
+    "appCount": 49,
     "apps": [
       {
         "id": "cme6fjssk0bbom50u3bk6xwpt",
@@ -18774,6 +18817,23 @@
         ]
       },
       {
+        "id": "cmkd5e1tw00ack90ulqr9lfz9",
+        "name": "ThinkPhys: Learn Physics by Thinking Like a Physicist",
+        "description": "Physics reasoning and problem-solving tool",
+        "url": "https://www.playlab.ai/project/cmkd5e1tw00ack90ulqr9lfz9",
+        "creator": "Alexander Dvorak",
+        "role": "",
+        "usage": "Physics students at International HS at Union Square develop scientific reasoning by working through problems the way physicists think — starting with observations, building models, and testing predictions.",
+        "impact": "Shifted physics learning from formula memorization to genuine scientific thinking and reasoning.",
+        "sessions": 0,
+        "iterations": 20,
+        "pinned": false,
+        "tags": [
+          "CIOB",
+          "Science / STEM"
+        ]
+      },
+      {
         "id": "stem-career-explorer",
         "name": "STEM Career Explorer",
         "description": "A chatbot that guides students through exploring different STEM career paths, providing information on job requirements, salary expectations, and educational pathways for various STEM professions to help students make informed career choices.",
@@ -18858,7 +18918,7 @@
   {
     "id": "social-studies-history",
     "name": "Social Studies / History",
-    "description": "",
+    "description": "History is never just one story. These apps help students engage with primary sources, multiple perspectives, and the messy complexity of how societies work — past and present.",
     "type": "topic",
     "iconColor": "#3347B8",
     "iconEmoji": null,
@@ -19326,7 +19386,7 @@
   {
     "id": "special-education",
     "name": "Special Education",
-    "description": "",
+    "description": "Every IEP tells a different story. These tools are built by educators who write those stories every day — apps that flex to meet individual needs with patience, precision, and genuine care.",
     "type": "topic",
     "iconColor": "#FE6A2E",
     "iconEmoji": null,
@@ -19654,7 +19714,7 @@
   {
     "id": "student-built-apps",
     "name": "Student-Built Apps",
-    "description": "",
+    "description": "When students become builders, something shifts. These apps were created by learners themselves — proof that the best way to understand technology is to make something meaningful with it.",
     "type": "topic",
     "iconColor": "#2D7A3A",
     "iconEmoji": null,
@@ -20182,11 +20242,11 @@
   {
     "id": "study-partners",
     "name": "Study Partners",
-    "description": "",
+    "description": "Late nights, tough concepts, upcoming exams — these AI companions meet students in their moments of need. Each one offers a slightly different approach to the ancient art of studying together.",
     "type": "topic",
     "iconColor": "#E8785A",
     "iconEmoji": null,
-    "appCount": 26,
+    "appCount": 27,
     "apps": [
       {
         "id": "cm1p74mmj0709rezljxj7oc7e",
@@ -20524,6 +20584,23 @@
         ]
       },
       {
+        "id": "cmi54bzrb69e7ij0uytri1v3l",
+        "name": "Research Assistant (Social Studies)",
+        "description": "Social studies research assistant",
+        "url": "https://www.playlab.ai/project/cmi54bzrb69e7ij0uytri1v3l",
+        "creator": "Khalia Joseph",
+        "role": "",
+        "usage": "Students in the Internationals Network conduct social studies research with guided support for finding sources, evaluating credibility, and synthesizing information into arguments.",
+        "impact": "Made academic research in social studies more accessible for multilingual learners navigating English-language sources.",
+        "sessions": 0,
+        "iterations": 6,
+        "pinned": false,
+        "tags": [
+          "CIOB",
+          "Study Partners"
+        ]
+      },
+      {
         "id": "cmklr3bry6c6jnb0t5968zi8e",
         "name": "Virginia Standards of Learning Study Assistant",
         "description": "Learn any of 70 SOL courses by taking a diagnostic, then progress through review, mastery, and practice while tracking your results.",
@@ -20664,7 +20741,7 @@
   {
     "id": "teacher-tools",
     "name": "Teacher Tools",
-    "description": "",
+    "description": "The largest collection in the garden, and for good reason. Educators are prolific builders when given the right tools. From admin shortcuts to pedagogical experiments, this is where teacher ingenuity lives.",
     "type": "topic",
     "iconColor": "#8B9E2A",
     "iconEmoji": null,
@@ -20935,24 +21012,6 @@
           "ELA / Literacy",
           "Teacher Tools",
           "Leading Educators"
-        ]
-      },
-      {
-        "id": "national-math-ai-partnership",
-        "name": "National Math AI Partnership",
-        "description": "HQIM planning and coaching apps — built by National Math AI Partnership (Multi-Region Curriculum Coaching Team) to support educators and students.",
-        "url": "",
-        "creator": "National Math AI Partnership",
-        "role": "Multi-Region Curriculum Coaching Team",
-        "usage": "Teachers internalize HQIM materials",
-        "impact": "Changed how teachers relate to curriculum — from following scripts to deep internalization",
-        "sessions": 850,
-        "iterations": 35,
-        "pinned": false,
-        "tags": [
-          "Illustrative Mathematics",
-          "Teacher Tools",
-          "Flowers"
         ]
       },
       {
@@ -21966,6 +22025,23 @@
         ]
       },
       {
+        "id": "cmgr48zc303wlgy0uwg7dwq9p",
+        "name": "Growth Rings Meeting Facilitator",
+        "description": "Meeting facilitation and agenda tool",
+        "url": "https://www.playlab.ai/project/cmgr48zc303wlgy0uwg7dwq9p",
+        "creator": "Moses Ahn",
+        "role": "",
+        "usage": "Staff at Manhattan International HS use Growth Rings to plan and facilitate productive meetings with clear agendas, time management, and structured discussion protocols.",
+        "impact": "Transformed unproductive staff meetings into focused, action-oriented professional conversations.",
+        "sessions": 0,
+        "iterations": 25,
+        "pinned": false,
+        "tags": [
+          "CIOB",
+          "Teacher Tools"
+        ]
+      },
+      {
         "id": "get-started-with-im360",
         "name": "Get Started With IM360",
         "description": "Designed to support teachers, instructional coaches, and school/district leaders in creating equitable, student-centered math classrooms through actionable strategies and sustainable systems with a focus on maintaining coherence and rigor of IM.",
@@ -22248,7 +22324,7 @@
   {
     "id": "texas",
     "name": "Texas",
-    "description": "",
+    "description": "Everything's bigger in Texas, including the ambition of its educators. These apps span subjects, grade levels, and contexts — a snapshot of one state's growing community of builder-teachers.",
     "type": "org",
     "iconColor": "#C06EB4",
     "iconEmoji": null,
@@ -22550,7 +22626,7 @@
   {
     "id": "tutoring-practice",
     "name": "Tutoring & Practice",
-    "description": "",
+    "description": "Practice makes permanent, not perfect — and these tools know the difference. Each one offers patient, adaptive support that meets students where they are and helps them build fluency through repetition that feels purposeful rather than punishing.",
     "type": "topic",
     "iconColor": "#D4A843",
     "iconEmoji": null,
@@ -22630,7 +22706,7 @@
   {
     "id": "world-languages",
     "name": "World Languages",
-    "description": "",
+    "description": "Language connects us. These apps help students learn Spanish, French, Mandarin, Arabic, and more — each one reflecting a different pedagogical tradition and a shared belief in the power of multilingualism.",
     "type": "topic",
     "iconColor": "#5B8DC9",
     "iconEmoji": null,
@@ -22980,11 +23056,11 @@
   {
     "id": "writing-coaches",
     "name": "Writing Coaches",
-    "description": "",
+    "description": "Writing is thinking made visible. These AI coaches help students at every stage of the writing process — brainstorming, drafting, revising — while preserving the student's own voice and ideas.",
     "type": "topic",
     "iconColor": "#D1576A",
     "iconEmoji": null,
-    "appCount": 22,
+    "appCount": 23,
     "apps": [
       {
         "id": "cmem7ynbn0cszke0ur86z4g9x",
@@ -23358,6 +23434,24 @@
           "ELA / Literacy",
           "Writing Coaches",
           "Creative & Engagement"
+        ]
+      },
+      {
+        "id": "cmincqtel00g5jd0umegml5h8",
+        "name": "Literary Analysis Feedback Coach",
+        "description": "Literary analysis writing feedback for ELL students",
+        "url": "https://www.playlab.ai/project/cmincqtel00g5jd0umegml5h8",
+        "creator": "Sean De Silva",
+        "role": "",
+        "usage": "ELL students at International HS at Union Square submit literary analysis drafts and receive targeted feedback on thesis development, textual evidence, and academic language.",
+        "impact": "Gave multilingual learners the specific, patient feedback they need to develop academic writing skills in English.",
+        "sessions": 0,
+        "iterations": 20,
+        "pinned": false,
+        "tags": [
+          "CIOB",
+          "Writing Coaches",
+          "ELA / Literacy"
         ]
       },
       {
