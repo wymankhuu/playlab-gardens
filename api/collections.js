@@ -4,8 +4,16 @@ const fs = require('fs');
 const dataPath = path.join(__dirname, '..', 'data', 'collections.json');
 const allCollections = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
-// Ghana/Y1/Y2 pattern — skip entirely in previews (except the Ghana collection itself)
-const GHANA_Y_RE = /^y[12]\s*[-–]|^year\s*[12]\s*[-–]|ghana/i;
+/**
+ * Check if an app name looks like a Ghana/Y1/Y2 curriculum app.
+ */
+function isGhanaApp(name) {
+  var lower = (name || '').toLowerCase();
+  if (lower.indexOf('ghana') !== -1) return true;
+  if (lower.match(/^y[12]\s*[-–]/)) return true;
+  if (lower.match(/^year\s*[12]\s*[-–]/)) return true;
+  return false;
+}
 
 /**
  * Pick N diverse preview apps from a list sorted by sessions.
@@ -13,31 +21,30 @@ const GHANA_Y_RE = /^y[12]\s*[-–]|^year\s*[12]\s*[-–]|ghana/i;
  * - Limits to 1 app per creator for variety
  */
 function pickDiversePreview(apps, n, collectionName) {
-  const isGhanaCollection = /^ghana$/i.test((collectionName || '').trim());
-  const picked = [];
-  const seenCreators = new Set();
+  var isGhanaCollection = (collectionName || '').toLowerCase().trim() === 'ghana';
+  var picked = [];
+  var seenCreators = {};
 
-  for (const app of apps) {
-    if (picked.length >= n) break;
+  for (var i = 0; i < apps.length && picked.length < n; i++) {
+    var app = apps[i];
 
     // Skip Ghana/Y1/Y2 apps outside the Ghana collection
-    if (!isGhanaCollection && GHANA_Y_RE.test(app.name)) continue;
+    if (!isGhanaCollection && isGhanaApp(app.name)) continue;
 
     // Limit 1 per creator for variety (skip unknown/empty creators)
-    const creator = (app.creator || '').toLowerCase().trim();
-    if (creator && seenCreators.has(creator)) continue;
+    var creator = (app.creator || '').toLowerCase().trim();
+    if (creator && seenCreators[creator]) continue;
 
     picked.push(app);
-    if (creator) seenCreators.add(creator);
+    if (creator) seenCreators[creator] = true;
   }
 
-  // If we didn't fill 6 (strict filters), do a second pass relaxing creator uniqueness
+  // If we didn't fill N, do a second pass relaxing creator uniqueness
   if (picked.length < n) {
-    for (const app of apps) {
-      if (picked.length >= n) break;
-      if (picked.includes(app)) continue;
-      if (!isGhanaCollection && GHANA_Y_RE.test(app.name)) continue;
-      picked.push(app);
+    for (var j = 0; j < apps.length && picked.length < n; j++) {
+      if (picked.indexOf(apps[j]) !== -1) continue;
+      if (!isGhanaCollection && isGhanaApp(apps[j].name)) continue;
+      picked.push(apps[j]);
     }
   }
 
