@@ -41,7 +41,6 @@ async function loadCollection() {
   }
 
   const appsGrid = document.getElementById('apps-grid');
-  const appsCount = document.getElementById('apps-count');
 
   renderSkeletons(appsGrid, 6, 'skeleton-app-card');
 

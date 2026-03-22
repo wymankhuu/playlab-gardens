@@ -17,7 +17,7 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { password, appId, appName, creator, role, description, usage, impact } = req.body;
+  const { password, appName, creator, role, description, usage, impact } = req.body;
 
   if (!ADMIN_PASSWORD || password !== ADMIN_PASSWORD) {
     return res.status(401).json({ error: 'Invalid password' });

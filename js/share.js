@@ -5,8 +5,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('share-form');
   const submitBtn = document.getElementById('submit-btn');
-  const formContainer = document.getElementById('form-container');
-
   const requiredFields = [
     { id: 'app-name', label: 'App Name' },
     { id: 'app-url', label: 'Playlab URL' },
