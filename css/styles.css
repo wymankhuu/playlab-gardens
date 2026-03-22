@@ -1163,10 +1163,10 @@ img {
   line-height: 1.6;
   opacity: 0.6;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  flex-grow: 1;
+  min-height: calc(2 * 1.6 * 0.875rem);
 }
 
 .app-card-meta {
@@ -1402,6 +1402,20 @@ img {
 .drawer.active {
   transform: translateX(0);
 }
+
+/* Staggered fade-in for drawer content sections */
+@keyframes drawerFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.drawer.active .drawer-app-name-row { animation: drawerFadeIn 0.3s ease-out 0.1s both; }
+.drawer.active .drawer-creator { animation: drawerFadeIn 0.3s ease-out 0.15s both; }
+.drawer.active #drawer-about-section { animation: drawerFadeIn 0.3s ease-out 0.2s both; }
+.drawer.active #drawer-usage { animation: drawerFadeIn 0.3s ease-out 0.25s both; }
+.drawer.active #drawer-impact { animation: drawerFadeIn 0.3s ease-out 0.3s both; }
+.drawer.active #drawer-labels { animation: drawerFadeIn 0.3s ease-out 0.35s both; }
+.drawer.active .drawer-actions { animation: drawerFadeIn 0.3s ease-out 0.4s both; }
 
 .drawer-header {
   display: flex;
