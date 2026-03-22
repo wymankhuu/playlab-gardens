@@ -4,6 +4,40 @@ const fs = require('fs');
 const dataPath = path.join(__dirname, '..', 'data', 'collections.json');
 const allCollections = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
+// Collections to hide from the Gardens page
+const HIDDEN_COLLECTIONS = ['religious studies'];
+
+// Collections that are allowed to show Y1/Y2/Ghana apps
+const GHANA_ALLOWED = ['ghana', 'flowers'];
+
+function isGhanaApp(name) {
+  var lower = name.toLowerCase();
+  if (lower.indexOf('ghana') >= 0) return true;
+  if (lower.substring(0, 2) === 'y1' || lower.substring(0, 2) === 'y2') return true;
+  if (lower.substring(0, 6) === 'year 1' || lower.substring(0, 6) === 'year 2') return true;
+  return false;
+}
+
+function pickPreview(apps, count, collectionName) {
+  var colLower = collectionName.toLowerCase();
+  var allowGhana = GHANA_ALLOWED.indexOf(colLower) >= 0;
+  var picked = [];
+
+  for (var i = 0; i < apps.length; i++) {
+    if (picked.length >= count) break;
+    if (!allowGhana && isGhanaApp(apps[i].name)) continue;
+    picked.push(apps[i]);
+  }
+
+  // Fallback: if we couldn't fill enough, allow any app
+  for (var j = 0; j < apps.length; j++) {
+    if (picked.length >= count) break;
+    if (picked.indexOf(apps[j]) === -1) picked.push(apps[j]);
+  }
+
+  return picked;
+}
+
 module.exports = function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
@@ -12,20 +46,25 @@ module.exports = function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Filter out seed collections (they have their own page)
-  const nonSeedCollections = allCollections.filter(col => col.type !== 'seed');
+  // Filter out seed collections and hidden collections
+  var filtered = allCollections.filter(function(col) {
+    if (col.type === 'seed') return false;
+    if (HIDDEN_COLLECTIONS.indexOf(col.name.toLowerCase()) >= 0) return false;
+    return true;
+  });
 
-  // Return collections with first 6 apps as previews
-  const summary = nonSeedCollections.map(col => ({
-    id: col.id,
-    name: col.name,
-    description: col.description,
-    type: col.type,
-    iconColor: col.iconColor,
-    iconEmoji: col.iconEmoji,
-    appCount: col.appCount,
-    previewApps: col.apps.slice(0, 6),
-  }));
+  var summary = filtered.map(function(col) {
+    return {
+      id: col.id,
+      name: col.name,
+      description: col.description,
+      type: col.type,
+      iconColor: col.iconColor,
+      iconEmoji: col.iconEmoji,
+      appCount: col.appCount,
+      previewApps: pickPreview(col.apps, 6, col.name),
+    };
+  });
 
   res.status(200).json(summary);
 };
