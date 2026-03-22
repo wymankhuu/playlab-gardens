@@ -284,12 +284,15 @@ function attachAppCardListeners(container, apps) {
     const app = apps.find(a => a.id === appId);
     if (!app) return;
 
-    const handler = () => openAppModal(app);
+    const handler = (e) => {
+      if (e.target.closest('.admin-pin-card-btn')) return;
+      openAppModal(app);
+    };
     card.addEventListener('click', handler);
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        handler();
+        handler(e);
       }
     });
   });
