@@ -22,17 +22,34 @@ function pickPreview(apps, count, collectionName) {
   var colLower = collectionName.toLowerCase();
   var allowGhana = GHANA_ALLOWED.indexOf(colLower) >= 0;
   var picked = [];
+  var seenCreators = {};
 
+  // Pass 1: unique creators, skip Ghana apps if not allowed
   for (var i = 0; i < apps.length; i++) {
     if (picked.length >= count) break;
     if (!allowGhana && isGhanaApp(apps[i].name)) continue;
+    var creator = (apps[i].creator || '').toLowerCase().trim();
+    if (creator && seenCreators[creator]) continue;
     picked.push(apps[i]);
+    if (creator) seenCreators[creator] = true;
   }
 
-  // Fallback: if we couldn't fill enough, allow any app
-  for (var j = 0; j < apps.length; j++) {
-    if (picked.length >= count) break;
-    if (picked.indexOf(apps[j]) === -1) picked.push(apps[j]);
+  // Pass 2: relax creator uniqueness if we didn't fill enough
+  if (picked.length < count) {
+    for (var j = 0; j < apps.length; j++) {
+      if (picked.length >= count) break;
+      if (picked.indexOf(apps[j]) !== -1) continue;
+      if (!allowGhana && isGhanaApp(apps[j].name)) continue;
+      picked.push(apps[j]);
+    }
+  }
+
+  // Pass 3: last resort, allow any app
+  if (picked.length < count) {
+    for (var k = 0; k < apps.length; k++) {
+      if (picked.length >= count) break;
+      if (picked.indexOf(apps[k]) === -1) picked.push(apps[k]);
+    }
   }
 
   return picked;
