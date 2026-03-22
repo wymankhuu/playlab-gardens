@@ -130,12 +130,21 @@ document.addEventListener('click', function(e) {
       pinBtn.classList.toggle('pinned', newPinned);
       pinBtn.title = newPinned ? 'Unpin' : 'Pin';
       pinBtn.innerHTML = lucideIconHTML(newPinned ? 'pin-off' : 'pin', 12);
-      refreshIcons();
 
       // Update the app object in memory
       const allAppsArr = getAllAppsFlat();
       const appObj = allAppsArr.find(function(a) { return a.name === appName; });
       if (appObj) appObj.pinned = newPinned;
+
+      // Also update any other pin buttons for the same app on the page
+      document.querySelectorAll('.admin-pin-card-btn[data-app-name="' + appName.replace(/"/g, '\\"') + '"]').forEach(function(btn) {
+        btn.classList.toggle('pinned', newPinned);
+        btn.title = newPinned ? 'Unpin' : 'Pin';
+        btn.innerHTML = lucideIconHTML(newPinned ? 'pin-off' : 'pin', 12);
+      });
+
+      // Force Lucide to re-render all new icon elements
+      setTimeout(function() { refreshIcons(); }, 10);
     }
     pinBtn.disabled = false;
     pinBtn.style.opacity = '';
