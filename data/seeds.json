@@ -1,0 +1,1149 @@
+{
+  "seeds": [
+    {
+      "name": "Staff Onboarding Guide Builder",
+      "description": "A seed app that creates structured onboarding plans and orientation guides for new teachers and staff. Generates welcome packets, first-week schedules, mentor pairing suggestions, systems walkthroughs, and 30-60-90 day check-in frameworks.",
+      "remixUrl": "https://www.playlab.ai/project/cmmt93mj12sosjg0wlpbx8y6t",
+      "tags": [
+        "Science",
+        "SEL",
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "Family Newsletter Translator",
+      "description": "A seed app that takes a teacher's classroom newsletter or announcement and translates it into clear, warm, parent-friendly language across multiple languages while preserving key dates and action items. Remixable for different languages, communicatio",
+      "remixUrl": "https://www.playlab.ai/project/cmmt8n5x22ogojg0w9ps6zi2g",
+      "tags": [
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "Writing Process Partner",
+      "description": "A seed app that walks students through the full writing process — brainstorm, outline, draft, revise, and edit — acting as a collaborative partner rather than a grading tool. Remix it to focus on specific genres, add rubric alignment, or adjust the l",
+      "remixUrl": "https://www.playlab.ai/project/cmmsckiv772azjg0w49b0scl6",
+      "tags": [
+        "ELA",
+        "Science",
+        "Assessment",
+        "Writing",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Student Facing Apps"
+    },
+    {
+      "name": "Personal Finance Coach",
+      "description": "A seed app that teaches financial literacy through relatable, real-world scenarios students can apply to their own lives. Enable chart tools so the AI can visualize budgets and comparisons.",
+      "remixUrl": "https://www.playlab.ai/project/cmmscwpgv73u9jg0wrzo0kv04",
+      "tags": [
+        "ELA",
+        "Career",
+        "Teacher Tools",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "The Whole Child"
+    },
+    {
+      "name": "PLC Meeting Facilitator",
+      "description": "A seed app that helps facilitators plan and run productive PLC (Professional Learning Community) or team meetings. Generates agendas, discussion protocols, and follow-up action items.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsbiwoi6x28jg0ww6x4196u",
+      "tags": [
+        "Career",
+        "Teacher Tools",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Coaching and Feedback"
+    },
+    {
+      "name": "Project Design Helper",
+      "description": "A seed app that helps students brainstorm, plan, and organize school projects step by step. Upload the project rubric so the plan maps directly to grading criteria.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsd4coz031uhk0wstlykk63",
+      "tags": [
+        "Assessment",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "The Whole Child"
+    },
+    {
+      "name": "Observation Debrief Prep",
+      "description": "seed app that helps coaches prepare structured, evidence-based post-observation debriefs. Upload your instructional framework to align feedback to your school's shared language.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsar9nn6ts0jg0w7pegh7r6",
+      "tags": [
+        "Assessment",
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Coaching and Feedback"
+    },
+    {
+      "name": "Policy & Procedure Drafter",
+      "description": "A seed app that helps administrators draft clear school policies, handbook sections, standard operating procedures, and staff communications about policy changes. Remixable for different policy domains, school levels, and district contexts.",
+      "remixUrl": "https://www.playlab.ai/project/cmmt8y88k2r1ljg0w4zolmv7p",
+      "tags": [
+        "ELA",
+        "Writing",
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "Debate Prep Coach",
+      "description": "A seed app that helps students prepare for formal or informal debates by generating arguments, counterarguments, evidence prompts, and rebuttal strategies for any topic while practicing both sides. Remix it to align with specific debate formats, add",
+      "remixUrl": "https://www.playlab.ai/project/cmmsex2ec0adwhk0wu0d7gogn",
+      "tags": [
+        "Social Studies",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "The Whole Child"
+    },
+    {
+      "name": "Exit Ticket Generator and Resource Generator",
+      "description": "A seed app for quickly creating exit tickets, warm-ups, and worksheets aligned to any lesson. Add starter inputs to turn it into a one-click resource generator.",
+      "remixUrl": "https://www.playlab.ai/project/cmmf497ab3hj0kl0wjx650vjj",
+      "tags": [
+        "Assessment",
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Classroom Essentials"
+    },
+    {
+      "name": "Homework Helper",
+      "description": "A seed app that helps students work through homework by guiding their thinking, not giving answers. Turn on Avoid Answer Generation and Image Input for the best experience.",
+      "remixUrl": "https://www.playlab.ai/project/cmmscfpo33zqnhk0xxagclf1s",
+      "tags": [
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Student Facing Apps"
+    },
+    {
+      "name": "Sub Plan Generator",
+      "description": "A seed app that generates complete substitute teacher plans from a teacher's brief notes, including schedule, procedures, emergency info format, and step-by-step activity instructions.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsbqp0a6y5tjg0wmw27vssb",
+      "tags": [
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Classroom Essentials"
+    },
+    {
+      "name": "Coding Buddy",
+      "description": "A seed app that guides students through coding concepts and debugging without writing code for them. Narrow it to a specific language like Python or Scratch for a focused learning experience.",
+      "remixUrl": "https://www.playlab.ai/project/cmmscigxl71yijg0w85nb2tg6",
+      "tags": [
+        "ELA",
+        "Science",
+        "Writing",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Student Facing Apps"
+    },
+    {
+      "name": "Parent Email Drafter",
+      "description": "A seed app that drafts professional, warm parent emails in minutes. Upload your school's email template so every draft matches your communication style automatically.",
+      "remixUrl": "https://www.playlab.ai/project/cmmt8fk0h0fbei90wrhy676ig",
+      "tags": [
+        "Writing",
+        "Career",
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "Event & Logistics Planner",
+      "description": "A seed app that helps educators plan school events from start to finish — field trips, assemblies, fundraisers, spirit weeks, and graduation ceremonies. Generates timelines, checklists, permission slip templates, volunteer coordination plans, rundown",
+      "remixUrl": "https://www.playlab.ai/project/cmmt8znzg2reajg0wlswh45gx",
+      "tags": [
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "Science Concept Explorer",
+      "description": "A seed app that explains science concepts through analogies and real-world examples. Connect a science knowledge graph for curriculum-aligned content that matches what students are learning in class.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsc8kle3yuchk0x3ue715lb",
+      "tags": [
+        "Science",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Student Facing Apps"
+    },
+    {
+      "name": "Student Progress Report Writer",
+      "description": "A seed app that generates personalized narrative progress comments for student report cards based on teacher-provided strengths, growth areas, and performance data.",
+      "remixUrl": "https://www.playlab.ai/project/cmmt8tdim0hqdi90wchjvesbs",
+      "tags": [
+        "Assessment",
+        "Writing",
+        "Teacher Tools",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "History Detective",
+      "description": "A seed app that helps students investigate history through evidence, multiple perspectives, and critical thinking. Upload primary source documents for a specific document analysis tool tied to your unit.",
+      "remixUrl": "https://www.playlab.ai/project/cmmses7rl4dc1kt0wz89ht4zg",
+      "tags": [
+        "ELA",
+        "Social Studies",
+        "Writing",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "The Whole Child"
+    },
+    {
+      "name": "Reading Copilot",
+      "description": "A seed app that helps students understand and discuss what they're reading without spoiling the experience. Upload the text itself for a book-specific companion your whole class can use.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsceemh71gojg0wvtye2ny6",
+      "tags": [
+        "ELA",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Student Facing Apps"
+    },
+    {
+      "name": "Meeting Agenda Builder",
+      "description": "A seed app that helps school leaders and teachers create structured, time-boxed meeting agendas for staff meetings, department meetings, committee meetings, and leadership team meetings",
+      "remixUrl": "https://www.playlab.ai/project/cmmt8vdlp0dumkj0wez20l6e9",
+      "tags": [
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "SEL Check-In Companion",
+      "description": "A seed app for quick emotional check-ins that helps students name their feelings and learn a coping strategy. Enable Voice Input so students can talk instead of type when they're struggling.",
+      "remixUrl": "https://www.playlab.ai/project/cmmscuop101p6hk0wc0asjfo8",
+      "tags": [
+        "SEL",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "The Whole Child"
+    },
+    {
+      "name": "School Goal Tracker",
+      "description": "A seed app that helps school leaders break big school improvement goals into manageable milestones, track progress, and identify next steps. Paste in your school's goals and get a structured action plan.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsblg9w3yg7kt0wkzsd7klp",
+      "tags": [
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Coaching and Feedback"
+    },
+    {
+      "name": "Newsletter & Update Drafter",
+      "description": "A seed app that creates polished classroom newsletters and updates in minutes. Upload a past newsletter so the AI mirrors your format and tone exactly.",
+      "remixUrl": "https://www.playlab.ai/project/cmmt8jdqh0fyni90wu1dvxu0a",
+      "tags": [
+        "Writing",
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "Digital Citizen Guide",
+      "description": "A seed app that helps students think critically about their online behavior through realistic scenarios. Upload your school's Acceptable Use Policy for guidance personalized to your community.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsczsdo45dokt0we8wus6in",
+      "tags": [
+        "Social Studies",
+        "Teacher Tools",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "The Whole Child"
+    },
+    {
+      "name": "Bellringer & Do Now Creator",
+      "description": "A seed app that creates quick 3–5 minute warm-up activities tied to the current lesson, previous day's review, or spiral content from earlier units. Remix it to align with your pacing guide, add specific question types, or needs.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsbul2g3zntkt0wv7abidkx",
+      "tags": [
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Classroom Essentials"
+    },
+    {
+      "name": "Coaching Conversation Planner",
+      "description": "A seed app that helps coaches and administrators prepare for one-on-one coaching conversations with teachers. Generates talk tracks, guiding questions, and a structured conversation flow based on the coaching focus area.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsb98sg3wr4kt0wi5ha2fy7",
+      "tags": [
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Coaching and Feedback"
+    },
+    {
+      "name": "Back-to-School Night Planner",
+      "description": "A seed app that helps teachers plan and prepare comprehensive materials for open house or back-to-school night, including talking points, classroom tour flow, FAQ responses, handouts, and follow-up communications. Remixable for different grade levels",
+      "remixUrl": "https://www.playlab.ai/project/cmmt8qzbd0h8pi90wjw0oisk6",
+      "tags": [
+        "Assessment",
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "Teacher Feedback Composer",
+      "description": "A seed app that helps administrators and coaches write clear, actionable post-observation feedback for teachers. Generates professional feedback aligned to observation rubrics.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsb6rrd3u1ihk0x7gkathka",
+      "tags": [
+        "Assessment",
+        "Writing",
+        "Career",
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Coaching and Feedback"
+    },
+    {
+      "name": "Lesson Plan Builder",
+      "description": "A seed app that helps teachers generate structured lesson plans. Use it as a starting point, then remix with your school's template and curriculum for a custom planning tool.",
+      "remixUrl": "https://www.playlab.ai/project/cmmf3ohzu07bnp80w4ms0f1gy",
+      "tags": [
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Classroom Essentials"
+    },
+    {
+      "name": "Student Data Analyzer",
+      "description": "A seed app that helps leaders make sense of assessment data. Paste in scores or results and get trend analysis, student groupings, and suggested instructional next steps.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsb2wrq3w0zkt0wmm544tc9",
+      "tags": [
+        "Assessment",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Coaching and Feedback"
+    },
+    {
+      "name": "Community Resource Connector",
+      "description": "A seed app that helps counselors and family liaisons identify relevant community resources for families and generate clear referral information with follow-up guidance. Remixable for different geographic areas, resource types, and family circumstance",
+      "remixUrl": "https://www.playlab.ai/project/cmmt8pji42ougjg0w0nzqv5an",
+      "tags": [
+        "SEL",
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "Discussion Question Generator",
+      "description": "A seed app that creates tiered discussion questions at multiple DOK levels for any topic. Upload the reading or text students will discuss to generate text-dependent, evidence-based questions.",
+      "remixUrl": "https://www.playlab.ai/project/cmmf4gm5n0e7kp80w67r3elt8",
+      "tags": [
+        "ELA",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Classroom Essentials"
+    },
+    {
+      "name": "Hook Generator",
+      "description": "A seed app that generates creative, low-prep lesson openers to grab student attention. Crank up the variability and remix with your own hook styles for even more engaging starters.",
+      "remixUrl": "https://www.playlab.ai/project/cmmf406n13f2ukl0werugm2h9",
+      "tags": [
+        "Teacher Tools",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Classroom Essentials"
+    },
+    {
+      "name": "Story Starter",
+      "description": "A seed app that sparks creative writing with imaginative prompts and collaborative storytelling. Set variability high for surprising, original prompts that get students excited to write.",
+      "remixUrl": "https://www.playlab.ai/project/cmmseprzq7apwjg0wpk4xh0tr",
+      "tags": [
+        "ELA",
+        "Science",
+        "Writing",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "The Whole Child"
+    },
+    {
+      "name": "Parent Conference Prep",
+      "description": "A seed app that helps teachers prepare structured, balanced talking points for parent-teacher conferences using student data and observations. Remixable for different grade levels, conference formats, and conversation difficulty levels.",
+      "remixUrl": "https://www.playlab.ai/project/cmmt8ltyc0bhhkj0wu33ddq3w",
+      "tags": [
+        "Assessment",
+        "Teacher Tools",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "Budget & Grant Proposal Helper",
+      "description": "A seed app that helps educators write grant proposals, budget justifications, and funding requests. Structures proposals around need statement, goals, activities, timeline, budget, and evaluation plan.",
+      "remixUrl": "https://www.playlab.ai/project/cmmt91rkq2s2vjg0wdydfg4ad",
+      "tags": [
+        "Writing",
+        "Teacher Tools",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "Health and Wellness",
+      "description": "A seed app that provides accurate, age-appropriate health and wellness information with practical tips. Customize it for your PE or health curriculum to keep content aligned with classroom learning.",
+      "remixUrl": "https://www.playlab.ai/project/cmmscydkg742vjg0wv74s328l",
+      "tags": [
+        "SEL"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "The Whole Child"
+    },
+    {
+      "name": "Standards Unpacker",
+      "description": "A seed app that breaks academic standards into clear, student-friendly learning targets. Remix it with your state's standards knowledge graph so teachers can look up any standard by code.",
+      "remixUrl": "https://www.playlab.ai/project/cmmf3wsws0zd0jx0wv3jv8xa8",
+      "tags": [
+        "Science",
+        "Teacher Tools",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Classroom Essentials"
+    },
+    {
+      "name": "Math Practice Partner",
+      "description": "A seed app that guides students through math problems step by step, building understanding rather than just giving answers. Turn on Avoid Answer Generation and connect a math knowledge graph for a real tutoring experience.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsc549v70fvjg0wcbevlw8y",
+      "tags": [
+        "Math",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Student Facing Apps"
+    },
+    {
+      "name": "Student Writing Feedback Coach",
+      "description": "A seed app that generates strengths-based writing feedback teachers can share directly with students. Upload your rubric to align feedback to your exact grading criteria.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsbazjq6w1ujg0wmx4ahrow",
+      "tags": [
+        "ELA",
+        "Assessment",
+        "Writing",
+        "Teacher Tools",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Coaching and Feedback"
+    },
+    {
+      "name": "Podcast & Script Creator",
+      "description": "A seed app that guides students through creating podcast episodes, video scripts, or oral presentation outlines, helping them structure content, write natural-sounding dialogue, and plan delivery. Remix it to target specific formats, add audience ana",
+      "remixUrl": "https://www.playlab.ai/project/cmmsevjst0a7fhk0wbfw2m6er",
+      "tags": [
+        "Writing",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "The Whole Child"
+    },
+    {
+      "name": "IEP Goal Drafter",
+      "description": "A seed app that drafts measurable IEP goals in standard format as a starting point for the IEP team. Upload your district's goal bank for consistent language and structure across your school. Always double check.",
+      "remixUrl": "https://www.playlab.ai/project/cmmt8dfd02moxjg0w1tw2vami",
+      "tags": [
+        "Writing",
+        "Teacher Tools"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Operations and Management"
+    },
+    {
+      "name": "Socratic Discussion Partner",
+      "description": "A seed app that guides critical thinking through probing questions — never giving answers or taking sides. Use it for debate prep, essay planning, or deep exploration of any topic.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsetny27b6vjg0wo58vejei",
+      "tags": [
+        "ELA",
+        "Social Studies",
+        "Writing",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "The Whole Child"
+    },
+    {
+      "name": "Language Practice Partner",
+      "description": "A seed app for conversational practice in a new language with gentle corrections and encouragement. Enable Voice Input and Output for a real speaking and listening experience.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsenffv7afzjg0wqifdf7ag",
+      "tags": [
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "The Whole Child"
+    },
+    {
+      "name": "Writing Feedback Coach",
+      "description": "A seed app that generates strengths-based writing feedback teachers can share directly with students. Upload your rubric to align feedback to your exact grading criteria.",
+      "remixUrl": "https://www.playlab.ai/project/cmmf4le6e0f4gp80w2vp1vhqu",
+      "tags": [
+        "ELA",
+        "Assessment",
+        "Writing",
+        "Teacher Tools",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Classroom Essentials"
+    },
+    {
+      "name": "Vocabulary Builder",
+      "description": "A seed app that teaches vocabulary through context, examples, and interactive quizzes. Upload your unit word list so definitions match exactly what's taught in class.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsc1r6g3y6ghk0xegdhet3t",
+      "tags": [
+        "ELA",
+        "Assessment"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Student Facing Apps"
+    },
+    {
+      "name": "Career Explorer",
+      "description": "A seed app that helps students discover careers matching their interests and values. Upload your school's course catalog so the AI can recommend specific next steps available at the student's school.",
+      "remixUrl": "https://www.playlab.ai/project/cmmsctd9244iokt0whb3w9b6c",
+      "tags": [
+        "Science",
+        "Career",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "The Whole Child"
+    },
+    {
+      "name": "Quiz & Review Partner",
+      "description": "A seed app that quizzes students, tracks their score, and identifies what they need to study more. Upload a study guide to generate questions aligned to the actual test",
+      "remixUrl": "https://www.playlab.ai/project/cmmsbzjb16zi8jg0wxqmhiss8",
+      "tags": [
+        "Assessment",
+        "Study Partner"
+      ],
+      "creator": "🌱 Seed App",
+      "seedCollection": "Student Facing Apps"
+    }
+  ],
+  "collections": [
+    {
+      "id": "classroom-essentials",
+      "image": "images/seed-1.png",
+      "color": "#e74c3c",
+      "description": "Starter templates for the tools teachers reach for every day — lesson plans, exit tickets, bellringers, sub plans, and newsletter drafts that save hours of prep time.",
+      "name": "Classroom Essentials",
+      "apps": [
+        {
+          "name": "Exit Ticket Generator and Resource Generator",
+          "description": "A seed app for quickly creating exit tickets, warm-ups, and worksheets aligned to any lesson. Add starter inputs to turn it into a one-click resource generator.",
+          "remixUrl": "https://www.playlab.ai/project/cmmf497ab3hj0kl0wjx650vjj",
+          "tags": [
+            "Assessment",
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Classroom Essentials"
+        },
+        {
+          "name": "Sub Plan Generator",
+          "description": "A seed app that generates complete substitute teacher plans from a teacher's brief notes, including schedule, procedures, emergency info format, and step-by-step activity instructions.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsbqp0a6y5tjg0wmw27vssb",
+          "tags": [
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Classroom Essentials"
+        },
+        {
+          "name": "Bellringer & Do Now Creator",
+          "description": "A seed app that creates quick 3–5 minute warm-up activities tied to the current lesson, previous day's review, or spiral content from earlier units. Remix it to align with your pacing guide, add specific question types, or needs.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsbul2g3zntkt0wv7abidkx",
+          "tags": [
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Classroom Essentials"
+        },
+        {
+          "name": "Lesson Plan Builder",
+          "description": "A seed app that helps teachers generate structured lesson plans. Use it as a starting point, then remix with your school's template and curriculum for a custom planning tool.",
+          "remixUrl": "https://www.playlab.ai/project/cmmf3ohzu07bnp80w4ms0f1gy",
+          "tags": [
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Classroom Essentials"
+        },
+        {
+          "name": "Discussion Question Generator",
+          "description": "A seed app that creates tiered discussion questions at multiple DOK levels for any topic. Upload the reading or text students will discuss to generate text-dependent, evidence-based questions.",
+          "remixUrl": "https://www.playlab.ai/project/cmmf4gm5n0e7kp80w67r3elt8",
+          "tags": [
+            "ELA",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Classroom Essentials"
+        },
+        {
+          "name": "Hook Generator",
+          "description": "A seed app that generates creative, low-prep lesson openers to grab student attention. Crank up the variability and remix with your own hook styles for even more engaging starters.",
+          "remixUrl": "https://www.playlab.ai/project/cmmf406n13f2ukl0werugm2h9",
+          "tags": [
+            "Teacher Tools",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Classroom Essentials"
+        },
+        {
+          "name": "Standards Unpacker",
+          "description": "A seed app that breaks academic standards into clear, student-friendly learning targets. Remix it with your state's standards knowledge graph so teachers can look up any standard by code.",
+          "remixUrl": "https://www.playlab.ai/project/cmmf3wsws0zd0jx0wv3jv8xa8",
+          "tags": [
+            "Science",
+            "Teacher Tools",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Classroom Essentials"
+        },
+        {
+          "name": "Writing Feedback Coach",
+          "description": "A seed app that generates strengths-based writing feedback teachers can share directly with students. Upload your rubric to align feedback to your exact grading criteria.",
+          "remixUrl": "https://www.playlab.ai/project/cmmf4le6e0f4gp80w2vp1vhqu",
+          "tags": [
+            "ELA",
+            "Assessment",
+            "Writing",
+            "Teacher Tools",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Classroom Essentials"
+        }
+      ]
+    },
+    {
+      "id": "coaching-feedback",
+      "image": "images/seed-2.png",
+      "color": "#9b59b6",
+      "description": "Templates for instructional coaches and school leaders to prepare observation debriefs, write actionable teacher feedback, and plan structured coaching conversations.",
+      "name": "Coaching and Feedback",
+      "apps": [
+        {
+          "name": "PLC Meeting Facilitator",
+          "description": "A seed app that helps facilitators plan and run productive PLC (Professional Learning Community) or team meetings. Generates agendas, discussion protocols, and follow-up action items.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsbiwoi6x28jg0ww6x4196u",
+          "tags": [
+            "Career",
+            "Teacher Tools",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Coaching and Feedback"
+        },
+        {
+          "name": "Observation Debrief Prep",
+          "description": "seed app that helps coaches prepare structured, evidence-based post-observation debriefs. Upload your instructional framework to align feedback to your school's shared language.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsar9nn6ts0jg0w7pegh7r6",
+          "tags": [
+            "Assessment",
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Coaching and Feedback"
+        },
+        {
+          "name": "School Goal Tracker",
+          "description": "A seed app that helps school leaders break big school improvement goals into manageable milestones, track progress, and identify next steps. Paste in your school's goals and get a structured action plan.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsblg9w3yg7kt0wkzsd7klp",
+          "tags": [
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Coaching and Feedback"
+        },
+        {
+          "name": "Coaching Conversation Planner",
+          "description": "A seed app that helps coaches and administrators prepare for one-on-one coaching conversations with teachers. Generates talk tracks, guiding questions, and a structured conversation flow based on the coaching focus area.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsb98sg3wr4kt0wi5ha2fy7",
+          "tags": [
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Coaching and Feedback"
+        },
+        {
+          "name": "Teacher Feedback Composer",
+          "description": "A seed app that helps administrators and coaches write clear, actionable post-observation feedback for teachers. Generates professional feedback aligned to observation rubrics.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsb6rrd3u1ihk0x7gkathka",
+          "tags": [
+            "Assessment",
+            "Writing",
+            "Career",
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Coaching and Feedback"
+        },
+        {
+          "name": "Student Data Analyzer",
+          "description": "A seed app that helps leaders make sense of assessment data. Paste in scores or results and get trend analysis, student groupings, and suggested instructional next steps.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsb2wrq3w0zkt0wmm544tc9",
+          "tags": [
+            "Assessment",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Coaching and Feedback"
+        },
+        {
+          "name": "Student Writing Feedback Coach",
+          "description": "A seed app that generates strengths-based writing feedback teachers can share directly with students. Upload your rubric to align feedback to your exact grading criteria.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsbazjq6w1ujg0wmx4ahrow",
+          "tags": [
+            "ELA",
+            "Assessment",
+            "Writing",
+            "Teacher Tools",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Coaching and Feedback"
+        }
+      ]
+    },
+    {
+      "id": "student-facing",
+      "image": "images/seed-3.png",
+      "color": "#2654d4",
+      "description": "Templates students use directly — study partners, homework helpers, career explorers, and practice tools across math, science, reading, and writing.",
+      "name": "Student Facing Apps",
+      "apps": [
+        {
+          "name": "Writing Process Partner",
+          "description": "A seed app that walks students through the full writing process — brainstorm, outline, draft, revise, and edit — acting as a collaborative partner rather than a grading tool. Remix it to focus on specific genres, add rubric alignment, or adjust the l",
+          "remixUrl": "https://www.playlab.ai/project/cmmsckiv772azjg0w49b0scl6",
+          "tags": [
+            "ELA",
+            "Science",
+            "Assessment",
+            "Writing",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Student Facing Apps"
+        },
+        {
+          "name": "Homework Helper",
+          "description": "A seed app that helps students work through homework by guiding their thinking, not giving answers. Turn on Avoid Answer Generation and Image Input for the best experience.",
+          "remixUrl": "https://www.playlab.ai/project/cmmscfpo33zqnhk0xxagclf1s",
+          "tags": [
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Student Facing Apps"
+        },
+        {
+          "name": "Coding Buddy",
+          "description": "A seed app that guides students through coding concepts and debugging without writing code for them. Narrow it to a specific language like Python or Scratch for a focused learning experience.",
+          "remixUrl": "https://www.playlab.ai/project/cmmscigxl71yijg0w85nb2tg6",
+          "tags": [
+            "ELA",
+            "Science",
+            "Writing",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Student Facing Apps"
+        },
+        {
+          "name": "Science Concept Explorer",
+          "description": "A seed app that explains science concepts through analogies and real-world examples. Connect a science knowledge graph for curriculum-aligned content that matches what students are learning in class.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsc8kle3yuchk0x3ue715lb",
+          "tags": [
+            "Science",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Student Facing Apps"
+        },
+        {
+          "name": "Reading Copilot",
+          "description": "A seed app that helps students understand and discuss what they're reading without spoiling the experience. Upload the text itself for a book-specific companion your whole class can use.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsceemh71gojg0wvtye2ny6",
+          "tags": [
+            "ELA",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Student Facing Apps"
+        },
+        {
+          "name": "Math Practice Partner",
+          "description": "A seed app that guides students through math problems step by step, building understanding rather than just giving answers. Turn on Avoid Answer Generation and connect a math knowledge graph for a real tutoring experience.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsc549v70fvjg0wcbevlw8y",
+          "tags": [
+            "Math",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Student Facing Apps"
+        },
+        {
+          "name": "Vocabulary Builder",
+          "description": "A seed app that teaches vocabulary through context, examples, and interactive quizzes. Upload your unit word list so definitions match exactly what's taught in class.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsc1r6g3y6ghk0xegdhet3t",
+          "tags": [
+            "ELA",
+            "Assessment"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Student Facing Apps"
+        },
+        {
+          "name": "Quiz & Review Partner",
+          "description": "A seed app that quizzes students, tracks their score, and identifies what they need to study more. Upload a study guide to generate questions aligned to the actual test",
+          "remixUrl": "https://www.playlab.ai/project/cmmsbzjb16zi8jg0wxqmhiss8",
+          "tags": [
+            "Assessment",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Student Facing Apps"
+        }
+      ]
+    },
+    {
+      "id": "operations-management",
+      "image": "images/seed-4.png",
+      "color": "#f1c40f",
+      "description": "Starter apps for the behind-the-scenes work that keeps schools running — onboarding guides, meeting agendas, policy drafters, event planners, and grant proposals.",
+      "name": "Operations and Management",
+      "apps": [
+        {
+          "name": "Staff Onboarding Guide Builder",
+          "description": "A seed app that creates structured onboarding plans and orientation guides for new teachers and staff. Generates welcome packets, first-week schedules, mentor pairing suggestions, systems walkthroughs, and 30-60-90 day check-in frameworks.",
+          "remixUrl": "https://www.playlab.ai/project/cmmt93mj12sosjg0wlpbx8y6t",
+          "tags": [
+            "Science",
+            "SEL",
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        },
+        {
+          "name": "Family Newsletter Translator",
+          "description": "A seed app that takes a teacher's classroom newsletter or announcement and translates it into clear, warm, parent-friendly language across multiple languages while preserving key dates and action items. Remixable for different languages, communicatio",
+          "remixUrl": "https://www.playlab.ai/project/cmmt8n5x22ogojg0w9ps6zi2g",
+          "tags": [
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        },
+        {
+          "name": "Policy & Procedure Drafter",
+          "description": "A seed app that helps administrators draft clear school policies, handbook sections, standard operating procedures, and staff communications about policy changes. Remixable for different policy domains, school levels, and district contexts.",
+          "remixUrl": "https://www.playlab.ai/project/cmmt8y88k2r1ljg0w4zolmv7p",
+          "tags": [
+            "ELA",
+            "Writing",
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        },
+        {
+          "name": "Parent Email Drafter",
+          "description": "A seed app that drafts professional, warm parent emails in minutes. Upload your school's email template so every draft matches your communication style automatically.",
+          "remixUrl": "https://www.playlab.ai/project/cmmt8fk0h0fbei90wrhy676ig",
+          "tags": [
+            "Writing",
+            "Career",
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        },
+        {
+          "name": "Event & Logistics Planner",
+          "description": "A seed app that helps educators plan school events from start to finish — field trips, assemblies, fundraisers, spirit weeks, and graduation ceremonies. Generates timelines, checklists, permission slip templates, volunteer coordination plans, rundown",
+          "remixUrl": "https://www.playlab.ai/project/cmmt8znzg2reajg0wlswh45gx",
+          "tags": [
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        },
+        {
+          "name": "Student Progress Report Writer",
+          "description": "A seed app that generates personalized narrative progress comments for student report cards based on teacher-provided strengths, growth areas, and performance data.",
+          "remixUrl": "https://www.playlab.ai/project/cmmt8tdim0hqdi90wchjvesbs",
+          "tags": [
+            "Assessment",
+            "Writing",
+            "Teacher Tools",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        },
+        {
+          "name": "Meeting Agenda Builder",
+          "description": "A seed app that helps school leaders and teachers create structured, time-boxed meeting agendas for staff meetings, department meetings, committee meetings, and leadership team meetings",
+          "remixUrl": "https://www.playlab.ai/project/cmmt8vdlp0dumkj0wez20l6e9",
+          "tags": [
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        },
+        {
+          "name": "Newsletter & Update Drafter",
+          "description": "A seed app that creates polished classroom newsletters and updates in minutes. Upload a past newsletter so the AI mirrors your format and tone exactly.",
+          "remixUrl": "https://www.playlab.ai/project/cmmt8jdqh0fyni90wu1dvxu0a",
+          "tags": [
+            "Writing",
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        },
+        {
+          "name": "Back-to-School Night Planner",
+          "description": "A seed app that helps teachers plan and prepare comprehensive materials for open house or back-to-school night, including talking points, classroom tour flow, FAQ responses, handouts, and follow-up communications. Remixable for different grade levels",
+          "remixUrl": "https://www.playlab.ai/project/cmmt8qzbd0h8pi90wjw0oisk6",
+          "tags": [
+            "Assessment",
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        },
+        {
+          "name": "Community Resource Connector",
+          "description": "A seed app that helps counselors and family liaisons identify relevant community resources for families and generate clear referral information with follow-up guidance. Remixable for different geographic areas, resource types, and family circumstance",
+          "remixUrl": "https://www.playlab.ai/project/cmmt8pji42ougjg0w0nzqv5an",
+          "tags": [
+            "SEL",
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        },
+        {
+          "name": "Parent Conference Prep",
+          "description": "A seed app that helps teachers prepare structured, balanced talking points for parent-teacher conferences using student data and observations. Remixable for different grade levels, conference formats, and conversation difficulty levels.",
+          "remixUrl": "https://www.playlab.ai/project/cmmt8ltyc0bhhkj0wu33ddq3w",
+          "tags": [
+            "Assessment",
+            "Teacher Tools",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        },
+        {
+          "name": "Budget & Grant Proposal Helper",
+          "description": "A seed app that helps educators write grant proposals, budget justifications, and funding requests. Structures proposals around need statement, goals, activities, timeline, budget, and evaluation plan.",
+          "remixUrl": "https://www.playlab.ai/project/cmmt91rkq2s2vjg0wdydfg4ad",
+          "tags": [
+            "Writing",
+            "Teacher Tools",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        },
+        {
+          "name": "IEP Goal Drafter",
+          "description": "A seed app that drafts measurable IEP goals in standard format as a starting point for the IEP team. Upload your district's goal bank for consistent language and structure across your school. Always double check.",
+          "remixUrl": "https://www.playlab.ai/project/cmmt8dfd02moxjg0w1tw2vami",
+          "tags": [
+            "Writing",
+            "Teacher Tools"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "Operations and Management"
+        }
+      ]
+    },
+    {
+      "id": "whole-child",
+      "image": "images/seed-5.png",
+      "color": "#e84393",
+      "description": "Seeds focused on the complete student experience — SEL check-ins, digital citizenship, health and wellness, parent conference prep, and community resource connectors.",
+      "name": "The Whole Child",
+      "apps": [
+        {
+          "name": "Personal Finance Coach",
+          "description": "A seed app that teaches financial literacy through relatable, real-world scenarios students can apply to their own lives. Enable chart tools so the AI can visualize budgets and comparisons.",
+          "remixUrl": "https://www.playlab.ai/project/cmmscwpgv73u9jg0wrzo0kv04",
+          "tags": [
+            "ELA",
+            "Career",
+            "Teacher Tools",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "The Whole Child"
+        },
+        {
+          "name": "Project Design Helper",
+          "description": "A seed app that helps students brainstorm, plan, and organize school projects step by step. Upload the project rubric so the plan maps directly to grading criteria.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsd4coz031uhk0wstlykk63",
+          "tags": [
+            "Assessment",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "The Whole Child"
+        },
+        {
+          "name": "Debate Prep Coach",
+          "description": "A seed app that helps students prepare for formal or informal debates by generating arguments, counterarguments, evidence prompts, and rebuttal strategies for any topic while practicing both sides. Remix it to align with specific debate formats, add",
+          "remixUrl": "https://www.playlab.ai/project/cmmsex2ec0adwhk0wu0d7gogn",
+          "tags": [
+            "Social Studies",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "The Whole Child"
+        },
+        {
+          "name": "History Detective",
+          "description": "A seed app that helps students investigate history through evidence, multiple perspectives, and critical thinking. Upload primary source documents for a specific document analysis tool tied to your unit.",
+          "remixUrl": "https://www.playlab.ai/project/cmmses7rl4dc1kt0wz89ht4zg",
+          "tags": [
+            "ELA",
+            "Social Studies",
+            "Writing",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "The Whole Child"
+        },
+        {
+          "name": "SEL Check-In Companion",
+          "description": "A seed app for quick emotional check-ins that helps students name their feelings and learn a coping strategy. Enable Voice Input so students can talk instead of type when they're struggling.",
+          "remixUrl": "https://www.playlab.ai/project/cmmscuop101p6hk0wc0asjfo8",
+          "tags": [
+            "SEL",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "The Whole Child"
+        },
+        {
+          "name": "Digital Citizen Guide",
+          "description": "A seed app that helps students think critically about their online behavior through realistic scenarios. Upload your school's Acceptable Use Policy for guidance personalized to your community.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsczsdo45dokt0we8wus6in",
+          "tags": [
+            "Social Studies",
+            "Teacher Tools",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "The Whole Child"
+        },
+        {
+          "name": "Story Starter",
+          "description": "A seed app that sparks creative writing with imaginative prompts and collaborative storytelling. Set variability high for surprising, original prompts that get students excited to write.",
+          "remixUrl": "https://www.playlab.ai/project/cmmseprzq7apwjg0wpk4xh0tr",
+          "tags": [
+            "ELA",
+            "Science",
+            "Writing",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "The Whole Child"
+        },
+        {
+          "name": "Health and Wellness",
+          "description": "A seed app that provides accurate, age-appropriate health and wellness information with practical tips. Customize it for your PE or health curriculum to keep content aligned with classroom learning.",
+          "remixUrl": "https://www.playlab.ai/project/cmmscydkg742vjg0wv74s328l",
+          "tags": [
+            "SEL"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "The Whole Child"
+        },
+        {
+          "name": "Podcast & Script Creator",
+          "description": "A seed app that guides students through creating podcast episodes, video scripts, or oral presentation outlines, helping them structure content, write natural-sounding dialogue, and plan delivery. Remix it to target specific formats, add audience ana",
+          "remixUrl": "https://www.playlab.ai/project/cmmsevjst0a7fhk0wbfw2m6er",
+          "tags": [
+            "Writing",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "The Whole Child"
+        },
+        {
+          "name": "Socratic Discussion Partner",
+          "description": "A seed app that guides critical thinking through probing questions — never giving answers or taking sides. Use it for debate prep, essay planning, or deep exploration of any topic.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsetny27b6vjg0wo58vejei",
+          "tags": [
+            "ELA",
+            "Social Studies",
+            "Writing",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "The Whole Child"
+        },
+        {
+          "name": "Language Practice Partner",
+          "description": "A seed app for conversational practice in a new language with gentle corrections and encouragement. Enable Voice Input and Output for a real speaking and listening experience.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsenffv7afzjg0wqifdf7ag",
+          "tags": [
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "The Whole Child"
+        },
+        {
+          "name": "Career Explorer",
+          "description": "A seed app that helps students discover careers matching their interests and values. Upload your school's course catalog so the AI can recommend specific next steps available at the student's school.",
+          "remixUrl": "https://www.playlab.ai/project/cmmsctd9244iokt0whb3w9b6c",
+          "tags": [
+            "Science",
+            "Career",
+            "Study Partner"
+          ],
+          "creator": "🌱 Seed App",
+          "seedCollection": "The Whole Child"
+        }
+      ]
+    }
+  ]
+}

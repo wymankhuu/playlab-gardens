@@ -321,20 +321,47 @@ async function performSearch(query) {
   dropdown.classList.add('open');
 
   try {
+    // Search collections first
+    const q = query.toLowerCase();
+    const matchedCollections = allCollections.filter(col =>
+      col.name.toLowerCase().includes(q)
+    ).slice(0, 4);
+
+    // Then search apps/builders
     const data = await fetchJSON(apiUrl('/search', { q: query }));
+    const matchedApps = data.results.slice(0, 6);
 
-    if (data.results.length === 0) {
-      dropdown.innerHTML = '<div class="search-dropdown-empty">No apps found</div>';
+    if (matchedCollections.length === 0 && matchedApps.length === 0) {
+      dropdown.innerHTML = '<div class="search-dropdown-empty">No results found</div>';
     } else {
-      const shown = data.results.slice(0, 8);
-      dropdown.innerHTML = shown.map(app => `
-        <div class="search-dropdown-item" data-app-id="${escapeHtml(app.id)}">
-          <div class="search-dropdown-name">${escapeHtml(app.name)}</div>
-          <div class="search-dropdown-desc">${escapeHtml(truncate(app.description || '', 80))}</div>
-        </div>
-      `).join('');
+      let html = '';
 
-      dropdown.querySelectorAll('.search-dropdown-item').forEach(item => {
+      // Collections section
+      if (matchedCollections.length > 0) {
+        html += '<div class="search-dropdown-section-label">Collections</div>';
+        html += matchedCollections.map(col => `
+          <a href="collection.html?id=${encodeURIComponent(col.id)}" class="search-dropdown-item search-dropdown-collection">
+            <div class="search-dropdown-name">${escapeHtml(col.name)}</div>
+            <div class="search-dropdown-desc">${escapeHtml(truncate(col.description || col.appCount + ' apps', 80))}</div>
+          </a>
+        `).join('');
+      }
+
+      // Apps/Builders section
+      if (matchedApps.length > 0) {
+        html += '<div class="search-dropdown-section-label">Apps & Builders</div>';
+        html += matchedApps.map(app => `
+          <div class="search-dropdown-item" data-app-id="${escapeHtml(app.id)}">
+            <div class="search-dropdown-name">${escapeHtml(app.name)}</div>
+            <div class="search-dropdown-desc">${escapeHtml(truncate(app.description || '', 80))}</div>
+          </div>
+        `).join('');
+      }
+
+      dropdown.innerHTML = html;
+
+      // Attach click handlers for app results
+      dropdown.querySelectorAll('.search-dropdown-item[data-app-id]').forEach(item => {
         const appId = item.dataset.appId;
         const app = data.results.find(a => a.id === appId);
         if (app) {
@@ -343,6 +370,11 @@ async function performSearch(query) {
             hideSearchResults();
           });
         }
+      });
+
+      // Collection links close dropdown on click
+      dropdown.querySelectorAll('.search-dropdown-collection').forEach(item => {
+        item.addEventListener('click', () => hideSearchResults());
       });
     }
   } catch (err) {

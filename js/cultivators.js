@@ -28,7 +28,7 @@ async function loadCultivators() {
     console.error('Failed to load cultivators:', err);
     grid.innerHTML = `
       <div class="cultivators-empty">
-        <p>Could not load cultivator profiles. Please try again later.</p>
+        <p>Could not load grower profiles. Please try again later.</p>
       </div>
     `;
   }

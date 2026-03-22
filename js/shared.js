@@ -2,6 +2,71 @@
    Playlab Gardens — Shared Utilities
    ========================================== */
 
+// ---- Star / Favorite System (localStorage) ----
+const STARS_KEY = 'playlab-gardens-stars';
+
+function getStarredApps() {
+  try { return JSON.parse(localStorage.getItem(STARS_KEY)) || {}; } catch { return {}; }
+}
+
+function isStarred(appId) {
+  return !!getStarredApps()[appId];
+}
+
+function toggleStar(appId) {
+  const stars = getStarredApps();
+  if (stars[appId]) {
+    delete stars[appId];
+  } else {
+    stars[appId] = Date.now();
+  }
+  localStorage.setItem(STARS_KEY, JSON.stringify(stars));
+  return !!stars[appId];
+}
+
+function getStarCount(appId) {
+  // localStorage only tracks this user's stars — count is 0 or 1 per user
+  return isStarred(appId) ? 1 : 0;
+}
+
+function initStarButtons() {
+  document.addEventListener('click', function(e) {
+    // Card star button
+    const cardBtn = e.target.closest('.app-star-btn');
+    if (cardBtn) {
+      e.stopPropagation();
+      const appId = cardBtn.dataset.appId;
+      const nowStarred = toggleStar(appId);
+      cardBtn.classList.toggle('starred', nowStarred);
+      cardBtn.querySelector('.star-icon').innerHTML = nowStarred ? '★' : '☆';
+      // Sync drawer if open
+      const drawerStar = document.getElementById('drawer-star-btn');
+      if (drawerStar && drawerStar.dataset.appId === appId) {
+        drawerStar.classList.toggle('starred', nowStarred);
+        drawerStar.querySelector('.star-icon').innerHTML = nowStarred ? '★' : '☆';
+        drawerStar.querySelector('.star-label').textContent = nowStarred ? 'Starred' : 'Star';
+      }
+      return;
+    }
+    // Drawer star button
+    const drawerBtn = e.target.closest('#drawer-star-btn');
+    if (drawerBtn) {
+      e.stopPropagation();
+      const appId = drawerBtn.dataset.appId;
+      const nowStarred = toggleStar(appId);
+      drawerBtn.classList.toggle('starred', nowStarred);
+      drawerBtn.querySelector('.star-icon').innerHTML = nowStarred ? '★' : '☆';
+      drawerBtn.querySelector('.star-label').textContent = nowStarred ? 'Starred' : 'Star';
+      // Sync card
+      const cardStar = document.querySelector(`.app-star-btn[data-app-id="${appId}"]`);
+      if (cardStar) {
+        cardStar.classList.toggle('starred', nowStarred);
+        cardStar.querySelector('.star-icon').innerHTML = nowStarred ? '★' : '☆';
+      }
+    }
+  });
+}
+
 // ---- Mobile Menu ----
 function initMobileMenu() {
   const btn = document.querySelector('.mobile-menu-btn');
@@ -35,6 +100,7 @@ function initScrollTop() {
   });
 }
 document.addEventListener('DOMContentLoaded', initScrollTop);
+document.addEventListener('DOMContentLoaded', initStarButtons);
 
 // ---- Meta Helpers ----
 function updateMeta(nameOrProp, content) {
@@ -284,7 +350,16 @@ function openAppModal(app) {
   const iterations = app.iterations || 0;
   const sessions = app.sessions || 0;
   document.getElementById('drawer-iterations').textContent = `${formatNumber(iterations)} remixes`;
-  document.getElementById('drawer-conversations').textContent = `${formatNumber(sessions)} conversations`;
+
+  // Star button in drawer
+  const drawerStar = document.getElementById('drawer-star-btn');
+  if (drawerStar) {
+    const starred = isStarred(app.id);
+    drawerStar.dataset.appId = app.id;
+    drawerStar.classList.toggle('starred', starred);
+    drawerStar.querySelector('.star-icon').innerHTML = starred ? '★' : '☆';
+    drawerStar.querySelector('.star-label').textContent = starred ? 'Starred' : 'Star';
+  }
 
   const impactText = document.getElementById('drawer-impact-text');
   if (impactText) {
@@ -596,11 +671,6 @@ function generateUsageBlurb(app) {
 function generateImpactBlurb(iterations, sessions) {
   if (!iterations && !sessions) return null;
   const parts = [];
-  if (sessions >= 1000) {
-    parts.push(`Reached over ${formatNumber(sessions)} student conversations`);
-  } else if (sessions > 0) {
-    parts.push(`${sessions} student conversations so far`);
-  }
   if (iterations >= 10) {
     parts.push(`remixed ${iterations} times by other educators`);
   } else if (iterations > 0) {
@@ -700,9 +770,11 @@ function collectionSectionHTML(col) {
         if (extra > 0) pills += `<span class="app-tag app-tag--more">+${extra}</span>`;
         previewTagHTML = `<div class="app-card-tags">${pills}</div>`;
       }
-      const creatorHTML = app.creator
-        ? `<div class="preview-app-card-creator">${escapeHtml(app.creator)}${app.role ? ` · ${escapeHtml(app.role)}` : ''}</div>`
-        : '';
+      const previewCreatorName = app.creator || 'Playlab Creator';
+      const initials = app.creator
+        ? app.creator.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2)
+        : 'P';
+      const creatorHTML = `<div class="app-card-creator"><span class="app-card-avatar">${escapeHtml(initials)}</span>${escapeHtml(previewCreatorName)}</div>`;
       return `
       <div class="preview-app-card" data-app-id="${escapeHtml(app.id)}" tabindex="0" role="button" aria-label="View ${escapeHtml(app.name)}">
         ${creatorHTML}
@@ -740,13 +812,14 @@ function collectionSectionHTML(col) {
 // ---- App Card HTML ----
 function appCardHTML(app) {
   const remixes = app.iterations ? `<span class="app-badge">${formatNumber(app.iterations)} remixes</span>` : '';
-  const sessions = app.sessions ? `<span class="app-badge">${formatNumber(app.sessions)} conversations</span>` : '';
+  const sessions = '';
   const desc = generateFallbackDescription(app);
 
-  // Creator initials for avatar
+  // Creator initials for avatar — default to Playlab Creator
+  const creatorName = app.creator || 'Playlab Creator';
   const initials = app.creator
     ? app.creator.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2)
-    : '';
+    : 'P';
 
   // Build tag pills from app.tags
   let tagHTML = '';
@@ -758,15 +831,17 @@ function appCardHTML(app) {
     tagHTML = `<div class="app-card-tags">${pills}</div>`;
   }
 
+  const starred = isStarred(app.id);
   return `
     <div class="app-card" data-app-id="${escapeHtml(app.id)}" tabindex="0" role="button" aria-label="View ${escapeHtml(app.name)}">
+      <button class="app-star-btn ${starred ? 'starred' : ''}" data-app-id="${escapeHtml(app.id)}" aria-label="Star this app" title="Star this app">
+        <span class="star-icon">${starred ? '★' : '☆'}</span>
+      </button>
       <div class="app-card-body">
-        ${app.creator ? `
-          <div class="app-card-creator">
-            <span class="app-card-avatar">${escapeHtml(initials)}</span>
-            ${escapeHtml(app.creator)}
-          </div>
-        ` : ''}
+        <div class="app-card-creator">
+          <span class="app-card-avatar">${escapeHtml(initials)}</span>
+          ${escapeHtml(creatorName)}
+        </div>
         <div class="app-card-name">${escapeHtml(app.name)}</div>
         <div class="app-card-desc">${escapeHtml(shortDesc(desc))}</div>
         ${tagHTML}

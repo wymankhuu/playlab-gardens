@@ -69,14 +69,39 @@
           type="search"
           id="search-input"
           class="search-input"
-          placeholder="Search apps by name..."
-          aria-label="Search apps"
+          placeholder="Search collections, apps, and builders..."
+          aria-label="Search collections, apps, and builders"
         >
         <button id="search-clear" class="search-clear" aria-label="Clear search">✕</button>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Flowers Spotlight -->
+    <section class="container" style="padding-top: 32px; padding-bottom: 0;">
+      <a href="collection.html?id=flowers" class="flowers-spotlight">
+        <div class="flowers-spotlight-bg"></div>
+        <div class="flowers-spotlight-content">
+          <span class="flowers-spotlight-badge">Featured Collection</span>
+          <h2 class="flowers-spotlight-title">Flowers</h2>
+          <p class="flowers-spotlight-desc">See how individuals across the Playlab community are building to reflect their unique contexts, roles, and goals. A living showcase of what's possible.</p>
+          <span class="flowers-spotlight-cta">Explore Flowers →</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- All Collections -->
+    <section class="container section">
+      <div class="section-header">
+        <h2>All Collections</h2>
+        <span id="collections-count" class="section-count"></span>
+      </div>
+
       <!-- Filters -->
-      <div class="filter-bar" role="toolbar" aria-label="Filter collections">
+      <div class="filter-bar filter-bar-left" role="toolbar" aria-label="Filter collections">
         <div class="filter-group" id="label-filters" style="display:none;">
           <div class="filter-dropdown" data-category="subject">
             <button class="filter-dropdown-btn" aria-haspopup="listbox" aria-expanded="false">
@@ -103,30 +128,6 @@
             <div class="filter-dropdown-menu" role="group"></div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Main Content -->
-  <main id="main-content">
-    <!-- Flowers Spotlight -->
-    <section class="container" style="padding-top: 32px; padding-bottom: 0;">
-      <a href="collection.html?id=flowers" class="flowers-spotlight">
-        <div class="flowers-spotlight-bg"></div>
-        <div class="flowers-spotlight-content">
-          <span class="flowers-spotlight-badge">Featured Collection</span>
-          <h2 class="flowers-spotlight-title">Flowers</h2>
-          <p class="flowers-spotlight-desc">See how individuals across the Playlab community are building to reflect their unique contexts, roles, and goals. A living showcase of what's possible.</p>
-          <span class="flowers-spotlight-cta">Explore Flowers →</span>
-        </div>
-      </a>
-    </section>
-
-    <!-- All Collections -->
-    <section class="container section">
-      <div class="section-header">
-        <h2>All Collections</h2>
-        <span id="collections-count" class="section-count"></span>
       </div>
 
       <div id="collections-grid" class="collections-grid"></div>
@@ -189,10 +190,10 @@
             <i data-lucide="shuffle" class="drawer-stat-icon"></i>
             <span id="drawer-iterations">0 remixes</span>
           </div>
-          <div class="drawer-stat">
-            <i data-lucide="star" class="drawer-stat-icon"></i>
-            <span id="drawer-conversations">0 conversations</span>
-          </div>
+          <button id="drawer-star-btn" class="drawer-star-btn" data-app-id="">
+            <span class="star-icon">☆</span>
+            <span class="star-label">Star</span>
+          </button>
         </div>
         <p id="drawer-impact-text" class="drawer-info-box-text"></p>
       </div>

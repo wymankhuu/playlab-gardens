@@ -122,18 +122,49 @@ async function main() {
     return col;
   });
 
-  // 4. Write to data/collections.json
+  // 4. Export Seeds (before writing collections, so we can merge)
+  const seedCollections = await exportSeeds();
+
+  // 5. Merge seed collections into main collections
+  if (seedCollections && seedCollections.length > 0) {
+    for (const sc of seedCollections) {
+      // Convert seed apps to collection app format
+      const apps = sc.apps.map(s => ({
+        id: s.name.toLowerCase().replace(/\s+/g, '-'),
+        name: s.name,
+        url: s.remixUrl || '',
+        creator: s.creator || '🌱 Seed App',
+        role: '',
+        description: s.description,
+        usage: '',
+        impact: '',
+        sessions: 0,
+        iterations: 0,
+        tags: s.tags || [],
+      }));
+      collections.push({
+        id: sc.id,
+        name: sc.name,
+        description: sc.description || '',
+        type: 'seed',
+        iconColor: sc.color,
+        iconEmoji: '🌱',
+        appCount: apps.length,
+        apps,
+        previewApps: apps.slice(0, 6),
+      });
+    }
+  }
+
+  // 6. Write to data/collections.json
   const outPath = path.join(__dirname, '..', 'data', 'collections.json');
   fs.writeFileSync(outPath, JSON.stringify(collections, null, 2));
 
   const totalApps = collections.reduce((sum, c) => sum + c.apps.length, 0);
   console.log(`\nExported ${collections.length} collections (${totalApps} app entries) to ${outPath}`);
 
-  // 5. Export Cultivators
+  // 7. Export Cultivators
   await exportCultivators();
-
-  // 6. Export Seeds
-  await exportSeeds();
 }
 
 async function exportCultivators() {
@@ -221,7 +252,7 @@ async function exportSeeds() {
   do {
     const response = await notion.databases.query({
       database_id: SEEDS_DB_ID,
-      filter: { property: 'Active', checkbox: { equals: true } },
+      ...(await notion.databases.retrieve({ database_id: SEEDS_DB_ID }).then(db => db.properties['Active'] ? { filter: { property: 'Active', checkbox: { equals: true } } } : {}).catch(() => ({}))),
       start_cursor: cursor,
       page_size: 100,
     });
@@ -231,7 +262,9 @@ async function exportSeeds() {
 
   const seeds = rows.map(row => {
     const props = row.properties;
-    const name = (props['Name']?.title || []).map(t => t.plain_text).join('').trim();
+    // Try both 'App Name' and 'Name' as title field
+    const nameArr = props['App Name']?.title || props['Name']?.title || [];
+    const name = nameArr.map(t => t.plain_text).join('').trim();
     if (!name) return null;
 
     const description = (props['Description']?.rich_text || []).map(t => t.plain_text).join('').trim();
@@ -239,12 +272,55 @@ async function exportSeeds() {
     const tags = (props['Tags']?.multi_select || []).map(s => s.name);
     const creator = (props['Creator']?.rich_text || []).map(t => t.plain_text).join('').trim();
 
-    return { name, description, remixUrl, tags, creator };
+    // Seed Collection (select field)
+    const seedCollection = props['Seed Collection ']?.select?.name || '';
+
+    return { name, description, remixUrl, tags, creator, seedCollection };
   }).filter(Boolean);
 
+  // Group seeds by Seed Collection field from Notion
+  const SEED_COLLECTION_META = {
+    'Classroom Essentials': { id: 'classroom-essentials', image: 'images/seed-1.png', color: '#e74c3c', description: 'Starter templates for the tools teachers reach for every day — lesson plans, exit tickets, bellringers, sub plans, and newsletter drafts that save hours of prep time.' },
+    'Coaching and Feedback': { id: 'coaching-feedback', image: 'images/seed-2.png', color: '#9b59b6', description: 'Templates for instructional coaches and school leaders to prepare observation debriefs, write actionable teacher feedback, and plan structured coaching conversations.' },
+    'Operations and Management': { id: 'operations-management', image: 'images/seed-4.png', color: '#f1c40f', description: 'Starter apps for the behind-the-scenes work that keeps schools running — onboarding guides, meeting agendas, policy drafters, event planners, and grant proposals.' },
+    'Student Facing Apps': { id: 'student-facing', image: 'images/seed-3.png', color: '#2654d4', description: 'Templates students use directly — study partners, homework helpers, career explorers, and practice tools across math, science, reading, and writing.' },
+    'The Whole Child': { id: 'whole-child', image: 'images/seed-5.png', color: '#e84393', description: 'Seeds focused on the complete student experience — SEL check-ins, digital citizenship, health and wellness, parent conference prep, and community resource connectors.' },
+  };
+
+  // Build collections from actual data
+  const collectionMap = {};
+  for (const seed of seeds) {
+    if (!seed.seedCollection) continue;
+    if (!collectionMap[seed.seedCollection]) {
+      const meta = SEED_COLLECTION_META[seed.seedCollection] || {
+        id: seed.seedCollection.toLowerCase().replace(/\s+/g, '-'),
+        image: 'images/seed-1.png',
+        color: '#2D7A3A',
+      };
+      collectionMap[seed.seedCollection] = {
+        ...meta,
+        name: seed.seedCollection,
+        apps: [],
+      };
+    }
+    collectionMap[seed.seedCollection].apps.push(seed);
+  }
+
+  // Order collections consistently
+  const collectionOrder = ['Classroom Essentials', 'Coaching and Feedback', 'Student Facing Apps', 'Operations and Management', 'The Whole Child'];
+  const seedCollections = collectionOrder
+    .filter(name => collectionMap[name])
+    .map(name => collectionMap[name]);
+
+  // Add any unlisted collections at the end
+  for (const name of Object.keys(collectionMap)) {
+    if (!collectionOrder.includes(name)) seedCollections.push(collectionMap[name]);
+  }
+
   const outPath = path.join(__dirname, '..', 'data', 'seeds.json');
-  fs.writeFileSync(outPath, JSON.stringify(seeds, null, 2));
-  console.log(`Exported ${seeds.length} seeds to ${outPath}`);
+  fs.writeFileSync(outPath, JSON.stringify({ seeds, collections: seedCollections }, null, 2));
+  console.log(`Exported ${seeds.length} seeds in ${seedCollections.length} collections to ${outPath}`);
+  return seedCollections;
 }
 
 function parseRow(props) {
