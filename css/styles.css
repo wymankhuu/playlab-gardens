@@ -274,7 +274,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(224, 209, 174, 0.6);
+  background: rgba(224, 209, 174, 0.75);
   z-index: 0;
 }
 
@@ -817,7 +817,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(224, 209, 174, 0.6);
+  background: rgba(224, 209, 174, 0.75);
   z-index: 0;
 }
 
@@ -2250,7 +2250,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(224, 209, 174, 0.6);
+  background: rgba(224, 209, 174, 0.75);
   z-index: 0;
 }
 
@@ -2890,7 +2890,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(224, 209, 174, 0.6);
+  background: rgba(224, 209, 174, 0.75);
   z-index: 0;
 }
 
@@ -3257,7 +3257,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(224, 209, 174, 0.6);
+  background: rgba(224, 209, 174, 0.75);
   z-index: 0;
 }
 
