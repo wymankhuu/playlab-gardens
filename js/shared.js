@@ -330,14 +330,37 @@ let isAdminMode = false;
 let adminPassword = '';
 let currentDrawerApp = null;
 
+// Restore admin mode from sessionStorage on load
+if (sessionStorage.getItem('playlab-admin-mode') === 'true') {
+  isAdminMode = true;
+  adminPassword = sessionStorage.getItem('playlab-admin-pwd') || '';
+}
+
+function persistAdminState() {
+  if (isAdminMode) {
+    sessionStorage.setItem('playlab-admin-mode', 'true');
+    sessionStorage.setItem('playlab-admin-pwd', adminPassword);
+  } else {
+    sessionStorage.removeItem('playlab-admin-mode');
+    sessionStorage.removeItem('playlab-admin-pwd');
+  }
+}
+
 function initAdminToggle() {
   const toggle = document.getElementById('admin-toggle');
   if (!toggle) return;
+
+  // If admin mode was restored from sessionStorage, set toggle active immediately
+  if (isAdminMode) {
+    toggle.classList.add('admin-active');
+    toggle.title = 'Exit admin mode';
+  }
 
   toggle.addEventListener('click', () => {
     if (isAdminMode) {
       isAdminMode = false;
       adminPassword = '';
+      persistAdminState();
       toggle.classList.remove('admin-active');
       toggle.title = 'Enter admin mode';
       // Re-open current app in view mode if drawer is open
@@ -346,6 +369,7 @@ function initAdminToggle() {
       showPasswordModal((pwd) => {
         adminPassword = pwd;
         isAdminMode = true;
+        persistAdminState();
         toggle.classList.add('admin-active');
         toggle.title = 'Exit admin mode';
         if (currentDrawerApp) openAppModal(currentDrawerApp);
@@ -993,8 +1017,23 @@ function appCardHTML(app) {
   }
 
   const starred = isStarred(app.id);
+
+  // Admin mode: flag cards missing key fields
+  let adminFlag = '';
+  if (isAdminMode) {
+    const missing = [];
+    if (!app.creator) missing.push('creator');
+    if (!app.description || !app.description.trim()) missing.push('description');
+    if (!app.usage || !app.usage.trim()) missing.push('usage');
+    if (!app.impact || !app.impact.trim()) missing.push('impact');
+    if (missing.length > 0) {
+      adminFlag = `<span class="admin-missing-dot" title="Missing: ${missing.join(', ')}">${missing.length}</span>`;
+    }
+  }
+
   return `
-    <div class="app-card" data-app-id="${escapeHtml(app.id)}" tabindex="0" role="button" aria-label="View ${escapeHtml(app.name)}">
+    <div class="app-card ${isAdminMode && adminFlag ? 'admin-missing' : ''}" data-app-id="${escapeHtml(app.id)}" tabindex="0" role="button" aria-label="View ${escapeHtml(app.name)}">
+      ${adminFlag}
       <button class="app-star-btn ${starred ? 'starred' : ''}" data-app-id="${escapeHtml(app.id)}" aria-label="Star this app" title="Star this app">
         <span class="star-icon">${starred ? '★' : '☆'}</span>
         <span class="star-count">${(_starCountCache[app.id] || 0) > 0 ? _starCountCache[app.id] : ''}</span>

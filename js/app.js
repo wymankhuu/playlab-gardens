@@ -71,6 +71,12 @@ function renderFilteredCollections() {
     }).join('')}
   </nav>`;
 
+  // Build a lookup map from collection ID to collection data for lazy rendering
+  const collectionMap = new Map();
+  for (const col of filtered) {
+    collectionMap.set(col.id, col);
+  }
+
   let html = jumpNav;
   for (const group of activeGroups) {
     const slug = group.title.toLowerCase().replace(/\s+/g, '-');
@@ -79,10 +85,15 @@ function renderFilteredCollections() {
       return `<a href="#${anchorId}" class="section-pill" data-collection-id="${escapeHtml(c.id)}">${escapeHtml(c.name)} <span class="section-pill-count">${c.appCount}</span></a>`;
     }).join('');
 
+    // Render group headers and pills immediately; collection sections as placeholders
+    const placeholders = group.collections.map(c =>
+      `<div class="collection-section-placeholder" id="col-${escapeHtml(c.id)}" data-collection-id="${escapeHtml(c.id)}" style="min-height:320px;"></div>`
+    ).join('');
+
     html += `<div class="collection-group" id="section-${slug}">
       <h3 class="collection-group-title">${group.title}</h3>
       <div class="section-pills">${pills}</div>
-      ${group.collections.map(c => collectionSectionHTML(c)).join('')}
+      ${placeholders}
     </div>`;
   }
   collectionsGrid.innerHTML = html;
@@ -90,7 +101,37 @@ function renderFilteredCollections() {
   // Highlight active jump nav link on scroll
   initJumpNavHighlight();
 
-  attachPreviewCardListeners(collectionsGrid, filtered);
+  // Lazy-load collection sections as they approach the viewport
+  const lazyObserver = new IntersectionObserver((entries, observer) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+
+      const placeholder = entry.target;
+      const colId = placeholder.dataset.collectionId;
+      const col = collectionMap.get(colId);
+      if (!col) continue;
+
+      // Stop observing this placeholder
+      observer.unobserve(placeholder);
+
+      // Replace placeholder with full section HTML
+      const temp = document.createElement('div');
+      temp.innerHTML = collectionSectionHTML(col);
+      const section = temp.firstElementChild;
+      placeholder.replaceWith(section);
+
+      // Render icons for the new section
+      refreshIcons();
+
+      // Attach preview card listeners scoped to this section
+      attachPreviewCardListeners(section, [col]);
+    }
+  }, { rootMargin: '200px' });
+
+  // Observe all placeholders
+  collectionsGrid.querySelectorAll('.collection-section-placeholder').forEach(el => {
+    lazyObserver.observe(el);
+  });
   collectionsCount.textContent = `${filtered.length} collections`;
 
   // Smooth scroll for section pills

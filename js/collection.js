@@ -5,11 +5,12 @@
 let allApps = [];
 let collectionSearchQuery = '';
 let activeTagFilters = new Set();
-let collectionSortMode = 'recent';
+let activeSortMode = 'popular';
 
 document.addEventListener('DOMContentLoaded', async () => {
   initModal();
   initCollectionSearch();
+  initSortToggle();
   highlightNavForCollection();
   await loadCollection();
   checkCollectionDeepLink();
@@ -94,6 +95,19 @@ function renderApps() {
     });
   }
 
+  // Apply sort
+  if (activeSortMode === 'starred') {
+    filtered = [...filtered].sort((a, b) => {
+      const starsA = _starCountCache[a.id] || 0;
+      const starsB = _starCountCache[b.id] || 0;
+      if (starsB !== starsA) return starsB - starsA;
+      return (b.sessions || 0) - (a.sessions || 0);
+    });
+  } else if (activeSortMode === 'az') {
+    filtered = [...filtered].sort((a, b) => a.name.localeCompare(b.name));
+  }
+  // 'popular' keeps the default order (already sorted by sessions from the API)
+
   if (filtered.length === 0) {
     appsGrid.innerHTML = emptyStateHTML('No apps match the selected filters');
     appsCount.textContent = '0 apps in this collection';
@@ -103,20 +117,6 @@ function renderApps() {
     attachAppCardListeners(appsGrid, filtered);
   }
   refreshIcons();
-}
-
-function initSortToggle() {
-  const appsGrid = document.getElementById('apps-grid');
-  if (!appsGrid) return;
-
-  appsGrid.addEventListener('click', (e) => {
-    const btn = e.target.closest('.sort-btn');
-    if (!btn) return;
-    const mode = btn.dataset.sort;
-    if (mode === collectionSortMode) return;
-    collectionSortMode = mode;
-    renderApps();
-  });
 }
 
 function buildCollectionDropdownFilters() {
@@ -289,6 +289,25 @@ function initCollectionSearch() {
     collectionSearchQuery = '';
     renderApps();
     input.focus();
+  });
+}
+
+// ---- Sort Toggle ----
+function initSortToggle() {
+  const toggle = document.getElementById('sort-toggle');
+  if (!toggle) return;
+
+  toggle.addEventListener('click', (e) => {
+    const btn = e.target.closest('.sort-btn');
+    if (!btn) return;
+
+    const mode = btn.dataset.sort;
+    if (mode === activeSortMode) return;
+
+    toggle.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeSortMode = mode;
+    renderApps();
   });
 }
 
