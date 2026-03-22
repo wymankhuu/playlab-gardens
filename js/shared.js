@@ -545,30 +545,43 @@ function renderAdminPanel(app) {
   container.innerHTML = `
     <div class="admin-panel">
       <div class="admin-panel-header">
-        <i data-lucide="settings" style="width:14px;height:14px;"></i>
-        <span>Edit in Database</span>
+        <i data-lucide="pen-line" style="width:14px;height:14px;"></i>
+        <span>Edit App</span>
+      </div>
+      <div class="admin-row">
+        <div class="admin-field admin-field--half">
+          <label class="admin-label" for="admin-creator">Creator</label>
+          <input type="text" class="admin-input" id="admin-creator" value="${escapeHtml(app.creator || '')}" placeholder="Jane Smith">
+        </div>
+        <div class="admin-field admin-field--half">
+          <label class="admin-label" for="admin-role">Role</label>
+          <input type="text" class="admin-input" id="admin-role" value="${escapeHtml(app.role || '')}" placeholder="Teacher, Student, Coach">
+        </div>
       </div>
       <div class="admin-field">
-        <label class="admin-label">Creator</label>
-        <input type="text" class="admin-input" id="admin-creator" value="${escapeHtml(app.creator || '')}" placeholder="e.g. Jane Smith">
+        <label class="admin-label" for="admin-description">Description</label>
+        <textarea class="admin-textarea" id="admin-description" rows="2" placeholder="What does this app do?">${escapeHtml(app.description || '')}</textarea>
       </div>
       <div class="admin-field">
-        <label class="admin-label">Role</label>
-        <input type="text" class="admin-input" id="admin-role" value="${escapeHtml(app.role || '')}" placeholder="e.g. Teacher, Student, Coach">
-      </div>
-      <div class="admin-field">
-        <label class="admin-label">Description</label>
-        <textarea class="admin-textarea" id="admin-description" rows="3" placeholder="What does this app do?">${escapeHtml(app.description || '')}</textarea>
-      </div>
-      <div class="admin-field">
-        <label class="admin-label">How It's Being Used</label>
+        <label class="admin-label" for="admin-usage">
+          <i data-lucide="book-open" style="width:12px;height:12px;opacity:0.5;"></i>
+          How It's Being Used
+        </label>
         <textarea class="admin-textarea" id="admin-usage" rows="3" placeholder="How are educators or students using this?">${escapeHtml(app.usage || '')}</textarea>
       </div>
       <div class="admin-field">
-        <label class="admin-label">Impact</label>
+        <label class="admin-label" for="admin-impact">
+          <i data-lucide="trending-up" style="width:12px;height:12px;opacity:0.5;"></i>
+          Impact
+        </label>
         <textarea class="admin-textarea" id="admin-impact" rows="3" placeholder="What difference has this made?">${escapeHtml(app.impact || '')}</textarea>
       </div>
-      <button class="admin-save-btn" id="admin-save-btn">Save to Database</button>
+      <div class="admin-actions">
+        <button class="admin-save-btn" id="admin-save-btn">
+          <i data-lucide="save" style="width:14px;height:14px;"></i>
+          Save to Database
+        </button>
+      </div>
     </div>
   `;
 
