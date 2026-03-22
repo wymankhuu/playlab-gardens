@@ -2,6 +2,11 @@
    Playlab Gardens — Home Page
    ========================================== */
 
+const SCROLL_OFFSET = 140;
+const SEARCH_DEBOUNCE_MS = 300;
+const MAX_COLLECTION_RESULTS = 4;
+const MAX_APP_RESULTS = 6;
+
 let allCollections = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -143,8 +148,7 @@ function renderFilteredCollections() {
     e.preventDefault();
     const el = document.getElementById(href.slice(1));
     if (el) {
-      const offset = 140;
-      window.scrollTo({ top: el.offsetTop - offset, behavior: 'smooth' });
+      window.scrollTo({ top: el.offsetTop - SCROLL_OFFSET, behavior: 'smooth' });
     }
   });
 
@@ -211,7 +215,7 @@ function initSearch() {
       hideSearchResults();
       return;
     }
-    searchTimeout = setTimeout(() => performSearch(q), 300);
+    searchTimeout = setTimeout(() => performSearch(q), SEARCH_DEBOUNCE_MS);
   });
 
   input.addEventListener('keydown', (e) => {
@@ -247,11 +251,11 @@ async function performSearch(query) {
     const q = query.toLowerCase();
     const matchedCollections = allCollections.filter(col =>
       col.name.toLowerCase().includes(q)
-    ).slice(0, 4);
+    ).slice(0, MAX_COLLECTION_RESULTS);
 
     // Then search apps/builders
     const data = await fetchJSON(apiUrl('/search', { q: query }));
-    const matchedApps = data.results.slice(0, 6);
+    const matchedApps = data.results.slice(0, MAX_APP_RESULTS);
 
     if (matchedCollections.length === 0 && matchedApps.length === 0) {
       dropdown.innerHTML = '<div class="search-dropdown-empty">No results found</div>';

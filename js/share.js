@@ -38,6 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    // Validate Playlab URL format
+    const urlEl = document.getElementById('app-url');
+    if (urlEl.value.trim() && !/^https?:\/\/(www\.)?playlab\.ai\/project\/.+$/.test(urlEl.value.trim())) {
+      showFieldError(urlEl, 'Must be a Playlab project link (playlab.ai/project/...)');
+      hasError = true;
+    }
+
     if (hasError) {
       // Scroll to first error
       const firstError = form.querySelector('.form-group--error');

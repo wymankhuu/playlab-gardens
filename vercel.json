@@ -4,10 +4,21 @@
     { "source": "/api/collection/:id", "destination": "/api/collection/[id]" },
     { "source": "/api/search", "destination": "/api/search" },
     { "source": "/api/app-labels", "destination": "/api/app-labels" },
-{ "source": "/api/admin-save", "destination": "/api/admin-save" },
+    { "source": "/api/admin-save", "destination": "/api/admin-save" },
     { "source": "/api/admin-pin", "destination": "/api/admin-pin" },
     { "source": "/api/submit-app", "destination": "/api/submit-app" },
     { "source": "/api/star", "destination": "/api/star" },
     { "source": "/api/stars", "destination": "/api/stars" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+      ]
+    }
   ]
 }

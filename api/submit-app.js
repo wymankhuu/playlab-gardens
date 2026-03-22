@@ -1,7 +1,8 @@
 const { Client } = require('@notionhq/client');
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const DATABASE_ID = process.env.NOTION_MASTER_DB_ID || '32aa9d3778c580e89f18c2771cc02004';
+const DATABASE_ID = process.env.NOTION_MASTER_DB_ID;
+if (!DATABASE_ID) throw new Error('NOTION_MASTER_DB_ID is required');
 
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -24,6 +25,9 @@ module.exports = async function handler(req, res) {
   }
   if (!url || !url.trim()) {
     return res.status(400).json({ error: 'App URL is required' });
+  }
+  if (!/^https?:\/\/(www\.)?playlab\.ai\/project\/.+$/.test(url.trim())) {
+    return res.status(400).json({ error: 'URL must be a valid Playlab project link (playlab.ai/project/...)' });
   }
   if (!creator || !creator.trim()) {
     return res.status(400).json({ error: 'Creator name is required' });

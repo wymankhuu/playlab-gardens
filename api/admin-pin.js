@@ -1,7 +1,8 @@
 const { Client } = require('@notionhq/client');
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const DATABASE_ID = process.env.NOTION_MASTER_DB_ID || '32aa9d3778c580e89f18c2771cc02004';
+const DATABASE_ID = process.env.NOTION_MASTER_DB_ID;
+if (!DATABASE_ID) throw new Error('NOTION_MASTER_DB_ID is required');
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const MAX_PINNED = 9;
 
@@ -11,7 +12,9 @@ const MAX_PINNED = 9;
  * Enforces a cap of 9 pinned apps per collection.
  */
 module.exports = async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  const origin = req.headers.origin || '';
+  const allowed = origin.includes('playlabgardens.com') || origin.includes('localhost');
+  res.setHeader('Access-Control-Allow-Origin', allowed ? origin : 'https://playlabgardens.com');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 

@@ -54,6 +54,12 @@ async function loadCollection() {
       mergeLabelsIntoApps(data.apps, labelsData.labels);
     }
 
+    if (!data || !data.apps) {
+      appsGrid.innerHTML = errorStateHTML('Collection not found. <a href="/">Return to Gardens</a>.');
+      refreshIcons();
+      return;
+    }
+
     allApps = data.apps;
 
     renderCollectionHeader(data);
@@ -62,7 +68,7 @@ async function loadCollection() {
     refreshIcons();
   } catch (err) {
     console.error('Failed to load collection:', err);
-    appsGrid.innerHTML = errorStateHTML('Could not load this collection.');
+    appsGrid.innerHTML = errorStateHTML('Collection not found. <a href="/">Return to Gardens</a>.');
     refreshIcons();
   }
 }
@@ -194,12 +200,12 @@ function renderCollectionHeader(col) {
     const gradeNames = ['elementary', 'middle school', 'high school', 'higher ed'];
     const isFlowers = lower === 'flowers';
 
-    let heroImage = 'beat-5.png'; // default
-    if (isFlowers) heroImage = 'beat-2.png';
-    else if (col.type === 'org') heroImage = 'beat-3.png';
-    else if (subjectNames.some(s => lower.includes(s))) heroImage = 'beat-1.png';
-    else if (gradeNames.some(g => lower.includes(g))) heroImage = 'beat-6.png';
-    else heroImage = 'beat-5.png'; // use cases
+    let heroImage = 'beat-5.webp'; // default
+    if (isFlowers) heroImage = 'beat-2.webp';
+    else if (col.type === 'org') heroImage = 'beat-3.webp';
+    else if (subjectNames.some(s => lower.includes(s))) heroImage = 'beat-1.webp';
+    else if (gradeNames.some(g => lower.includes(g))) heroImage = 'beat-6.webp';
+    else heroImage = 'beat-5.webp'; // use cases
 
     hero.style.backgroundImage = `url('images/${heroImage}')`;
   }

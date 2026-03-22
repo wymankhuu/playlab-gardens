@@ -11,7 +11,8 @@ const fs = require('fs');
 const path = require('path');
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const DATABASE_ID = process.env.NOTION_MASTER_DB_ID || '32aa9d3778c580e89f18c2771cc02004';
+const DATABASE_ID = process.env.NOTION_MASTER_DB_ID;
+if (!DATABASE_ID) { console.error('NOTION_MASTER_DB_ID is required in .env'); process.exit(1); }
 
 // Colors drawn from the Playlab Gardens illustrations
 const ICON_COLORS = [
@@ -280,11 +281,11 @@ async function exportSeeds() {
 
   // Group seeds by Seed Collection field from Notion
   const SEED_COLLECTION_META = {
-    'Classroom Essentials': { id: 'classroom-essentials', image: 'images/seed-1.png', color: '#e74c3c', description: 'Starter templates for the tools teachers reach for every day — lesson plans, exit tickets, bellringers, sub plans, and newsletter drafts that save hours of prep time.' },
-    'Coaching and Feedback': { id: 'coaching-feedback', image: 'images/seed-2.png', color: '#9b59b6', description: 'Templates for instructional coaches and school leaders to prepare observation debriefs, write actionable teacher feedback, and plan structured coaching conversations.' },
-    'Operations and Management': { id: 'operations-management', image: 'images/seed-4.png', color: '#f1c40f', description: 'Starter apps for the behind-the-scenes work that keeps schools running — onboarding guides, meeting agendas, policy drafters, event planners, and grant proposals.' },
-    'Student Facing Apps': { id: 'student-facing', image: 'images/seed-3.png', color: '#2654d4', description: 'Templates students use directly — study partners, homework helpers, career explorers, and practice tools across math, science, reading, and writing.' },
-    'The Whole Child': { id: 'whole-child', image: 'images/seed-5.png', color: '#e84393', description: 'Seeds focused on the complete student experience — SEL check-ins, digital citizenship, health and wellness, parent conference prep, and community resource connectors.' },
+    'Classroom Essentials': { id: 'classroom-essentials', image: 'images/seed-1.webp', color: '#e74c3c', description: 'Starter templates for the tools teachers reach for every day — lesson plans, exit tickets, bellringers, sub plans, and newsletter drafts that save hours of prep time.' },
+    'Coaching and Feedback': { id: 'coaching-feedback', image: 'images/seed-2.webp', color: '#9b59b6', description: 'Templates for instructional coaches and school leaders to prepare observation debriefs, write actionable teacher feedback, and plan structured coaching conversations.' },
+    'Operations and Management': { id: 'operations-management', image: 'images/seed-4.webp', color: '#f1c40f', description: 'Starter apps for the behind-the-scenes work that keeps schools running — onboarding guides, meeting agendas, policy drafters, event planners, and grant proposals.' },
+    'Student Facing Apps': { id: 'student-facing', image: 'images/seed-3.webp', color: '#2654d4', description: 'Templates students use directly — study partners, homework helpers, career explorers, and practice tools across math, science, reading, and writing.' },
+    'The Whole Child': { id: 'whole-child', image: 'images/seed-5.webp', color: '#e84393', description: 'Seeds focused on the complete student experience — SEL check-ins, digital citizenship, health and wellness, parent conference prep, and community resource connectors.' },
   };
 
   // Build collections from actual data
@@ -294,7 +295,7 @@ async function exportSeeds() {
     if (!collectionMap[seed.seedCollection]) {
       const meta = SEED_COLLECTION_META[seed.seedCollection] || {
         id: seed.seedCollection.toLowerCase().replace(/\s+/g, '-'),
-        image: 'images/seed-1.png',
+        image: 'images/seed-1.webp',
         color: '#2D7A3A',
       };
       collectionMap[seed.seedCollection] = {

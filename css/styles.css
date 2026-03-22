@@ -219,21 +219,6 @@ img {
   opacity: 0.85;
 }
 
-.nav-back {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-caption);
-  font-weight: 500;
-  font-size: 0.875rem;
-  padding: 8px 16px;
-  border-radius: var(--radius-pill);
-  transition: background-color 0.15s;
-}
-
-.nav-back:hover {
-  background-color: var(--sand);
-}
 
 .mobile-menu-btn {
   display: none;
@@ -260,7 +245,7 @@ img {
   text-align: center;
   position: relative;
   overflow: visible;
-  background-image: url('../images/landing-illustration.png');
+  background-image: url('../images/landing-illustration.webp');
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -462,16 +447,12 @@ img {
 }
 
 /* ---- Collection Sections (Home) ---- */
-.featured-grid,
 .collections-grid {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.featured-grid {
-  margin-bottom: 24px;
-}
 
 /* Full-width collection section */
 .collection-section {
@@ -826,7 +807,7 @@ img {
   padding: 32px 0 48px;
   position: relative;
   overflow: hidden;
-  background-image: url('../images/beat-5.png');
+  background-image: url('../images/beat-5.webp');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -995,9 +976,6 @@ img {
   font-size: 1.5rem;
 }
 
-.collection-grid-header .filter-pills {
-  margin-bottom: 0;
-}
 
 /* ---- Collection Search ---- */
 .collection-search-container {
@@ -1093,7 +1071,7 @@ img {
   background: rgba(230, 168, 23, 0.15);
 }
 
-/* Star button in drawer header */
+/* Star button next to app name in drawer */
 .drawer-star-btn {
   background: none;
   border: none;
@@ -1356,53 +1334,6 @@ img {
   font-weight: 600;
 }
 
-/* ---- Filter Pills (Collection Detail Page) ---- */
-.filter-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 20px;
-}
-
-.filter-pill {
-  font-family: var(--font-caption);
-  font-weight: 500;
-  font-size: 0.75rem;
-  padding: 5px 14px;
-  border-radius: var(--radius-pill);
-  border: 1.5px solid rgba(13, 40, 24, 0.15);
-  background: var(--cream);
-  color: var(--deep-forest);
-  cursor: pointer;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
-}
-
-.filter-pill:hover {
-  border-color: rgba(13, 40, 24, 0.3);
-}
-
-.filter-pill.active {
-  background: var(--deep-forest);
-  color: var(--cream);
-  border-color: var(--deep-forest);
-}
-
-.filter-pill-clear {
-  font-family: var(--font-caption);
-  font-weight: 500;
-  font-size: 0.75rem;
-  padding: 5px 14px;
-  border: none;
-  background: none;
-  color: var(--deep-forest);
-  opacity: 0.6;
-  cursor: pointer;
-  transition: opacity 0.15s;
-}
-
-.filter-pill-clear:hover {
-  opacity: 0.7;
-}
 
 /* ---- Search Results ---- */
 .search-results {
@@ -1512,11 +1443,23 @@ img {
 }
 
 /* Drawer content sections */
+.drawer-app-name-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.drawer-app-name-row .drawer-star-btn {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
 .drawer-app-name {
   font-family: var(--font-accent);
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.2;
+  flex: 1;
 }
 
 .drawer-creator {
@@ -2218,7 +2161,7 @@ img {
   font-family: var(--font-caption);
   font-size: 0.8125rem;
   position: relative;
-  background-image: url('../images/beat-4.png');
+  background-image: url('../images/beat-4.webp');
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2294,7 +2237,7 @@ img {
 .share-hero {
   padding: 32px 0 24px;
   position: relative;
-  background-image: url('../images/beat-2.png');
+  background-image: url('../images/beat-2.webp');
   background-position: center center;
   background-size: cover;
 }
@@ -2458,7 +2401,7 @@ img {
 .flowers-spotlight-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/beat-2.png');
+  background-image: url('../images/beat-2.webp');
   background-size: cover;
   background-position: center;
   opacity: 0.15;
@@ -2929,7 +2872,7 @@ img {
 .seeds-hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/beat-1.png');
+  background-image: url('../images/beat-1.webp');
   background-size: cover;
   background-position: center bottom;
   opacity: 0.15;
@@ -3296,7 +3239,7 @@ img {
 .cultivators-hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/beat-3.png');
+  background-image: url('../images/beat-3.webp');
   background-size: cover;
   background-position: center;
   opacity: 0.15;
@@ -3345,7 +3288,7 @@ img {
 .cultivators-spotlight-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/beat-3.png');
+  background-image: url('../images/beat-3.webp');
   background-size: cover;
   background-position: center;
   opacity: 0.15;
@@ -3831,4 +3774,17 @@ img {
 
 .hidden {
   display: none !important;
+}
+
+/* ---- Mobile Drawer ---- */
+@media (max-width: 600px) {
+  .drawer {
+    max-width: 100%;
+  }
+  .drawer-header {
+    padding: 12px 16px;
+  }
+  .drawer-body {
+    padding: 16px;
+  }
 }

@@ -2,6 +2,9 @@
    Playlab Gardens — Seeds Page
    ========================================== */
 
+const SEED_PREVIEW_TAGS = 3;
+const SEED_PREVIEW_APPS = 6;
+
 let _seedsData = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -41,7 +44,7 @@ async function loadSeeds() {
 
 function seedPreviewCard(seed) {
   const tagPills = seed.tags && seed.tags.length > 0
-    ? seed.tags.slice(0, 3).map(t => `<span class="app-tag">${escapeHtml(t)}</span>`).join('')
+    ? seed.tags.slice(0, SEED_PREVIEW_TAGS).map(t => `<span class="app-tag">${escapeHtml(t)}</span>`).join('')
     : '';
   const tagHTML = tagPills ? `<div class="app-card-tags">${tagPills}</div>` : '';
 
@@ -57,7 +60,7 @@ function seedPreviewCard(seed) {
 
 function renderSeedSections(collections) {
   return collections.map(col => {
-    const previewHTML = col.apps.slice(0, 6).map(seedPreviewCard).join('');
+    const previewHTML = col.apps.slice(0, SEED_PREVIEW_APPS).map(seedPreviewCard).join('');
     const accentColor = col.color || '#2D7A3A';
 
     const descHTML = col.description

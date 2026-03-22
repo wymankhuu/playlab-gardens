@@ -2,6 +2,19 @@
    Playlab Gardens — Shared Utilities
    ========================================== */
 
+// ---- Constants ----
+const MAX_STAR_IDS_PER_REQUEST = 100;
+const MAX_PREVIEW_TAGS = 3;
+const MAX_INITIALS = 2;
+const MAX_RELATED_APPS = 3;
+const COPY_FEEDBACK_MS = 2000;
+const MODAL_FADE_MS = 150;
+const ICON_INIT_DELAY_MS = 100;
+const DRAWER_TRANSITION_MS = 800;
+const TRUNCATE_SHORT = 150;
+const TRUNCATE_LONG = 200;
+const MAX_SHORT_SENTENCES = 2;
+
 // ---- Star / Favorite System (localStorage + API) ----
 const STARS_KEY = 'playlab-gardens-stars';
 const _starCountCache = {};
@@ -58,7 +71,7 @@ function updateStarCountDisplays(appId, count) {
 
 async function loadStarCounts(appIds) {
   if (!appIds || appIds.length === 0) return;
-  const unique = [...new Set(appIds)].slice(0, 100);
+  const unique = [...new Set(appIds)].slice(0, MAX_STAR_IDS_PER_REQUEST);
   try {
     const res = await fetch(`/api/stars?ids=${unique.join(',')}`);
     const counts = await res.json();
@@ -191,7 +204,7 @@ function showQRModal(url, name) {
   modal.querySelector('.qr-copy-btn').addEventListener('click', function() {
     navigator.clipboard.writeText(url).then(() => {
       this.textContent = 'Copied!';
-      setTimeout(() => { this.textContent = 'Copy Link'; }, 2000);
+      setTimeout(() => { this.textContent = 'Copy Link'; }, COPY_FEEDBACK_MS);
     });
   });
 }
@@ -365,6 +378,11 @@ function refreshIcons() {
   }
 }
 
+// Auto-init lucide icons on page load
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => refreshIcons(), ICON_INIT_DELAY_MS);
+});
+
 // ---- Drawer Panel ----
 // ---- Admin Mode ----
 let isAdminMode = false;
@@ -462,7 +480,7 @@ function showPasswordModal(onSuccess) {
 
   function close() {
     modal.classList.add('closing');
-    setTimeout(() => modal.remove(), 150);
+    setTimeout(() => modal.remove(), MODAL_FADE_MS);
   }
 
   function submit() {
@@ -539,7 +557,7 @@ function openAppModal(app) {
   const creatorRole = app.role || 'Teacher';
   if (creatorName) {
     creatorSection.style.display = '';
-    const initials = creatorName.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+    const initials = creatorName.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, MAX_INITIALS);
     document.getElementById('drawer-creator-avatar').textContent = initials;
     document.getElementById('drawer-creator-name').textContent = creatorName;
     document.getElementById('drawer-creator-role').textContent = creatorRole;
@@ -632,7 +650,7 @@ function openAppModal(app) {
       const deepLink = `${window.location.origin}${window.location.pathname}#app=${app.id}`;
       navigator.clipboard.writeText(deepLink).then(() => {
         copyBtn.textContent = 'Link copied!';
-        setTimeout(() => { copyBtn.textContent = 'Copy Link'; }, 2000);
+        setTimeout(() => { copyBtn.textContent = 'Copy Link'; }, COPY_FEEDBACK_MS);
       });
     };
   }
@@ -772,7 +790,7 @@ function renderAdminPanel(app) {
     if (success) {
       app.pinned = newPinned;
       btn.textContent = newPinned ? 'Pinned!' : 'Unpinned!';
-      setTimeout(() => openAppModal(app), 800);
+      setTimeout(() => openAppModal(app), DRAWER_TRANSITION_MS);
     } else {
       btn.disabled = false;
       btn.innerHTML = `${lucideIconHTML(app.pinned ? 'pin-off' : 'pin', 14)} ${app.pinned ? 'Unpin from Homepage' : 'Pin to Homepage'}`;
@@ -856,7 +874,7 @@ function renderRelatedApps(app) {
     }))
     .filter(s => s.shared > 0)
     .sort((a, b) => b.shared - a.shared)
-    .slice(0, 3);
+    .slice(0, MAX_RELATED_APPS);
 
   if (scored.length === 0) {
     container.style.display = 'none';
@@ -925,9 +943,9 @@ function truncate(str, max) {
 function shortDesc(str) {
   if (!str) return '';
   const sentences = str.match(/[^.!?]+[.!?]+/g);
-  if (!sentences) return truncate(str, 150);
-  const short = sentences.slice(0, 2).join('').trim();
-  return truncate(short, 200);
+  if (!sentences) return truncate(str, TRUNCATE_SHORT);
+  const short = sentences.slice(0, MAX_SHORT_SENTENCES).join('').trim();
+  return truncate(short, TRUNCATE_LONG);
 }
 
 // ---- Label Helpers ----
@@ -1036,7 +1054,7 @@ function collectionSectionHTML(col) {
       // Build tag pills (2-3 shown, +more)
       let previewTagHTML = '';
       if (app.tags && app.tags.length > 0) {
-        const shown = app.tags.slice(0, 3);
+        const shown = app.tags.slice(0, MAX_PREVIEW_TAGS);
         const extra = app.tags.length - 3;
         let pills = shown.map(t => `<span class="app-tag">${escapeHtml(t)}</span>`).join('');
         if (extra > 0) pills += `<span class="app-tag app-tag--more">+${extra}</span>`;
@@ -1044,7 +1062,7 @@ function collectionSectionHTML(col) {
       }
       const previewCreatorName = app.creator || 'Playlab Creator';
       const initials = app.creator
-        ? app.creator.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2)
+        ? app.creator.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, MAX_INITIALS)
         : 'P';
       const creatorHTML = `<div class="app-card-creator"><span class="app-card-avatar">${escapeHtml(initials)}</span>${escapeHtml(previewCreatorName)}</div>`;
       let previewPinBtn = '';
@@ -1104,13 +1122,13 @@ function appCardHTML(app) {
   // Creator initials for avatar — default to Playlab Creator
   const creatorName = app.creator || 'Playlab Creator';
   const initials = app.creator
-    ? app.creator.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2)
+    ? app.creator.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, MAX_INITIALS)
     : 'P';
 
   // Build tag pills from app.tags
   let tagHTML = '';
   if (app.tags && app.tags.length > 0) {
-    const shown = app.tags.slice(0, 3);
+    const shown = app.tags.slice(0, MAX_PREVIEW_TAGS);
     const extra = app.tags.length - 3;
     let pills = shown.map(t => `<span class="app-tag">${escapeHtml(t)}</span>`).join('');
     if (extra > 0) pills += `<span class="app-tag app-tag--more">+${extra}</span>`;
@@ -1164,7 +1182,7 @@ function refreshAppCard(app) {
   const desc = generateFallbackDescription(app);
   const creatorName = app.creator || 'Playlab Creator';
   const initials = app.creator
-    ? app.creator.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2)
+    ? app.creator.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, MAX_INITIALS)
     : 'P';
   const creatorHTML = `<span class="app-card-avatar">${escapeHtml(initials)}</span>${escapeHtml(creatorName)}`;
 

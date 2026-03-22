@@ -35,7 +35,7 @@ async function loadCultivators() {
 }
 
 function cultivatorCardHTML(c) {
-  const initials = c.name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+  const initials = c.name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, MAX_INITIALS);
 
   const headshotHTML = c.headshotUrl
     ? `<img src="${escapeHtml(c.headshotUrl)}" alt="${escapeHtml(c.name)}" class="cultivator-headshot">`
