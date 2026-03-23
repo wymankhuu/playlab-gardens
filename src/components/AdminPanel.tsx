@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { App } from '@/lib/notion';
 import { escapeHtml } from '@/lib/utils';
+import { LucideIcon } from '@/lib/icons';
 
 /* ==========================================
    Admin Panel — edit fields, save, pin
@@ -65,7 +66,7 @@ function PasswordModal({
       <div className="admin-pw-modal">
         <div className="admin-pw-header">
           <div className="admin-pw-icon">
-            <i data-lucide="lock" style={{ width: 20, height: 20 }} />
+            <LucideIcon name="Lock" size={20} />
           </div>
           <h3 className="admin-pw-title">Admin Access</h3>
           <p className="admin-pw-subtitle">Enter the password to edit apps</p>
@@ -88,7 +89,7 @@ function PasswordModal({
             Cancel
           </button>
           <button className="admin-pw-submit" onClick={submit}>
-            <i data-lucide="unlock" style={{ width: 14, height: 14 }} />
+            <LucideIcon name="Unlock" size={14} />
             Enter
           </button>
         </div>
@@ -200,7 +201,7 @@ function AdminEditPanel({ app, onAppUpdated }: AdminPanelProps) {
   return (
     <div className="admin-panel">
       <div className="admin-panel-header">
-        <i data-lucide="pen-line" style={{ width: 14, height: 14 }} />
+        <LucideIcon name="PenLine" size={14} />
         <span>Edit App</span>
       </div>
 
@@ -213,10 +214,7 @@ function AdminEditPanel({ app, onAppUpdated }: AdminPanelProps) {
           app.tags && app.tags.length > 0 ? app.tags[0] : ''
         }
       >
-        <i
-          data-lucide={app.pinned ? 'pin-off' : 'pin'}
-          style={{ width: 14, height: 14 }}
-        />
+        <LucideIcon name={app.pinned ? 'PinOff' : 'Pin'} size={14} />
         {pinning
           ? app.pinned
             ? 'Unpinning...'
@@ -271,10 +269,7 @@ function AdminEditPanel({ app, onAppUpdated }: AdminPanelProps) {
 
       <div className="admin-field">
         <label className="admin-label" htmlFor="admin-usage">
-          <i
-            data-lucide="book-open"
-            style={{ width: 12, height: 12, opacity: 0.5 }}
-          />
+          <LucideIcon name="BookOpen" size={12} />
           How It&apos;s Being Used
         </label>
         <textarea
@@ -289,10 +284,7 @@ function AdminEditPanel({ app, onAppUpdated }: AdminPanelProps) {
 
       <div className="admin-field">
         <label className="admin-label" htmlFor="admin-impact">
-          <i
-            data-lucide="trending-up"
-            style={{ width: 12, height: 12, opacity: 0.5 }}
-          />
+          <LucideIcon name="TrendingUp" size={12} />
           Impact
         </label>
         <textarea
@@ -311,7 +303,7 @@ function AdminEditPanel({ app, onAppUpdated }: AdminPanelProps) {
           onClick={handleSave}
           disabled={saving}
         >
-          <i data-lucide="save" style={{ width: 14, height: 14 }} />
+          <LucideIcon name="Save" size={14} />
           {saveLabel}
         </button>
       </div>

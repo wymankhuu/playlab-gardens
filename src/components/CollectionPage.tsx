@@ -8,6 +8,7 @@ import ShareButton from '@/components/ShareButton';
 import { loadStarCounts } from '@/lib/stars';
 import { useAdminMode } from './AdminPanel';
 import AppCardComponent from './AppCard';
+import { LucideIcon, getCollectionIcon } from '@/lib/icons';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -21,74 +22,9 @@ const SUBJECT_NAMES = [
 ];
 const GRADE_NAMES = ['elementary', 'middle school', 'high school', 'higher ed'];
 
-const COLLECTION_ICONS: Record<string, string> = {
-  'project-based learning': 'rocket',
-  'student-built apps': 'code',
-  'study partners': 'book-open',
-  'writing coaches': 'pen-tool',
-  'career & vocational': 'graduation-cap',
-  'assessment & feedback': 'clipboard-check',
-  'science / stem': 'flask-conical',
-  'math': 'calculator',
-  'ela / literacy': 'book-text',
-  'social studies / history': 'landmark',
-  'arts & design': 'palette',
-  'business / economics': 'briefcase',
-  'cultural studies': 'globe',
-  'religious studies': 'heart',
-  'elementary': 'baby',
-  'middle school': 'backpack',
-  'high school': 'school',
-  'higher ed': 'graduation-cap',
-  'ca community colleges': 'building',
-  'teacher tools': 'wrench',
-  'ghana': 'map-pin',
-  'nyc': 'map-pin',
-  'texas': 'map-pin',
-  'fairfax': 'map-pin',
-  'ciob': 'building-2',
-  'flowers': 'flower-2',
-  'ai assistants': 'brain',
-  'sel / wellbeing': 'smile',
-  'ell / esl': 'languages',
-  'special education': 'accessibility',
-  'niche & emerging': 'trending-up',
-  'illustrative mathematics': 'square-function',
-  'world languages': 'languages',
-  'gamified learning': 'gamepad-2',
-  'kipp': 'map-pin',
-  'data-driven instruction': 'bar-chart-3',
-  'family & community': 'users',
-  'school leadership': 'shield',
-  'reading intervention': 'book-marked',
-  'amplify': 'volume-2',
-  'leading educators': 'award',
-  'health & pe': 'activity',
-  'creative & engagement': 'lightbulb',
-  'music & performing arts': 'music',
-  'professional development': 'briefcase',
-  'lesson planning': 'calendar',
-  'differentiation & access': 'accessibility',
-  'operations and management': 'settings',
-  'tutoring & practice': 'book-open',
-  'sel & wellbeing': 'smile',
-  'science & stem': 'flask-conical',
-  'social studies & history': 'landmark',
-};
-
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
-
-function getCollectionIcon(name: string): string {
-  const lower = (name || '').toLowerCase();
-  if (COLLECTION_ICONS[lower]) return COLLECTION_ICONS[lower];
-  for (const [key, icon] of Object.entries(COLLECTION_ICONS)) {
-    if (lower.includes(key) || key.includes(lower)) return icon;
-  }
-  if (lower.includes('showcase') || lower.includes('district')) return 'map-pin';
-  return 'folder';
-}
 
 function getHeroImage(collection: Collection): string {
   const lower = collection.name.toLowerCase();
@@ -97,22 +33,6 @@ function getHeroImage(collection: Collection): string {
   if (SUBJECT_NAMES.some((s) => lower.includes(s))) return '/images/beat-1.webp';
   if (GRADE_NAMES.some((g) => lower.includes(g))) return '/images/beat-6.webp';
   return '/images/beat-5.webp';
-}
-
-// ---------------------------------------------------------------------------
-// Lucide icon SVG component (inline)
-// ---------------------------------------------------------------------------
-function LucideIcon({ name, size = 20 }: { name: string; size?: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    if (ref.current && typeof window !== 'undefined' && (window as any).lucide) {
-      ref.current.innerHTML = `<i data-lucide="${name}" style="width:${size}px;height:${size}px;"></i>`;
-      (window as any).lucide.createIcons({ nodes: [ref.current] });
-    }
-  }, [name, size]);
-
-  return <span ref={ref} style={{ display: 'inline-flex', alignItems: 'center' }} />;
 }
 
 // ---------------------------------------------------------------------------

@@ -5,6 +5,7 @@ import type { App } from '@/lib/notion';
 import { formatNumber, generateFallbackDescription, generateImpactBlurb } from '@/lib/utils';
 import { isStarred, toggleStar, loadStarCounts, getCachedStarCount } from '@/lib/stars';
 import { useAdminMode, PasswordModal, AdminEditPanel } from './AdminPanel';
+import { LucideIcon } from '@/lib/icons';
 
 /* ==========================================
    AppDrawer — slide-in detail panel
@@ -275,7 +276,7 @@ export default function AppDrawer({
               aria-label="Toggle admin mode"
               onClick={handleAdminToggle}
             >
-              <i data-lucide="lock" style={{ width: 16, height: 16 }} />
+              <LucideIcon name="Lock" size={16} />
             </button>
             <button
               ref={closeRef}
@@ -327,7 +328,7 @@ export default function AppDrawer({
           {/* How It's Being Used */}
           <div className="drawer-info-box">
             <div className="drawer-info-box-header">
-              <i data-lucide="book-open" className="drawer-info-box-icon" />
+              <LucideIcon name="BookOpen" size={20} />
               <span className="drawer-info-box-title">
                 How It&apos;s Being Used
               </span>
@@ -342,12 +343,12 @@ export default function AppDrawer({
           {/* Impact */}
           <div className="drawer-info-box">
             <div className="drawer-info-box-header">
-              <i data-lucide="trending-up" className="drawer-info-box-icon" />
+              <LucideIcon name="TrendingUp" size={20} />
               <span className="drawer-info-box-title">Impact</span>
             </div>
             <div className="drawer-impact-stats">
               <div className="drawer-stat">
-                <i data-lucide="shuffle" className="drawer-stat-icon" />
+                <LucideIcon name="Shuffle" size={16} />
                 <span>{formatNumber(iterations)} remixes</span>
               </div>
             </div>
