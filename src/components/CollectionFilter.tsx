@@ -143,14 +143,14 @@ export default function CollectionFilter({
               </div>
               {app.tags && app.tags.length > 0 && (
                 <div className="app-card-tags">
-                  {app.tags.slice(0, 3).map((tag) => (
+                  {app.tags.slice(0, 2).map((tag) => (
                     <span key={tag} className="app-tag">
                       {tag}
                     </span>
                   ))}
-                  {app.tags.length > 3 && (
+                  {app.tags.length > 2 && (
                     <span className="app-tag app-tag--more">
-                      +{app.tags.length - 3}
+                      +{app.tags.length - 2}
                     </span>
                   )}
                 </div>

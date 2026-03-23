@@ -107,11 +107,16 @@ export default async function SeedsPage() {
                     <div className="app-card-desc">{seed.description}</div>
                     {seed.tags && seed.tags.length > 0 && (
                       <div className="app-card-tags">
-                        {seed.tags.slice(0, 3).map((tag) => (
+                        {seed.tags.slice(0, 2).map((tag) => (
                           <span key={tag} className="app-tag">
                             {tag}
                           </span>
                         ))}
+                        {seed.tags.length > 2 && (
+                          <span className="app-tag app-tag--more">
+                            +{seed.tags.length - 2}
+                          </span>
+                        )}
                       </div>
                     )}
                   </div>
