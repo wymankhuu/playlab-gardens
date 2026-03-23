@@ -3,12 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "export": "node scripts/export-notion.js",
     "enrich": "node scripts/enrich-descriptions.js"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
     "@upstash/redis": "^1.37.0",
-    "dotenv": "^17.3.1"
+    "dotenv": "^17.3.1",
+    "next": "^16.2.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "typescript": "^5.9.3"
   }
 }
