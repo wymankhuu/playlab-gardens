@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import type { Seed, SeedCollection } from '@/lib/notion';
 import { shortDesc } from '@/lib/utils';
 import QRModal from '@/components/QRModal';
 import ShareButton from '@/components/ShareButton';
+import SeedDrawer from '@/components/SeedDrawer';
 import { LucideIcon } from '@/lib/icons';
 
 interface SeedsClientProps {
@@ -14,9 +15,21 @@ interface SeedsClientProps {
 
 const SEED_PREVIEW_TAGS = 3;
 
-function SeedCard({ seed }: { seed: Seed }) {
+function SeedCard({ seed, onClick }: { seed: Seed; onClick?: () => void }) {
   return (
-    <div className="seed-card-mini">
+    <div
+      className="seed-card-mini"
+      role="button"
+      tabIndex={0}
+      style={{ cursor: 'pointer' }}
+      onClick={onClick}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick?.();
+        }
+      }}
+    >
       <div className="seed-card-mini-name">{seed.name}</div>
       <div className="seed-card-mini-desc">{shortDesc(seed.description)}</div>
       {seed.tags && seed.tags.length > 0 && (
@@ -41,7 +54,7 @@ function SeedCard({ seed }: { seed: Seed }) {
   );
 }
 
-function SeedCollectionSection({ sc }: { sc: SeedCollection }) {
+function SeedCollectionSection({ sc, onOpenSeed }: { sc: SeedCollection; onOpenSeed: (seed: Seed, sc: SeedCollection) => void }) {
   const [showQR, setShowQR] = useState(false);
   const collectionUrl = `/collection/${sc.id}`;
   const shareUrl = typeof window !== 'undefined'
@@ -92,7 +105,7 @@ function SeedCollectionSection({ sc }: { sc: SeedCollection }) {
       )}
       <div className="seed-collection-cards">
         {sortedApps.map((seed) => (
-          <SeedCard key={seed.name} seed={seed} />
+          <SeedCard key={seed.name} seed={seed} onClick={() => onOpenSeed(seed, sc)} />
         ))}
       </div>
       {showQR && (
@@ -108,6 +121,35 @@ function SeedCollectionSection({ sc }: { sc: SeedCollection }) {
 
 export default function SeedsClient({ seedCollections }: SeedsClientProps) {
   const [search, setSearch] = useState('');
+  const [selectedSeed, setSelectedSeed] = useState<Seed | null>(null);
+  const [selectedCollection, setSelectedCollection] = useState<{
+    name: string; color: string; image: string; description: string;
+  } | null>(null);
+
+  // Deep link: open drawer if #seed=... is in the URL
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash.startsWith('#seed=')) return;
+    const seedId = decodeURIComponent(hash.slice(6));
+    for (const sc of seedCollections) {
+      const found = sc.apps.find((s) => s.id === seedId);
+      if (found) {
+        setSelectedSeed(found);
+        setSelectedCollection({ name: sc.name, color: sc.color, image: sc.image, description: sc.description });
+        break;
+      }
+    }
+  }, [seedCollections]);
+
+  const openSeedDrawer = (seed: Seed, sc: SeedCollection) => {
+    setSelectedSeed(seed);
+    setSelectedCollection({ name: sc.name, color: sc.color, image: sc.image, description: sc.description });
+  };
+
+  const closeSeedDrawer = () => {
+    setSelectedSeed(null);
+    setSelectedCollection(null);
+  };
 
   // When searching, filter across ALL seeds
   const allSeeds = seedCollections.flatMap((sc) => sc.apps);
@@ -169,9 +211,16 @@ export default function SeedsClient({ seedCollections }: SeedsClientProps) {
             // Search results view
             filteredSeeds.length > 0 ? (
               <div className="seeds-search-results">
-                {filteredSeeds.map((seed) => (
-                  <SeedCard key={seed.name} seed={seed} />
-                ))}
+                {filteredSeeds.map((seed) => {
+                  const sc = seedCollections.find((c) => c.apps.some((s) => s.id === seed.id));
+                  return (
+                    <SeedCard
+                      key={seed.name}
+                      seed={seed}
+                      onClick={sc ? () => openSeedDrawer(seed, sc) : undefined}
+                    />
+                  );
+                })}
               </div>
             ) : (
               <div className="seeds-empty">
@@ -183,7 +232,7 @@ export default function SeedsClient({ seedCollections }: SeedsClientProps) {
           ) : seedCollections.length > 0 ? (
             // Collections view
             seedCollections.map((sc) => (
-              <SeedCollectionSection key={sc.id} sc={sc} />
+              <SeedCollectionSection key={sc.id} sc={sc} onOpenSeed={openSeedDrawer} />
             ))
           ) : (
             <div className="seeds-empty">
@@ -197,6 +246,12 @@ export default function SeedsClient({ seedCollections }: SeedsClientProps) {
           )}
         </div>
       </main>
+
+      <SeedDrawer
+        seed={selectedSeed}
+        collection={selectedCollection}
+        onClose={closeSeedDrawer}
+      />
     </>
   );
 }
