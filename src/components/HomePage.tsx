@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import type { Collection, App } from '@/lib/notion';
+import { pickPreview } from '@/lib/notion';
 import { getCollectionIcon, LucideIcon } from '@/lib/icons';
 import { loadStarCounts } from '@/lib/stars';
 import { useAdminMode } from './AdminPanel';
@@ -135,8 +136,8 @@ function CollectionSection({
     : '';
   const collectionUrl = `/collection/${collection.id}`;
 
-  // Use preview apps (first 3 from the apps array, since pickPreview was applied server-side)
-  const previewApps = collection.apps.slice(0, 3);
+  // Show 6 preview apps per collection, using pickPreview for diverse selection
+  const previewApps = pickPreview(collection.apps, 6, collection.name);
 
   return (
     <section
