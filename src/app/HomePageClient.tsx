@@ -9,7 +9,8 @@ interface HomePageClientProps {
   collections: Collection[];
 }
 
-export default function HomePageClient({ collections }: HomePageClientProps) {
+export default function HomePageClient({ collections: initialCollections }: HomePageClientProps) {
+  const [collections, setCollections] = useState(initialCollections);
   const [drawerApp, setDrawerApp] = useState<App | null>(null);
 
   // Flatten all apps for the drawer's related-apps feature
@@ -31,10 +32,21 @@ export default function HomePageClient({ collections }: HomePageClientProps) {
 
   const handleCloseDrawer = useCallback(() => {
     setDrawerApp(null);
-    // Clean up hash if present
     if (window.location.hash.startsWith('#app=')) {
       history.pushState(null, '', window.location.pathname + window.location.search);
     }
+  }, []);
+
+  // When admin updates an app (pin/unpin, edit fields), update collections state
+  const handleAppUpdated = useCallback((app: App, fields: Partial<App>) => {
+    setCollections((prev) =>
+      prev.map((col) => ({
+        ...col,
+        apps: col.apps.map((a) =>
+          a.id === app.id ? { ...a, ...fields } : a
+        ),
+      }))
+    );
   }, []);
 
   return (
@@ -44,6 +56,7 @@ export default function HomePageClient({ collections }: HomePageClientProps) {
         app={drawerApp}
         allApps={allApps}
         onClose={handleCloseDrawer}
+        onAppUpdated={handleAppUpdated}
       />
     </>
   );

@@ -9,7 +9,8 @@ interface CollectionPageClientProps {
   collection: Collection;
 }
 
-export default function CollectionPageClient({ collection }: CollectionPageClientProps) {
+export default function CollectionPageClient({ collection: initialCollection }: CollectionPageClientProps) {
+  const [collection, setCollection] = useState(initialCollection);
   const [drawerApp, setDrawerApp] = useState<App | null>(null);
 
   const handleOpenApp = useCallback((app: App) => {
@@ -23,6 +24,16 @@ export default function CollectionPageClient({ collection }: CollectionPageClien
     }
   }, []);
 
+  // When admin updates an app (pin/unpin, edit fields), update the collection state
+  const handleAppUpdated = useCallback((app: App, fields: Partial<App>) => {
+    setCollection((prev) => ({
+      ...prev,
+      apps: prev.apps.map((a) =>
+        a.id === app.id ? { ...a, ...fields } : a
+      ),
+    }));
+  }, []);
+
   return (
     <>
       <CollectionPage collection={collection} onOpenApp={handleOpenApp} />
@@ -31,6 +42,7 @@ export default function CollectionPageClient({ collection }: CollectionPageClien
         allApps={collection.apps}
         accentColor={collection.iconColor}
         onClose={handleCloseDrawer}
+        onAppUpdated={handleAppUpdated}
       />
     </>
   );

@@ -25,6 +25,7 @@ interface AppDrawerProps {
   allApps: App[];
   accentColor?: string;
   onClose: () => void;
+  onAppUpdated?: (app: App, fields: Partial<App>) => void;
 }
 
 export default function AppDrawer({
@@ -32,6 +33,7 @@ export default function AppDrawer({
   allApps,
   accentColor,
   onClose,
+  onAppUpdated: onAppUpdatedProp,
 }: AppDrawerProps) {
   const [active, setActive] = useState(false);
   const [starred, setStarred] = useState(false);
@@ -186,9 +188,11 @@ export default function AppDrawer({
   const handleAppUpdated = useCallback(
     (fields: Partial<App>) => {
       if (!currentApp) return;
-      setCurrentApp({ ...currentApp, ...fields });
+      const updated = { ...currentApp, ...fields };
+      setCurrentApp(updated);
+      if (onAppUpdatedProp) onAppUpdatedProp(currentApp, fields);
     },
-    [currentApp],
+    [currentApp, onAppUpdatedProp],
   );
 
   // Switch to a related app
