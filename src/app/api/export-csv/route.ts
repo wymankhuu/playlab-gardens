@@ -55,7 +55,6 @@ export async function GET(request: NextRequest) {
     'Sessions',
     'Iterations',
     'Collections',
-    'Pinned',
   ];
 
   const rows = Array.from(appMap.values()).map((app) => [
@@ -69,7 +68,6 @@ export async function GET(request: NextRequest) {
     String(app.sessions || 0),
     String(app.iterations || 0),
     escapeCsvField(app.collections.join(', ')),
-    app.pinned ? 'Yes' : 'No',
   ]);
 
   const csv = [

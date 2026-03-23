@@ -16,8 +16,6 @@ export interface App {
   impact: string;
   sessions: number;
   iterations: number;
-  pinned: boolean;
-  homepageOrder: number;
   tags: string[];
   notionId: string;
   homepageHidden: boolean;
@@ -264,8 +262,6 @@ function parseRow(props: any, pageId?: string): (App & { tags?: string[] }) | nu
   const impact = richTextToString(props['Impact']);
   const sessions = props['Sessions']?.number || 0;
   const iterations = props['Iterations']?.number || 0;
-  const pinned = !!props['Homepage']?.checkbox;
-  const homepageOrder = props['Homepage Order']?.number ?? 999;
   const notionId = pageId || '';
   const homepageHidden = !!props['Homepage Hidden']?.checkbox;
   const collectionOrder = props['Collection Order']?.number ?? 999;
@@ -281,8 +277,6 @@ function parseRow(props: any, pageId?: string): (App & { tags?: string[] }) | nu
     impact,
     sessions,
     iterations,
-    pinned,
-    homepageOrder,
     tags: [],
     notionId,
     homepageHidden,
@@ -406,8 +400,6 @@ async function fetchCollections(): Promise<Collection[]> {
       impact: '',
       sessions: 0,
       iterations: 0,
-      pinned: false,
-      homepageOrder: 999,
       tags: s.tags || [],
       notionId: '',
       homepageHidden: false,

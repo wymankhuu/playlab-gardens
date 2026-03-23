@@ -107,8 +107,6 @@ function toApp(adminApp: Record<string, unknown>): App {
     impact: (adminApp.impact as string) || '',
     sessions: (adminApp.sessions as number) || 0,
     iterations: (adminApp.iterations as number) || 0,
-    pinned: (adminApp.pinned as boolean) || false,
-    homepageOrder: (adminApp.homepageOrder as number) || 0,
     tags: (adminApp.tags as string[]) || [],
     notionId: (adminApp.notionId as string) || '',
     homepageHidden: (adminApp.homepageHidden as boolean) || false,
