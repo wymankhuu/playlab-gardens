@@ -815,7 +815,6 @@ img {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  overflow: hidden;
   backdrop-filter: blur(4px);
   transition: transform 0.15s, border-color 0.15s;
 }
