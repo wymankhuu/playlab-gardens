@@ -32,6 +32,7 @@ export interface Collection {
 }
 
 export interface Seed {
+  id: string;
   name: string;
   description: string;
   remixUrl: string;
@@ -326,7 +327,7 @@ async function fetchCollections(): Promise<Collection[]> {
     const app = parseRow(props);
     if (!app) continue;
 
-    const collections = (props['Collection']?.multi_select || []).map((s: any) => s.name.replace(/\s*\/\s*/g, ' & '));
+    const collections = (props['Collection']?.multi_select || []).map((s: any) => s.name);
     if (collections.length === 0) continue;
 
     app.tags = collections;
@@ -453,7 +454,7 @@ async function fetchSeedCollections(): Promise<SeedCollection[]> {
       // Note: the Notion property has a trailing space
       const seedCollection = props['Seed Collection ']?.select?.name || '';
 
-      return { name, description, remixUrl, tags, creator, seedCollection };
+      return { id: row.id, name, description, remixUrl, tags, creator, seedCollection };
     })
     .filter(Boolean) as Seed[];
 
