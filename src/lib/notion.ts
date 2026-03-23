@@ -620,3 +620,49 @@ export async function getSeeds(): Promise<SeedCollection[]> {
 export async function getCultivators(): Promise<Cultivator[]> {
   return getCachedCultivators();
 }
+
+// --- Admin helpers ---
+
+export function checkAdminPassword(password: string): boolean {
+  const adminPwd = process.env.ADMIN_PASSWORD;
+  return !!adminPwd && password === adminPwd;
+}
+
+export function getAdminCorsHeaders(origin?: string | null): Record<string, string> {
+  const allowedOrigin = origin && (origin.includes('playlabgardens.com') || origin.includes('localhost'))
+    ? origin
+    : 'https://playlabgardens.com';
+  return {
+    'Access-Control-Allow-Origin': allowedOrigin,
+    'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+}
+
+export async function findAppByNotionId(notionId: string) {
+  return notion.pages.retrieve({ page_id: notionId });
+}
+
+export async function updateNotionPage(notionId: string, properties: Record<string, any>) {
+  return notion.pages.update({ page_id: notionId, properties });
+}
+
+export async function sequentialUpdate(
+  items: Array<{ notionId: string; properties: Record<string, any> }>,
+  delayMs = 200
+) {
+  const results = [];
+  for (const item of items) {
+    results.push(await updateNotionPage(item.notionId, item.properties));
+    if (delayMs > 0) await new Promise(r => setTimeout(r, delayMs));
+  }
+  return results;
+}
+
+export function getNotionClient() {
+  return notion;
+}
+
+export function getMasterDbId() {
+  return MASTER_DB_ID;
+}
