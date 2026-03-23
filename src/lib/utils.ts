@@ -39,12 +39,44 @@ export function shortDesc(str: string): string {
   return truncate(short, TRUNCATE_LONG);
 }
 
-/** Return the app description, or a fallback if empty */
+/** Return the app description, or a contextual fallback if empty */
 export function generateFallbackDescription(app: {
   description?: string;
+  name?: string;
+  creator?: string;
+  usage?: string;
+  tags?: string[];
 }): string {
   if (app.description && app.description.trim()) return app.description;
-  return 'An educator-built Playlab app.';
+
+  // Try usage as fallback
+  if (app.usage && app.usage.trim()) return truncate(app.usage.trim(), 150);
+
+  // Build a contextual fallback from available fields
+  const parts: string[] = [];
+  const name = app.name || 'This app';
+
+  // Infer purpose from tags
+  const tags = app.tags || [];
+  const subjectTags = tags.filter(t =>
+    !['flowers', 'kipp', 'ghana', 'nyc', 'texas', 'fairfax', 'ciob',
+      'amplify', 'leading educators', 'ca community colleges',
+      'elementary', 'middle school', 'high school', 'higher ed']
+      .includes(t.toLowerCase())
+  );
+
+  if (subjectTags.length > 0) {
+    const tagStr = subjectTags.slice(0, 2).join(' and ');
+    parts.push(`${name} is an AI-powered tool for ${tagStr.toLowerCase()}`);
+  } else {
+    parts.push(`${name} is an educator-built AI tool on Playlab`);
+  }
+
+  if (app.creator) {
+    parts.push(`built by ${app.creator}`);
+  }
+
+  return parts.join(', ') + '.';
 }
 
 /** Generate an impact blurb from remix count */

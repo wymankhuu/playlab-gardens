@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import type { App } from '@/lib/notion';
 import StarButton from './StarButton';
+import QuickEditPopover from './QuickEditPopover';
 
 const MAX_PREVIEW_TAGS = 3;
 const MAX_INITIALS = 2;
@@ -131,9 +132,33 @@ export default function AppCard({
     [app, onPin],
   );
 
+  const [showQuickEdit, setShowQuickEdit] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleQuickEdit = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setShowQuickEdit(true);
+  }, []);
+
+  const cardClasses = [
+    'app-card',
+    isAdmin && missing.count > 0 ? 'admin-missing' : '',
+    isAdmin && app.pinned ? 'admin-pinned' : '',
+    isSelected ? 'bulk-selected' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const descText =
+    isAdmin && (!app.description || !app.description.trim())
+      ? ''
+      : shortDesc(desc);
+
   return (
     <div
-      className={`app-card${isAdmin && missing.count > 0 ? ' admin-missing' : ''}${isSelected ? ' bulk-selected' : ''}`}
+      ref={cardRef}
+      className={cardClasses}
       data-app-id={app.id}
       tabIndex={0}
       role="button"
@@ -157,14 +182,16 @@ export default function AppCard({
         />
       )}
 
-      {/* Admin missing-fields dot */}
+      {/* Admin quick-edit pencil */}
       {isAdmin && missing.count > 0 && (
-        <span
-          className="admin-missing-dot"
-          title={`Missing: ${missing.fields.join(', ')}`}
+        <button
+          className="quick-edit-trigger"
+          title={`Edit missing: ${missing.fields.join(', ')}`}
+          aria-label="Quick edit"
+          onClick={handleQuickEdit}
         >
-          {missing.count}
-        </span>
+          ✏️
+        </button>
       )}
 
       {/* Admin pin button */}
@@ -193,7 +220,17 @@ export default function AppCard({
           {creatorName}
         </div>
         <div className="app-card-name">{app.name}</div>
-        <div className="app-card-desc">{shortDesc(desc)}</div>
+        <div className="app-card-desc">
+          {descText || (
+            isAdmin ? (
+              <em style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>
+                Needs description
+              </em>
+            ) : (
+              shortDesc(desc)
+            )
+          )}
+        </div>
         {tagsPills.length > 0 && (
           <div className="app-card-tags">
             {tagsPills.map((tag) => (
@@ -207,6 +244,15 @@ export default function AppCard({
           </div>
         )}
       </div>
+
+      {/* Quick Edit Popover */}
+      {showQuickEdit && cardRef.current && (
+        <QuickEditPopover
+          app={app}
+          anchorRect={cardRef.current.getBoundingClientRect()}
+          onClose={() => setShowQuickEdit(false)}
+        />
+      )}
     </div>
   );
 }

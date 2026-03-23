@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import type { App } from '@/lib/notion';
 import StarButton from './StarButton';
+import QuickEditPopover from './QuickEditPopover';
 
 const MAX_PREVIEW_TAGS = 3;
 const MAX_INITIALS = 2;
@@ -125,9 +126,32 @@ export default function PreviewAppCard({
     [app, onPin],
   );
 
+  const [showQuickEdit, setShowQuickEdit] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleQuickEdit = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setShowQuickEdit(true);
+  }, []);
+
+  const cardClasses = [
+    'preview-app-card',
+    isAdmin && missing.count > 0 ? 'admin-missing' : '',
+    isAdmin && app.pinned ? 'admin-pinned' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const descText =
+    isAdmin && (!app.description || !app.description.trim())
+      ? ''
+      : truncate(desc, 100);
+
   return (
     <div
-      className={`preview-app-card${isAdmin && missing.count > 0 ? ' admin-missing' : ''}`}
+      ref={cardRef}
+      className={cardClasses}
       data-app-id={app.id}
       tabIndex={0}
       role="button"
@@ -136,14 +160,16 @@ export default function PreviewAppCard({
       onKeyDown={handleKeyDown}
       style={{ position: 'relative' }}
     >
-      {/* Admin missing-fields dot */}
+      {/* Admin quick-edit pencil */}
       {isAdmin && missing.count > 0 && (
-        <span
-          className="admin-missing-dot"
-          title={`Missing: ${missing.fields.join(', ')}`}
+        <button
+          className="quick-edit-trigger"
+          title={`Edit missing: ${missing.fields.join(', ')}`}
+          aria-label="Quick edit"
+          onClick={handleQuickEdit}
         >
-          {missing.count}
-        </span>
+          ✏️
+        </button>
       )}
 
       {/* Admin pin button */}
@@ -169,7 +195,17 @@ export default function PreviewAppCard({
         {creatorName}
       </div>
       <div className="preview-app-card-name">{app.name}</div>
-      <div className="preview-app-card-desc">{truncate(desc, 100)}</div>
+      <div className="preview-app-card-desc">
+        {descText || (
+          isAdmin ? (
+            <em style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>
+              Needs description
+            </em>
+          ) : (
+            truncate(desc, 100)
+          )
+        )}
+      </div>
       {shownTags.length > 0 && (
         <div className="app-card-tags">
           {shownTags.slice(0, 2).map((t) => (
@@ -179,6 +215,15 @@ export default function PreviewAppCard({
             <span className="app-tag app-tag--more">+{shownTags.length - 2}</span>
           )}
         </div>
+      )}
+
+      {/* Quick Edit Popover */}
+      {showQuickEdit && cardRef.current && (
+        <QuickEditPopover
+          app={app}
+          anchorRect={cardRef.current.getBoundingClientRect()}
+          onClose={() => setShowQuickEdit(false)}
+        />
       )}
     </div>
   );

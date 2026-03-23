@@ -318,7 +318,6 @@ function CollectionSection({
                     <circle cx="9" cy="18" r="2" />
                     <circle cx="15" cy="18" r="2" />
                   </svg>
-                  <span className="admin-order-badge">{idx + 1}</span>
                 </div>
               )}
               <PreviewAppCard

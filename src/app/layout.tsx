@@ -2,6 +2,7 @@ import '@/css/styles.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Nav from '@/components/Nav';
+import AdminToolbar from '@/components/AdminToolbar';
 import ScrollToTop from '@/components/ScrollToTop';
 import FadeUpObserver from '@/components/FadeUpObserver';
 
@@ -49,6 +50,7 @@ export default function RootLayout({
       </head>
       <body>
         <Nav />
+        <AdminToolbar />
 
         {children}
 

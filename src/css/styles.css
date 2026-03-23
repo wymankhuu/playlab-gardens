@@ -1760,12 +1760,29 @@ img {
 }
 
 /* ---- Admin Missing Data Indicators ---- */
-.admin-missing {
-  outline: 2px dashed rgba(220, 60, 60, 0.35);
-  outline-offset: -2px;
+.app-card.admin-missing {
+  border-left: 3px solid #dc3c3c;
+}
+.preview-app-card.admin-missing {
+  border-left: 3px solid #dc3c3c;
+}
+
+/* Pin badge for admin */
+.app-card.admin-pinned,
+.preview-app-card.admin-pinned {
+  position: relative;
+}
+.app-card.admin-pinned::after,
+.preview-app-card.admin-pinned::after {
+  content: '\1F4CC';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  font-size: 0.7rem;
 }
 
 .admin-missing-dot {
+  display: none;
   position: absolute;
   top: -10px;
   left: 50%;
@@ -4495,4 +4512,167 @@ img {
 .export-csv-link:hover {
   color: var(--text);
   border-color: rgba(13, 40, 24, 0.3);
+}
+
+/* ---- Admin Toolbar ---- */
+.admin-toolbar {
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 49;
+  background: var(--deep-forest);
+  color: var(--cream);
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-caption);
+  font-size: 0.8rem;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.admin-toolbar-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+.admin-toolbar-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+}
+.admin-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.admin-toolbar-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--cream);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.admin-toolbar-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+.admin-toolbar-btn--exit {
+  background: rgba(220,60,60,0.2);
+  border-color: rgba(220,60,60,0.4);
+}
+.admin-toolbar-btn--exit:hover {
+  background: rgba(220,60,60,0.35);
+}
+.admin-toolbar-stat {
+  opacity: 0.8;
+}
+.admin-toolbar-stat a {
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---- Quick Edit Popover ---- */
+.quick-edit-trigger {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1px solid rgba(13,40,24,0.15);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.15s;
+  font-size: 0.75rem;
+  padding: 0;
+  line-height: 1;
+}
+.preview-app-card:hover .quick-edit-trigger,
+.app-card:hover .quick-edit-trigger {
+  display: flex;
+}
+.quick-edit-trigger:hover {
+  background: var(--deep-forest);
+  color: var(--cream);
+  border-color: var(--deep-forest);
+}
+.quick-edit-popover {
+  position: fixed;
+  z-index: 200;
+  background: var(--cream);
+  border: 1.5px solid rgba(13,40,24,0.12);
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.15);
+  padding: 16px;
+  width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.quick-edit-popover h4 {
+  font-family: var(--font-accent);
+  font-size: 0.875rem;
+  margin: 0 0 12px;
+}
+.quick-edit-field {
+  margin-bottom: 10px;
+}
+.quick-edit-field label {
+  font-family: var(--font-caption);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+  opacity: 0.7;
+}
+.quick-edit-field input,
+.quick-edit-field textarea {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid rgba(13,40,24,0.15);
+  border-radius: 8px;
+  font-family: var(--font-caption);
+  font-size: 0.8rem;
+  background: #fff;
+  resize: vertical;
+  box-sizing: border-box;
+}
+.quick-edit-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.quick-edit-save {
+  flex: 1;
+  padding: 6px;
+  background: var(--deep-forest);
+  color: var(--cream);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.quick-edit-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.quick-edit-cancel {
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid rgba(13,40,24,0.15);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
