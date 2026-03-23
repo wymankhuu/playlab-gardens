@@ -10,6 +10,8 @@ const { Client } = require('@notionhq/client');
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
+const http = require('http');
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const DATABASE_ID = process.env.NOTION_MASTER_DB_ID;
@@ -255,12 +257,12 @@ async function exportCultivators() {
     const blogLink = (props['Link to Blog']?.rich_text || []).map(t => t.plain_text).join('').trim();
     const month = (props['Month']?.rich_text || []).map(t => t.plain_text).join('').trim();
 
-    // Headshot — get the URL from files property
-    let headshotUrl = '';
+    // Headshot — get the URL from files property (will be downloaded below)
+    let headshotNotionUrl = '';
     const headshot = props['Headshot']?.files || [];
     if (headshot.length > 0) {
       const file = headshot[0];
-      headshotUrl = file.file?.url || file.external?.url || '';
+      headshotNotionUrl = file.file?.url || file.external?.url || '';
     }
 
     return {
@@ -271,10 +273,40 @@ async function exportCultivators() {
       usage,
       impact,
       blogLink,
-      headshotUrl,
+      headshotNotionUrl,
+      headshotUrl: '',
       month,
     };
   }).filter(Boolean);
+
+  // Download headshot images to images/ folder
+  const imagesDir = path.join(__dirname, '..', 'images');
+  if (!fs.existsSync(imagesDir)) fs.mkdirSync(imagesDir, { recursive: true });
+
+  for (const c of cultivators) {
+    if (!c.headshotNotionUrl) continue;
+    // Extract original filename from the Notion URL (before query params)
+    const urlPath = new URL(c.headshotNotionUrl).pathname;
+    const originalName = path.basename(urlPath);
+    // Sanitize: replace spaces/underscores with hyphens
+    const fileName = originalName.replace(/[_ ]+/g, '-');
+    const destPath = path.join(imagesDir, fileName);
+
+    try {
+      console.log(`  Downloading headshot: ${fileName}`);
+      await downloadFile(c.headshotNotionUrl, destPath);
+      c.headshotUrl = `/images/${fileName}`;
+    } catch (err) {
+      console.warn(`  Warning: Could not download headshot for ${c.name}: ${err.message}`);
+      // Check if local file already exists from a previous export
+      if (fs.existsSync(destPath)) {
+        c.headshotUrl = `/images/${fileName}`;
+      }
+    }
+    delete c.headshotNotionUrl;
+  }
+  // Clean up any remaining headshotNotionUrl fields
+  for (const c of cultivators) delete c.headshotNotionUrl;
 
   // Match cultivators to their apps from collections data
   const collectionsPath = path.join(__dirname, '..', 'data', 'collections.json');
@@ -433,6 +465,28 @@ function parseRow(props) {
     iterations,
     pinned,
   };
+}
+
+/**
+ * Download a file from a URL and save it to disk.
+ * Returns the local path relative to the project root (e.g. "/images/Foo.webp").
+ */
+function downloadFile(url, destPath) {
+  return new Promise((resolve, reject) => {
+    const mod = url.startsWith('https') ? https : http;
+    mod.get(url, (res) => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        return downloadFile(res.headers.location, destPath).then(resolve).catch(reject);
+      }
+      if (res.statusCode !== 200) {
+        return reject(new Error(`Failed to download ${url}: HTTP ${res.statusCode}`));
+      }
+      const stream = fs.createWriteStream(destPath);
+      res.pipe(stream);
+      stream.on('finish', () => { stream.close(); resolve(); });
+      stream.on('error', reject);
+    }).on('error', reject);
+  });
 }
 
 function richTextToString(prop) {

@@ -15,15 +15,16 @@ async function loadCultivators() {
     if (!cultivators || cultivators.length === 0) {
       grid.innerHTML = `
         <div class="cultivators-empty">
-          <div class="cultivators-empty-icon">🌱</div>
-          <h3>Coming soon</h3>
-          <p>Cultivator profiles are on the way. Check back to meet the builders behind the apps.</p>
+          <div class="cultivators-empty-icon">🌾</div>
+          <h3>Cultivators are growing</h3>
+          <p>Builder profiles are on the way. Check back to meet the educators, students, and leaders behind the apps.</p>
         </div>
       `;
       return;
     }
 
     grid.innerHTML = cultivators.map(cultivatorCardHTML).join('');
+    observeFadeUp(grid);
   } catch (err) {
     console.error('Failed to load cultivators:', err);
     grid.innerHTML = `
@@ -69,7 +70,7 @@ function cultivatorCardHTML(c) {
   }
 
   return `
-    <article class="cultivator-card">
+    <article class="cultivator-card fade-up">
       <div class="cultivator-card-top">
         <div class="cultivator-header">
           ${headshotHTML}

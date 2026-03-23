@@ -125,6 +125,9 @@ function renderFilteredCollections() {
       const section = temp.firstElementChild;
       placeholder.replaceWith(section);
 
+      // Animate entrance
+      observeFadeUp(section.parentElement);
+
       // Render icons for the new section
       refreshIcons();
 

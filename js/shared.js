@@ -91,6 +91,10 @@ function initStarButtons() {
       const nowStarred = toggleStar(appId);
       cardBtn.classList.toggle('starred', nowStarred);
       cardBtn.querySelector('.star-icon').innerHTML = nowStarred ? '★' : '☆';
+      // Bounce animation
+      cardBtn.classList.remove('star-animate');
+      void cardBtn.offsetWidth;
+      cardBtn.classList.add('star-animate');
       // Sync drawer
       const drawerStarBtn = document.getElementById('drawer-star-btn');
       if (drawerStarBtn && drawerStarBtn.dataset.appId === appId) {
@@ -107,6 +111,10 @@ function initStarButtons() {
       const nowStarred = toggleStar(appId);
       drawerBtn.classList.toggle('starred', nowStarred);
       drawerBtn.querySelector('.star-icon').innerHTML = nowStarred ? '★' : '☆';
+      // Bounce animation
+      drawerBtn.classList.remove('star-animate');
+      void drawerBtn.offsetWidth;
+      drawerBtn.classList.add('star-animate');
       const cardStar = document.querySelector(`.app-star-btn[data-app-id="${appId}"]`);
       if (cardStar) {
         cardStar.classList.toggle('starred', nowStarred);
@@ -275,6 +283,48 @@ function initScrollTop() {
 }
 document.addEventListener('DOMContentLoaded', initScrollTop);
 document.addEventListener('DOMContentLoaded', initStarButtons);
+document.addEventListener('DOMContentLoaded', initFadeUp);
+
+// ---- Card Entrance Animations ----
+function initFadeUp() {
+  if (!('IntersectionObserver' in window)) {
+    // Fallback: just show everything
+    document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+    return;
+  }
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(function(el) {
+    observer.observe(el);
+  });
+}
+
+// Re-observe newly added .fade-up elements (call after dynamic content)
+function observeFadeUp(container) {
+  if (!('IntersectionObserver' in window)) {
+    (container || document).querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('visible'));
+    return;
+  }
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  (container || document).querySelectorAll('.fade-up:not(.visible)').forEach(function(el) {
+    observer.observe(el);
+  });
+}
 
 // ---- Meta Helpers ----
 function updateMeta(nameOrProp, content) {
@@ -1068,7 +1118,7 @@ function collectionSectionHTML(col) {
   }
 
   return `
-    <section class="collection-section" id="col-${escapeHtml(col.id)}" data-type="${escapeHtml(col.type || 'topic')}" style="--collection-accent: ${accentColor};">
+    <section class="collection-section fade-up" id="col-${escapeHtml(col.id)}" data-type="${escapeHtml(col.type || 'topic')}" style="--collection-accent: ${accentColor};">
       <div class="collection-section-header">
         <div class="collection-section-title">
           <div class="collection-section-icon" style="background-color: ${accentColor}">

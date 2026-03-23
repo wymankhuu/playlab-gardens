@@ -37,6 +37,7 @@ async function loadSeeds() {
     } else {
       grid.innerHTML = allSeeds.map(seedPreviewCard).join('');
     }
+    observeFadeUp(grid);
   } catch (err) {
     console.error('Failed to load seeds:', err);
   }
@@ -71,7 +72,7 @@ function renderSeedSections(collections) {
     const shareUrl = `${window.location.origin}/collection.html?id=${col.id}`;
 
     return `
-      <div class="seed-collection-section" style="--seed-accent: ${accentColor};">
+      <div class="seed-collection-section fade-up" style="--seed-accent: ${accentColor};">
         <div class="seed-collection-header">
           <div class="seed-collection-header-left">
             <img class="seed-collection-flower" src="${escapeHtml(col.image)}" alt="">
@@ -134,6 +135,7 @@ function filterSeeds(query) {
       grid.innerHTML = [...allSeeds].sort((a, b) => a.name.localeCompare(b.name)).map(seedPreviewCard).join('');
     }
     if (window.lucide) lucide.createIcons();
+    observeFadeUp(grid);
     return;
   }
 
