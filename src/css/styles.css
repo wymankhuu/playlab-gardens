@@ -1120,8 +1120,7 @@ img {
 
 .app-card {
   background: var(--cream);
-  border: 1.5px solid rgba(13, 40, 24, 0.12);
-  border-left: 3px solid var(--collection-accent, rgba(13, 40, 24, 0.12));
+  border: 2px solid var(--collection-accent, rgba(13, 40, 24, 0.12));
   border-radius: var(--radius-md);
   padding: 0;
   cursor: pointer;
@@ -1807,10 +1806,10 @@ img {
 
 /* ---- Admin Missing Data Indicators ---- */
 .app-card.admin-missing {
-  border-left: 3px solid #dc3c3c;
+  border-color: #dc3c3c;
 }
 .preview-app-card.admin-missing {
-  border-left: 3px solid #dc3c3c;
+  border-color: #dc3c3c;
 }
 
 .admin-missing-dot {

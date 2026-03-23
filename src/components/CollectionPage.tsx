@@ -380,7 +380,7 @@ export default function CollectionPageComponent({
                 aria-label="Generate QR code"
                 onClick={() => setShowQR(true)}
               >
-                <LucideIcon name="qr-code" size={18} />
+                <LucideIcon name="QrCode" size={18} />
               </button>
               <ShareButton url={typeof window !== 'undefined' ? window.location.href : ''} />
             </div>

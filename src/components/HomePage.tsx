@@ -93,7 +93,7 @@ function FlowersSpotlight({ collection }: { collection: Collection }) {
             aria-label="Generate QR code for Flowers"
             onClick={(e) => { e.preventDefault(); setShowQR(true); }}
           >
-            <LucideIcon name="qr-code" size={18} />
+            <LucideIcon name="QrCode" size={18} />
           </button>
           <ShareButton url={flowersUrl} />
         </div>
@@ -294,13 +294,7 @@ function CollectionSection({
             aria-label="Generate QR code"
             onClick={() => setShowQR(true)}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <rect x="2" y="2" width="8" height="8" rx="1" />
-              <rect x="14" y="2" width="8" height="8" rx="1" />
-              <rect x="2" y="14" width="8" height="8" rx="1" />
-              <rect x="14" y="14" width="4" height="4" />
-              <path d="M22 14h-2v4h-4v4h4a2 2 0 0 0 2-2z" />
-            </svg>
+            <LucideIcon name="QrCode" size={16} />
           </button>
           <ShareButton url={typeof window !== 'undefined' ? `${window.location.origin}${collectionUrl}` : collectionUrl} />
           <Link href={collectionUrl} className="collection-section-viewall">
