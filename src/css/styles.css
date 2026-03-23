@@ -764,6 +764,7 @@ img {
   padding-right: 4px;
   scrollbar-width: thin;
   scrollbar-color: var(--sand) transparent;
+  align-items: stretch;
 }
 
 .collection-preview-apps::-webkit-scrollbar {
@@ -788,14 +789,15 @@ img {
   padding: 16px;
   min-width: 200px;
   max-width: 220px;
-  min-height: 180px;
+  height: 200px;
   flex-shrink: 0;
   cursor: pointer;
-  backdrop-filter: blur(4px);
-  transition: transform 0.15s, border-color 0.15s;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  transition: transform 0.15s, border-color 0.15s;
 }
 
 .preview-app-card:hover {
