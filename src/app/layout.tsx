@@ -49,6 +49,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <Nav />
         <AdminToolbar />
 
@@ -63,7 +64,7 @@ export default function RootLayout({
                     key={link.href}
                     href={link.href}
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                   >
                     {link.label}
                   </a>
