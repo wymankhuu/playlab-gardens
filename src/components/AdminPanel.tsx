@@ -109,7 +109,7 @@ function AdminEditPanel({ app, onAppUpdated }: AdminPanelProps) {
   const [impact, setImpact] = useState(app.impact || '');
   const [saving, setSaving] = useState(false);
   const [saveLabel, setSaveLabel] = useState('Save to Database');
-  const [pinning, setPinning] = useState(false);
+
 
   // Reset fields when app changes
   useEffect(() => {
@@ -168,62 +168,12 @@ function AdminEditPanel({ app, onAppUpdated }: AdminPanelProps) {
     }
   };
 
-  const handlePin = async () => {
-    const newPinned = !app.pinned;
-    setPinning(true);
-    const collectionName =
-      app.tags && app.tags.length > 0 ? app.tags[0] : '';
-    try {
-      const res = await fetch('/api/admin-pin', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          password: getPassword(),
-          appName: app.name,
-          pinned: newPinned,
-          collectionName,
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        alert('Pin failed: ' + (data.error || 'Unknown error'));
-        setPinning(false);
-        return;
-      }
-      onAppUpdated({ pinned: newPinned });
-      setPinning(false);
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : 'Unknown error';
-      alert('Pin failed: ' + message);
-      setPinning(false);
-    }
-  };
-
   return (
     <div className="admin-panel">
       <div className="admin-panel-header">
         <LucideIcon name="PenLine" size={14} />
         <span>Edit App</span>
       </div>
-
-      <button
-        className={`admin-pin-drawer-btn${app.pinned ? ' pinned' : ''}`}
-        onClick={handlePin}
-        disabled={pinning}
-        data-app-name={app.name}
-        data-collection-name={
-          app.tags && app.tags.length > 0 ? app.tags[0] : ''
-        }
-      >
-        <LucideIcon name={app.pinned ? 'PinOff' : 'Pin'} size={14} />
-        {pinning
-          ? app.pinned
-            ? 'Unpinning...'
-            : 'Pinning...'
-          : app.pinned
-            ? 'Unpin from Homepage'
-            : 'Pin to Homepage'}
-      </button>
 
       <div className="admin-row">
         <div className="admin-field admin-field--half">

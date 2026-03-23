@@ -4,14 +4,11 @@ import { useState, useCallback, useRef } from 'react';
 import type { App } from '@/lib/notion';
 import StarButton from './StarButton';
 import QuickEditPopover from './QuickEditPopover';
-import { LucideIcon } from '@/lib/icons';
-
 const MAX_PREVIEW_TAGS = 3;
 const MAX_INITIALS = 2;
 const TRUNCATE_SHORT = 150;
 const TRUNCATE_LONG = 200;
 const MAX_SHORT_SENTENCES = 2;
-const ADMIN_PWD_KEY = 'playlab-admin-pwd';
 
 function truncate(str: string, max: number): string {
   if (!str || str.length <= max) return str || '';
@@ -54,16 +51,13 @@ interface PreviewAppCardProps {
   app: App;
   isAdmin?: boolean;
   onOpenApp: (app: App) => void;
-  onPin?: (app: App) => void;
 }
 
 export default function PreviewAppCard({
   app,
   isAdmin = false,
   onOpenApp,
-  onPin,
 }: PreviewAppCardProps) {
-  const [pinning, setPinning] = useState(false);
 
   const desc = generateFallbackDescription(app);
   const creatorName = app.creator || 'Playlab Creator';
@@ -88,45 +82,6 @@ export default function PreviewAppCard({
     [app, onOpenApp],
   );
 
-  const handlePin = useCallback(
-    async (e: React.MouseEvent) => {
-      e.stopPropagation();
-      e.preventDefault();
-
-      if (onPin) {
-        onPin(app);
-        return;
-      }
-
-      const newPinned = !app.pinned;
-      setPinning(true);
-      const collectionName = app.tags && app.tags.length > 0 ? app.tags[0] : '';
-      try {
-        const password = sessionStorage.getItem(ADMIN_PWD_KEY) || '';
-        const res = await fetch('/api/admin-pin', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            password,
-            appName: app.name,
-            pinned: newPinned,
-            collectionName,
-          }),
-        });
-        const data = await res.json();
-        if (!res.ok) {
-          alert('Pin failed: ' + (data.error || 'Unknown error'));
-        }
-      } catch (err: unknown) {
-        const message = err instanceof Error ? err.message : 'Unknown error';
-        alert('Pin failed: ' + message);
-      } finally {
-        setPinning(false);
-      }
-    },
-    [app, onPin],
-  );
-
   const [showQuickEdit, setShowQuickEdit] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -139,7 +94,6 @@ export default function PreviewAppCard({
   const cardClasses = [
     'preview-app-card',
     isAdmin && missing.count > 0 ? 'admin-missing' : '',
-    isAdmin && app.pinned ? 'admin-pinned' : '',
   ]
     .filter(Boolean)
     .join(' ');
@@ -161,13 +115,6 @@ export default function PreviewAppCard({
       onKeyDown={handleKeyDown}
       style={{ position: 'relative' }}
     >
-      {/* Admin pin badge */}
-      {isAdmin && app.pinned && (
-        <span className="admin-pin-badge">
-          <LucideIcon name="Pin" size={14} />
-        </span>
-      )}
-
       {/* Admin quick-edit pencil */}
       {isAdmin && missing.count > 0 && (
         <button
@@ -177,21 +124,6 @@ export default function PreviewAppCard({
           onClick={handleQuickEdit}
         >
           ✏️
-        </button>
-      )}
-
-      {/* Admin pin button */}
-      {isAdmin && (
-        <button
-          className={`admin-pin-card-btn${app.pinned ? ' pinned' : ''}`}
-          data-app-name={app.name}
-          data-collection-name={app.tags && app.tags.length > 0 ? app.tags[0] : ''}
-          title={app.pinned ? 'Unpin' : 'Pin'}
-          aria-label={app.pinned ? 'Unpin' : 'Pin'}
-          onClick={handlePin}
-          disabled={pinning}
-        >
-          {app.pinned ? '\u{1F4CC}' : '\u{1F4CD}'}
         </button>
       )}
 

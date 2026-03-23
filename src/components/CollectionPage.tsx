@@ -149,60 +149,6 @@ export default function CollectionPageComponent({
 
   const { isAdmin } = useAdminMode();
 
-  // --- Bulk selection state (admin only) ---
-  const [selectedAppIds, setSelectedAppIds] = useState<Set<string>>(new Set());
-  const [bulkActionInProgress, setBulkActionInProgress] = useState(false);
-
-  // Clear selection when leaving admin mode
-  useEffect(() => {
-    if (!isAdmin) setSelectedAppIds(new Set());
-  }, [isAdmin]);
-
-  const handleToggleSelect = useCallback((appId: string) => {
-    setSelectedAppIds((prev) => {
-      const next = new Set(prev);
-      if (next.has(appId)) {
-        next.delete(appId);
-      } else {
-        next.add(appId);
-      }
-      return next;
-    });
-  }, []);
-
-  const handleClearSelection = useCallback(() => {
-    setSelectedAppIds(new Set());
-  }, []);
-
-  const handleBulkPin = useCallback(async (pin: boolean) => {
-    if (selectedAppIds.size === 0) return;
-    setBulkActionInProgress(true);
-    const password = sessionStorage.getItem('playlab-admin-pwd') || '';
-    const appsToPin = collection.apps.filter((a) => selectedAppIds.has(a.id));
-    const results = await Promise.allSettled(
-      appsToPin.map((app) => {
-        const collectionName = app.tags && app.tags.length > 0 ? app.tags[0] : '';
-        return fetch('/api/admin-pin', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            password,
-            appName: app.name,
-            pinned: pin,
-            collectionName,
-          }),
-        });
-      })
-    );
-    const failed = results.filter((r) => r.status === 'rejected').length;
-    if (failed > 0) {
-      alert(`${failed} of ${appsToPin.length} operations failed.`);
-    }
-    setSelectedAppIds(new Set());
-    setBulkActionInProgress(false);
-    window.location.reload();
-  }, [selectedAppIds, collection.apps]);
-
   // --- Load star counts on mount ---
   useEffect(() => {
     const appIds = collection.apps.map((a) => a.id);
@@ -537,45 +483,11 @@ export default function CollectionPageComponent({
                 accentColor={accentColor}
                 isAdmin={isAdmin}
                 onOpenApp={handleOpenApp}
-                isSelected={selectedAppIds.has(app.id)}
-                onToggleSelect={isAdmin ? handleToggleSelect : undefined}
               />
             ))}
           </div>
         )}
       </main>
-
-      {/* Bulk Action Bar (admin mode) */}
-      {isAdmin && selectedAppIds.size > 0 && (
-        <div className="bulk-action-bar">
-          <span>{selectedAppIds.size} selected</span>
-          <button
-            onClick={() => {
-              const allIds = filteredApps.map((a) => a.id);
-              if (selectedAppIds.size === allIds.length) {
-                setSelectedAppIds(new Set());
-              } else {
-                setSelectedAppIds(new Set(allIds));
-              }
-            }}
-          >
-            {selectedAppIds.size === filteredApps.length ? 'Deselect All' : 'Select All'}
-          </button>
-          <button
-            disabled={bulkActionInProgress}
-            onClick={() => handleBulkPin(true)}
-          >
-            {bulkActionInProgress ? 'Pinning...' : 'Pin Selected'}
-          </button>
-          <button
-            disabled={bulkActionInProgress}
-            onClick={() => handleBulkPin(false)}
-          >
-            {bulkActionInProgress ? 'Unpinning...' : 'Unpin Selected'}
-          </button>
-          <button onClick={handleClearSelection}>Cancel</button>
-        </div>
-      )}
 
       {/* Related Collections */}
       {relatedCollections.length > 0 && (
