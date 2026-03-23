@@ -42,33 +42,22 @@ export default async function SeedsPage() {
       {/* Steps */}
       <div className="container section">
         <div className="seeds-steps">
-          <div
-            className="seeds-step"
-            style={{ background: '#2654d4' }}
-          >
-            <div className="seeds-step-number">1</div>
+          <div className="seeds-step">
+            <div className="seeds-step-number" style={{ background: '#2654d4' }}>1</div>
             <h3 className="seeds-step-title">Pick a seed</h3>
             <p className="seeds-step-desc">
-              Browse starter templates and click &apos;Plant this seed&apos; to
-              get started
+              Browse starter templates and click &quot;Plant this seed&quot; to get started
             </p>
           </div>
-          <div
-            className="seeds-step"
-            style={{ background: '#9b59b6' }}
-          >
-            <div className="seeds-step-number">2</div>
+          <div className="seeds-step">
+            <div className="seeds-step-number" style={{ background: '#9b59b6' }}>2</div>
             <h3 className="seeds-step-title">Add your context</h3>
             <p className="seeds-step-desc">
-              Customize it with your curriculum, pedagogy, knowledge, and your
-              voice
+              Customize it with your curriculum, pedagogy, knowledge, and your voice
             </p>
           </div>
-          <div
-            className="seeds-step"
-            style={{ background: '#e84393' }}
-          >
-            <div className="seeds-step-number">3</div>
+          <div className="seeds-step">
+            <div className="seeds-step-number" style={{ background: '#e84393' }}>3</div>
             <h3 className="seeds-step-title">Watch it grow</h3>
             <p className="seeds-step-desc">
               Share it, iterate, and see it come to life in your environments
