@@ -11,3 +11,4 @@ node_modules
 node_modules
 .env.vercel
 tsconfig.tsbuildinfo
+.superpowers/
