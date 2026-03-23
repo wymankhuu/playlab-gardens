@@ -12,12 +12,6 @@ import AppCardComponent from './AppCard';
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
-const MAX_PREVIEW_TAGS = 3;
-const MAX_INITIALS = 2;
-const TRUNCATE_SHORT = 150;
-const TRUNCATE_LONG = 200;
-const MAX_SHORT_SENTENCES = 2;
-const COPY_FEEDBACK_MS = 2000;
 const SEARCH_DEBOUNCE_MS = 200;
 
 const SUBJECT_NAMES = [
@@ -86,24 +80,6 @@ const COLLECTION_ICONS: Record<string, string> = {
 // Helpers
 // ---------------------------------------------------------------------------
 
-function truncate(str: string, max: number): string {
-  if (!str || str.length <= max) return str || '';
-  return str.slice(0, max).trim() + '\u2026';
-}
-
-function shortDesc(str: string): string {
-  if (!str) return '';
-  const sentences = str.match(/[^.!?]+[.!?]+/g);
-  if (!sentences) return truncate(str, TRUNCATE_SHORT);
-  const short = sentences.slice(0, MAX_SHORT_SENTENCES).join('').trim();
-  return truncate(short, TRUNCATE_LONG);
-}
-
-function generateFallbackDescription(app: App): string {
-  if (app.description && app.description.trim()) return app.description;
-  return 'An educator-built Playlab app.';
-}
-
 function getCollectionIcon(name: string): string {
   const lower = (name || '').toLowerCase();
   if (COLLECTION_ICONS[lower]) return COLLECTION_ICONS[lower];
@@ -122,18 +98,6 @@ function getHeroImage(collection: Collection): string {
   if (GRADE_NAMES.some((g) => lower.includes(g))) return '/images/beat-6.webp';
   return '/images/beat-5.webp';
 }
-
-function getInitials(name: string): string {
-  if (!name) return 'P';
-  return name
-    .split(' ')
-    .map((w) => w[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, MAX_INITIALS);
-}
-
-
 
 // ---------------------------------------------------------------------------
 // Lucide icon SVG component (inline)
@@ -171,8 +135,6 @@ function SearchIcon() {
     </svg>
   );
 }
-
-// QR Modal is now imported from @/components/QRModal
 
 // ---------------------------------------------------------------------------
 // Filter Dropdown
@@ -261,6 +223,16 @@ export default function CollectionPageComponent({
   const [showQR, setShowQR] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchTimeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  const { isAdmin } = useAdminMode();
+
+  // --- Load star counts on mount ---
+  useEffect(() => {
+    const appIds = collection.apps.map((a) => a.id);
+    if (appIds.length > 0) {
+      loadStarCounts(appIds);
+    }
+  }, [collection.apps]);
 
   // --- URL sync: read from URL on mount ---
   useEffect(() => {
@@ -412,15 +384,6 @@ export default function CollectionPageComponent({
     ? collection.name.replace(/\s*Showcase\s*/i, '') + ' Organization'
     : '';
 
-  // --- Share handler ---
-  const handleShare = () => {
-    const url = window.location.href;
-    navigator.clipboard.writeText(url).then(() => {
-      setShareToast(true);
-      setTimeout(() => setShareToast(false), COPY_FEEDBACK_MS);
-    });
-  };
-
   // --- Open app handler ---
   const handleOpenApp = (app: App) => {
     if (onOpenApp) {
@@ -552,11 +515,12 @@ export default function CollectionPageComponent({
             style={{ '--collection-accent': accentColor } as React.CSSProperties}
           >
             {filteredApps.map((app) => (
-              <AppCard
+              <AppCardComponent
                 key={app.id}
                 app={app}
                 accentColor={accentColor}
-                onClick={() => handleOpenApp(app)}
+                isAdmin={isAdmin}
+                onOpenApp={handleOpenApp}
               />
             ))}
           </div>

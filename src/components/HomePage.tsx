@@ -4,16 +4,14 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import type { Collection, App } from '@/lib/notion';
 import { getCollectionIcon, LucideIcon } from '@/lib/icons';
+import { loadStarCounts } from '@/lib/stars';
+import { useAdminMode } from './AdminPanel';
 import SearchOverlay from '@/components/SearchOverlay';
+import PreviewAppCard from '@/components/PreviewAppCard';
 import QRModal from '@/components/QRModal';
 import ShareButton from '@/components/ShareButton';
 
 const SCROLL_OFFSET = 140;
-const MAX_PREVIEW_TAGS = 3;
-const MAX_INITIALS = 2;
-const TRUNCATE_SHORT = 150;
-const TRUNCATE_LONG = 200;
-const MAX_SHORT_SENTENCES = 2;
 
 // ---- Grouping constants ----
 const SUBJECT_NAMES = [
@@ -40,29 +38,6 @@ function isOrgCollection(name: string): boolean {
 function truncate(str: string, max: number): string {
   if (!str || str.length <= max) return str || '';
   return str.slice(0, max).trim() + '\u2026';
-}
-
-function shortDesc(str: string): string {
-  if (!str) return '';
-  const sentences = str.match(/[^.!?]+[.!?]+/g);
-  if (!sentences) return truncate(str, TRUNCATE_SHORT);
-  const short = sentences.slice(0, MAX_SHORT_SENTENCES).join('').trim();
-  return truncate(short, TRUNCATE_LONG);
-}
-
-function generateFallbackDescription(app: App): string {
-  if (app.description && app.description.trim()) return app.description;
-  return 'An educator-built Playlab app.';
-}
-
-function getInitials(name: string): string {
-  if (!name) return 'P';
-  return name
-    .split(' ')
-    .map((w) => w[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, MAX_INITIALS);
 }
 
 interface Group {
@@ -99,62 +74,13 @@ function groupCollections(collections: Collection[]): Group[] {
 
 // ---- Sub-components ----
 
-function PreviewAppCard({
-  app,
-  collection,
-  onOpenApp,
-}: {
-  app: App;
-  collection: Collection;
-  onOpenApp: (app: App) => void;
-}) {
-  const desc = generateFallbackDescription(app);
-  const creatorName = app.creator || 'Playlab Creator';
-  const initials = app.creator ? getInitials(app.creator) : 'P';
-  const tags = app.tags || [];
-  const shownTags = tags.slice(0, MAX_PREVIEW_TAGS);
-  const extraCount = tags.length - MAX_PREVIEW_TAGS;
-
-  return (
-    <div
-      className="preview-app-card"
-      data-app-id={app.id}
-      tabIndex={0}
-      role="button"
-      aria-label={`View ${app.name}`}
-      onClick={() => onOpenApp(app)}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          onOpenApp(app);
-        }
-      }}
-    >
-      <div className="app-card-creator">
-        <span className="app-card-avatar">{initials}</span>
-        {creatorName}
-      </div>
-      <div className="preview-app-card-name">{app.name}</div>
-      <div className="preview-app-card-desc">{shortDesc(desc)}</div>
-      {shownTags.length > 0 && (
-        <div className="app-card-tags">
-          {shownTags.map((t) => (
-            <span key={t} className="app-tag">{t}</span>
-          ))}
-          {extraCount > 0 && (
-            <span className="app-tag app-tag--more">+{extraCount}</span>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
 function CollectionSection({
   collection,
+  isAdmin,
   onOpenApp,
 }: {
   collection: Collection;
+  isAdmin: boolean;
   onOpenApp: (app: App) => void;
 }) {
   const [visible, setVisible] = useState(false);
@@ -180,6 +106,14 @@ function CollectionSection({
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  // Load star counts when section becomes visible
+  useEffect(() => {
+    if (visible && collection.apps.length > 0) {
+      const appIds = collection.apps.slice(0, 3).map((a) => a.id);
+      loadStarCounts(appIds);
+    }
+  }, [visible, collection.apps]);
 
   if (!visible) {
     return (
@@ -256,7 +190,7 @@ function CollectionSection({
             <PreviewAppCard
               key={app.id}
               app={app}
-              collection={collection}
+              isAdmin={isAdmin}
               onOpenApp={onOpenApp}
             />
           ))}
@@ -349,6 +283,8 @@ export default function HomePage({ collections, onOpenApp }: HomePageProps) {
     (c) => c.name.toLowerCase() === 'flowers'
   );
 
+  const { isAdmin } = useAdminMode();
+
   // Deep linking: check hash on mount
   useEffect(() => {
     const hash = window.location.hash;
@@ -393,7 +329,7 @@ export default function HomePage({ collections, onOpenApp }: HomePageProps) {
           </h1>
           <p className="text-accent hero-tagline">
             Every app here was built by someone who knows their context best. Browse
-            hundreds of tools grown by teachers, students, and leaders, each one
+            hundreds of tools grown by teachers, students, and leaders &mdash; each one
             shaped by the specific needs of a particular classroom, school, or community.
             No two look alike, because no two contexts are the same.
           </p>
@@ -463,6 +399,7 @@ export default function HomePage({ collections, onOpenApp }: HomePageProps) {
                   <CollectionSection
                     key={col.id}
                     collection={col}
+                    isAdmin={isAdmin}
                     onOpenApp={onOpenApp}
                   />
                 ))}

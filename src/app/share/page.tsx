@@ -1,7 +1,19 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useState, useRef, type FormEvent } from 'react';
 import Link from 'next/link';
+
+const PLAYLAB_URL_PATTERN = /^https?:\/\/(www\.)?playlab\.ai\/project\/.+$/;
+
+interface FieldErrors {
+  appName?: string;
+  url?: string;
+  creator?: string;
+  role?: string;
+  description?: string;
+  usage?: string;
+  impact?: string;
+}
 
 export default function SharePage() {
   const [form, setForm] = useState({
@@ -17,14 +29,79 @@ export default function SharePage() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const formRef = useRef<HTMLFormElement>(null);
 
   function updateField(field: string, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));
+    // Clear field error on change
+    if (fieldErrors[field as keyof FieldErrors]) {
+      setFieldErrors((prev) => {
+        const next = { ...prev };
+        delete next[field as keyof FieldErrors];
+        return next;
+      });
+    }
+  }
+
+  function validate(): FieldErrors {
+    const errors: FieldErrors = {};
+
+    if (!form.appName.trim()) {
+      errors.appName = 'App name is required.';
+    }
+
+    if (!form.url.trim()) {
+      errors.url = 'Playlab URL is required.';
+    } else if (!PLAYLAB_URL_PATTERN.test(form.url.trim())) {
+      errors.url = 'Please enter a valid Playlab URL (https://playlab.ai/project/...).';
+    }
+
+    if (!form.creator.trim()) {
+      errors.creator = 'Your name is required.';
+    }
+
+    if (!form.role.trim()) {
+      errors.role = 'Your role is required.';
+    }
+
+    if (!form.description.trim()) {
+      errors.description = 'Description is required.';
+    }
+
+    if (!form.usage.trim()) {
+      errors.usage = 'Please describe how the app is being used.';
+    }
+
+    if (!form.impact.trim()) {
+      errors.impact = 'Please describe the impact of the app.';
+    }
+
+    return errors;
+  }
+
+  function scrollToFirstError(errors: FieldErrors) {
+    const firstField = Object.keys(errors)[0];
+    if (!firstField) return;
+    const el = document.getElementById(firstField);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.focus();
+    }
   }
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError('');
+
+    const errors = validate();
+    setFieldErrors(errors);
+
+    if (Object.keys(errors).length > 0) {
+      scrollToFirstError(errors);
+      return;
+    }
+
     setSubmitting(true);
 
     try {
@@ -78,6 +155,7 @@ export default function SharePage() {
               onClick={() => {
                 setSubmitted(false);
                 setConsent(false);
+                setFieldErrors({});
                 setForm({
                   appName: '',
                   url: '',
@@ -117,9 +195,9 @@ export default function SharePage() {
       {/* Form */}
       <div className="container section">
         <div className="share-form-container">
-          <form className="share-form" onSubmit={handleSubmit}>
+          <form className="share-form" ref={formRef} onSubmit={handleSubmit} noValidate>
             {/* App Name */}
-            <div className="form-group">
+            <div className={`form-group${fieldErrors.appName ? ' form-group--error' : ''}`}>
               <label className="form-label" htmlFor="appName">
                 App Name <span className="form-required">*</span>
               </label>
@@ -132,10 +210,13 @@ export default function SharePage() {
                 onChange={(e) => updateField('appName', e.target.value)}
                 required
               />
+              {fieldErrors.appName && (
+                <p className="form-error">{fieldErrors.appName}</p>
+              )}
             </div>
 
             {/* Playlab URL */}
-            <div className="form-group">
+            <div className={`form-group${fieldErrors.url ? ' form-group--error' : ''}`}>
               <label className="form-label" htmlFor="url">
                 Playlab URL <span className="form-required">*</span>
               </label>
@@ -148,11 +229,14 @@ export default function SharePage() {
                 onChange={(e) => updateField('url', e.target.value)}
                 required
               />
+              {fieldErrors.url && (
+                <p className="form-error">{fieldErrors.url}</p>
+              )}
             </div>
 
             {/* Creator + Role row */}
             <div className="form-row">
-              <div className="form-group">
+              <div className={`form-group${fieldErrors.creator ? ' form-group--error' : ''}`}>
                 <label className="form-label" htmlFor="creator">
                   Your Name <span className="form-required">*</span>
                 </label>
@@ -165,8 +249,11 @@ export default function SharePage() {
                   onChange={(e) => updateField('creator', e.target.value)}
                   required
                 />
+                {fieldErrors.creator && (
+                  <p className="form-error">{fieldErrors.creator}</p>
+                )}
               </div>
-              <div className="form-group">
+              <div className={`form-group${fieldErrors.role ? ' form-group--error' : ''}`}>
                 <label className="form-label" htmlFor="role">
                   Your Role <span className="form-required">*</span>
                 </label>
@@ -179,11 +266,14 @@ export default function SharePage() {
                   onChange={(e) => updateField('role', e.target.value)}
                   required
                 />
+                {fieldErrors.role && (
+                  <p className="form-error">{fieldErrors.role}</p>
+                )}
               </div>
             </div>
 
             {/* Description */}
-            <div className="form-group">
+            <div className={`form-group${fieldErrors.description ? ' form-group--error' : ''}`}>
               <label className="form-label" htmlFor="description">
                 Description <span className="form-required">*</span>
               </label>
@@ -196,10 +286,13 @@ export default function SharePage() {
                 onChange={(e) => updateField('description', e.target.value)}
                 required
               />
+              {fieldErrors.description && (
+                <p className="form-error">{fieldErrors.description}</p>
+              )}
             </div>
 
             {/* How It's Being Used */}
-            <div className="form-group">
+            <div className={`form-group${fieldErrors.usage ? ' form-group--error' : ''}`}>
               <label className="form-label" htmlFor="usage">
                 How It&apos;s Being Used{' '}
                 <span className="form-required">*</span>
@@ -213,10 +306,13 @@ export default function SharePage() {
                 onChange={(e) => updateField('usage', e.target.value)}
                 required
               />
+              {fieldErrors.usage && (
+                <p className="form-error">{fieldErrors.usage}</p>
+              )}
             </div>
 
             {/* Impact */}
-            <div className="form-group">
+            <div className={`form-group${fieldErrors.impact ? ' form-group--error' : ''}`}>
               <label className="form-label" htmlFor="impact">
                 Impact <span className="form-required">*</span>
               </label>
@@ -229,6 +325,9 @@ export default function SharePage() {
                 onChange={(e) => updateField('impact', e.target.value)}
                 required
               />
+              {fieldErrors.impact && (
+                <p className="form-error">{fieldErrors.impact}</p>
+              )}
             </div>
 
             {/* Public consent checkbox */}
