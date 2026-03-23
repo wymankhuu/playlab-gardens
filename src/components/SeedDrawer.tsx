@@ -24,6 +24,22 @@ export default function SeedDrawer({ seed, collection, onClose }: SeedDrawerProp
   const savedScrollRef = useRef(0);
   const closingViaPopstateRef = useRef(false);
 
+  const handleClose = useCallback(
+    (fromPopstate = false) => {
+      setActive(false);
+      document.body.style.overflow = '';
+      window.scrollTo(0, savedScrollRef.current);
+
+      if (!fromPopstate && window.location.hash.startsWith('#seed=')) {
+        closingViaPopstateRef.current = true;
+        history.back();
+      }
+
+      onClose();
+    },
+    [onClose],
+  );
+
   // Open / close animation + body scroll lock
   useEffect(() => {
     if (seed) {
@@ -55,7 +71,7 @@ export default function SeedDrawer({ seed, collection, onClose }: SeedDrawerProp
     };
     document.addEventListener('keydown', handleKey);
     return () => document.removeEventListener('keydown', handleKey);
-  });
+  }, [seed, handleClose]);
 
   // Browser back button
   useEffect(() => {
@@ -68,23 +84,7 @@ export default function SeedDrawer({ seed, collection, onClose }: SeedDrawerProp
     };
     window.addEventListener('popstate', handlePopstate);
     return () => window.removeEventListener('popstate', handlePopstate);
-  });
-
-  const handleClose = useCallback(
-    (fromPopstate = false) => {
-      setActive(false);
-      document.body.style.overflow = '';
-      window.scrollTo(0, savedScrollRef.current);
-
-      if (!fromPopstate && window.location.hash.startsWith('#seed=')) {
-        closingViaPopstateRef.current = true;
-        history.back();
-      }
-
-      onClose();
-    },
-    [onClose],
-  );
+  }, [seed, handleClose]);
 
   const handleCopyLink = useCallback(() => {
     if (!seed) return;

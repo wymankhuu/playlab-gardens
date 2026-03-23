@@ -345,7 +345,7 @@ export default function CollectionPageComponent({
               <LucideIcon name={iconName} size={28} />
             </div>
             <div className="collection-hero-text">
-              <h1>{collection.name.replace(/\//g, '&')}</h1>
+              <h1>{collection.name}</h1>
               {collection.description && (
                 <p className="collection-hero-desc">{collection.description}</p>
               )}

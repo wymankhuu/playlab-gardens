@@ -1,7 +1,9 @@
 export const COLLECTION_CATEGORIES: Record<string, string[]> = {
   subject: [
-    'science / stem', 'math', 'ela / literacy', 'social studies / history',
-    'arts & design', 'business / economics', 'cultural studies', 'religious studies',
+    'science & stem', 'science / stem', 'math', 'ela & literacy', 'ela / literacy',
+    'social studies & history', 'social studies / history',
+    'arts & design', 'business & economics', 'business / economics',
+    'cultural studies', 'religious studies',
     'health & pe', 'music & performing arts', 'world languages',
     'illustrative mathematics',
   ],
@@ -11,7 +13,8 @@ export const COLLECTION_CATEGORIES: Record<string, string[]> = {
   useCase: [
     'project-based learning', 'student-built apps', 'study partners', 'writing coaches',
     'career & vocational', 'assessment & feedback', 'teacher tools',
-    'ai assistants', 'sel / wellbeing', 'ell / esl',
+    'ai assistants', 'sel & wellbeing', 'sel / wellbeing',
+    'ell & multilingual', 'ell / esl',
     'special education', 'niche & emerging', 'gamified learning',
     'data-driven instruction', 'family & community',
     'school leadership', 'reading intervention', 'creative & engagement',

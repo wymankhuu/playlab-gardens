@@ -2823,16 +2823,18 @@ img {
 .jump-nav {
   display: inline-flex;
   gap: 6px;
-  padding: 8px 16px;
+  padding: 10px 20px;
   position: sticky;
   top: calc(var(--nav-height) + 12px);
   z-index: 50;
-  background: var(--cream);
+  background: rgba(251, 249, 246, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(13, 40, 24, 0.1);
   border-radius: var(--radius-pill);
-  box-shadow: 0 2px 12px rgba(13, 40, 24, 0.08);
-  flex-wrap: wrap;
+  box-shadow: 0 4px 16px rgba(13, 40, 24, 0.1);
+  flex-wrap: nowrap;
   justify-content: center;
-  margin: 0 auto 16px;
+  margin: 0 auto 24px;
 }
 
 .jump-nav-link {

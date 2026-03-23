@@ -55,6 +55,22 @@ export default function AppDrawer({
     setCurrentApp(app);
   }, [app]);
 
+  const handleClose = useCallback(
+    (fromPopstate = false) => {
+      setActive(false);
+      document.body.style.overflow = '';
+      window.scrollTo(0, savedScrollRef.current);
+
+      if (!fromPopstate && window.location.hash.startsWith('#app=')) {
+        closingViaPopstateRef.current = true;
+        history.back();
+      }
+
+      onClose();
+    },
+    [onClose],
+  );
+
   // Open / close animation + body scroll lock
   useEffect(() => {
     if (currentApp) {
@@ -105,7 +121,7 @@ export default function AppDrawer({
     };
     document.addEventListener('keydown', handleKey);
     return () => document.removeEventListener('keydown', handleKey);
-  });
+  }, [currentApp, handleClose]);
 
   // Browser back button
   useEffect(() => {
@@ -120,23 +136,7 @@ export default function AppDrawer({
     };
     window.addEventListener('popstate', handlePopstate);
     return () => window.removeEventListener('popstate', handlePopstate);
-  });
-
-  const handleClose = useCallback(
-    (fromPopstate = false) => {
-      setActive(false);
-      document.body.style.overflow = '';
-      window.scrollTo(0, savedScrollRef.current);
-
-      if (!fromPopstate && window.location.hash.startsWith('#app=')) {
-        closingViaPopstateRef.current = true;
-        history.back();
-      }
-
-      onClose();
-    },
-    [onClose],
-  );
+  }, [currentApp, handleClose]);
 
   // Refresh lucide icons whenever the panel content changes
   useEffect(() => {

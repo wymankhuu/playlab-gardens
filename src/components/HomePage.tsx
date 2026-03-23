@@ -463,7 +463,7 @@ export default function HomePage({ collections, onOpenApp }: HomePageProps) {
           </h1>
           <p className="text-accent hero-tagline">
             Every app here was built by someone who knows their context best. Browse
-            hundreds of tools grown by teachers, students, and leaders &mdash; each one
+            hundreds of tools grown by teachers, students, and leaders, each one
             shaped by the specific needs of a particular classroom, school, or community.
             No two look alike, because no two contexts are the same.
           </p>

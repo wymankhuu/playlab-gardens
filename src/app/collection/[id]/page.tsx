@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (!collection) {
     return { title: 'Collection Not Found | Playlab Gardens' };
   }
-  const displayName = collection.name.replace(/\//g, '&');
+  const displayName = collection.name;
   const description =
     collection.description ||
     `Explore ${collection.appCount} apps in the ${displayName} collection.`;
