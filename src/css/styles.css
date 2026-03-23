@@ -720,11 +720,11 @@ img {
 
 .collection-section-desc {
   font-family: var(--font-caption);
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   line-height: 1.6;
-  opacity: 0.65;
+  opacity: 0.75;
   max-width: 720px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .collection-section-meta {
@@ -2892,20 +2892,21 @@ img {
 .section-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 5px;
+  margin-bottom: 12px;
 }
 
 .section-pill {
   font-family: var(--font-caption);
   font-weight: 500;
-  font-size: 0.8125rem;
-  padding: 5px 14px;
+  font-size: 0.7rem;
+  padding: 3px 10px;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(13, 40, 24, 0.12);
-  background: var(--cream);
+  border: 1px solid rgba(13, 40, 24, 0.1);
+  background: transparent;
   color: var(--forest);
   text-decoration: none;
+  opacity: 0.7;
   transition: all 0.15s;
   display: inline-flex;
   align-items: center;
@@ -2914,9 +2915,10 @@ img {
 .section-pill:hover {
   border-color: var(--deep-forest);
   background: rgba(13, 40, 24, 0.04);
+  opacity: 1;
 }
 .section-pill-count {
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 600;
   opacity: 0.5;
 }
@@ -2928,7 +2930,7 @@ img {
     -webkit-overflow-scrolling: touch;
     padding-bottom: 4px;
   }
-  .section-pill { white-space: nowrap; font-size: 0.75rem; }
+  .section-pill { white-space: nowrap; font-size: 0.65rem; }
 }
 
 .collection-group:first-child .collection-group-title {
