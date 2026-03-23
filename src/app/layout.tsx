@@ -1,6 +1,8 @@
 import '@/css/styles.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Nav from '@/components/Nav';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export const metadata: Metadata = {
   title: 'Playlab Gardens',
@@ -12,7 +14,26 @@ export const metadata: Metadata = {
       'Hundreds of apps built by educators, for their students and communities.',
     images: ['https://playlabgardens.com/images/landing-illustration.webp'],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Playlab Gardens',
+    description:
+      'Hundreds of apps built by educators, for their students and communities.',
+    images: ['https://playlabgardens.com/images/landing-illustration.webp'],
+  },
+  icons: {
+    icon: '/images/favicon.webp',
+  },
 };
+
+const FOOTER_LINKS = [
+  { href: '/seeds', label: 'Seeds' },
+  { href: '/collection/flowers', label: 'Flowers' },
+  { href: '/', label: 'Gardens' },
+  { href: '/cultivators', label: 'Cultivators' },
+  { href: '/share', label: 'Share Your App' },
+  { href: 'https://playlab.ai', label: 'Start Building', external: true },
+];
 
 export default function RootLayout({
   children,
@@ -22,45 +43,39 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <nav className="nav">
-          <div className="nav-inner">
-            <Link href="/" className="nav-logo">
-              Playlab Gardens
-            </Link>
-            <ul className="nav-links">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/seeds">Seeds</Link>
-              </li>
-              <li>
-                <Link href="/cultivators">Cultivators</Link>
-              </li>
-              <li>
-                <Link href="/share" className="nav-cta">
-                  Share Your App
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <Nav />
 
-        <main>{children}</main>
+        {children}
 
         <footer className="footer">
           <div className="footer-inner container">
             <div className="footer-links">
-              <Link href="/">Home</Link>
-              <Link href="/seeds">Seeds</Link>
-              <Link href="/cultivators">Cultivators</Link>
-              <Link href="/share">Share Your App</Link>
+              {FOOTER_LINKS.map((link) =>
+                link.external ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link key={link.href} href={link.href}>
+                    {link.label}
+                  </Link>
+                )
+              )}
             </div>
             <p className="footer-tagline">
-              Built with love by the Playlab community
+              Brought to you by Playlab Education Inc., a 501(c)3 nonprofit.
+              <br />
+              &copy; 2026 Playlab Education Inc.
             </p>
           </div>
         </footer>
+
+        <ScrollToTop />
       </body>
     </html>
   );
