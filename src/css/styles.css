@@ -1119,7 +1119,8 @@ img {
 
 .app-card {
   background: var(--cream);
-  border: 2px solid var(--collection-accent, rgba(13, 40, 24, 0.12));
+  border: none;
+  border-left: 3px solid var(--collection-accent, rgba(13, 40, 24, 0.12));
   border-radius: var(--radius-md);
   padding: 0;
   cursor: pointer;
@@ -1221,7 +1222,7 @@ img {
 
 .app-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(13, 40, 24, 0.25);
+  border-left-color: rgba(13, 40, 24, 0.25);
 }
 
 .app-card:focus-visible {
