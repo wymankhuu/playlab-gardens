@@ -43,9 +43,10 @@ function SeedCard({ seed }: { seed: Seed }) {
 
 function SeedCollectionSection({ sc }: { sc: SeedCollection }) {
   const [showQR, setShowQR] = useState(false);
+  const collectionUrl = `/collection/${sc.id}`;
   const shareUrl = typeof window !== 'undefined'
-    ? `${window.location.origin}/seeds`
-    : '/seeds';
+    ? `${window.location.origin}${collectionUrl}`
+    : collectionUrl;
   const sortedApps = [...sc.apps].sort((a, b) => a.name.localeCompare(b.name));
 
   return (
@@ -81,7 +82,7 @@ function SeedCollectionSection({ sc }: { sc: SeedCollection }) {
             <LucideIcon name="QrCode" size={16} />
           </button>
           <ShareButton url={shareUrl} />
-          <Link href={`/seeds`} className="seed-show-all-btn">
+          <Link href={collectionUrl} className="seed-show-all-btn">
             View all →
           </Link>
         </div>
