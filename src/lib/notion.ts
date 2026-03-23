@@ -77,55 +77,55 @@ const CULTIVATORS_DB_ID = '32aa9d3778c580958a83fb9a78a86021';
 // ---------------------------------------------------------------------------
 
 const COLLECTION_DESCRIPTIONS: Record<string, string> = {
-  'AI Assistants': 'Educators are reimagining what a teaching assistant can be. These AI-powered tools handle everything from lesson scaffolding to real-time student support — each one reflecting a different vision of how intelligence can serve the classroom.',
+  'AI Assistants': 'Educators are reimagining what a teaching assistant can be. These AI-powered tools handle everything from lesson scaffolding to real-time student support, each one reflecting a different vision of how intelligence can serve the classroom.',
   'Amplify': 'Amplify educators have taken their deep curriculum knowledge and built something new with it. These apps extend and personalize the Amplify experience in ways only the people closest to the work could imagine.',
-  'Arts & Design': 'Where creativity meets craft. Educators and students have built tools that open up visual arts, design thinking, and creative expression — proving that art education thrives when learners can shape their own tools.',
+  'Arts & Design': 'Where creativity meets craft. Educators and students have built tools that open up visual arts, design thinking, and creative expression, proving that art education thrives when learners can shape their own tools.',
   'Assessment & Feedback': 'The community has built dozens of different approaches to understanding what students know. From quick formative checks to deep rubric-based feedback, each tool reflects a different classroom reality and a different philosophy of assessment.',
-  'Business & Economics': 'Financial literacy, entrepreneurship, economic reasoning — educators across contexts have built tools that bring the complexity of the business world into classrooms in accessible, student-centered ways.',
-  'CA Community Colleges': 'California\'s community college educators are building for a student population unlike any other — working adults, first-generation learners, career changers. These apps reflect that diversity and the creativity it demands.',
+  'Business & Economics': 'Financial literacy, entrepreneurship, economic reasoning, educators across contexts have built tools that bring the complexity of the business world into classrooms in accessible, student-centered ways.',
+  'CA Community Colleges': 'California\'s community college educators are building for a student population unlike any other, working adults, first-generation learners, career changers. These apps reflect that diversity and the creativity it demands.',
   'CIOB': 'CIOB district educators have channeled their knowledge of their communities into tools that serve their specific students. What started as individual experiments has become a growing library of locally-rooted innovation.',
   'Career & Vocational': 'From resume builders to industry simulations, educators are helping students see a future beyond the classroom. These tools connect academic learning to real-world career paths in ways that feel personal and practical.',
-  'Creative & Engagement': 'Some of the most inventive work in the community lives here. These apps use storytelling, play, and surprise to pull students in — reminding us that engagement isn\'t a trick, it\'s a design challenge.',
-  'Cultural Studies': 'Educators have built tools that honor the richness of human culture — from indigenous traditions to diaspora histories. Each app opens a window into a different community\'s story, told with care and nuance.',
+  'Creative & Engagement': 'Some of the most inventive work in the community lives here. These apps use storytelling, play, and surprise to pull students in, reminding us that engagement isn\'t a trick, it\'s a design challenge.',
+  'Cultural Studies': 'Educators have built tools that honor the richness of human culture, from indigenous traditions to diaspora histories. Each app opens a window into a different community\'s story, told with care and nuance.',
   'Data-Driven Instruction': 'What happens when teachers can see patterns in student learning in real time? These tools turn data into something actionable, helping educators adjust their practice with clarity rather than guesswork.',
-  'Differentiation & Access': 'Every learner arrives differently. These apps are built by educators who know that firsthand — tools that flex, adapt, and meet students where they actually are, not where a pacing guide says they should be.',
-  'ELA & Literacy': 'Reading and writing look different in every classroom. This collection captures that range — from phonics coaches to literary analysis partners, each app shaped by an educator\'s unique understanding of how literacy grows.',
-  'ELL & ESL': 'Language learning is deeply personal work. These tools were built by educators who understand the particular challenges and joys of supporting multilingual students — bridging languages, cultures, and confidence.',
-  'Elementary': 'Teaching young learners requires a special kind of imagination. These apps are playful, patient, and purposeful — built by educators who understand that the early years set the foundation for everything that follows.',
-  'Fairfax': 'More than 1,100 Fairfax County Public Schools students from 25 high schools designed AI-powered solutions to real-world problems as part of the Seize the Moment Student AI Innovation Challenge — shaping the future of their communities one app at a time.',
-  'Family & Community': 'Learning doesn\'t stop at the school door. These tools help families participate in their children\'s education — bridging the gap between home and classroom with warmth and practical support.',
-  'Flowers': 'See how individuals across the Playlab community are building to reflect their unique contexts, roles, and goals. Each app here tells a different story — a teacher solving a problem no one else saw, a student reimagining how learning could work, a coach finding new ways to support their team.',
-  'Gamified Learning': 'Points, quests, narratives, challenges — educators have found countless ways to make learning feel like play. These apps prove that rigor and fun aren\'t opposites; they\'re collaborators.',
+  'Differentiation & Access': 'Every learner arrives differently. These apps are built by educators who know that firsthand, tools that flex, adapt, and meet students where they actually are, not where a pacing guide says they should be.',
+  'ELA & Literacy': 'Reading and writing look different in every classroom. This collection captures that range, from phonics coaches to literary analysis partners, each app shaped by an educator\'s unique understanding of how literacy grows.',
+  'ELL & ESL': 'Language learning is deeply personal work. These tools were built by educators who understand the particular challenges and joys of supporting multilingual students, bridging languages, cultures, and confidence.',
+  'Elementary': 'Teaching young learners requires a special kind of imagination. These apps are playful, patient, and purposeful, built by educators who understand that the early years set the foundation for everything that follows.',
+  'Fairfax': 'More than 1,100 Fairfax County Public Schools students from 25 high schools designed AI-powered solutions to real-world problems as part of the Seize the Moment Student AI Innovation Challenge, shaping the future of their communities one app at a time.',
+  'Family & Community': 'Learning doesn\'t stop at the school door. These tools help families participate in their children\'s education, bridging the gap between home and classroom with warmth and practical support.',
+  'Flowers': 'See how individuals across the Playlab community are building to reflect their unique contexts, roles, and goals. Each app here tells a different story, a teacher solving a problem no one else saw, a student reimagining how learning could work, a coach finding new ways to support their team.',
+  'Gamified Learning': 'Points, quests, narratives, challenges, educators have found countless ways to make learning feel like play. These apps prove that rigor and fun aren\'t opposites; they\'re collaborators.',
   'Ghana': 'Ghana\'s educator community has embraced app-building with remarkable energy. From curriculum-aligned subject tools to creative student projects, these apps represent one of the most vibrant collections on the platform.',
-  'Health & PE': 'Bodies, minds, nutrition, movement — health education covers enormous ground. These apps reflect educators who see wellness holistically, building tools that meet students in the fullness of who they are.',
-  'High School': 'High school students are ready for complexity. These tools rise to that — offering sophisticated support for advanced coursework, college prep, and the social-emotional challenges of adolescence.',
-  'Higher Ed': 'College and university educators are building for a different kind of learner — self-directed, time-pressed, and hungry for depth. These apps bring AI into higher education with the rigor the context demands.',
-  'Illustrative Mathematics': 'IM educators know their curriculum inside and out. These apps extend that expertise into new territory — interactive practice, lesson internalization, and student support that stays true to the IM philosophy.',
-  'KIPP': 'KIPP educators build with urgency and heart. These apps carry that energy — tools designed for specific schools, specific grade levels, and the specific belief that every student deserves an excellent education.',
+  'Health & PE': 'Bodies, minds, nutrition, movement, health education covers enormous ground. These apps reflect educators who see wellness holistically, building tools that meet students in the fullness of who they are.',
+  'High School': 'High school students are ready for complexity. These tools rise to that, offering sophisticated support for advanced coursework, college prep, and the social-emotional challenges of adolescence.',
+  'Higher Ed': 'College and university educators are building for a different kind of learner, self-directed, time-pressed, and hungry for depth. These apps bring AI into higher education with the rigor the context demands.',
+  'Illustrative Mathematics': 'IM educators know their curriculum inside and out. These apps extend that expertise into new territory, interactive practice, lesson internalization, and student support that stays true to the IM philosophy.',
+  'KIPP': 'KIPP educators build with urgency and heart. These apps carry that energy, tools designed for specific schools, specific grade levels, and the specific belief that every student deserves an excellent education.',
   'Leading Educators': 'The Leading Educators community brings a coaching lens to everything they build. These apps support not just students but the professional growth of the educators who serve them.',
-  'Lesson Planning': 'Behind every great lesson is a plan. These tools help educators think through sequence, differentiation, and timing — turning the invisible work of preparation into something more structured and shareable.',
+  'Lesson Planning': 'Behind every great lesson is a plan. These tools help educators think through sequence, differentiation, and timing, turning the invisible work of preparation into something more structured and shareable.',
   'Math': 'Math education is a space of enormous creativity right now. From visual models to AI tutors to curriculum-aligned practice, this collection captures the community\'s many approaches to helping students think mathematically.',
-  'Middle School': 'Middle schoolers are figuring out who they are. These tools meet that energy — engaging, age-appropriate, and built by educators who understand the unique developmental moment of early adolescence.',
-  'Music & Performing Arts': 'Music theory, performance practice, creative composition — educators in the arts are proving that AI tools can enhance rather than replace the deeply human experience of making music and art together.',
+  'Middle School': 'Middle schoolers are figuring out who they are. These tools meet that energy, engaging, age-appropriate, and built by educators who understand the unique developmental moment of early adolescence.',
+  'Music & Performing Arts': 'Music theory, performance practice, creative composition, educators in the arts are proving that AI tools can enhance rather than replace the deeply human experience of making music and art together.',
   'NYC': 'New York City\'s educators bring the energy and diversity of the city into everything they build. These apps reflect classrooms where dozens of languages, cultures, and perspectives converge every day.',
-  'Niche & Emerging': 'The edges are where innovation happens. These apps explore topics that don\'t fit neatly into traditional categories — unusual subjects, experimental formats, and ideas that might define tomorrow\'s classrooms.',
-  'Operations and Management': 'The work that keeps schools running rarely gets the spotlight. These tools tackle scheduling, communications, HR, and the thousand small decisions that shape whether a school day runs smoothly — built by the people who live that complexity every day.',
-  'Professional Development': 'Educators building tools for other educators. These apps support coaching, reflection, and growth — the kind of professional learning that actually changes practice, not just checks a compliance box.',
-  'Project-Based Learning': 'PBL demands a different kind of tool — one that supports open-ended inquiry, student agency, and real-world connection. These apps help educators and students design projects that matter.',
-  'Reading Intervention': 'When a student struggles to read, the stakes are high. These tools are built by educators who feel that urgency — targeted, evidence-informed approaches to helping every student become a reader.',
-  'Religious Studies': 'Faith, ethics, scripture, and theology — educators in religious communities have built tools that honor the depth and sensitivity of spiritual education while embracing what technology makes newly possible.',
-  'SEL & Wellbeing': 'Social-emotional learning isn\'t a curriculum add-on; it\'s the foundation. These tools help students develop self-awareness, empathy, and resilience — built by educators who know that wellbeing comes first.',
-  'School Leadership': 'Principals, coaches, and district leaders are building too. These tools tackle the operational and strategic challenges of running schools — from observation protocols to data dashboards to communication aids.',
-  'Science & STEM': 'From biology to physics to engineering design, STEM educators are building tools that make abstract concepts tangible. The range here is extraordinary — reflecting the breadth of scientific curiosity itself.',
-  'Social Studies & History': 'History is never just one story. These apps help students engage with primary sources, multiple perspectives, and the messy complexity of how societies work — past and present.',
-  'Special Education': 'Every IEP tells a different story. These tools are built by educators who write those stories every day — apps that flex to meet individual needs with patience, precision, and genuine care.',
-  'Student-Built Apps': 'When students become builders, something shifts. These apps were created by learners themselves — proof that the best way to understand technology is to make something meaningful with it.',
-  'Study Partners': 'Late nights, tough concepts, upcoming exams — these AI companions meet students in their moments of need. Each one offers a slightly different approach to the ancient art of studying together.',
+  'Niche & Emerging': 'The edges are where innovation happens. These apps explore topics that don\'t fit neatly into traditional categories, unusual subjects, experimental formats, and ideas that might define tomorrow\'s classrooms.',
+  'Operations and Management': 'The work that keeps schools running rarely gets the spotlight. These tools tackle scheduling, communications, HR, and the thousand small decisions that shape whether a school day runs smoothly, built by the people who live that complexity every day.',
+  'Professional Development': 'Educators building tools for other educators. These apps support coaching, reflection, and growth, the kind of professional learning that actually changes practice, not just checks a compliance box.',
+  'Project-Based Learning': 'PBL demands a different kind of tool, one that supports open-ended inquiry, student agency, and real-world connection. These apps help educators and students design projects that matter.',
+  'Reading Intervention': 'When a student struggles to read, the stakes are high. These tools are built by educators who feel that urgency, targeted, evidence-informed approaches to helping every student become a reader.',
+  'Religious Studies': 'Faith, ethics, scripture, and theology, educators in religious communities have built tools that honor the depth and sensitivity of spiritual education while embracing what technology makes newly possible.',
+  'SEL & Wellbeing': 'Social-emotional learning isn\'t a curriculum add-on; it\'s the foundation. These tools help students develop self-awareness, empathy, and resilience, built by educators who know that wellbeing comes first.',
+  'School Leadership': 'Principals, coaches, and district leaders are building too. These tools tackle the operational and strategic challenges of running schools, from observation protocols to data dashboards to communication aids.',
+  'Science & STEM': 'From biology to physics to engineering design, STEM educators are building tools that make abstract concepts tangible. The range here is extraordinary, reflecting the breadth of scientific curiosity itself.',
+  'Social Studies & History': 'History is never just one story. These apps help students engage with primary sources, multiple perspectives, and the messy complexity of how societies work, past and present.',
+  'Special Education': 'Every IEP tells a different story. These tools are built by educators who write those stories every day, apps that flex to meet individual needs with patience, precision, and genuine care.',
+  'Student-Built Apps': 'When students become builders, something shifts. These apps were created by learners themselves, proof that the best way to understand technology is to make something meaningful with it.',
+  'Study Partners': 'Late nights, tough concepts, upcoming exams, these AI companions meet students in their moments of need. Each one offers a slightly different approach to the ancient art of studying together.',
   'Teacher Tools': 'The largest collection in the garden, and for good reason. Educators are prolific builders when given the right tools. From admin shortcuts to pedagogical experiments, this is where teacher ingenuity lives.',
-  'Texas': 'Everything\'s bigger in Texas, including the ambition of its educators. These apps span subjects, grade levels, and contexts — a snapshot of one state\'s growing community of builder-teachers.',
-  'Tutoring & Practice': 'Practice makes permanent, not perfect — and these tools know the difference. Each one offers patient, adaptive support that meets students where they are and helps them build fluency through repetition that feels purposeful rather than punishing.',
-  'World Languages': 'Language connects us. These apps help students learn Spanish, French, Mandarin, Arabic, and more — each one reflecting a different pedagogical tradition and a shared belief in the power of multilingualism.',
-  'Writing Coaches': 'Writing is thinking made visible. These AI coaches help students at every stage of the writing process — brainstorming, drafting, revising — while preserving the student\'s own voice and ideas.',
+  'Texas': 'Everything\'s bigger in Texas, including the ambition of its educators. These apps span subjects, grade levels, and contexts, a snapshot of one state\'s growing community of builder-teachers.',
+  'Tutoring & Practice': 'Practice makes permanent, not perfect, and these tools know the difference. Each one offers patient, adaptive support that meets students where they are and helps them build fluency through repetition that feels purposeful rather than punishing.',
+  'World Languages': 'Language connects us. These apps help students learn Spanish, French, Mandarin, Arabic, and more, each one reflecting a different pedagogical tradition and a shared belief in the power of multilingualism.',
+  'Writing Coaches': 'Writing is thinking made visible. These AI coaches help students at every stage of the writing process, brainstorming, drafting, revising, while preserving the student\'s own voice and ideas.',
 };
 
 // Colors drawn from the Playlab Gardens illustrations
@@ -136,11 +136,11 @@ const ICON_COLORS = [
 
 // Seed collection metadata
 const SEED_COLLECTION_META: Record<string, { id: string; image: string; color: string; description: string }> = {
-  'Classroom Essentials': { id: 'classroom-essentials', image: 'images/seed-1.webp', color: '#e74c3c', description: 'Starter templates for the tools teachers reach for every day — lesson plans, exit tickets, bellringers, sub plans, and newsletter drafts that save hours of prep time.' },
+  'Classroom Essentials': { id: 'classroom-essentials', image: 'images/seed-1.webp', color: '#e74c3c', description: 'Starter templates for the tools teachers reach for every day, lesson plans, exit tickets, bellringers, sub plans, and newsletter drafts that save hours of prep time.' },
   'Coaching and Feedback': { id: 'coaching-feedback', image: 'images/seed-2.webp', color: '#9b59b6', description: 'Templates for instructional coaches and school leaders to prepare observation debriefs, write actionable teacher feedback, and plan structured coaching conversations.' },
-  'Operations and Management': { id: 'operations-management', image: 'images/seed-4.webp', color: '#f1c40f', description: 'Starter apps for the behind-the-scenes work that keeps schools running — onboarding guides, meeting agendas, policy drafters, event planners, and grant proposals.' },
-  'Student Facing Apps': { id: 'student-facing', image: 'images/seed-3.webp', color: '#2654d4', description: 'Templates students use directly — study partners, homework helpers, career explorers, and practice tools across math, science, reading, and writing.' },
-  'The Whole Child': { id: 'whole-child', image: 'images/seed-5.webp', color: '#e84393', description: 'Seeds focused on the complete student experience — SEL check-ins, digital citizenship, health and wellness, parent conference prep, and community resource connectors.' },
+  'Operations and Management': { id: 'operations-management', image: 'images/seed-4.webp', color: '#f1c40f', description: 'Starter apps for the behind-the-scenes work that keeps schools running, onboarding guides, meeting agendas, policy drafters, event planners, and grant proposals.' },
+  'Student Facing Apps': { id: 'student-facing', image: 'images/seed-3.webp', color: '#2654d4', description: 'Templates students use directly, study partners, homework helpers, career explorers, and practice tools across math, science, reading, and writing.' },
+  'The Whole Child': { id: 'whole-child', image: 'images/seed-5.webp', color: '#e84393', description: 'Seeds focused on the complete student experience, SEL check-ins, digital citizenship, health and wellness, parent conference prep, and community resource connectors.' },
 };
 
 const SEED_COLLECTION_ORDER = [
@@ -434,7 +434,7 @@ async function fetchSeedCollections(): Promise<SeedCollection[]> {
       filter = { property: 'Active', checkbox: { equals: true } };
     }
   } catch {
-    // ignore — proceed without filter
+    // ignore, proceed without filter
   }
 
   const rows = await fetchAllRows(SEEDS_DB_ID, filter);
@@ -509,7 +509,7 @@ async function fetchCultivators(): Promise<Cultivator[]> {
       const blogLink = (props['Link to Blog']?.rich_text || []).map((t: any) => t.plain_text).join('').trim();
       const month = (props['Month']?.rich_text || []).map((t: any) => t.plain_text).join('').trim();
 
-      // Headshot — get the URL from files property
+      // Headshot, get the URL from files property
       let headshotUrl = '';
       const headshot = props['Headshot']?.files || [];
       if (headshot.length > 0) {

@@ -3680,7 +3680,7 @@ img {
     z-index: 100;
   }
 
-  .nav-links.open {
+  .nav-links.mobile-open {
     display: flex;
   }
 

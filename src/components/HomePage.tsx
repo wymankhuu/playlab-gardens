@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { Collection, App } from '@/lib/notion';
 import { getCollectionIcon, LucideIcon } from '@/lib/icons';
 import SearchOverlay from '@/components/SearchOverlay';
+import QRModal from '@/components/QRModal';
+import ShareButton from '@/components/ShareButton';
 
 const SCROLL_OFFSET = 140;
 const MAX_PREVIEW_TAGS = 3;
@@ -156,6 +158,7 @@ function CollectionSection({
   onOpenApp: (app: App) => void;
 }) {
   const [visible, setVisible] = useState(false);
+  const [showQR, setShowQR] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -217,9 +220,25 @@ function CollectionSection({
           >
             <LucideIcon name={iconName} size={18} />
           </div>
-          <h3 className="collection-section-name">{collection.name}</h3>
+          <h3 className="collection-section-name">{collection.name.replace(/\//g, '&')}</h3>
         </div>
         <div className="collection-section-actions">
+          <button
+            className="qr-code-btn"
+            data-url={collectionUrl}
+            title="Generate QR code"
+            aria-label="Generate QR code"
+            onClick={() => setShowQR(true)}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="8" height="8" rx="1" />
+              <rect x="14" y="2" width="8" height="8" rx="1" />
+              <rect x="2" y="14" width="8" height="8" rx="1" />
+              <rect x="14" y="14" width="4" height="4" />
+              <path d="M22 14h-2v4h-4v4h4a2 2 0 0 0 2-2z" />
+            </svg>
+          </button>
+          <ShareButton url={typeof window !== 'undefined' ? `${window.location.origin}${collectionUrl}` : collectionUrl} />
           <Link href={collectionUrl} className="collection-section-viewall">
             View all &rarr;
           </Link>
@@ -244,6 +263,13 @@ function CollectionSection({
         </div>
       ) : (
         <div className="collection-section-empty">Apps coming soon</div>
+      )}
+      {showQR && (
+        <QRModal
+          url={typeof window !== 'undefined' ? `${window.location.origin}${collectionUrl}` : collectionUrl}
+          name={collection.name}
+          onClose={() => setShowQR(false)}
+        />
       )}
     </section>
   );
@@ -367,7 +393,7 @@ export default function HomePage({ collections, onOpenApp }: HomePageProps) {
           </h1>
           <p className="text-accent hero-tagline">
             Every app here was built by someone who knows their context best. Browse
-            hundreds of tools grown by teachers, students, and leaders &mdash; each one
+            hundreds of tools grown by teachers, students, and leaders, each one
             shaped by the specific needs of a particular classroom, school, or community.
             No two look alike, because no two contexts are the same.
           </p>
@@ -427,7 +453,7 @@ export default function HomePage({ collections, onOpenApp }: HomePageProps) {
                       data-collection-id={c.id}
                       onClick={handlePillClick}
                     >
-                      {c.name}{' '}
+                      {c.name.replace(/\//g, '&')}{' '}
                       <span className="section-pill-count">{c.appCount}</span>
                     </a>
                   ))}

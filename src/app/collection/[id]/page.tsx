@@ -24,19 +24,20 @@ export async function generateMetadata({
   if (!collection) {
     return { title: 'Collection Not Found | Playlab Gardens' };
   }
+  const displayName = collection.name.replace(/\//g, '&');
   const description =
     collection.description ||
-    `Explore ${collection.appCount} apps in the ${collection.name} collection.`;
+    `Explore ${collection.appCount} apps in the ${displayName} collection.`;
   return {
-    title: `${collection.name} | Playlab Gardens`,
+    title: `${displayName} | Playlab Gardens`,
     description,
     openGraph: {
-      title: `${collection.name} | Playlab Gardens`,
+      title: `${displayName} | Playlab Gardens`,
       description,
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${collection.name} | Playlab Gardens`,
+      title: `${displayName} | Playlab Gardens`,
       description,
     },
   };

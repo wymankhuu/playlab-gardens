@@ -5,18 +5,18 @@ import SeedsClient from './SeedsClient';
 export const metadata: Metadata = {
   title: 'Seeds | Playlab Gardens',
   description:
-    "These aren't finished apps — they're starting points. Pick one, add your expertise, your curriculum, your students' needs, and nurture it into something only you could grow.",
+    "These aren't finished apps, they're starting points. Pick one, add your expertise, your curriculum, your students' needs, and nurture it into something only you could grow.",
   openGraph: {
     title: 'Seeds | Playlab Gardens',
     description:
-      "These aren't finished apps — they're starting points. Pick one, add your expertise, your curriculum, your students' needs, and nurture it into something only you could grow.",
+      "These aren't finished apps, they're starting points. Pick one, add your expertise, your curriculum, your students' needs, and nurture it into something only you could grow.",
     images: ['https://playlabgardens.com/images/beat-1.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Seeds | Playlab Gardens',
     description:
-      "These aren't finished apps — they're starting points. Pick one, add your expertise, your curriculum, your students' needs, and nurture it into something only you could grow.",
+      "These aren't finished apps, they're starting points. Pick one, add your expertise, your curriculum, your students' needs, and nurture it into something only you could grow.",
     images: ['https://playlabgardens.com/images/beat-1.webp'],
   },
 };
@@ -32,7 +32,7 @@ export default async function SeedsPage() {
         <div className="seeds-hero-content container">
           <h1 className="seeds-hero-title">Seeds</h1>
           <p className="seeds-hero-desc">
-            These aren&apos;t finished apps — they&apos;re starting points. Pick
+            These aren&apos;t finished apps, they&apos;re starting points. Pick
             one, add your expertise, your curriculum, your students&apos; needs,
             and nurture it into something only you could grow.
           </p>

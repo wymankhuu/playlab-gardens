@@ -33,7 +33,7 @@ export default async function CultivatorsPage() {
           <p className="cultivators-hero-desc">
             Behind every app is a person who saw something missing and decided to
             build it. These are the educators, students, and leaders whose work
-            is shaping what Playlab becomes — one tool, one classroom, one
+            is shaping what Playlab becomes, one tool, one classroom, one
             community at a time.
           </p>
         </div>
@@ -49,7 +49,7 @@ export default async function CultivatorsPage() {
             </span>
             <h2 className="cultivators-spotlight-title">March 2026</h2>
             <p className="cultivators-spotlight-desc">
-              Three educators building at the edges — where data meets equity,
+              Three educators building at the edges, where data meets equity,
               where AI meets language, and where analog classrooms meet digital
               preparation. Meet this month&apos;s cultivators.
             </p>

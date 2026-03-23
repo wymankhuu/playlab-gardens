@@ -3,6 +3,11 @@
 import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import type { Collection, App } from '@/lib/notion';
+import QRModal from '@/components/QRModal';
+import ShareButton from '@/components/ShareButton';
+import { loadStarCounts } from '@/lib/stars';
+import { useAdminMode } from './AdminPanel';
+import AppCardComponent from './AppCard';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -128,41 +133,7 @@ function getInitials(name: string): string {
     .slice(0, MAX_INITIALS);
 }
 
-// ---------------------------------------------------------------------------
-// Star helpers (localStorage)
-// ---------------------------------------------------------------------------
-const STARS_KEY = 'playlab-gardens-stars';
 
-function getStarredApps(): Record<string, number> {
-  try {
-    return JSON.parse(localStorage.getItem(STARS_KEY) || '{}');
-  } catch {
-    return {};
-  }
-}
-
-function isStarred(appId: string): boolean {
-  return !!getStarredApps()[appId];
-}
-
-function toggleStar(appId: string): boolean {
-  const stars = getStarredApps();
-  const nowStarred = !stars[appId];
-  if (nowStarred) {
-    stars[appId] = Date.now();
-  } else {
-    delete stars[appId];
-  }
-  localStorage.setItem(STARS_KEY, JSON.stringify(stars));
-
-  fetch('/api/stars', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ appId, action: nowStarred ? 'star' : 'unstar' }),
-  }).catch(() => {});
-
-  return nowStarred;
-}
 
 // ---------------------------------------------------------------------------
 // Lucide icon SVG component (inline)
@@ -201,159 +172,7 @@ function SearchIcon() {
   );
 }
 
-// ---------------------------------------------------------------------------
-// QR Modal
-// ---------------------------------------------------------------------------
-function QRModal({
-  url,
-  name,
-  onClose,
-}: {
-  url: string;
-  name: string;
-  onClose: () => void;
-}) {
-  const [copyText, setCopyText] = useState('Copy Link');
-  const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}&margin=10`;
-  const downloadName = `qr-${name.toLowerCase().replace(/\s+/g, '-')}.png`;
-
-  useEffect(() => {
-    function handleKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose();
-    }
-    document.addEventListener('keydown', handleKey);
-    return () => document.removeEventListener('keydown', handleKey);
-  }, [onClose]);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(url).then(() => {
-      setCopyText('Copied!');
-      setTimeout(() => setCopyText('Copy Link'), COPY_FEEDBACK_MS);
-    });
-  };
-
-  return (
-    <div
-      className="qr-modal-overlay"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-    >
-      <div className="qr-modal">
-        <div className="qr-modal-header">
-          <h3 className="qr-modal-title">{name}</h3>
-          <button className="qr-modal-close" aria-label="Close" onClick={onClose}>
-            &#10005;
-          </button>
-        </div>
-        <div className="qr-modal-body">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={qrImageUrl}
-            alt={`QR code for ${name}`}
-            className="qr-modal-image"
-            width="300"
-            height="300"
-          />
-          <p className="qr-modal-url">{url}</p>
-        </div>
-        <div className="qr-modal-actions">
-          <a href={qrImageUrl} download={downloadName} className="qr-download-btn">
-            Download QR
-          </a>
-          <button className="qr-copy-btn" onClick={handleCopy}>
-            {copyText}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// App Card
-// ---------------------------------------------------------------------------
-function AppCard({
-  app,
-  accentColor,
-  onClick,
-}: {
-  app: App;
-  accentColor: string;
-  onClick: () => void;
-}) {
-  const [starred, setStarred] = useState(false);
-
-  useEffect(() => {
-    setStarred(isStarred(app.id));
-  }, [app.id]);
-
-  const desc = generateFallbackDescription(app);
-  const creatorName = app.creator || 'Playlab Creator';
-  const initials = app.creator ? getInitials(app.creator) : 'P';
-
-  const handleStar = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const nowStarred = toggleStar(app.id);
-    setStarred(nowStarred);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      onClick();
-    }
-  };
-
-  const tagsPills = app.tags && app.tags.length > 0 ? app.tags.slice(0, MAX_PREVIEW_TAGS) : [];
-  const extraTags = app.tags ? app.tags.length - MAX_PREVIEW_TAGS : 0;
-
-  return (
-    <div
-      className="app-card"
-      data-app-id={app.id}
-      tabIndex={0}
-      role="button"
-      aria-label={`View ${app.name}`}
-      onClick={onClick}
-      onKeyDown={handleKeyDown}
-      style={{ '--collection-accent': accentColor } as React.CSSProperties}
-    >
-      <button
-        className={`app-star-btn${starred ? ' starred' : ''}`}
-        data-app-id={app.id}
-        aria-label="Star this app"
-        title="Star this app"
-        onClick={handleStar}
-      >
-        <span className="star-icon">{starred ? '\u2605' : '\u2606'}</span>
-        <span className="star-count" />
-      </button>
-      <div className="app-card-body">
-        <div className="app-card-creator">
-          <span className="app-card-avatar" style={{ backgroundColor: accentColor }}>
-            {initials}
-          </span>
-          {creatorName}
-        </div>
-        <div className="app-card-name">{app.name}</div>
-        <div className="app-card-desc">{shortDesc(desc)}</div>
-        {tagsPills.length > 0 && (
-          <div className="app-card-tags">
-            {tagsPills.map((tag) => (
-              <span key={tag} className="app-tag">
-                {tag}
-              </span>
-            ))}
-            {extraTags > 0 && (
-              <span className="app-tag app-tag--more">+{extraTags}</span>
-            )}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
+// QR Modal is now imported from @/components/QRModal
 
 // ---------------------------------------------------------------------------
 // Filter Dropdown
@@ -440,7 +259,6 @@ export default function CollectionPageComponent({
   const [debouncedQuery, setDebouncedQuery] = useState('');
   const [activeFilters, setActiveFilters] = useState<Set<string>>(new Set());
   const [showQR, setShowQR] = useState(false);
-  const [shareToast, setShareToast] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchTimeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
@@ -639,7 +457,7 @@ export default function CollectionPageComponent({
               <LucideIcon name={iconName} size={28} />
             </div>
             <div className="collection-hero-text">
-              <h1>{collection.name}</h1>
+              <h1>{collection.name.replace(/\//g, '&')}</h1>
               {collection.description && (
                 <p className="collection-hero-desc">{collection.description}</p>
               )}
@@ -654,7 +472,7 @@ export default function CollectionPageComponent({
                 <span>{orgName}</span>
               </span>
             )}
-            <div className="collection-hero-share">
+            <div className="collection-hero-actions">
               <button
                 className="qr-code-btn"
                 title="Generate QR code"
@@ -663,15 +481,7 @@ export default function CollectionPageComponent({
               >
                 <LucideIcon name="qr-code" size={18} />
               </button>
-              <button
-                className={`share-link-btn${shareToast ? ' copied' : ''}`}
-                title="Copy share link"
-                aria-label="Copy share link"
-                onClick={handleShare}
-              >
-                <LucideIcon name="link" size={18} />
-                {shareToast && <span className="copied-toast">Link copied!</span>}
-              </button>
+              <ShareButton url={typeof window !== 'undefined' ? window.location.href : ''} />
             </div>
           </div>
 
