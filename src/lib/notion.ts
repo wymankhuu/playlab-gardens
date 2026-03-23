@@ -409,7 +409,7 @@ async function fetchCollections(): Promise<Collection[]> {
       id: s.name.toLowerCase().replace(/\s+/g, '-'),
       name: s.name,
       url: s.remixUrl || '',
-      creator: s.creator || '🌱 Seed App',
+      creator: s.creator || 'Seed App',
       role: '',
       description: s.description,
       usage: '',

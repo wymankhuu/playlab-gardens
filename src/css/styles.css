@@ -1772,13 +1772,13 @@ img {
 .preview-app-card.admin-pinned {
   position: relative;
 }
-.app-card.admin-pinned::after,
-.preview-app-card.admin-pinned::after {
-  content: '\1F4CC';
+.admin-pin-badge {
   position: absolute;
   top: 6px;
   left: 6px;
-  font-size: 0.7rem;
+  z-index: 2;
+  color: var(--deep-forest);
+  opacity: 0.45;
 }
 
 .admin-missing-dot {

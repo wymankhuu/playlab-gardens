@@ -4,6 +4,7 @@ import { useState, useCallback, useRef } from 'react';
 import type { App } from '@/lib/notion';
 import StarButton from './StarButton';
 import QuickEditPopover from './QuickEditPopover';
+import { LucideIcon } from '@/lib/icons';
 
 const MAX_PREVIEW_TAGS = 3;
 const MAX_INITIALS = 2;
@@ -160,6 +161,13 @@ export default function PreviewAppCard({
       onKeyDown={handleKeyDown}
       style={{ position: 'relative' }}
     >
+      {/* Admin pin badge */}
+      {isAdmin && app.pinned && (
+        <span className="admin-pin-badge">
+          <LucideIcon name="Pin" size={14} />
+        </span>
+      )}
+
       {/* Admin quick-edit pencil */}
       {isAdmin && missing.count > 0 && (
         <button
