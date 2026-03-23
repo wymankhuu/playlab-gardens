@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getCollections, getCollection } from '@/lib/notion';
-import CollectionFilter from '@/components/CollectionFilter';
+import CollectionPage from '@/components/CollectionPage';
 
 // ---------------------------------------------------------------------------
 // Static params — pre-render every collection page at build time
@@ -24,24 +24,28 @@ export async function generateMetadata({
   if (!collection) {
     return { title: 'Collection Not Found | Playlab Gardens' };
   }
+  const description =
+    collection.description ||
+    `Explore ${collection.appCount} apps in the ${collection.name} collection.`;
   return {
     title: `${collection.name} | Playlab Gardens`,
-    description:
-      collection.description ||
-      `Explore ${collection.appCount} apps in the ${collection.name} collection.`,
+    description,
     openGraph: {
       title: `${collection.name} | Playlab Gardens`,
-      description:
-        collection.description ||
-        `Explore ${collection.appCount} apps in the ${collection.name} collection.`,
+      description,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${collection.name} | Playlab Gardens`,
+      description,
     },
   };
 }
 
 // ---------------------------------------------------------------------------
-// Page component
+// Page component (Server Component)
 // ---------------------------------------------------------------------------
-export default async function CollectionPage({
+export default async function CollectionDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>;
@@ -74,59 +78,5 @@ export default async function CollectionPage({
     );
   }
 
-  // Serialize apps for the client component
-  const clientApps = collection.apps.map((app) => ({
-    id: app.id,
-    name: app.name,
-    description: app.description,
-    url: app.url,
-    creator: app.creator,
-    role: app.role,
-    sessions: app.sessions,
-    tags: app.tags,
-  }));
-
-  return (
-    <>
-      {/* Collection Hero */}
-      <section
-        className="collection-hero"
-        style={{ '--accent': collection.iconColor } as React.CSSProperties}
-      >
-        <div className="collection-hero-shapes">
-          <div className="collection-hero-shape collection-hero-shape-1" />
-          <div className="collection-hero-shape collection-hero-shape-2" />
-        </div>
-        <div className="collection-hero-content container">
-          <Link href="/" className="collection-breadcrumb">
-            &larr; All Collections
-          </Link>
-          <div className="collection-hero-header">
-            <div
-              className="collection-hero-icon"
-              style={{ backgroundColor: collection.iconColor }}
-            >
-              {collection.iconEmoji || collection.name.charAt(0)}
-            </div>
-            <div className="collection-hero-text">
-              <h1>{collection.name}</h1>
-              {collection.description && (
-                <p className="collection-hero-desc">{collection.description}</p>
-              )}
-            </div>
-          </div>
-          <div className="collection-hero-meta">
-            <span className="collection-hero-stat">
-              {collection.appCount} app{collection.appCount !== 1 ? 's' : ''}
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* Apps Grid with Client-Side Filtering */}
-      <div className="container section">
-        <CollectionFilter apps={clientApps} accentColor={collection.iconColor} />
-      </div>
-    </>
-  );
+  return <CollectionPage collection={collection} />;
 }
