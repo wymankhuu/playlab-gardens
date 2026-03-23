@@ -54,6 +54,8 @@ interface AppCardProps {
   isAdmin?: boolean;
   onOpenApp: (app: App) => void;
   onPin?: (app: App) => void;
+  isSelected?: boolean;
+  onToggleSelect?: (appId: string) => void;
 }
 
 export default function AppCard({
@@ -62,6 +64,8 @@ export default function AppCard({
   isAdmin = false,
   onOpenApp,
   onPin,
+  isSelected = false,
+  onToggleSelect,
 }: AppCardProps) {
   const [pinning, setPinning] = useState(false);
 
@@ -129,7 +133,7 @@ export default function AppCard({
 
   return (
     <div
-      className={`app-card${isAdmin && missing.count > 0 ? ' admin-missing' : ''}`}
+      className={`app-card${isAdmin && missing.count > 0 ? ' admin-missing' : ''}${isSelected ? ' bulk-selected' : ''}`}
       data-app-id={app.id}
       tabIndex={0}
       role="button"
@@ -138,6 +142,21 @@ export default function AppCard({
       onKeyDown={handleKeyDown}
       style={{ '--collection-accent': accentColor } as React.CSSProperties}
     >
+      {/* Bulk select checkbox (admin mode) */}
+      {isAdmin && onToggleSelect && (
+        <input
+          type="checkbox"
+          className="bulk-select-checkbox"
+          checked={isSelected}
+          aria-label={`Select ${app.name}`}
+          onClick={(e) => e.stopPropagation()}
+          onChange={(e) => {
+            e.stopPropagation();
+            onToggleSelect(app.id);
+          }}
+        />
+      )}
+
       {/* Admin missing-fields dot */}
       {isAdmin && missing.count > 0 && (
         <span

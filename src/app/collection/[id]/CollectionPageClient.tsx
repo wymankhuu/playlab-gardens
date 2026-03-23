@@ -5,11 +5,21 @@ import type { Collection, App } from '@/lib/notion';
 import CollectionPage from '@/components/CollectionPage';
 import AppDrawer from '@/components/AppDrawer';
 
-interface CollectionPageClientProps {
-  collection: Collection;
+export interface CollectionSummary {
+  id: string;
+  name: string;
+  iconColor: string;
 }
 
-export default function CollectionPageClient({ collection: initialCollection }: CollectionPageClientProps) {
+interface CollectionPageClientProps {
+  collection: Collection;
+  allCollectionSummaries?: CollectionSummary[];
+}
+
+export default function CollectionPageClient({
+  collection: initialCollection,
+  allCollectionSummaries = [],
+}: CollectionPageClientProps) {
   const [collection, setCollection] = useState(initialCollection);
   const [drawerApp, setDrawerApp] = useState<App | null>(null);
 
@@ -36,7 +46,11 @@ export default function CollectionPageClient({ collection: initialCollection }: 
 
   return (
     <>
-      <CollectionPage collection={collection} onOpenApp={handleOpenApp} />
+      <CollectionPage
+        collection={collection}
+        allCollectionSummaries={allCollectionSummaries}
+        onOpenApp={handleOpenApp}
+      />
       <AppDrawer
         app={drawerApp}
         allApps={collection.apps}

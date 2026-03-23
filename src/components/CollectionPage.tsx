@@ -9,6 +9,7 @@ import { loadStarCounts } from '@/lib/stars';
 import { useAdminMode } from './AdminPanel';
 import AppCardComponent from './AppCard';
 import { LucideIcon, getCollectionIcon } from '@/lib/icons';
+import type { CollectionSummary } from '@/app/collection/[id]/CollectionPageClient';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -130,11 +131,13 @@ function FilterDropdown({
 // ---------------------------------------------------------------------------
 export interface CollectionPageProps {
   collection: Collection;
+  allCollectionSummaries?: CollectionSummary[];
   onOpenApp?: (app: App) => void;
 }
 
 export default function CollectionPageComponent({
   collection,
+  allCollectionSummaries = [],
   onOpenApp,
 }: CollectionPageProps) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -145,6 +148,60 @@ export default function CollectionPageComponent({
   const searchTimeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const { isAdmin } = useAdminMode();
+
+  // --- Bulk selection state (admin only) ---
+  const [selectedAppIds, setSelectedAppIds] = useState<Set<string>>(new Set());
+  const [bulkActionInProgress, setBulkActionInProgress] = useState(false);
+
+  // Clear selection when leaving admin mode
+  useEffect(() => {
+    if (!isAdmin) setSelectedAppIds(new Set());
+  }, [isAdmin]);
+
+  const handleToggleSelect = useCallback((appId: string) => {
+    setSelectedAppIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(appId)) {
+        next.delete(appId);
+      } else {
+        next.add(appId);
+      }
+      return next;
+    });
+  }, []);
+
+  const handleClearSelection = useCallback(() => {
+    setSelectedAppIds(new Set());
+  }, []);
+
+  const handleBulkPin = useCallback(async (pin: boolean) => {
+    if (selectedAppIds.size === 0) return;
+    setBulkActionInProgress(true);
+    const password = sessionStorage.getItem('playlab-admin-pwd') || '';
+    const appsToPin = collection.apps.filter((a) => selectedAppIds.has(a.id));
+    const results = await Promise.allSettled(
+      appsToPin.map((app) => {
+        const collectionName = app.tags && app.tags.length > 0 ? app.tags[0] : '';
+        return fetch('/api/admin-pin', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            password,
+            appName: app.name,
+            pinned: pin,
+            collectionName,
+          }),
+        });
+      })
+    );
+    const failed = results.filter((r) => r.status === 'rejected').length;
+    if (failed > 0) {
+      alert(`${failed} of ${appsToPin.length} operations failed.`);
+    }
+    setSelectedAppIds(new Set());
+    setBulkActionInProgress(false);
+    window.location.reload();
+  }, [selectedAppIds, collection.apps]);
 
   // --- Load star counts on mount ---
   useEffect(() => {
@@ -298,6 +355,40 @@ export default function CollectionPageComponent({
 
   const hasActiveFilters = activeFilters.size > 0 || debouncedQuery.length > 0;
 
+  // --- Compute related collections ---
+  const relatedCollections = useMemo(() => {
+    if (allCollectionSummaries.length === 0) return [];
+
+    // Build a lookup from collection name to summary
+    const summaryByName = new Map<string, CollectionSummary>();
+    for (const s of allCollectionSummaries) {
+      summaryByName.set(s.name, s);
+    }
+
+    // For each app in the current collection, count how many times each
+    // other tag (collection name) appears
+    const tagCounts: Record<string, number> = {};
+    const currentName = collection.name;
+    for (const app of collection.apps) {
+      if (!app.tags) continue;
+      for (const tag of app.tags) {
+        if (tag === currentName) continue;
+        // Only count if it matches a known collection
+        if (summaryByName.has(tag)) {
+          tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+        }
+      }
+    }
+
+    return Object.entries(tagCounts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5)
+      .map(([name, count]) => ({
+        ...summaryByName.get(name)!,
+        sharedCount: count,
+      }));
+  }, [collection.apps, collection.name, allCollectionSummaries]);
+
   // --- Hero image + accent ---
   const heroImage = getHeroImage(collection);
   const accentColor = collection.iconColor || '#00983F';
@@ -446,11 +537,70 @@ export default function CollectionPageComponent({
                 accentColor={accentColor}
                 isAdmin={isAdmin}
                 onOpenApp={handleOpenApp}
+                isSelected={selectedAppIds.has(app.id)}
+                onToggleSelect={isAdmin ? handleToggleSelect : undefined}
               />
             ))}
           </div>
         )}
       </main>
+
+      {/* Bulk Action Bar (admin mode) */}
+      {isAdmin && selectedAppIds.size > 0 && (
+        <div className="bulk-action-bar">
+          <span>{selectedAppIds.size} selected</span>
+          <button
+            onClick={() => {
+              const allIds = filteredApps.map((a) => a.id);
+              if (selectedAppIds.size === allIds.length) {
+                setSelectedAppIds(new Set());
+              } else {
+                setSelectedAppIds(new Set(allIds));
+              }
+            }}
+          >
+            {selectedAppIds.size === filteredApps.length ? 'Deselect All' : 'Select All'}
+          </button>
+          <button
+            disabled={bulkActionInProgress}
+            onClick={() => handleBulkPin(true)}
+          >
+            {bulkActionInProgress ? 'Pinning...' : 'Pin Selected'}
+          </button>
+          <button
+            disabled={bulkActionInProgress}
+            onClick={() => handleBulkPin(false)}
+          >
+            {bulkActionInProgress ? 'Unpinning...' : 'Unpin Selected'}
+          </button>
+          <button onClick={handleClearSelection}>Cancel</button>
+        </div>
+      )}
+
+      {/* Related Collections */}
+      {relatedCollections.length > 0 && (
+        <section className="container related-collections">
+          <h3 className="related-collections-title">Related Collections</h3>
+          <div className="related-collections-list">
+            {relatedCollections.map((rc) => (
+              <Link
+                key={rc.id}
+                href={`/collection/${rc.id}`}
+                className="related-collection-item"
+              >
+                <span
+                  className="related-collection-dot"
+                  style={{ backgroundColor: rc.iconColor || '#00983F' }}
+                />
+                <span className="related-collection-name">{rc.name}</span>
+                <span className="related-collection-count">
+                  {rc.sharedCount} shared app{rc.sharedCount !== 1 ? 's' : ''}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* QR Modal */}
       {showQR && (

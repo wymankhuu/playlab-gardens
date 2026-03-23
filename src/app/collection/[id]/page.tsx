@@ -52,7 +52,10 @@ export default async function CollectionDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const collection = await getCollection(id);
+  const [collection, allCollections] = await Promise.all([
+    getCollection(id),
+    getCollections(),
+  ]);
 
   if (!collection) {
     return (
@@ -79,5 +82,17 @@ export default async function CollectionDetailPage({
     );
   }
 
-  return <CollectionPageClient collection={collection} />;
+  // Build lightweight collection summaries for related-collections sidebar
+  const collectionSummaries = allCollections.map((col) => ({
+    id: col.id,
+    name: col.name,
+    iconColor: col.iconColor,
+  }));
+
+  return (
+    <CollectionPageClient
+      collection={collection}
+      allCollectionSummaries={collectionSummaries}
+    />
+  );
 }

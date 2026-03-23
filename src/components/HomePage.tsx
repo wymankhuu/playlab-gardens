@@ -502,6 +502,19 @@ export default function HomePage({ collections, onOpenApp }: HomePageProps) {
             <span id="collections-count" className="section-count">
               {collections.length} collections
             </span>
+            {isAdmin && (
+              <a
+                className="export-csv-link"
+                href={`/api/export-csv?password=${encodeURIComponent(
+                  typeof window !== 'undefined'
+                    ? sessionStorage.getItem('playlab-admin-pwd') || ''
+                    : ''
+                )}`}
+                download
+              >
+                Export All CSV
+              </a>
+            )}
           </div>
 
           <div id="collections-grid" className="collections-grid">
