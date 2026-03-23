@@ -78,6 +78,50 @@ function groupCollections(collections: Collection[]): Group[] {
 
 // ---- Sub-components ----
 
+function FlowersSpotlight({ collection }: { collection: Collection }) {
+  const [showQR, setShowQR] = useState(false);
+  const flowersUrl = typeof window !== 'undefined' ? `${window.location.origin}/collection/flowers` : '/collection/flowers';
+
+  return (
+    <section className="container" style={{ paddingTop: 32, paddingBottom: 0 }}>
+      <div className="flowers-spotlight" style={{ position: 'relative' }}>
+        <div className="flowers-spotlight-bg" />
+        <div className="flowers-spotlight-actions">
+          <button
+            className="qr-code-btn"
+            title="Generate QR code"
+            aria-label="Generate QR code for Flowers"
+            onClick={(e) => { e.preventDefault(); setShowQR(true); }}
+          >
+            <LucideIcon name="qr-code" size={18} />
+          </button>
+          <ShareButton url={flowersUrl} />
+        </div>
+        <Link href="/collection/flowers" className="flowers-spotlight-link">
+          <div className="flowers-spotlight-content">
+            <span className="flowers-spotlight-badge">Featured Collection</span>
+            <h2 className="flowers-spotlight-title">Flowers</h2>
+            <p className="flowers-spotlight-desc">
+              {collection.description ||
+                'See how individuals across the Playlab community are building to reflect their unique contexts, roles, and goals. A living showcase of what\u2019s possible.'}
+            </p>
+            <span className="flowers-spotlight-cta">
+              Explore {collection.appCount} apps &rarr;
+            </span>
+          </div>
+        </Link>
+      </div>
+      {showQR && (
+        <QRModal
+          url={flowersUrl}
+          name="Flowers"
+          onClose={() => setShowQR(false)}
+        />
+      )}
+    </section>
+  );
+}
+
 function CollectionSection({
   collection,
   isAdmin,
@@ -476,22 +520,7 @@ export default function HomePage({ collections, onOpenApp }: HomePageProps) {
       <main id="main-content">
         {/* Flowers Spotlight */}
         {flowersCollection && (
-          <section className="container" style={{ paddingTop: 32, paddingBottom: 0 }}>
-            <Link href="/collection/flowers" className="flowers-spotlight">
-              <div className="flowers-spotlight-bg" />
-              <div className="flowers-spotlight-content">
-                <span className="flowers-spotlight-badge">Featured Collection</span>
-                <h2 className="flowers-spotlight-title">Flowers</h2>
-                <p className="flowers-spotlight-desc">
-                  {flowersCollection.description ||
-                    'See how individuals across the Playlab community are building to reflect their unique contexts, roles, and goals. A living showcase of what\u2019s possible.'}
-                </p>
-                <span className="flowers-spotlight-cta">
-                  Explore {flowersCollection.appCount} apps &rarr;
-                </span>
-              </div>
-            </Link>
-          </section>
+          <FlowersSpotlight collection={flowersCollection} />
         )}
 
         {/* All Collections */}

@@ -2494,7 +2494,6 @@ img {
 
 /* ---- Flowers Spotlight ---- */
 .flowers-spotlight {
-  display: block;
   position: relative;
   border-radius: 20px;
   overflow: hidden;
@@ -2502,13 +2501,41 @@ img {
   background: linear-gradient(135deg, #3347B8 0%, #C06EB4 50%, #FE6A2E 100%);
   padding: 48px 40px;
   color: #FFFDF7;
-  text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .flowers-spotlight:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 32px rgba(51, 71, 184, 0.2);
+}
+
+.flowers-spotlight-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.flowers-spotlight-actions {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  display: flex;
+  gap: 6px;
+}
+
+.flowers-spotlight-actions .qr-code-btn,
+.flowers-spotlight-actions .share-link-btn {
+  color: #FFFDF7;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(255, 253, 247, 0.15);
+  border: 1px solid rgba(255, 253, 247, 0.25);
+  transition: background 0.15s;
+}
+.flowers-spotlight-actions .qr-code-btn:hover,
+.flowers-spotlight-actions .share-link-btn:hover {
+  background: rgba(255, 253, 247, 0.3);
 }
 
 .flowers-spotlight-bg {
