@@ -147,7 +147,7 @@ function CollectionSection({
 
   // Show up to 9 preview apps in admin mode, 6 otherwise
   const maxPreview = isAdmin ? ADMIN_MAX_PREVIEW : DEFAULT_MAX_PREVIEW;
-  const previewApps = orderedApps || pickPreview(collection.apps, maxPreview, collection.name);
+  const previewApps = orderedApps || pickPreview(collection.apps, maxPreview);
 
   // Drag-and-drop handlers (admin mode only)
   const handleDragStart = (idx: number) => {

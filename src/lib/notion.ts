@@ -161,8 +161,6 @@ const SEED_COLLECTION_ORDER = [
 // Collections to hide from the Gardens page
 const HIDDEN_COLLECTIONS = ['religious studies'];
 
-// Collections allowed to show Y1/Y2/Ghana apps
-const GHANA_ALLOWED = ['ghana', 'flowers'];
 
 // ---------------------------------------------------------------------------
 // Helper functions
@@ -190,24 +188,9 @@ export function inferType(name: string): 'topic' | 'org' {
   return 'topic';
 }
 
-export function isGhanaApp(name: string): boolean {
-  const lower = name.toLowerCase();
-  if (lower.includes('ghana')) return true;
-  if (lower.startsWith('y1') || lower.startsWith('y2')) return true;
-  if (lower.startsWith('year 1') || lower.startsWith('year 2')) return true;
-  return false;
-}
-
-export function pickPreview(apps: App[], count: number, collectionName: string): App[] {
-  const lowerName = collectionName.toLowerCase();
-  const ghanaAllowed = GHANA_ALLOWED.includes(lowerName);
-
-  // Filter: remove hidden apps and Ghana apps (unless allowed)
-  const eligible = apps.filter(app => {
-    if (app.homepageHidden) return false;
-    if (!ghanaAllowed && isGhanaApp(app.name)) return false;
-    return true;
-  });
+export function pickPreview(apps: App[], count: number): App[] {
+  // Filter: remove hidden apps
+  const eligible = apps.filter(app => !app.homepageHidden);
 
   // Sort: explicit collectionOrder first, then alphabetical
   const sorted = [...eligible].sort((a, b) => {
