@@ -201,62 +201,43 @@ export function isGhanaApp(name: string): boolean {
 }
 
 export function pickPreview(apps: App[], count: number, collectionName: string): App[] {
-  const colLower = collectionName.toLowerCase();
-  const allowGhana = GHANA_ALLOWED.includes(colLower);
+  const lowerName = collectionName.toLowerCase();
+  const ghanaAllowed = GHANA_ALLOWED.includes(lowerName);
 
-  // Separate pinned from unpinned, sort pinned by homepageOrder
-  const pinnedApps: App[] = [];
-  const unpinnedApps: App[] = [];
-  for (const app of apps) {
-    if (app.pinned) {
-      pinnedApps.push(app);
+  // Filter: remove hidden apps and Ghana apps (unless allowed)
+  let eligible = apps.filter(app => {
+    if (app.homepageHidden) return false;
+    if (!ghanaAllowed && isGhanaApp(app.name)) return false;
+    return true;
+  });
+
+  // Split into ordered (has explicit collectionOrder < 999) and unordered
+  const ordered = eligible
+    .filter(a => a.collectionOrder < 999)
+    .sort((a, b) => a.collectionOrder - b.collectionOrder);
+
+  const unordered = eligible
+    .filter(a => a.collectionOrder >= 999);
+
+  // For unordered: apply creator diversity (max 1 per creator), sort by sessions
+  const seenCreators = new Set(ordered.map(a => a.creator.toLowerCase()).filter(c => c));
+  const diverseUnordered: App[] = [];
+  const remainingUnordered: App[] = [];
+
+  const sortedBySession = [...unordered].sort((a, b) => b.sessions - a.sessions);
+  for (const app of sortedBySession) {
+    const creatorKey = app.creator.toLowerCase();
+    if (!creatorKey || !seenCreators.has(creatorKey)) {
+      diverseUnordered.push(app);
+      if (creatorKey) seenCreators.add(creatorKey);
     } else {
-      unpinnedApps.push(app);
-    }
-  }
-  pinnedApps.sort((a, b) => (a.homepageOrder ?? 999) - (b.homepageOrder ?? 999));
-
-  const picked: App[] = [];
-  const seenCreators: Record<string, boolean> = {};
-
-  // Phase 1: Add pinned apps first (respecting Ghana filter)
-  for (const app of pinnedApps) {
-    if (picked.length >= count) break;
-    if (!allowGhana && isGhanaApp(app.name)) continue;
-    picked.push(app);
-    const creator = (app.creator || '').toLowerCase().trim();
-    if (creator) seenCreators[creator] = true;
-  }
-
-  // Phase 2: Fill remaining with unpinned, unique creators
-  for (const app of unpinnedApps) {
-    if (picked.length >= count) break;
-    if (!allowGhana && isGhanaApp(app.name)) continue;
-    const creator = (app.creator || '').toLowerCase().trim();
-    if (creator && seenCreators[creator]) continue;
-    picked.push(app);
-    if (creator) seenCreators[creator] = true;
-  }
-
-  // Phase 3: Relax creator uniqueness
-  if (picked.length < count) {
-    for (const app of unpinnedApps) {
-      if (picked.length >= count) break;
-      if (picked.includes(app)) continue;
-      if (!allowGhana && isGhanaApp(app.name)) continue;
-      picked.push(app);
+      remainingUnordered.push(app);
     }
   }
 
-  // Phase 4: Last resort, allow any app
-  if (picked.length < count) {
-    for (const app of apps) {
-      if (picked.length >= count) break;
-      if (!picked.includes(app)) picked.push(app);
-    }
-  }
-
-  return picked;
+  // Combine: ordered first, then diverse unordered, then remaining
+  const result = [...ordered, ...diverseUnordered, ...remainingUnordered];
+  return result.slice(0, count);
 }
 
 function parseRow(props: any, pageId?: string): (App & { tags?: string[] }) | null {
