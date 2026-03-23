@@ -787,14 +787,14 @@ img {
   border: 1px solid rgba(13, 40, 24, 0.08);
   border-radius: 14px;
   padding: 16px;
-  min-width: 200px;
-  max-width: 220px;
-  height: 200px;
+  min-width: 210px;
+  max-width: 240px;
+  height: 250px;
   flex-shrink: 0;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   overflow: hidden;
   backdrop-filter: blur(4px);
   transition: transform 0.15s, border-color 0.15s;
@@ -818,10 +818,24 @@ img {
   line-height: 1.5;
   opacity: 0.7;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex-grow: 1;
+  min-height: 3em;
+}
+
+/* Tags inside preview cards — compact, single row */
+.preview-app-card .app-card-tags {
+  margin-top: auto;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  gap: 4px;
+}
+.preview-app-card .app-tag {
+  font-size: 0.625rem;
+  padding: 2px 6px;
+  white-space: nowrap;
 }
 
 /* No-preview fallback */
