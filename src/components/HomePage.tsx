@@ -13,6 +13,9 @@ import QRModal from '@/components/QRModal';
 import ShareButton from '@/components/ShareButton';
 
 const SCROLL_OFFSET = 140;
+const ADMIN_MAX_PREVIEW = 9;
+const DEFAULT_MAX_PREVIEW = 6;
+const ADMIN_PWD_KEY = 'playlab-admin-pwd';
 
 // ---- Grouping constants ----
 const SUBJECT_NAMES = [
@@ -86,6 +89,10 @@ function CollectionSection({
 }) {
   const [visible, setVisible] = useState(false);
   const [showQR, setShowQR] = useState(false);
+  const [orderedApps, setOrderedApps] = useState<App[] | null>(null);
+  const [dragIdx, setDragIdx] = useState<number | null>(null);
+  const [dropIdx, setDropIdx] = useState<number | null>(null);
+  const [saving, setSaving] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -136,8 +143,69 @@ function CollectionSection({
     : '';
   const collectionUrl = `/collection/${collection.id}`;
 
-  // Show 6 preview apps per collection, using pickPreview for diverse selection
-  const previewApps = pickPreview(collection.apps, 6, collection.name);
+  // Show up to 9 preview apps in admin mode, 6 otherwise
+  const maxPreview = isAdmin ? ADMIN_MAX_PREVIEW : DEFAULT_MAX_PREVIEW;
+  const previewApps = orderedApps || pickPreview(collection.apps, maxPreview, collection.name);
+
+  // Drag-and-drop handlers (admin mode only)
+  const handleDragStart = (idx: number) => {
+    setDragIdx(idx);
+  };
+
+  const handleDragOver = (e: React.DragEvent, idx: number) => {
+    e.preventDefault();
+    setDropIdx(idx);
+  };
+
+  const handleDragLeave = () => {
+    setDropIdx(null);
+  };
+
+  const handleDrop = async (e: React.DragEvent, targetIdx: number) => {
+    e.preventDefault();
+    setDropIdx(null);
+    if (dragIdx === null || dragIdx === targetIdx) {
+      setDragIdx(null);
+      return;
+    }
+
+    // Reorder locally (optimistic)
+    const newOrder = [...previewApps];
+    const [moved] = newOrder.splice(dragIdx, 1);
+    newOrder.splice(targetIdx, 0, moved);
+    setOrderedApps(newOrder);
+    setDragIdx(null);
+
+    // Save to Notion
+    setSaving(true);
+    try {
+      const pwd = sessionStorage.getItem(ADMIN_PWD_KEY) || '';
+      const appOrder = newOrder.map((app, i) => ({
+        appName: app.name,
+        order: i + 1,
+      }));
+      const res = await fetch('/api/admin-reorder', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pwd, appOrder }),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        alert('Reorder failed: ' + (data.error || 'Unknown error'));
+        setOrderedApps(null); // revert
+      }
+    } catch {
+      alert('Reorder failed: network error');
+      setOrderedApps(null); // revert
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleDragEnd = () => {
+    setDragIdx(null);
+    setDropIdx(null);
+  };
 
   return (
     <section
@@ -155,7 +223,7 @@ function CollectionSection({
           >
             <LucideIcon name={iconName} size={18} />
           </div>
-          <h3 className="collection-section-name">{collection.name.replace(/\//g, '&')}</h3>
+          <h3 className="collection-section-name">{collection.name}</h3>
         </div>
         <div className="collection-section-actions">
           <button
@@ -184,16 +252,42 @@ function CollectionSection({
         {countText && (
           <span className="collection-section-count">{countText}</span>
         )}
+        {isAdmin && saving && (
+          <span className="admin-saving-indicator">Saving order...</span>
+        )}
       </div>
       {previewApps.length > 0 ? (
         <div className="collection-preview-apps">
-          {previewApps.map((app) => (
-            <PreviewAppCard
+          {previewApps.map((app, idx) => (
+            <div
               key={app.id}
-              app={app}
-              isAdmin={isAdmin}
-              onOpenApp={onOpenApp}
-            />
+              className={`admin-drag-wrapper${dropIdx === idx ? ' drag-over' : ''}${dragIdx === idx ? ' dragging' : ''}`}
+              draggable={isAdmin}
+              onDragStart={isAdmin ? () => handleDragStart(idx) : undefined}
+              onDragOver={isAdmin ? (e) => handleDragOver(e, idx) : undefined}
+              onDragLeave={isAdmin ? handleDragLeave : undefined}
+              onDrop={isAdmin ? (e) => handleDrop(e, idx) : undefined}
+              onDragEnd={isAdmin ? handleDragEnd : undefined}
+            >
+              {isAdmin && (
+                <div className="admin-drag-handle" title="Drag to reorder">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <circle cx="9" cy="6" r="2" />
+                    <circle cx="15" cy="6" r="2" />
+                    <circle cx="9" cy="12" r="2" />
+                    <circle cx="15" cy="12" r="2" />
+                    <circle cx="9" cy="18" r="2" />
+                    <circle cx="15" cy="18" r="2" />
+                  </svg>
+                  <span className="admin-order-badge">{idx + 1}</span>
+                </div>
+              )}
+              <PreviewAppCard
+                app={app}
+                isAdmin={isAdmin}
+                onOpenApp={onOpenApp}
+              />
+            </div>
           ))}
         </div>
       ) : (
@@ -390,7 +484,7 @@ export default function HomePage({ collections, onOpenApp }: HomePageProps) {
                       data-collection-id={c.id}
                       onClick={handlePillClick}
                     >
-                      {c.name.replace(/\//g, '&')}{' '}
+                      {c.name}{' '}
                       <span className="section-pill-count">{c.appCount}</span>
                     </a>
                   ))}
