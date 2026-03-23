@@ -203,39 +203,19 @@ export function pickPreview(apps: App[], count: number, collectionName: string):
   const ghanaAllowed = GHANA_ALLOWED.includes(lowerName);
 
   // Filter: remove hidden apps and Ghana apps (unless allowed)
-  let eligible = apps.filter(app => {
+  const eligible = apps.filter(app => {
     if (app.homepageHidden) return false;
     if (!ghanaAllowed && isGhanaApp(app.name)) return false;
     return true;
   });
 
-  // Split into ordered (has explicit collectionOrder < 999) and unordered
-  const ordered = eligible
-    .filter(a => a.collectionOrder < 999)
-    .sort((a, b) => a.collectionOrder - b.collectionOrder);
+  // Sort: explicit collectionOrder first, then alphabetical
+  const sorted = [...eligible].sort((a, b) => {
+    if (a.collectionOrder !== b.collectionOrder) return a.collectionOrder - b.collectionOrder;
+    return a.name.localeCompare(b.name);
+  });
 
-  const unordered = eligible
-    .filter(a => a.collectionOrder >= 999);
-
-  // For unordered: apply creator diversity (max 1 per creator), sort by sessions
-  const seenCreators = new Set(ordered.map(a => a.creator.toLowerCase()).filter(c => c));
-  const diverseUnordered: App[] = [];
-  const remainingUnordered: App[] = [];
-
-  const sortedBySession = [...unordered].sort((a, b) => b.sessions - a.sessions);
-  for (const app of sortedBySession) {
-    const creatorKey = app.creator.toLowerCase();
-    if (!creatorKey || !seenCreators.has(creatorKey)) {
-      diverseUnordered.push(app);
-      if (creatorKey) seenCreators.add(creatorKey);
-    } else {
-      remainingUnordered.push(app);
-    }
-  }
-
-  // Combine: ordered first, then diverse unordered, then remaining
-  const result = [...ordered, ...diverseUnordered, ...remainingUnordered];
-  return result.slice(0, count);
+  return sorted.slice(0, count);
 }
 
 function parseRow(props: any, pageId?: string): (App & { tags?: string[] }) | null {
