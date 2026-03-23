@@ -1767,20 +1767,6 @@ img {
   border-left: 3px solid #dc3c3c;
 }
 
-/* Pin badge for admin */
-.app-card.admin-pinned,
-.preview-app-card.admin-pinned {
-  position: relative;
-}
-.admin-pin-badge {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  z-index: 2;
-  color: var(--deep-forest);
-  opacity: 0.45;
-}
-
 .admin-missing-dot {
   display: none;
   position: absolute;
@@ -1801,41 +1787,6 @@ img {
   z-index: 2;
   box-shadow: 0 1px 4px rgba(220, 60, 60, 0.3);
   cursor: help;
-}
-
-/* ---- Admin Pin Button (on cards) ---- */
-.admin-pin-card-btn {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(13, 40, 24, 0.06);
-  color: var(--deep-forest);
-  opacity: 0.4;
-  border: none;
-  cursor: pointer;
-  z-index: 2;
-  transition: all 0.15s;
-}
-
-.admin-pin-card-btn:hover {
-  opacity: 0.8;
-  background: rgba(0, 152, 63, 0.1);
-}
-
-.admin-pin-card-btn.pinned {
-  opacity: 1;
-  background: rgba(0, 152, 63, 0.12);
-  color: var(--emerald);
-}
-
-.admin-pin-card-btn:disabled {
-  cursor: not-allowed;
 }
 
 /* ---- Admin Password Modal ---- */
@@ -2147,42 +2098,6 @@ img {
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
-}
-
-/* ---- Admin Pin Button (drawer) ---- */
-.admin-pin-drawer-btn {
-  width: 100%;
-  padding: 10px 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-family: var(--font-caption);
-  font-weight: 600;
-  font-size: 0.8125rem;
-  background: rgba(13, 40, 24, 0.04);
-  color: var(--deep-forest);
-  border: 1.5px solid rgba(13, 40, 24, 0.1);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.2s;
-  margin-bottom: 16px;
-}
-
-.admin-pin-drawer-btn:hover {
-  background: rgba(0, 152, 63, 0.06);
-  border-color: rgba(0, 152, 63, 0.2);
-}
-
-.admin-pin-drawer-btn.pinned {
-  background: rgba(0, 152, 63, 0.08);
-  border-color: rgba(0, 152, 63, 0.25);
-  color: var(--emerald);
-}
-
-.admin-pin-drawer-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
 }
 
 /* Resource links in drawer */
@@ -4250,58 +4165,6 @@ img {
   background: var(--sand);
 }
 
-/* ---- Bulk Selection Checkbox ---- */
-.bulk-select-checkbox {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 10;
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
-  accent-color: var(--emerald);
-  transform: scale(1.15);
-}
-.app-card.bulk-selected {
-  outline: 2px solid var(--emerald);
-  outline-offset: -2px;
-}
-
-/* ---- Bulk Action Bar ---- */
-.bulk-action-bar {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--deep-forest);
-  color: var(--cream);
-  padding: 12px 24px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  z-index: 100;
-  font-family: var(--font-caption);
-  font-size: 0.875rem;
-}
-.bulk-action-bar button {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: var(--cream);
-  padding: 6px 16px;
-  border-radius: var(--radius-pill);
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-.bulk-action-bar button:hover {
-  background: rgba(255,255,255,0.25);
-}
-.bulk-action-bar button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
 
 /* ---- Admin Dashboard ---- */
 .admin-dashboard {

@@ -269,11 +269,9 @@ export default function CollectionPageComponent({
   const filteredApps = useMemo(() => {
     let result = [...collection.apps];
 
-    // Sort: pinned first (by homepageOrder), then A-Z by name
+    // Sort: by collectionOrder, then A-Z by name
     result.sort((a, b) => {
-      if (a.pinned && !b.pinned) return -1;
-      if (!a.pinned && b.pinned) return 1;
-      if (a.pinned && b.pinned) return (a.homepageOrder ?? 999) - (b.homepageOrder ?? 999);
+      if (a.collectionOrder !== b.collectionOrder) return a.collectionOrder - b.collectionOrder;
       return a.name.localeCompare(b.name);
     });
 
