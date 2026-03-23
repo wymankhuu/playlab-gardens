@@ -238,6 +238,9 @@ export default function SearchOverlay({ collections, onOpenApp }: SearchOverlayP
                         }}
                       >
                         <div className="search-dropdown-name">{app.name}</div>
+                        {app.creator && (
+                          <div className="search-dropdown-creator">by {app.creator}</div>
+                        )}
                         <div className="search-dropdown-desc">
                           {truncate(app.description || '', 80)}
                         </div>

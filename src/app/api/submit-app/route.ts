@@ -16,7 +16,7 @@ export async function OPTIONS() {
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  const { appName, url, creator, role, description, usage, impact } = body;
+  const { appName, url, creator, role, description, usage, impact, suggestedCollections } = body;
 
   // Validate required fields
   if (!appName || !appName.trim()) {
@@ -67,6 +67,11 @@ export async function POST(request: NextRequest) {
     if (impact && impact.trim()) {
       properties['Impact'] = {
         rich_text: [{ text: { content: impact.trim() } }],
+      };
+    }
+    if (suggestedCollections && Array.isArray(suggestedCollections) && suggestedCollections.length > 0) {
+      properties['Suggested Collections'] = {
+        rich_text: [{ text: { content: suggestedCollections.join(', ') } }],
       };
     }
 

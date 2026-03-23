@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 interface QRModalProps {
   url: string;
@@ -10,6 +10,8 @@ interface QRModalProps {
 
 export default function QRModal({ url, name, onClose }: QRModalProps) {
   const [copyText, setCopyText] = useState('Copy Link');
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
   const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}&margin=10`;
   const downloadName = `qr-${name.toLowerCase().replace(/\s+/g, '-')}.png`;
 
@@ -21,8 +23,19 @@ export default function QRModal({ url, name, onClose }: QRModalProps) {
   );
 
   useEffect(() => {
+    // Save trigger element for returning focus on close
+    triggerRef.current = document.activeElement as HTMLElement | null;
+    // Focus the close button when modal opens
+    setTimeout(() => closeButtonRef.current?.focus(), 50);
+
     document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      // Return focus to trigger element on unmount
+      if (triggerRef.current && typeof triggerRef.current.focus === 'function') {
+        triggerRef.current.focus();
+      }
+    };
   }, [handleKeyDown]);
 
   const handleCopy = () => {
@@ -39,10 +52,10 @@ export default function QRModal({ url, name, onClose }: QRModalProps) {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="qr-modal">
+      <div className="qr-modal" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title">
         <div className="qr-modal-header">
-          <h3 className="qr-modal-title">{name}</h3>
-          <button className="qr-modal-close" aria-label="Close" onClick={onClose}>
+          <h3 className="qr-modal-title" id="qr-modal-title">{name}</h3>
+          <button ref={closeButtonRef} className="qr-modal-close" aria-label="Close" onClick={onClose}>
             &#10005;
           </button>
         </div>

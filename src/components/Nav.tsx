@@ -69,6 +69,7 @@ function NavInner() {
               <Link
                 href={link.href}
                 className={link.href === activePath ? 'active' : undefined}
+                {...(link.href === activePath ? { 'aria-current': 'page' as const } : {})}
               >
                 {link.label}
               </Link>
@@ -86,6 +87,7 @@ function NavInner() {
         <button
           className="mobile-menu-btn"
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           <svg

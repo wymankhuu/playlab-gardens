@@ -169,14 +169,14 @@ export default function PreviewAppCard({
         {creatorName}
       </div>
       <div className="preview-app-card-name">{app.name}</div>
-      <div className="preview-app-card-desc">{shortDesc(desc)}</div>
+      <div className="preview-app-card-desc">{truncate(desc, 100)}</div>
       {shownTags.length > 0 && (
         <div className="app-card-tags">
-          {shownTags.map((t) => (
+          {shownTags.slice(0, 2).map((t) => (
             <span key={t} className="app-tag">{t}</span>
           ))}
-          {extraCount > 0 && (
-            <span className="app-tag app-tag--more">+{extraCount}</span>
+          {shownTags.length > 2 && (
+            <span className="app-tag app-tag--more">+{shownTags.length - 2}</span>
           )}
         </div>
       )}

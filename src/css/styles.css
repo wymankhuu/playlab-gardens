@@ -2460,6 +2460,53 @@ img {
   cursor: not-allowed;
 }
 
+/* ---- Auto-tag Suggestions ---- */
+.autotag-suggestions {
+  margin-top: 10px;
+}
+.autotag-label {
+  display: block;
+  font-family: var(--font-caption);
+  font-size: 0.75rem;
+  color: var(--text-secondary, #666);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.autotag-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.autotag-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-family: var(--font-caption);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1.5px solid var(--border, #ddd);
+  background: transparent;
+  color: var(--text-secondary, #666);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+}
+.autotag-pill:hover {
+  border-color: var(--green, #00983F);
+  color: var(--green, #00983F);
+}
+.autotag-pill--selected {
+  background: var(--green, #00983F);
+  border-color: var(--green, #00983F);
+  color: #fff;
+}
+.autotag-pill--selected:hover {
+  background: var(--green-dark, #007a32);
+  border-color: var(--green-dark, #007a32);
+  color: #fff;
+}
+
 /* ---- Flowers Spotlight ---- */
 .flowers-spotlight {
   display: block;
@@ -2978,6 +3025,13 @@ img {
   font-family: var(--font-accent);
   font-size: 0.9375rem;
   margin-bottom: 2px;
+}
+
+.search-dropdown-creator {
+  font-family: var(--font-caption);
+  font-size: 0.75rem;
+  opacity: 0.5;
+  font-style: italic;
 }
 
 .search-dropdown-desc {

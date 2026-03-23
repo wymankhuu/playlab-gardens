@@ -1,9 +1,11 @@
 'use client';
 
-import { useState, useRef, type FormEvent } from 'react';
+import { useState, useRef, useEffect, type FormEvent } from 'react';
 import Link from 'next/link';
+import { suggestTags } from '@/lib/autotag';
 
 const PLAYLAB_URL_PATTERN = /^https?:\/\/(www\.)?playlab\.ai\/project\/.+$/;
+const DEBOUNCE_MS = 500;
 
 interface FieldErrors {
   appName?: string;
@@ -30,7 +32,10 @@ export default function SharePage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const [suggestedTags, setSuggestedTags] = useState<string[]>([]);
+  const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
   const formRef = useRef<HTMLFormElement>(null);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function updateField(field: string, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -42,6 +47,34 @@ export default function SharePage() {
         return next;
       });
     }
+  }
+
+  // Debounced auto-tag suggestions when description changes
+  useEffect(() => {
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    if (!form.description.trim()) {
+      setSuggestedTags([]);
+      return;
+    }
+    debounceRef.current = setTimeout(() => {
+      const tags = suggestTags(form.description);
+      setSuggestedTags(tags);
+    }, DEBOUNCE_MS);
+    return () => {
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+    };
+  }, [form.description]);
+
+  function toggleTag(tag: string) {
+    setSelectedTags((prev) => {
+      const next = new Set(prev);
+      if (next.has(tag)) {
+        next.delete(tag);
+      } else {
+        next.add(tag);
+      }
+      return next;
+    });
   }
 
   function validate(): FieldErrors {
@@ -108,7 +141,11 @@ export default function SharePage() {
       const res = await fetch('/api/submit-app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, consent }),
+        body: JSON.stringify({
+          ...form,
+          consent,
+          suggestedCollections: [...selectedTags],
+        }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -156,6 +193,8 @@ export default function SharePage() {
                 setSubmitted(false);
                 setConsent(false);
                 setFieldErrors({});
+                setSuggestedTags([]);
+                setSelectedTags(new Set());
                 setForm({
                   appName: '',
                   url: '',
@@ -288,6 +327,29 @@ export default function SharePage() {
               />
               {fieldErrors.description && (
                 <p className="form-error">{fieldErrors.description}</p>
+              )}
+
+              {/* Auto-tag suggestions */}
+              {suggestedTags.length > 0 && (
+                <div className="autotag-suggestions" aria-live="polite">
+                  <span className="autotag-label">Suggested collections:</span>
+                  <div className="autotag-pills">
+                    {suggestedTags.map((tag) => {
+                      const isSelected = selectedTags.has(tag);
+                      return (
+                        <button
+                          key={tag}
+                          type="button"
+                          className={`autotag-pill${isSelected ? ' autotag-pill--selected' : ''}`}
+                          onClick={() => toggleTag(tag)}
+                          aria-pressed={isSelected}
+                        >
+                          {tag}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
               )}
             </div>
 

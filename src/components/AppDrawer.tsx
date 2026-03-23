@@ -47,6 +47,7 @@ export default function AppDrawer({
   const drawerRef = useRef<HTMLElement>(null);
   const savedScrollRef = useRef(0);
   const closingViaPopstateRef = useRef(false);
+  const triggerRef = useRef<HTMLElement | null>(null);
 
   const { isAdmin, enterAdmin, exitAdmin } = useAdminMode();
 
@@ -66,6 +67,11 @@ export default function AppDrawer({
         history.back();
       }
 
+      // Return focus to the element that triggered the drawer
+      if (triggerRef.current && typeof triggerRef.current.focus === 'function') {
+        triggerRef.current.focus();
+      }
+
       onClose();
     },
     [onClose],
@@ -74,6 +80,8 @@ export default function AppDrawer({
   // Open / close animation + body scroll lock
   useEffect(() => {
     if (currentApp) {
+      // Save the element that triggered the drawer open so we can return focus
+      triggerRef.current = document.activeElement as HTMLElement | null;
       savedScrollRef.current = window.scrollY;
       // Small delay so the CSS transition fires
       requestAnimationFrame(() => setActive(true));
@@ -113,11 +121,34 @@ export default function AppDrawer({
     }
   }, [currentApp]);
 
-  // Escape key
+  // Escape key + focus trap
   useEffect(() => {
     if (!currentApp) return;
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') handleClose();
+      if (e.key === 'Escape') {
+        handleClose();
+        return;
+      }
+      // Focus trap: Tab should cycle within the drawer
+      if (e.key === 'Tab' && drawerRef.current) {
+        const focusable = drawerRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
     };
     document.addEventListener('keydown', handleKey);
     return () => document.removeEventListener('keydown', handleKey);
@@ -408,7 +439,16 @@ export default function AppDrawer({
                     className="drawer-related-item"
                     data-app-id={r.id}
                     style={{ cursor: 'pointer' }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`View related app: ${r.name}`}
                     onClick={() => openRelatedApp(r)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openRelatedApp(r);
+                      }
+                    }}
                   >
                     <div className="drawer-related-name">{r.name}</div>
                     {r.creator && (
