@@ -346,8 +346,13 @@ export default function CollectionPageComponent({
   const filteredApps = useMemo(() => {
     let result = [...collection.apps];
 
-    // Default A-Z sort
-    result.sort((a, b) => a.name.localeCompare(b.name));
+    // Sort: pinned first (by homepageOrder), then A-Z by name
+    result.sort((a, b) => {
+      if (a.pinned && !b.pinned) return -1;
+      if (!a.pinned && b.pinned) return 1;
+      if (a.pinned && b.pinned) return (a.homepageOrder ?? 999) - (b.homepageOrder ?? 999);
+      return a.name.localeCompare(b.name);
+    });
 
     // Search filter
     if (debouncedQuery) {
@@ -428,7 +433,7 @@ export default function CollectionPageComponent({
           </div>
           <div className="collection-hero-meta">
             <span className="collection-hero-stat">
-              {collection.appCount} app{collection.appCount !== 1 ? 's' : ''} in this collection
+              {filteredApps.length} app{filteredApps.length !== 1 ? 's' : ''} in this collection
             </span>
             {isOrg && (
               <span className="collection-hero-org">

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getCollections, getCollection } from '@/lib/notion';
-import CollectionPage from '@/components/CollectionPage';
+import CollectionPageClient from './CollectionPageClient';
 
 // ---------------------------------------------------------------------------
 // Static params — pre-render every collection page at build time
@@ -79,5 +79,5 @@ export default async function CollectionDetailPage({
     );
   }
 
-  return <CollectionPage collection={collection} />;
+  return <CollectionPageClient collection={collection} />;
 }
