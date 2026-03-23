@@ -17,6 +17,7 @@ export interface App {
   sessions: number;
   iterations: number;
   pinned: boolean;
+  homepageOrder: number;
   tags: string[];
 }
 
@@ -196,7 +197,7 @@ export function pickPreview(apps: App[], count: number, collectionName: string):
   const colLower = collectionName.toLowerCase();
   const allowGhana = GHANA_ALLOWED.includes(colLower);
 
-  // Separate pinned from unpinned
+  // Separate pinned from unpinned, sort pinned by homepageOrder
   const pinnedApps: App[] = [];
   const unpinnedApps: App[] = [];
   for (const app of apps) {
@@ -206,6 +207,7 @@ export function pickPreview(apps: App[], count: number, collectionName: string):
       unpinnedApps.push(app);
     }
   }
+  pinnedApps.sort((a, b) => (a.homepageOrder ?? 999) - (b.homepageOrder ?? 999));
 
   const picked: App[] = [];
   const seenCreators: Record<string, boolean> = {};
@@ -275,6 +277,7 @@ function parseRow(props: any): (App & { tags?: string[] }) | null {
   const sessions = props['Sessions']?.number || 0;
   const iterations = props['Iterations']?.number || 0;
   const pinned = !!props['Homepage']?.checkbox;
+  const homepageOrder = props['Homepage Order']?.number ?? 999;
 
   return {
     id: appId || name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
@@ -288,6 +291,7 @@ function parseRow(props: any): (App & { tags?: string[] }) | null {
     sessions,
     iterations,
     pinned,
+    homepageOrder,
     tags: [],
   };
 }
@@ -409,6 +413,7 @@ async function fetchCollections(): Promise<Collection[]> {
       sessions: 0,
       iterations: 0,
       pinned: false,
+      homepageOrder: 999,
       tags: s.tags || [],
     }));
     result.push({

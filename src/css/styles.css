@@ -1261,7 +1261,7 @@ img {
 /* Drawer labels — neutral bordered pills to match app detail design */
 .drawer-labels {
   padding-top: 8px;
-  border-top: 1px solid var(--sand);
+  border-top: 1px solid rgba(13, 40, 24, 0.18);
 }
 
 .drawer-labels .app-card-labels {
@@ -1472,7 +1472,7 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  border-bottom: 1px solid var(--sand);
+  border-bottom: 1px solid rgba(13, 40, 24, 0.18);
   flex-shrink: 0;
 }
 
@@ -1572,12 +1572,14 @@ img {
   font-family: var(--font-accent);
   font-style: italic;
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0;
   text-transform: none;
-  color: var(--drawer-accent, var(--emerald));
-  opacity: 0.8;
+  color: var(--deep-forest);
+  opacity: 1;
   margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(13, 40, 24, 0.2);
 }
 
 .drawer-desc {
@@ -1666,7 +1668,7 @@ img {
   flex-direction: column;
   gap: 10px;
   padding-top: 20px;
-  border-top: 1px solid var(--sand);
+  border-top: 1px solid rgba(13, 40, 24, 0.18);
   margin-top: auto;
 }
 
@@ -2574,6 +2576,157 @@ img {
 .drawer-btn-tertiary:hover {
   background: rgba(13, 40, 24, 0.04);
 }
+
+/* ---- Admin Drag & Drop Reorder ---- */
+
+.admin-drag-wrapper {
+  position: relative;
+  transition: transform 0.15s ease;
+}
+
+.admin-drag-wrapper.dragging {
+  opacity: 0.4;
+}
+
+.admin-drag-wrapper.drag-over::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -4px;
+  right: 0;
+  height: 3px;
+  background: #3347B8;
+  border-radius: 2px;
+  z-index: 10;
+}
+
+.admin-drag-handle {
+  position: absolute;
+  top: 8px;
+  left: -28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: grab;
+  color: rgba(13, 40, 24, 0.35);
+  z-index: 5;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.admin-drag-handle:hover {
+  color: rgba(13, 40, 24, 0.7);
+}
+
+.admin-drag-handle:active {
+  cursor: grabbing;
+}
+
+.admin-order-badge {
+  font-family: var(--font-caption);
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #fff;
+  background: #3347B8;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.admin-saving-indicator {
+  font-family: var(--font-caption);
+  font-size: 0.75rem;
+  color: #3347B8;
+  margin-left: 8px;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Give the preview grid left padding in admin mode for drag handles */
+.collection-preview-apps:has(.admin-drag-handle) {
+  padding-left: 32px;
+}
+
+/* ---- Seed Drawer ---- */
+
+.drawer-seed-explainer {
+  background: #f0f7ed;
+  border: 1px solid #c8e0be;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.drawer-seed-explainer-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.drawer-seed-explainer-icon {
+  font-size: 1.3rem;
+}
+
+.drawer-seed-explainer-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--deep-forest);
+}
+
+.drawer-seed-explainer-text {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--deep-forest);
+  opacity: 0.85;
+}
+
+.drawer-seed-collection-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--cream);
+  border-radius: 10px;
+  border: 1px solid var(--sand);
+}
+
+.drawer-seed-collection-badge img {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.drawer-seed-collection-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--deep-forest);
+}
+
+.drawer-seed-collection-desc {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--deep-forest);
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* Staggered fade-in for seed drawer sections */
+.drawer.active .drawer-seed-explainer { animation: drawerFadeIn 0.3s ease-out 0.2s both; }
+.drawer.active .drawer-seed-about { animation: drawerFadeIn 0.3s ease-out 0.25s both; }
+.drawer.active .drawer-seed-collection-section { animation: drawerFadeIn 0.3s ease-out 0.3s both; }
+.drawer.active .drawer-seed-tags { animation: drawerFadeIn 0.3s ease-out 0.35s both; }
 
 /* ---- Scroll to Top ---- */
 .scroll-top-btn {
