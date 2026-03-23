@@ -90,9 +90,11 @@ function CollectionSection({
   const [visible, setVisible] = useState(false);
   const [showQR, setShowQR] = useState(false);
   const [orderedApps, setOrderedApps] = useState<App[] | null>(null);
+  const [hasUnsavedOrder, setHasUnsavedOrder] = useState(false);
   const [dragIdx, setDragIdx] = useState<number | null>(null);
   const [dropIdx, setDropIdx] = useState<number | null>(null);
   const [saving, setSaving] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<'idle' | 'saved' | 'error'>('idle');
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -161,7 +163,7 @@ function CollectionSection({
     setDropIdx(null);
   };
 
-  const handleDrop = async (e: React.DragEvent, targetIdx: number) => {
+  const handleDrop = (e: React.DragEvent, targetIdx: number) => {
     e.preventDefault();
     setDropIdx(null);
     if (dragIdx === null || dragIdx === targetIdx) {
@@ -169,18 +171,23 @@ function CollectionSection({
       return;
     }
 
-    // Reorder locally (optimistic)
+    // Reorder locally only — don't save yet
     const newOrder = [...previewApps];
     const [moved] = newOrder.splice(dragIdx, 1);
     newOrder.splice(targetIdx, 0, moved);
     setOrderedApps(newOrder);
+    setHasUnsavedOrder(true);
+    setSaveStatus('idle');
     setDragIdx(null);
+  };
 
-    // Save to Notion
+  const handleSaveOrder = async () => {
+    if (!orderedApps) return;
     setSaving(true);
+    setSaveStatus('idle');
     try {
       const pwd = sessionStorage.getItem(ADMIN_PWD_KEY) || '';
-      const appOrder = newOrder.map((app, i) => ({
+      const appOrder = orderedApps.map((app, i) => ({
         appName: app.name,
         order: i + 1,
       }));
@@ -192,14 +199,24 @@ function CollectionSection({
       if (!res.ok) {
         const data = await res.json();
         alert('Reorder failed: ' + (data.error || 'Unknown error'));
-        setOrderedApps(null); // revert
+        setSaveStatus('error');
+      } else {
+        setHasUnsavedOrder(false);
+        setSaveStatus('saved');
+        setTimeout(() => setSaveStatus('idle'), 2000);
       }
     } catch {
       alert('Reorder failed: network error');
-      setOrderedApps(null); // revert
+      setSaveStatus('error');
     } finally {
       setSaving(false);
     }
+  };
+
+  const handleResetOrder = () => {
+    setOrderedApps(null);
+    setHasUnsavedOrder(false);
+    setSaveStatus('idle');
   };
 
   const handleDragEnd = () => {
@@ -252,8 +269,30 @@ function CollectionSection({
         {countText && (
           <span className="collection-section-count">{countText}</span>
         )}
-        {isAdmin && saving && (
-          <span className="admin-saving-indicator">Saving order...</span>
+        {isAdmin && hasUnsavedOrder && (
+          <span className="admin-order-actions" style={{ display: 'inline-flex', gap: 8, marginLeft: 12 }}>
+            <button
+              className="admin-save-btn"
+              onClick={handleSaveOrder}
+              disabled={saving}
+              style={{ padding: '4px 14px', fontSize: '0.8rem', height: 'auto', width: 'auto' }}
+            >
+              {saving ? 'Saving...' : 'Save Order'}
+            </button>
+            <button
+              className="admin-pw-cancel"
+              onClick={handleResetOrder}
+              disabled={saving}
+              style={{ padding: '4px 14px', fontSize: '0.8rem', height: 'auto', width: 'auto' }}
+            >
+              Reset
+            </button>
+          </span>
+        )}
+        {isAdmin && saveStatus === 'saved' && !hasUnsavedOrder && (
+          <span style={{ marginLeft: 12, color: '#2D7A3A', fontSize: '0.8rem', fontWeight: 500 }}>
+            ✓ Order saved
+          </span>
         )}
       </div>
       {previewApps.length > 0 ? (
