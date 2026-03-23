@@ -19,6 +19,9 @@ export interface App {
   pinned: boolean;
   homepageOrder: number;
   tags: string[];
+  notionId: string;
+  homepageHidden: boolean;
+  collectionOrder: number;
 }
 
 export interface Collection {
@@ -256,7 +259,7 @@ export function pickPreview(apps: App[], count: number, collectionName: string):
   return picked;
 }
 
-function parseRow(props: any): (App & { tags?: string[] }) | null {
+function parseRow(props: any, pageId?: string): (App & { tags?: string[] }) | null {
   // App name (title)
   const nameArr = props['App Name']?.title || [];
   const name = nameArr.map((t: any) => t.plain_text).join('').trim();
@@ -282,6 +285,9 @@ function parseRow(props: any): (App & { tags?: string[] }) | null {
   const iterations = props['Iterations']?.number || 0;
   const pinned = !!props['Homepage']?.checkbox;
   const homepageOrder = props['Homepage Order']?.number ?? 999;
+  const notionId = pageId || '';
+  const homepageHidden = !!props['Homepage Hidden']?.checkbox;
+  const collectionOrder = props['Collection Order']?.number ?? 999;
 
   return {
     id: appId || name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
@@ -297,6 +303,9 @@ function parseRow(props: any): (App & { tags?: string[] }) | null {
     pinned,
     homepageOrder,
     tags: [],
+    notionId,
+    homepageHidden,
+    collectionOrder,
   };
 }
 
@@ -332,7 +341,7 @@ async function fetchCollections(): Promise<Collection[]> {
 
   for (const row of rows) {
     const props = row.properties;
-    const app = parseRow(props);
+    const app = parseRow(props, row.id);
     if (!app) continue;
 
     const collections = (props['Collection']?.multi_select || []).map((s: any) => s.name);
@@ -419,6 +428,9 @@ async function fetchCollections(): Promise<Collection[]> {
       pinned: false,
       homepageOrder: 999,
       tags: s.tags || [],
+      notionId: '',
+      homepageHidden: false,
+      collectionOrder: 999,
     }));
     result.push({
       id: sc.id,
