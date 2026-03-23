@@ -188,13 +188,13 @@ function CollectionSection({
     try {
       const pwd = sessionStorage.getItem(ADMIN_PWD_KEY) || '';
       const appOrder = orderedApps.map((app, i) => ({
-        appName: app.name,
+        notionId: app.notionId,
         order: i + 1,
       }));
-      const res = await fetch('/api/admin-reorder', {
+      const res = await fetch('/api/admin-collection-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: pwd, appOrder }),
+        body: JSON.stringify({ password: pwd, collection: collection.name, appOrder }),
       });
       if (!res.ok) {
         const data = await res.json();

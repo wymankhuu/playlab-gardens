@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import type { App } from '@/lib/notion';
 import { escapeHtml } from '@/lib/utils';
 import { LucideIcon } from '@/lib/icons';
+import TagEditor from './TagEditor';
 
 /* ==========================================
    Admin Panel — edit fields, save, pin
@@ -296,6 +297,17 @@ function AdminEditPanel({ app, onAppUpdated }: AdminPanelProps) {
           onChange={(e) => setImpact(e.target.value)}
         />
       </div>
+
+      {app.notionId && (
+        <TagEditor
+          appNotionId={app.notionId}
+          currentTags={app.tags || []}
+          password={sessionStorage.getItem(ADMIN_PWD_KEY) || ''}
+          onTagsChanged={(newTags) => {
+            onAppUpdated({ tags: newTags });
+          }}
+        />
+      )}
 
       <div className="admin-actions">
         <button

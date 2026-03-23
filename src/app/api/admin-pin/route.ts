@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { Client } from '@notionhq/client';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
@@ -77,6 +78,8 @@ export async function POST(request: NextRequest) {
         Homepage: { checkbox: !!pinned },
       },
     });
+
+    revalidatePath('/');
 
     return NextResponse.json({ success: true, pinned: !!pinned }, { headers });
   } catch (error: unknown) {

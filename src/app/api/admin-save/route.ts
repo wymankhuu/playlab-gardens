@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { Client } from '@notionhq/client';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
@@ -68,6 +69,8 @@ export async function POST(request: NextRequest) {
     }
 
     await notion.pages.update({ page_id: pageId, properties: properties as any });
+
+    revalidatePath('/');
 
     return NextResponse.json({ success: true }, { headers });
   } catch (error: unknown) {
