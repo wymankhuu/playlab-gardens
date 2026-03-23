@@ -4,7 +4,20 @@ import { getCultivators } from '@/lib/notion';
 export const metadata: Metadata = {
   title: 'Cultivators | Playlab Gardens',
   description:
-    'Meet the educators growing the Playlab community. Each cultivator brings a unique perspective, building apps that reflect their students and classrooms.',
+    'Behind every app is a person who saw something missing and decided to build it. These are the educators, students, and leaders whose work is shaping what Playlab becomes.',
+  openGraph: {
+    title: 'Cultivators | Playlab Gardens',
+    description:
+      'Behind every app is a person who saw something missing and decided to build it. These are the educators, students, and leaders whose work is shaping what Playlab becomes.',
+    images: ['https://playlabgardens.com/images/beat-3.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cultivators | Playlab Gardens',
+    description:
+      'Behind every app is a person who saw something missing and decided to build it. These are the educators, students, and leaders whose work is shaping what Playlab becomes.',
+    images: ['https://playlabgardens.com/images/beat-3.webp'],
+  },
 };
 
 export default async function CultivatorsPage() {
@@ -18,9 +31,10 @@ export default async function CultivatorsPage() {
         <div className="cultivators-hero-content container">
           <h1 className="cultivators-hero-title">Cultivators</h1>
           <p className="cultivators-hero-desc">
-            Meet the educators growing the Playlab community. Each cultivator
-            brings a unique perspective, building apps that reflect their
-            students and classrooms.
+            Behind every app is a person who saw something missing and decided to
+            build it. These are the educators, students, and leaders whose work
+            is shaping what Playlab becomes — one tool, one classroom, one
+            community at a time.
           </p>
         </div>
       </section>
@@ -30,14 +44,14 @@ export default async function CultivatorsPage() {
         <div className="cultivators-spotlight">
           <div className="cultivators-spotlight-bg" />
           <div className="cultivators-spotlight-content">
-            <span className="cultivators-spotlight-badge">Community Spotlight</span>
-            <h2 className="cultivators-spotlight-title">
-              Growing Together
-            </h2>
+            <span className="cultivators-spotlight-badge">
+              Monthly Spotlight
+            </span>
+            <h2 className="cultivators-spotlight-title">March 2026</h2>
             <p className="cultivators-spotlight-desc">
-              Our cultivators are educators who go above and beyond, building
-              apps, mentoring peers, and pushing the boundaries of what&apos;s
-              possible in their classrooms.
+              Three educators building at the edges — where data meets equity,
+              where AI meets language, and where analog classrooms meet digital
+              preparation. Meet this month&apos;s cultivators.
             </p>
           </div>
         </div>
@@ -140,7 +154,9 @@ export default async function CultivatorsPage() {
                             <span className="cultivator-app-name">
                               {app.name}
                             </span>
-                            <span className="cultivator-app-arrow">&rarr;</span>
+                            <span className="cultivator-app-arrow">
+                              &rarr;
+                            </span>
                           </a>
                         ))}
                       </div>

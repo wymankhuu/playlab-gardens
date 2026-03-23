@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Nav from '@/components/Nav';
 import ScrollToTop from '@/components/ScrollToTop';
+import FadeUpObserver from '@/components/FadeUpObserver';
 
 export const metadata: Metadata = {
   title: 'Playlab Gardens',
@@ -76,6 +77,7 @@ export default function RootLayout({
         </footer>
 
         <ScrollToTop />
+        <FadeUpObserver />
       </body>
     </html>
   );

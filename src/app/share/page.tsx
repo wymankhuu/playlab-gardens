@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
+import Link from 'next/link';
 
 export default function SharePage() {
   const [form, setForm] = useState({
@@ -12,6 +13,7 @@ export default function SharePage() {
     usage: '',
     impact: '',
   });
+  const [consent, setConsent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -29,7 +31,7 @@ export default function SharePage() {
       const res = await fetch('/api/submit-app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, consent }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -49,16 +51,25 @@ export default function SharePage() {
       <>
         <section className="share-hero">
           <div className="container">
+            <Link href="/" className="breadcrumb-link">
+              &larr; Back to Gardens
+            </Link>
             <h1 className="share-hero-title">Share Your App</h1>
           </div>
         </section>
         <div className="container section">
-          <div className="share-form-container" style={{ textAlign: 'center', padding: '60px 0' }}>
+          <div
+            className="share-form-container"
+            style={{ textAlign: 'center', padding: '60px 0' }}
+          >
             <div style={{ fontSize: '3rem', marginBottom: 16 }}>&#127881;</div>
             <h2 className="heading-lg" style={{ marginBottom: 12 }}>
               Thank you!
             </h2>
-            <p className="text-body" style={{ opacity: 0.7, marginBottom: 24 }}>
+            <p
+              className="text-body"
+              style={{ opacity: 0.7, marginBottom: 24 }}
+            >
               Your app has been submitted. Our team will review it and add it to
               the Gardens soon.
             </p>
@@ -66,6 +77,7 @@ export default function SharePage() {
               className="share-submit-btn"
               onClick={() => {
                 setSubmitted(false);
+                setConsent(false);
                 setForm({
                   appName: '',
                   url: '',
@@ -90,10 +102,14 @@ export default function SharePage() {
       {/* Hero */}
       <section className="share-hero">
         <div className="container">
+          <Link href="/" className="breadcrumb-link">
+            &larr; Back to Gardens
+          </Link>
           <h1 className="share-hero-title">Share Your App</h1>
           <p className="share-hero-desc">
-            Built something with Playlab? Share it with the community. Every
-            app tells a story — we want to hear yours.
+            Built something on Playlab? Tell us about it. We review every
+            submission and add apps to the Gardens so other educators can
+            discover and learn from your work.
           </p>
         </div>
       </section>
@@ -111,7 +127,7 @@ export default function SharePage() {
                 id="appName"
                 className="form-input"
                 type="text"
-                placeholder="e.g., Math Practice Partner"
+                placeholder="What's your app called?"
                 value={form.appName}
                 onChange={(e) => updateField('appName', e.target.value)}
                 required
@@ -144,7 +160,7 @@ export default function SharePage() {
                   id="creator"
                   className="form-input"
                   type="text"
-                  placeholder="e.g., Maria Garcia"
+                  placeholder="First and last name"
                   value={form.creator}
                   onChange={(e) => updateField('creator', e.target.value)}
                   required
@@ -152,15 +168,16 @@ export default function SharePage() {
               </div>
               <div className="form-group">
                 <label className="form-label" htmlFor="role">
-                  Your Role
+                  Your Role <span className="form-required">*</span>
                 </label>
                 <input
                   id="role"
                   className="form-input"
                   type="text"
-                  placeholder="e.g., 5th Grade Teacher"
+                  placeholder="e.g. Teacher, Student, Coach"
                   value={form.role}
                   onChange={(e) => updateField('role', e.target.value)}
+                  required
                 />
               </div>
             </div>
@@ -173,7 +190,7 @@ export default function SharePage() {
               <textarea
                 id="description"
                 className="form-textarea"
-                placeholder="What does your app do? Who is it for?"
+                placeholder="What does your app do? (1-2 sentences)"
                 rows={3}
                 value={form.description}
                 onChange={(e) => updateField('description', e.target.value)}
@@ -184,31 +201,56 @@ export default function SharePage() {
             {/* How It's Being Used */}
             <div className="form-group">
               <label className="form-label" htmlFor="usage">
-                How It&apos;s Being Used
+                How It&apos;s Being Used{' '}
+                <span className="form-required">*</span>
               </label>
               <textarea
                 id="usage"
                 className="form-textarea"
-                placeholder="How are you or your students using this app in the classroom?"
+                placeholder="How are students or educators using this app? What does a typical session look like?"
                 rows={3}
                 value={form.usage}
                 onChange={(e) => updateField('usage', e.target.value)}
+                required
               />
             </div>
 
             {/* Impact */}
             <div className="form-group">
               <label className="form-label" htmlFor="impact">
-                Impact
+                Impact <span className="form-required">*</span>
               </label>
               <textarea
                 id="impact"
                 className="form-textarea"
-                placeholder="What impact has this app had on learning or teaching?"
+                placeholder="What difference has this app made? Any outcomes, stories, or numbers you can share?"
                 rows={3}
                 value={form.impact}
                 onChange={(e) => updateField('impact', e.target.value)}
+                required
               />
+            </div>
+
+            {/* Public consent checkbox */}
+            <div className="form-group">
+              <label
+                className="form-label"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  cursor: 'pointer',
+                  fontWeight: 'normal',
+                }}
+              >
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                />
+                I&apos;m willing to have my app shared publicly in the Playlab
+                Gardens
+              </label>
             </div>
 
             {error && (
