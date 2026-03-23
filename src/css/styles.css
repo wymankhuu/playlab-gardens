@@ -887,7 +887,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(224, 209, 174, 0.75);
+  background: rgba(224, 209, 174, 0.88);
   z-index: 0;
 }
 
@@ -982,7 +982,7 @@ img {
   font-family: var(--font-accent);
   font-style: italic;
   font-size: 1.125rem;
-  opacity: 0.85;
+  color: var(--text-secondary);
   max-width: 600px;
 }
 
@@ -998,23 +998,39 @@ img {
   font-family: var(--font-caption);
   font-size: 0.875rem;
   font-weight: 400;
-  opacity: 0.85;
+  color: var(--text-secondary);
 }
 
-.collection-hero-share {
+.collection-hero-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.collection-hero-topbar .collection-breadcrumb {
+  margin-bottom: 0;
+}
+
+.collection-hero-actions {
   display: flex;
   align-items: center;
   gap: 6px;
 }
-.collection-hero-share .qr-code-btn,
-.collection-hero-share .share-link-btn {
-  color: rgba(255, 253, 247, 0.5);
-  padding: 6px;
+
+.collection-hero-actions .qr-code-btn,
+.collection-hero-actions .share-link-btn {
+  color: var(--deep-forest);
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(251, 249, 246, 0.7);
+  border: 1px solid rgba(13, 40, 24, 0.1);
+  transition: background 0.15s, border-color 0.15s;
 }
-.collection-hero-share .qr-code-btn:hover,
-.collection-hero-share .share-link-btn:hover {
-  color: var(--cream);
-  background: rgba(255, 253, 247, 0.15);
+.collection-hero-actions .qr-code-btn:hover,
+.collection-hero-actions .share-link-btn:hover {
+  background: var(--cream);
+  border-color: rgba(13, 40, 24, 0.2);
 }
 
 .collection-hero-org {
@@ -1023,7 +1039,7 @@ img {
   font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  opacity: 0.85;
+  color: var(--text-secondary);
 }
 
 .collection-accent-bar-hidden {

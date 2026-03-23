@@ -368,10 +368,23 @@ export default function CollectionPageComponent({
           <div className="collection-hero-shape collection-hero-shape-2" />
         </div>
         <div className="collection-hero-content container">
-          <Link href="/" className="collection-breadcrumb">
-            <LucideIcon name="arrow-left" size={16} />
-            All Collections
-          </Link>
+          <div className="collection-hero-topbar">
+            <Link href="/" className="collection-breadcrumb">
+              <LucideIcon name="arrow-left" size={16} />
+              All Collections
+            </Link>
+            <div className="collection-hero-actions">
+              <button
+                className="qr-code-btn"
+                title="Generate QR code"
+                aria-label="Generate QR code"
+                onClick={() => setShowQR(true)}
+              >
+                <LucideIcon name="qr-code" size={18} />
+              </button>
+              <ShareButton url={typeof window !== 'undefined' ? window.location.href : ''} />
+            </div>
+          </div>
           <div className="collection-hero-header">
             <div
               className="collection-hero-icon"
@@ -395,17 +408,6 @@ export default function CollectionPageComponent({
                 <span>{orgName}</span>
               </span>
             )}
-            <div className="collection-hero-actions">
-              <button
-                className="qr-code-btn"
-                title="Generate QR code"
-                aria-label="Generate QR code"
-                onClick={() => setShowQR(true)}
-              >
-                <LucideIcon name="qr-code" size={18} />
-              </button>
-              <ShareButton url={typeof window !== 'undefined' ? window.location.href : ''} />
-            </div>
           </div>
 
           {/* Search */}
